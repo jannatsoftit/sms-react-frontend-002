@@ -15,6 +15,11 @@ function Form(props) {
     setText(newText);
   }
 
+  const handleClearClick = () => {
+    let newText = '';
+    setText(newText);
+  }
+
   const handleOnChange = (event) => {
     setText(event.target.value);
   }
@@ -39,6 +44,9 @@ function Form(props) {
         </button>
         <button onClick={handleLowClick} type='submit' className='btn btn-primary mb-3 mx-3'>
           Convert To LowerCase
+        </button>
+        <button onClick={handleClearClick} type='submit' className='btn btn-primary mb-3 mx-3'>
+          Clear
         </button>
       </div>
 
