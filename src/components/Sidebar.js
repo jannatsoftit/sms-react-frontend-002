@@ -16,7 +16,14 @@ function Sidebar() {
               id={ window.location.pathname == val.link ? 'active' : '' }
             >
               <div id='icon'>{val.icon}</div>
-              <div id='title'>{val.title}</div>
+
+              <div id='title'>
+                <div id={ window.location.pathname == val.childrens ? window.location.pathname = val.downIcon : '' }>
+                {val.title}
+                </div>
+              </div>
+              <div id='downIcon'>{val.downIcon}</div>
+
             </li>
           );
         })}

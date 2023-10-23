@@ -1,4 +1,5 @@
 import { AiFillDashboard } from 'react-icons/ai';
+import { AiFillCaretDown } from 'react-icons/ai';
 import { FaMoneyCheckAlt } from 'react-icons/fa';
 import { FaBook } from "react-icons/fa";
 import { FaUserFriends } from 'react-icons/fa';
@@ -15,7 +16,24 @@ export const SidebarData = [
   {
     title: 'Users',
     icon: < FaUserFriends color='white'/>,
-    link: '/users'
+    downIcon: < AiFillCaretDown color='white'/>,
+    childrens: [
+      {
+        title: 'Admin',
+        icon: '',
+        link: '/admin',
+      },
+      {
+        title: 'Student',
+        icon: '',
+        link: '/student',
+      },
+      {
+        title: 'Teacher',
+        icon: '',
+        link: '/teacher',
+      },
+    ]
   },
   {
     title: 'Examination',

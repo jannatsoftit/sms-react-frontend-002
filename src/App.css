@@ -46,3 +46,11 @@
 .SidebarList #active {
   background-color: #293846;
 }
+
+#downIcon {
+  width: 30%;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+}
+
