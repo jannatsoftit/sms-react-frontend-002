@@ -1,13 +1,122 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html,
+body {
+  height: 100vh;
+}
+
+body {
+  font-size: 16px;
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 230px;
+  flex-shrink: 0;
+  background-color: #2f4050;
+  height: 100%;
+  overflow: auto;
+}
+
+.SidebarList #active {
+  background-color: #293846; /**/
+}
+
+.sidebar-item {
+  padding: 0.75em 1em;
+  display: block;
+  transition: background-color 0.15s;
+  border-radius: 5px;
+}
+.sidebar-item:hover {
+  background-color: #293846;
+}
+
+.sidebar-title {
+  display: flex;
+  font-size: 15px;
+  justify-content: space-between;
+}
+.sidebar-title span div {
+  display: inline-block;
+  width: 1.5em;
+}
+.sidebar-title .toggle-btn {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.sidebar-item.open > .sidebar-title .toggle-btn {
+  transform: rotate(180deg);
+}
+.sidebar-content {
+  padding-top: 0.25em;
+  height: 0;
+  overflow: hidden;
+}
+.sidebar-item.open > .sidebar-content {
+  height: auto;
+}
+
+.sidebar-item.plain {
+  color: #fff;
+  text-decoration: none;
+}
+.sidebar-item.plain:hover {
+  text-decoration: none;
+}
+.sidebar-item.plain div {
+  display: inline-block;
+  width: 1.7em;
+}
+
+.Row {
+  width: 100%;
+  height: 50px;
+  margin: 0px;
+  color: aliceblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+
+.Row #icon {
+  width: 30%;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.Row #title {
+  width: 70%;
+}
+
+.Row #title_1 {
+  width: 40%;
+}
+
+.downIcon {
+  width: 30%;
+  display: grid;
+  place-items: center;
+  font-size: 13px;
+}
+
+#active {
+  background-color: #293846;
+}
+
+.sub-menu {
+  text-decoration: none;
 }
