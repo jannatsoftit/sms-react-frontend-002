@@ -1,21 +1,19 @@
+import React, { useState } from 'react';
 import { AiFillDashboard, AiFillCaretDown } from 'react-icons/ai';
 import { FaMoneyCheckAlt, FaUserFriends, FaBook, FaBars } from 'react-icons/fa';
 import { IoMdSchool } from 'react-icons/io';
 import { PiExamFill } from 'react-icons/pi';
-import { useState } from 'react';
-//import { Link } from 'react-router-dom';
+
 
 const Sidebar = ({children} : any) => {
 
-  const[Open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
 
-  const toggle = () => {
-    setOpen(!Open);
-  }
+  const toggle = () => setIsOpen(!isOpen);
+
 
   const SidebarData = [
     {
-      className: 'active',
       title: "Dashboard",
       icon: <AiFillDashboard />,
       path: '/dashboard',
@@ -66,31 +64,32 @@ const Sidebar = ({children} : any) => {
 
   return (
     <>
-       <div className='container'>
-       <div style={{width: Open ? '300px' : '45px'}} className='sidebar'>
-         <div className='top_section'>
-           <h1 style={{display: Open ? 'block' : 'none'}} className='logo'>Logo</h1>
-           <div style={{marginLeft: Open ? '300px' : 'none'}} className='bars'>
-             <FaBars onClick={toggle}/>
-           </div>
-         </div>
-         {
-           SidebarData.map((item, index) => (
-             
-            <a 
-              key={index} 
-              className='link' 
-              href ={item.path} 
-              id={window.location.pathname == item.path ? 'active' : ''}
-            >
-              <div className='icon'>{item.icon}</div>
-              <div className='link_text'>{item.title}</div>
-            </a>
-           ))
-         }
-       </div>
-       <main>{children}</main>
-     </div>
+      <div className='container'>
+        <div style={{ width: isOpen ? '220px' : '50px' }} className='sidebar'>
+          <div className='top_section'>
+            <h1 style={{ display: isOpen ? 'block' : 'none' }} className='logo'>Logo</h1>
+            <div style={{ marginLeft: isOpen ? '80px' : '0px' }} className='bars'>
+              <FaBars onClick={toggle} />
+            </div>
+          </div>
+          {
+            SidebarData.map((item, index) => (
+
+              <a
+                key={index}
+                className='link'
+                href={item.path}
+                id={window.location.pathname == item.path ? 'active' : ''}
+              >
+
+                <div className='icon'>{item.icon}</div>
+                <div style={{ display: isOpen ? 'block' : 'none' }} className='link_text'>{item.title}</div>
+              </a>
+            ))
+          }
+        </div>
+        <main>{children}</main>
+      </div>
     </>
   );
 }
