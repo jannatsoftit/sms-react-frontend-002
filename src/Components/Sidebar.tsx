@@ -11,7 +11,6 @@ const Sidebar = ({children} : any) => {
 
   const toggle = () => setIsOpen(!isOpen);
 
-
   const SidebarData = [
     {
       title: "Dashboard",
@@ -64,8 +63,8 @@ const Sidebar = ({children} : any) => {
 
   return (
     <>
-      <div className='container'>
-        <div style={{ width: isOpen ? '220px' : '50px' }} className='sidebar'>
+      <div className='con'>
+        <div style={{ width: isOpen ? '250px' : '50px' }} className='sidebar'>
           <div className='top_section'>
             <h1 style={{ display: isOpen ? 'block' : 'none' }} className='logo'>Logo</h1>
             <div style={{ marginLeft: isOpen ? '80px' : '0px' }} className='bars'>

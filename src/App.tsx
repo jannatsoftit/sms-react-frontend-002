@@ -7,12 +7,16 @@ import Admission from './Components/Pages/Admission';
 import Academic from './Components/Pages/Academic';
 import './App.css';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import Sidebar from './Components/Sidebar';
+import Home from './Components/Home';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
+        <Home />
         <Sidebar>
           <Routes>
             <Route path='/dashboard' element={<Dashboard />} />
@@ -21,8 +25,8 @@ const App = () => {
             <Route path='/accountant' element={<Accountant />} />
             <Route path='/admission' element={<Admission />} />
             <Route path='/academic' element={<Academic />} />
-          </Routes> 
-          </Sidebar>
+          </Routes>
+        </Sidebar>
       </BrowserRouter>
     </>
   );
