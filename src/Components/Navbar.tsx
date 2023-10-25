@@ -19,9 +19,9 @@ const Navbar = () => {
                   Dropdown
                 </a>
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a className="dropdown-item" href="/">Action</a></li>
-                  <li><a className="dropdown-item" href="/">Another</a></li>
-                  <li><a className="dropdown-item" href="/">Something</a></li>
+                  <li><a className="dropdown-item" href="/">Profile</a></li>
+                  <li><a className="dropdown-item" href="/">Logout</a></li>
+                  <li><a className="dropdown-item" href="/">Settings</a></li>
                 </ul>
               </li>
             </ul>
