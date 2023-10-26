@@ -18,6 +18,11 @@ const Sidebar = ({children} : any) => {
       path: '/dashboard',
     },
     {
+      title: "Home",
+      icon: <AiFillDashboard />,
+      path: '/home',
+    },
+    {
       title: 'Users',
       icon: <FaUserFriends />,
       downIcon: <AiFillCaretDown />,
@@ -73,14 +78,12 @@ const Sidebar = ({children} : any) => {
           </div>
           {
             SidebarData.map((item, index) => (
-
               <a
                 key={index}
                 className='link'
                 href={item.path}
                 id={window.location.pathname == item.path ? 'active' : ''}
               >
-
                 <div className='icon'>{item.icon}</div>
                 <div style={{ display: isOpen ? 'block' : 'none' }} className='link_text'>{item.title}</div>
               </a>

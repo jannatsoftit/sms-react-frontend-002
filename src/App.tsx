@@ -7,19 +7,21 @@ import Admission from './Components/Pages/Admission';
 import Academic from './Components/Pages/Academic';
 import './App.css';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+//import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Sidebar from './Components/Sidebar';
 import Home from './Components/Home';
+import Navbar from './Components/Navbar';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
-        <Home />
         <Sidebar>
+          <Navbar />
           <Routes>
             <Route path='/dashboard' element={<Dashboard />} />
+            <Route path='/home' element={<Home/>} />
             <Route path='/user' element={<User />} />
             <Route path='/examination' element={<Examination />} />
             <Route path='/accountant' element={<Accountant />} />
