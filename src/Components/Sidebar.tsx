@@ -18,11 +18,6 @@ const Sidebar = ({children} : any) => {
       path: '/dashboard',
     },
     {
-      title: "Home",
-      icon: <AiFillDashboard />,
-      path: '/home',
-    },
-    {
       title: 'Users',
       icon: <FaUserFriends />,
       downIcon: <AiFillCaretDown />,

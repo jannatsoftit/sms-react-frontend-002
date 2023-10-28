@@ -10,7 +10,7 @@ import './App.css';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Sidebar from './Components/Sidebar';
-import Home from './Components/Home';
+//import Home from './Components/Home';
 import Navbar from './Components/Navbar';
 
 const App = () => {
@@ -21,7 +21,7 @@ const App = () => {
           <Navbar />
           <Routes>
             <Route path='/dashboard' element={<Dashboard />} />
-            <Route path='/home' element={<Home/>} />
+            {/* <Route path='/home' element={<Home/>} /> */}
             <Route path='/user' element={<User />} />
             <Route path='/examination' element={<Examination />} />
             <Route path='/accountant' element={<Accountant />} />

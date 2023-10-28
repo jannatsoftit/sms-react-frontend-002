@@ -5,7 +5,6 @@ import { Line } from 'react-chartjs-2'
 chartjs.register(...registerables);
 
 
-
 const labels = ['2018', '2019', '2020', '2021', '2022', '2023'];
 
 const data = {
@@ -23,7 +22,7 @@ const data = {
 const BarChart = () => {
   return (
     <div className='bg-white border border-secondary'>
-      <Line data={data} />
+      <Line data={data}/>
     </div>
   )
 }
