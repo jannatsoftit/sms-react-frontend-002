@@ -11,9 +11,9 @@ const data = {
   labels: labels,
   datasets: [
     {
-      label: 'Average Students',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
+      label: 'Average Students of Abdul Gafur School',
+      // backgroundColor: 'rgb(255, 99, 132)',
+      // borderColor: 'rgb(255, 99, 132)',
       data: [160, 210, 150, 190, 230, 245],
     },
   ],
@@ -21,7 +21,7 @@ const data = {
 
 const BarChart = () => {
   return (
-    <div className='bg-white border border-secondary'>
+    <div className='bg-white'>
       <Line data={data}/>
     </div>
   )

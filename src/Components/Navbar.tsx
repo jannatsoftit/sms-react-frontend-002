@@ -8,7 +8,7 @@ const Navbar = () => {
           <div className="navbar-collapse" id="navbarSupportedContent">
             <form className="d-flex search">
               <input className="form-control me-2 search" type="search" placeholder="Search" aria-label="Search" />
-              <button className="btn btn-outline-success" type="submit">Search</button>
+              <button className="btn btn-outline-dark" type="submit" style={{backgroundColor: "#ADD8E6", color: 'black'}}>Search</button>
             </form>
             <ul className="navbar-nav me-auto mb-2">
               <li className="nav-item dropdown d-flex">
