@@ -5,7 +5,7 @@ const Table = () => {
 
   useEffect(() => {
 
-    fetch(`http://127.0.0.1:8001/api/students?`, {
+    fetch(`http://127.0.0.1:8000/api/students?`, {
       headers: {
         Accept: 'application/json',
       },
@@ -30,8 +30,8 @@ const Table = () => {
         <thead>
           <tr>
             <th>First Name</th>
-            <th>Last Name</th>
             <th>Email</th>
+            <th>Gender</th>
           </tr>
         </thead>
         <tbody>
@@ -39,8 +39,8 @@ const Table = () => {
             return (
               <tr key={student.id}>
                 <td>{student.first_name}</td>
-                <td>{student.last_name}</td>
                 <td>{student.email}</td>
+                <td>{student.gender}</td>
               </tr>
             )
           })}
