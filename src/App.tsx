@@ -11,14 +11,14 @@ import './App.css';
 
 import Sidebar from './Components/Sidebar';
 //import Home from './Components/Home';
-import Navbar from './Components/Navbar';
+import Topbar from './Components/Topbar';
 
 const App = () => {
   return (
     <>
       <BrowserRouter>
         <Sidebar>
-          <Navbar />
+          <Topbar />
           <Routes>
             <Route path='/dashboard' element={<Dashboard />} />
             {/* <Route path='/home' element={<Home/>} /> */}

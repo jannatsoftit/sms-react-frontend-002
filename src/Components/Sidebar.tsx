@@ -1,11 +1,16 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { FaBars } from 'react-icons/fa';
 import { AiFillDashboard, AiFillCaretDown } from 'react-icons/ai';
-import { FaMoneyCheckAlt, FaUserFriends, FaBook, FaBars } from 'react-icons/fa';
+import { FaMoneyCheckAlt, FaUserFriends, FaBook, FaAngleDown, FaAngleUp } from 'react-icons/fa';
 import { IoMdSchool } from 'react-icons/io';
 import { PiExamFill } from 'react-icons/pi';
+//import { Link, NavLink } from 'react-router-dom';
 
 
-const Sidebar = ({children} : any) => {
+const Sidebar = ({ children }: any) => {
+
+  const [subMenu, setSubMenu] = useState(false);
+  const showSubMenu = () => setSubMenu(!subMenu);
 
   const [isOpen, setIsOpen] = useState(true);
 
@@ -20,8 +25,10 @@ const Sidebar = ({children} : any) => {
     {
       title: 'Users',
       icon: <FaUserFriends />,
+      iconClosed: <FaAngleUp />,
+      iconOpened: <FaAngleDown />,
       downIcon: <AiFillCaretDown />,
-      childrens: [
+      subMenu: [
         {
           title: 'Admin',
           icon: '',
@@ -61,6 +68,7 @@ const Sidebar = ({children} : any) => {
     },
   ];
 
+
   return (
     <>
       <div className='con'>
@@ -71,7 +79,48 @@ const Sidebar = ({children} : any) => {
               <FaBars onClick={toggle} />
             </div>
           </div>
-          {
+
+
+          {SidebarData?.map((item, index) => (
+            <>
+              <div onClick={showSubMenu}>
+                <a
+                  key={index}
+                  className='link'
+                  href={item.path}
+                  id={window.location.pathname === item.path ? 'active' : ''}
+                >
+                  <div className='icon'>{item.icon}</div>
+                  <div style={{ display: isOpen ? 'block' : 'none' }} className='link_text'>{item.title}</div>
+                  <div>
+                    {subMenu && item.subMenu ? item?.iconClosed : item?.iconOpened}
+                  </div>
+                </a>
+
+                {/* sidebar submenu section*/}
+                <div>
+                  {subMenu && item?.subMenu?.map((subMenuItem, i) => {
+                    return (
+                      <a
+                        href={subMenuItem.path}
+                        key={i}
+                        className='link'
+                      >
+                        <div className='icon'>{subMenuItem.icon}</div>
+                        <div className='link_text'>{subMenuItem.title}</div>
+                      </a>
+                    )
+                  })
+                  }
+                </div>
+              </div>
+            </>))}
+
+
+
+
+
+          {/* {
             SidebarData.map((item, index) => (
               <a
                 key={index}
@@ -83,7 +132,7 @@ const Sidebar = ({children} : any) => {
                 <div style={{ display: isOpen ? 'block' : 'none' }} className='link_text'>{item.title}</div>
               </a>
             ))
-          }
+          } */}
         </div>
         <main>{children}</main>
       </div>

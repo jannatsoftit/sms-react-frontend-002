@@ -64,6 +64,19 @@ main {
   margin-left: 620px;
 }
 
+/* submenu */
+/* .link_submenu {
+  display: flex;
+  color: #fff;
+  padding: 13px 15px;
+  gap: 15px;
+  transition: all .5s;
+  text-decoration: none;
+}
+
+.link_text_submenu{
+  font-size: 17px;
+} */
 
 /* dashboard */
 
