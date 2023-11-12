@@ -5,9 +5,11 @@ import { MdNotificationsActive } from 'react-icons/md';
 import BarChart from './BarChart';
 import Table from './Table';
 
-const Home = () => {
+const Dashboard = () => {
   return (
-    <div className='p-3 bg-light'>
+    <>
+    Dashboard
+    {/* <div className='p-3 bg-light'>
       <div className='container-fluid'>
         
         <div className='row'>
@@ -63,8 +65,9 @@ const Home = () => {
 
         </div>
       </div>
-    </div>
+    </div> */}
+    </>
   )
 }
 
-export default Home;
+export default Dashboard;
