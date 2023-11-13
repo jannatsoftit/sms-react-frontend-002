@@ -24,12 +24,12 @@ const Table = () => {
   return (
     <>
       <div className='container'>
-        <div class='row align-items-center'>
-          <div class='col'>
-            <h2 class='fs-5 fw-bold mb-2'>Admin List</h2>
+        <div className='row align-items-center'>
+          <div className='col'>
+            <h2 className='fs-5 fw-bold mb-2'>Admin List</h2>
           </div>
-          <div class='col text-end'>
-            <a href='/#' class='btn btn-sm mb-2' style={{backgroundColor: "#ADD8E6"}}>
+          <div className='col text-end'>
+            <a href='/#' className='btn btn-sm mb-2' style={{backgroundColor: "#ADD8E6"}}>
               See all
             </a>
           </div>

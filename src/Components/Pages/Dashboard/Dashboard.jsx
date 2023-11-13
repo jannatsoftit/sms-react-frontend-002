@@ -8,8 +8,7 @@ import Table from './Table';
 const Dashboard = () => {
   return (
     <>
-    Dashboard
-    {/* <div className='p-3 bg-light'>
+    <div className='p-3 bg-light'>
       <div className='container-fluid'>
         
         <div className='row'>
@@ -65,7 +64,7 @@ const Dashboard = () => {
 
         </div>
       </div>
-    </div> */}
+    </div>
     </>
   )
 }

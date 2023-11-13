@@ -10,45 +10,43 @@ export const SidebarData = [
     icon: <AiIcons.AiFillHome />,
   },
   {
-    title: 'Reports',
-    path: '/reports',
+    title: 'User',
+    path: '/user',
     icon: <IoIcons.IoIosPaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
     subNav: [
       {
-        title: 'Reports',
-        path: '/reports/reports1',
+        title: 'Admin',
+        path: '/user/admin',
         icon: <IoIcons.IoIosPaper />,
-        cName: 'sub-nav'
       },
       {
-        title: 'Reports 2',
-        path: '/reports/reports2',
+        title: 'Student',
+        path: '/user/student',
         icon: <IoIcons.IoIosPaper />,
-        cName: 'sub-nav'
       },
       {
-        title: 'Reports 3',
-        path: '/reports/reports3',
-        icon: <IoIcons.IoIosPaper />
-      }
-    ]
+        title: 'Teacher',
+        path: '/user/teacher',
+        icon: <IoIcons.IoIosPaper />,
+      },
+    ],
   },
   {
-    title: 'Products',
-    path: '/products',
-    icon: <FaIcons.FaCartPlus />
+    title: 'Examination',
+    path: '/examination',
+    icon: <FaIcons.FaCartPlus />,
   },
   {
-    title: 'Team',
-    path: '/team',
-    icon: <IoIcons.IoMdPeople />
+    title: 'Accountant',
+    path: '/accountant',
+    icon: <IoIcons.IoMdPeople />,
   },
   {
-    title: 'Messages',
-    path: '/messages',
+    title: 'Admission',
+    path: '/admission',
     icon: <FaIcons.FaEnvelopeOpenText />,
 
     iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -58,18 +56,18 @@ export const SidebarData = [
       {
         title: 'Message 1',
         path: '/messages/message1',
-        icon: <IoIcons.IoIosPaper />
+        icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Message 2',
         path: '/messages/message2',
-        icon: <IoIcons.IoIosPaper />
-      }
-    ]
+        icon: <IoIcons.IoIosPaper />,
+      },
+    ],
   },
   {
-    title: 'Support',
-    path: '/support',
-    icon: <IoIcons.IoMdHelpCircle />
-  }
+    title: 'Academic',
+    path: '/academic',
+    icon: <IoIcons.IoMdHelpCircle />,
+  },
 ];

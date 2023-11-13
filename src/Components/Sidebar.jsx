@@ -15,17 +15,18 @@ const SidebarNav = styled.nav`
   justify-content: center;
   position: fixed;
   top: 0;
-  left: ${({ sidebar }) => (sidebar ? '10' : '-100%')};
+  left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
   transition: 350ms;
   z-index: 10;
 `;
 
-const Sidebar = () => {
+const Sidebar = ({ children }) => {
   const [sidebar, setSidebar] = useState('true');
-  const showSidebar = () => setSidebar(!sidebar);
+  //const showSidebar = () => setSidebar(!sidebar);
 
   return(
     <>
+    <div className='con'>
     <IconContext.Provider value={{color: '#fff'}}>
       <div>
         <a href='/'>Hello</a>
@@ -41,7 +42,7 @@ const Sidebar = () => {
           {/* <div className='navicon'>
             <AiIcons.AiOutlineClose />
           </div> */}
-          {SidebarData.map((item, index) => {
+          {SidebarData?.map((item, index) => {
             return <SubMenu item={item} key={index}/>
           })}
 
@@ -49,6 +50,9 @@ const Sidebar = () => {
       </SidebarNav>
       
     </IconContext.Provider>
+    <main>{children}</main>
+    </div>
+    
     </>
   )
 }
