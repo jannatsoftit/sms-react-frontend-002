@@ -1,7 +1,12 @@
 import * as FaIcons from 'react-icons/fa';
 import * as AiIcons from 'react-icons/ai';
+import * as BsIcons from 'react-icons/bs';
+import * as BiIcons from 'react-icons/bi';
 import * as IoIcons from 'react-icons/io';
 import * as RiIcons from 'react-icons/ri';
+import * as SiIcons from 'react-icons/si';
+import * as MdIcons from 'react-icons/md';
+import * as PiIcons from 'react-icons/pi';
 
 export const SidebarData = [
   {
@@ -12,7 +17,7 @@ export const SidebarData = [
   {
     title: 'User',
     path: '/user',
-    icon: <IoIcons.IoIosPaper />,
+    icon: <FaIcons.FaUserFriends />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
 
@@ -20,39 +25,39 @@ export const SidebarData = [
       {
         title: 'Admin',
         path: '/user/admin',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <MdIcons.MdAdminPanelSettings />,
       },
       {
         title: 'Student',
         path: '/user/student',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <PiIcons.PiStudentFill />,
       },
       {
         title: 'Teacher',
         path: '/user/teacher',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <FaIcons.FaChalkboardTeacher />,
       },
       {
         title: 'Parent',
         path: '/user/parent',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <RiIcons.RiParentFill />,
       },
       {
         title: 'Accountant',
         path: '/user/accountant',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <BsIcons.BsBank2 />,
       },
       {
         title: 'Librarian',
         path: '/user/librarian',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <MdIcons.MdLocalLibrary />,
       },
     ],
   },
   {
     title: 'Examination',
     path: '/examination',
-    icon: <FaIcons.FaCartPlus />,
+    icon: <FaIcons.FaBook />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
@@ -81,14 +86,14 @@ export const SidebarData = [
   {
     title: 'Academic',
     path: '/academic',
-    icon: <IoIcons.IoMdHelpCircle />,
+    icon: <IoIcons.IoMdSchool />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: 'Class Room',
         path: '/academic/class-room',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <SiIcons.SiGoogleclassroom />,
       },
       {
         title: 'Class List',
@@ -98,7 +103,7 @@ export const SidebarData = [
       {
         title: 'Subjects',
         path: '/academic/subjects',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <MdIcons.MdSubject />,
       },
       {
         title: 'Syllabus',
@@ -115,14 +120,14 @@ export const SidebarData = [
   {
     title: 'Accountant',
     path: '/accountant',
-    icon: <IoIcons.IoMdPeople />,
+    icon: <FaIcons.FaMoneyCheckAlt />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: 'Student Fee',
         path: '/accountant/student-fee',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <BiIcons.BiMoney />,
       },
       {
         title: 'Expense Category',
@@ -134,19 +139,19 @@ export const SidebarData = [
   {
     title: 'Settings',
     path: '/settings',
-    icon: <IoIcons.IoMdPeople />,
+    icon: <AiIcons.AiFillSetting />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: 'School Info',
         path: '/Settings/school-info',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <BsIcons.BsInfoCircleFill />,
       },
       {
         title: 'Logout',
         path: '/Settings/logout',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <RiIcons.RiLogoutCircleFill />,
       },
     ],
   },

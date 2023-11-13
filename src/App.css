@@ -10,7 +10,7 @@
 
 main {
   width: 100%;
-  margin-left: 240px;
+  margin-left: 250px;
 }
 
 .top_section {
@@ -37,7 +37,6 @@ main {
   color: #fff;
   height: 100vh;
   transition: all 0.5s;
-  /* z-index: ; */
 }
 
  /* .link {
@@ -53,8 +52,8 @@ main {
   background-color: lightblue;
   color: #000;
 }
-
-/* #active{
+/* 
+#active{
   background-color: lightblue;
   color: #000;
 }  */
@@ -63,15 +62,13 @@ main {
   font-size: 17px;
 }
 
-
 .navbar-nav {
-  margin-left: 520px;
+  margin-left: 720px;
 }
 
 .search{
   margin-left: 170px;
 }
-
 
 /* dashboard */
 
@@ -86,7 +83,6 @@ main {
 span {
   font-weight: bold;
 }
-
 
 /* Sidebar main-menu design */
 

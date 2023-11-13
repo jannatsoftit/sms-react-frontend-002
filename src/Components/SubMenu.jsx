@@ -15,7 +15,7 @@ const SubMenu = ({ item }) => {
           to={item.path}
           className='link'
           onClick={item.subNav && showSubmenu}
-          // id={window.location.pathname == item.path ? 'active' : ''}
+          //id={window.location.pathname == item.path ? 'active' : ''}
         >
           
           <div>
