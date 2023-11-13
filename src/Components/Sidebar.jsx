@@ -27,7 +27,7 @@ const Sidebar = ({ children }) => {
   return(
     <>
     <div className='con'>
-    <IconContext.Provider value={{color: '#fff'}}>
+    <IconContext.Provider value={{}}>
       <div>
         <a href='/'>Hello</a>
       </div>

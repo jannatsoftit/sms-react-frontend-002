@@ -32,35 +32,48 @@ export const SidebarData = [
         path: '/user/teacher',
         icon: <IoIcons.IoIosPaper />,
       },
+      {
+        title: 'Parent',
+        path: '/user/parent',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Accountant',
+        path: '/user/accountant',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Librarian',
+        path: '/user/librarian',
+        icon: <IoIcons.IoIosPaper />,
+      },
     ],
   },
   {
     title: 'Examination',
     path: '/examination',
     icon: <FaIcons.FaCartPlus />,
-  },
-  {
-    title: 'Accountant',
-    path: '/accountant',
-    icon: <IoIcons.IoMdPeople />,
-  },
-  {
-    title: 'Admission',
-    path: '/admission',
-    icon: <FaIcons.FaEnvelopeOpenText />,
-
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
-
     subNav: [
       {
-        title: 'Message 1',
-        path: '/messages/message1',
+        title: 'Exam Category',
+        path: '/examination/exam-category',
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: 'Message 2',
-        path: '/messages/message2',
+        title: 'Grades',
+        path: '/examination/grades',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Marks',
+        path: '/examination/marks',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Offline Exam',
+        path: '/examination/offline-exam',
         icon: <IoIcons.IoIosPaper />,
       },
     ],
@@ -69,5 +82,74 @@ export const SidebarData = [
     title: 'Academic',
     path: '/academic',
     icon: <IoIcons.IoMdHelpCircle />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+    subNav: [
+      {
+        title: 'Class Room',
+        path: '/academic/class-room',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Class List',
+        path: '/academic/class-list',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Subjects',
+        path: '/academic/subjects',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Syllabus',
+        path: '/academic/syllabus',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Section',
+        path: '/academic/section',
+        icon: <IoIcons.IoIosPaper />,
+      },
+    ],
   },
+  {
+    title: 'Accountant',
+    path: '/accountant',
+    icon: <IoIcons.IoMdPeople />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+    subNav: [
+      {
+        title: 'Student Fee',
+        path: '/accountant/student-fee',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Expense Category',
+        path: '/accountant/expense-category',
+        icon: <IoIcons.IoIosPaper />,
+      },
+    ],
+  },
+  {
+    title: 'Settings',
+    path: '/settings',
+    icon: <IoIcons.IoMdPeople />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+    subNav: [
+      {
+        title: 'School Info',
+        path: '/Settings/school-info',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Logout',
+        path: '/Settings/logout',
+        icon: <IoIcons.IoIosPaper />,
+      },
+    ],
+  },
+
+ 
 ];
