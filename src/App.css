@@ -1,0 +1,147 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* .con {
+  display: flex;
+} */
+
+/* main {
+  width: 100%;
+  padding: 0px;
+} */
+
+/* .top_section {
+  display: flex;
+  align-items: center;
+  padding: 15px 15px;
+} */
+
+/* .logo {
+  font-size: 30px;
+}
+
+.bars {
+  font-size: 25px;
+  display: flex;
+  margin-left: 50px;
+  cursor: pointer;
+} */
+
+/* .link {
+  display: flex;
+  color: #fff;
+  padding: 13px 15px;
+  gap: 15px;
+  transition: all .5s;
+  text-decoration: none;
+}
+
+.link:hover{
+  background-color: lightblue;
+  color: #000;
+}
+
+#active {
+  background-color: lightblue;
+  color: #000;
+} */
+
+/* .icon, .link_text {
+  font-size: 17px;
+} */
+
+
+.navbar-nav {
+  margin-left: 520px;
+}
+
+.search{
+  margin-left: 170px;
+}
+
+
+/* dashboard */
+
+.icons {
+  font-size: 55px;
+}
+
+.info{
+  margin-left: 25px;
+}
+
+span {
+  font-weight: bold;
+}
+
+
+/* Sidebar main-menu design */
+.nav{
+  background: #15171c;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.navicon{
+  margin-left: 280px;
+  font-size: 2rem;
+  height: 80px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.sidebar_wrap{
+  width: 100%;
+  margin-top: 20px;
+  
+}
+
+
+/* Sidebar submenu design */
+
+.link{
+  display: flex;
+  color: #e1e9fc;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  list-style: none;
+  height: 60px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.link:hover {
+  background: #252831;
+  border-left: 4px solid #632ce4;
+  cursor: pointer;
+}
+
+.sidebar_label{
+  margin-left: 16px;
+
+}
+
+.dropdown_link{
+  background: #414757;
+  height: 60px;
+  padding-left: 3rem;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #f5f5f5;
+  font-size: 18px;
+}
+
+.dropdown_link:hover {
+  background: #632ce4;
+  cursor: pointer;
+}
+
+
