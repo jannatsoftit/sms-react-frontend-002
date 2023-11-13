@@ -25,10 +25,6 @@ const Sidebar = ({ children }) => {
 
   const showSidebar = () => setSidebar(!sidebar);
 
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggle = () => setIsOpen(!isOpen);
-
   return (
     <>
       <div className='con'>
@@ -41,23 +37,9 @@ const Sidebar = ({ children }) => {
 
           <SidebarNav sidebar={sidebar}>
             <div className='sidebar_wrap'>
-              <div
-                style={{ width: isOpen ? '250px' : '50px' }}
-                className='sidebar'
-              >
+              <div className='sidebar'>
                 <div className='top_section'>
-                  <h1
-                    style={{ display: isOpen ? 'block' : 'none' }}
-                    className='logo'
-                  >
-                    Logo
-                  </h1>
-                  <div
-                    style={{ marginLeft: isOpen ? '100px' : '0px' }}
-                    className='bars'
-                  >
-                    <FaIcons.FaBars onClick={toggle} />
-                  </div>
+                  <h1 className='logo'>Logo</h1>
                 </div>
 
                 {/* <div className='navicon'>

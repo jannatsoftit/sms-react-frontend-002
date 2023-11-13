@@ -7,10 +7,6 @@ const SubMenu = ({ item }) => {
 
   const showSubmenu = () => setSubmenu(!submenu);
 
-  const [isOpen, setIsOpen] = useState(true);
-
-  const toggle = () => setIsOpen(!isOpen);
-
   return (
     <>
      
