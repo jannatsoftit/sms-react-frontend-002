@@ -10,18 +10,18 @@
 
 main {
   width: 100%;
-  padding: 0px;
-  margin-left: 210px;
+  margin-left: 240px;
 }
 
-/* .top_section {
+.top_section {
   display: flex;
   align-items: center;
   padding: 15px 15px;
-} */
+}
 
-/* .logo {
+.logo {
   font-size: 30px;
+  color: #f5f5f5;
 }
 
 .bars {
@@ -29,7 +29,16 @@ main {
   display: flex;
   margin-left: 50px;
   cursor: pointer;
-} */
+  color: #e1e9fc;
+}
+
+.sidebar {
+  background: #000;
+  color: #fff;
+  height: 100vh;
+  transition: all 0.5s;
+  /* z-index: ; */
+}
 
  /* .link {
   display: flex;
@@ -110,9 +119,7 @@ span {
 
 .sidebar_wrap{
   width: 100%;
-  margin-top: 65px;
 }
-
 
 /* Sidebar submenu design */
 
@@ -155,7 +162,6 @@ span {
   background: lightblue;
   cursor: pointer;
   color: #000;
-
 }
 
 
