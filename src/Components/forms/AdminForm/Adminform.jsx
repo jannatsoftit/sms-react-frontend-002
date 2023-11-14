@@ -1,4 +1,6 @@
 //import React from 'react';
+import { RxSlash } from 'react-icons/rx';
+import { Link } from 'react-router-dom';
 
 const AdminForm = () => {
   return (
@@ -7,6 +9,23 @@ const AdminForm = () => {
         <div className='row d-flex justify-content-center'>
           <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
             <div className='card'>
+
+            <div className='col-md-6 text-center mb-5'>
+            <h2 className='heading-section'>Admin Form Table</h2>
+            <div className='admin-create'>
+              <Link to='#' className='links'>
+                user
+              </Link>
+              <RxSlash />
+              <Link to='' className='links'>
+                admins
+              </Link>
+              <RxSlash />
+              <Link to='' className='actives'>
+                create
+              </Link>
+            </div>
+          </div>
               
               <form className='form-card' onSubmit='event.preventDefault()'>
                 <div className='row justify-content-between text-left'>

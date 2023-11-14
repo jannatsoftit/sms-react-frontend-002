@@ -60,6 +60,12 @@ main {
   margin-left: 8px;
 }
 
+/* admin-form table-url css */
+.admin-create{
+  text-align: start;
+  margin-left: -28px;
+}
+
 /* Top section */
 
 .navbar-nav {

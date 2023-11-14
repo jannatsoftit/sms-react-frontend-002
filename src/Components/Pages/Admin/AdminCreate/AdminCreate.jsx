@@ -6,7 +6,7 @@ const AdminCreate = () => {
   return (
     <div>
       {/* Admin create table title section */}
-      <Link to="admins" className="add_button">
+      <Link to="/admins" className="add_button">
       <button type="button" className="btn">
         Admin Table  <AiOutlineArrowRight /> 
       </button>

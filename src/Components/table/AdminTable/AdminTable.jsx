@@ -31,11 +31,11 @@ const AdminTable = () => {
             <h2 className='heading-section'>Admin Table List</h2>
             <div className='admin'>
               <Link to='#' className='links'>
-                User
+                user
               </Link>
               <RxSlash />
               <Link to='' className='actives'>
-                Admin List
+                admins
               </Link>
             </div>
           </div>
