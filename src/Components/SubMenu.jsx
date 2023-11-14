@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import * as FaIcons from 'react-icons/fa';
+//import * as FaIcons from 'react-icons/fa';
 
 const SubMenu = ({ item }) => {
   const [submenu, setSubmenu] = useState(false);
