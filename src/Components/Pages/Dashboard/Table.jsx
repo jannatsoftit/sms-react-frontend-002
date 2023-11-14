@@ -36,21 +36,22 @@ const Table = () => {
         </div>
 
         <div className='table-responsive'>
-          <table className='table table-bordered'>
+          <table className='table-bordered dash_table' >
             <thead>
               <tr>
-                <th>First Name</th>
-                <th>Email</th>
-                <th>Gender</th>
+                <th className='dash_table'>First Name</th>
+                <th className='dash_table'>Email</th>
+                <th className='dash_table'>Gender</th>
               </tr>
             </thead>
             <tbody>
-              {students?.map((student) => {
+              {students?.map((student, key) => {
                 return (
-                  <tr key={student.id}>
-                    <td>{student.first_name}</td>
-                    <td>{student.email}</td>
-                    <td>{student.gender}</td>
+                  <tr key={key}>
+                    {/* <td>{student.id}</td> */}
+                    <td className='dash_table'>{student.first_name}</td>
+                    <td className='dash_table'>{student.email}</td>
+                    <td className='dash_table'>{student.gender}</td>
                   </tr>
                 );
               })}

@@ -1,7 +1,9 @@
+import AdminTable from "../../../table/AdminTable/AdminTable";
+
 const AdminList = () => {
   return (
     <div>
-      <p>Admin List</p>
+      <AdminTable />
     </div>
   )
 }
