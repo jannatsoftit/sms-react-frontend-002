@@ -16,7 +16,7 @@ export const SidebarData = [
   },
   {
     title: 'User',
-    path: '/user',
+    path: '#',
     icon: <FaIcons.FaUserFriends />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,

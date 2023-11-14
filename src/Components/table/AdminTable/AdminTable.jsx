@@ -6,16 +6,14 @@ const AdminTable = () => {
     <div>
       <section className='ftco-section'>
         <div className='container'>
-          <div className='row'>
             <div className='col-md-6 text-center mb-5'>
               <h2 className='heading-section'>Admin Table List</h2>
               <div className='admin'>
-                <Link to={'#'}>User</Link>
+                <Link to='#' className='links'>User</Link>
                 <RxSlash />
-                <Link to={'/user/admin'}>Admin List</Link>
+                <Link to='/user/admin' className='actives'>Admin List</Link>
               </div>
             </div>
-          </div>
           <div className='row admin_table'>
             <div className='col-md-12'>
               <div className='table-wrap'>
