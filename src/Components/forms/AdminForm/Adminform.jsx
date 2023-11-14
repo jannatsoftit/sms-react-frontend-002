@@ -1,70 +1,160 @@
-import React from 'react';
+//import React from 'react';
 
 const AdminForm = () => {
   return (
     <div className='admin_form'>
-      <form className='row g-3'>
-        <div className='col-md-6'>
-          <label htmlFor='inputEmail4' className='form-label'>
-            Email
-          </label>
-          <input type='email' className='form-control' id='inputEmail4' />
+      <div className='container-fluid px-1 py-5 mx-auto'>
+        <div className='row d-flex justify-content-center'>
+          <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
+            <div className='card'>
+              
+              <form className='form-card' onSubmit='event.preventDefault()'>
+                <div className='row justify-content-between text-left'>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    <label className='form-control-label px-3'>
+                      First name<span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='text'
+                      id='fname'
+                      name='fname'
+                      placeholder='Enter your first name'
+                      onBlur='validate(1)'
+                    />{' '}
+                  </div>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                      Last name<span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='text'
+                      id='lname'
+                      name='lname'
+                      placeholder='Enter your last name'
+                      onBlur='validate(2)'
+                    />{' '}
+                  </div>
+                </div>
+                <div className='row justify-content-between text-left'>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                      Email<span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='text'
+                      id='email'
+                      name='email'
+                      placeholder='Enter Your Email'
+                      onBlur='validate(3)'
+                    />{' '}
+                  </div>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                      Designation <span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='text'
+                      id='mob'
+                      name='mob'
+                      placeholder='Enter Your Designation'
+                      onBlur='validate(4)'
+                    />{' '}
+                  </div>
+                </div>
+
+
+                <div className='row justify-content-between text-left'>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                      Department<span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='text'
+                      id='email'
+                      name='email'
+                      placeholder='Enter Your Department'
+                      onBlur='validate(3)'
+                    />{' '}
+                  </div>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                      Gender <span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='text'
+                      id='mob'
+                      name='mob'
+                      placeholder='Enter Your Gender'
+                      onBlur='validate(4)'
+                    />{' '}
+                  </div>
+                </div>
+
+                <div className='row justify-content-between text-left'>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                      Password<span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='text'
+                      id='email'
+                      name='email'
+                      placeholder='Enter Your Gender'
+                      onBlur='validate(3)'
+                    />{' '}
+                  </div>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                    Date <span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='text'
+                      id='mob'
+                      name='mob'
+                      placeholder='Enter Creating Date'
+                      onBlur='validate(4)'
+                    />{' '}
+                  </div>
+                </div>
+
+                <div className='row justify-content-between text-left'>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                      image <span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='text'
+                      id='mob'
+                      name='mob'
+                      placeholder='Enter Your Image'
+                      onBlur='validate(4)'
+                    />{' '}
+                  </div>
+                </div>
+
+
+
+                <div className='row justify-content-end'>
+                  <div className='form-group col-sm-4'>
+                    {' '}
+                    <button type='submit' className='btn-block btn-primary'>
+                      Send
+                    </button>{' '}
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
         </div>
-        <div className='col-md-6'>
-          <label htmlFor='inputPassword4' className='form-label'>
-            Password
-          </label>
-          <input type='password' className='form-control' id='inputPassword4' />
-        </div>
-        <div className='col-12'>
-          <label htmlFor='inputAddress' className='form-label'>
-            Address
-          </label>
-          <input
-            type='text'
-            className='form-control'
-            id='inputAddress'
-            placeholder='1234 Main St'
-          />
-        </div>
-        <div className='col-12'>
-          <label htmlFor='inputAddress2' className='form-label'>
-            Address 2
-          </label>
-          <input
-            type='text'
-            className='form-control'
-            id='inputAddress2'
-            placeholder='Apartment, studio, or floor'
-          />
-        </div>
-        <div className='col-md-6'>
-          <label htmlFor='inputCity' className='form-label'>
-            City
-          </label>
-          <input type='text' className='form-control' id='inputCity' />
-        </div>
-        <div className='col-md-4'>
-          <label htmlFor='inputState' className='form-label'>
-            State
-          </label>
-          <select id='inputState' className='form-select'>
-            <option selected>Choose...</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div className='col-md-2'>
-          <label htmlFor='inputZip' className='form-label'>
-            Zip
-          </label>
-          <input type='text' className='form-control' id='inputZip' />
-        </div>
-        <div className='col-12'>
-          <button type='submit' className='btn btn-primary'>
-            Sign in
-          </button>
-        </div>
-      </form>
+      </div>
     </div>
   );
 };
