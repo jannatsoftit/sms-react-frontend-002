@@ -16,7 +16,6 @@ export const SidebarData = [
   },
   {
     title: 'User',
-    path: '#',
     icon: <FaIcons.FaUserFriends />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -24,32 +23,32 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Admin',
-        path: '/user/admin',
+        path: '/admins',
         icon: <MdIcons.MdAdminPanelSettings />,
       },
       {
         title: 'Student',
-        path: '/user/student',
+        path: '/students',
         icon: <PiIcons.PiStudentFill />,
       },
       {
         title: 'Teacher',
-        path: '/user/teacher',
+        path: '/teachers',
         icon: <FaIcons.FaChalkboardTeacher />,
       },
       {
         title: 'Parent',
-        path: '/user/parent',
+        path: '/parents',
         icon: <RiIcons.RiParentFill />,
       },
       {
         title: 'Accountant',
-        path: '/user/accountant',
+        path: '/accountants',
         icon: <BsIcons.BsBank2 />,
       },
       {
         title: 'Librarian',
-        path: '/user/librarian',
+        path: '/librarians',
         icon: <MdIcons.MdLocalLibrary />,
       },
     ],

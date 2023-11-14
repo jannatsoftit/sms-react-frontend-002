@@ -34,7 +34,7 @@ const AdminTable = () => {
                 User
               </Link>
               <RxSlash />
-              <Link to='/user/admin' className='actives'>
+              <Link to='' className='actives'>
                 Admin List
               </Link>
             </div>
@@ -87,19 +87,19 @@ const AdminTable = () => {
                                 aria-labelledby='dropdownMenuButton1'
                               >
                                 <li>
-                                  <a className='dropdown-item' href='#'>
+                                  <Link className='dropdown-item' to='#'>
                                   Show Admin
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li>
-                                  <a className='dropdown-item' href='#'>
+                                  <Link className='dropdown-item' to='#'>
                                     Edit Admin
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li>
-                                  <a className='dropdown-item' href='#'>
+                                  <Link className='dropdown-item' to='#'>
                                     Delete Admin
-                                  </a>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
