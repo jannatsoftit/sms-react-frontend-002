@@ -161,12 +161,12 @@ const AdminForm = () => {
 
 
 
-                <div className='row justify-content-end'>
+                <div className='row justify-content-start'>
                   <div className='form-group col-sm-4'>
-                    {' '}
+                    
                     <button type='submit' className='btn-block btn-primary'>
                       Send
-                    </button>{' '}
+                    </button>
                   </div>
                 </div>
               </form>

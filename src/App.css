@@ -10874,7 +10874,8 @@ h5,
 }
 
 .ftco-section {
-  padding: 7em 0;
+  padding-top: 7em;
+  padding-bottom: 4em;
 }
 
 .ftco-no-pt {
@@ -11078,9 +11079,9 @@ button {
   margin: 5px 0px;
   box-sizing: border-box;
   border: 1px solid #ccc;
-  font-size: 18px !important;
   font-weight: 300;
 }
+
 input:focus,
 textarea:focus {
   -moz-box-shadow: none !important;
@@ -11106,3 +11107,7 @@ button:focus {
   box-shadow: none !important;
   outline-width: 0;
 }
+label{
+  font-size: 18px;
+}
+
