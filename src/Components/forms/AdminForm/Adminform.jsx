@@ -31,6 +31,7 @@ const AdminForm = () => {
     console.log(inputFields);
   };
 
+  // admin info create function 
   const handelSubmit = ( e ) => {
     e.preventDefault();
 
@@ -51,11 +52,13 @@ const AdminForm = () => {
       })
       .catch((error) => {
         console.error(error);
+        isSubmit(false);
       });
-
      
 
+    // admin information validation Errors message  
     const validationErrors = {};
+
     if (!inputFields.first_name.trim()) {
       validationErrors.first_name = 'first name required';
     }
@@ -98,6 +101,7 @@ const AdminForm = () => {
 
     setErrors(validationErrors);
 
+    // admin create success message
     if (Object.keys(validationErrors).length === 0) {
       alert('Form Submitted');
     }
@@ -128,6 +132,7 @@ const AdminForm = () => {
                 </div>
               </div>
 
+              {/* admin create form table*/}
               <form className='form-card' onSubmit={handelSubmit} >
                 <div className='row justify-content-between text-left'>
                   <div className='form-group col-sm-6 flex-column d-flex'>

@@ -11116,3 +11116,15 @@ label{
   font-size: 18px;
 }
 
+/* Admin info show css */
+.admin_show{
+  margin-left: 200px;
+  padding-bottom: 80px;
+  padding-top: 50px;
+}
+
+.avatar-xxl {
+  height: 7rem;
+  width: 7rem;
+}
+

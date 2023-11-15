@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 
 const AdminTable = () => {
+  const navigate = useNavigate();
   const [admins, setAdmins] = useState(null);
 
   useEffect(() => {
@@ -53,9 +54,9 @@ const AdminTable = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {admins?.map((admin, index) => {
+                    {admins?.map(admin => {
                       return (
-                        <tr className='alert' role='alert' key={index}>
+                        <tr className='alert' role='alert' key={admin.id}>
                           <td>
                             <span>image</span>
                           </td>
@@ -87,7 +88,9 @@ const AdminTable = () => {
                                 aria-labelledby='dropdownMenuButton1'
                               >
                                 <li>
-                                  <Link className='dropdown-item' to='#'>
+                                  <Link className='dropdown-item' 
+                                  to={`/admins/${admin.id}`}
+                                  >
                                   Show Admin
                                   </Link>
                                 </li>
