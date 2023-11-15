@@ -14,7 +14,7 @@ const AdminTable = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+        console.info(res);
         setAdmins(res.data?.admins);
       })
       .catch((error) => {

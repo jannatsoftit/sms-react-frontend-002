@@ -1,10 +1,16 @@
+import {AiOutlineArrowRight} from 'react-icons/ai';
 import AdminForm from "../../../forms/AdminForm/Adminform";
 import {Link} from 'react-router-dom';
-import {AiOutlineArrowRight} from 'react-icons/ai';
+//import { useState } from 'react';
+//import { FaSlack } from 'react-icons/fa';
 
 const AdminCreate = () => {
+
+
+
   return (
     <div>
+
       {/* Admin create table title section */}
       <Link to="/admins" className="add_button">
       <button type="button" className="btn">
@@ -14,6 +20,7 @@ const AdminCreate = () => {
 
       {/* Admin form section */}
       <AdminForm />
+
     </div>
   )
 }
