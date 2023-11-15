@@ -7,23 +7,15 @@ import * as AiIcons from 'react-icons/ai';
 import { IconContext } from 'react-icons/lib';
 import styled from 'styled-components';
 
-const SidebarNav = styled.nav`
-  background: #15171c;
-  width: 250px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
-  transition: 350ms;
-  z-index: 10;
-`;
+
 
 const Sidebar = ({ children }) => {
+
   const [sidebar, setSidebar] = useState('true');
 
   const showSidebar = () => setSidebar(!sidebar);
+
+
 
   return (
     <>
@@ -57,5 +49,18 @@ const Sidebar = ({ children }) => {
     </>
   );
 };
+
+const SidebarNav = styled.nav`
+  background: #15171c;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
+  transition: 350ms;
+  z-index: 10;
+`;
 
 export default Sidebar;

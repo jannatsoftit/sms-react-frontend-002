@@ -1,13 +1,14 @@
+
 //import React from 'react';
 import { useState } from 'react';
 import { RxSlash } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
-//import getAdminInitialValues from './getAdminInitialValues';
 
 const AdminForm = () => {
+
   const [inputFields, setInputFields] = useState({
-    fname: '',
-    lname: '',
+    first_name: '',
+    last_name: '',
     email: '',
     designation: '',
     department: '',
@@ -19,18 +20,23 @@ const AdminForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  const [isSubmit, setIsSubmit] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setInputFields({
       ...inputFields,
       [name]: value,
     });
+    console.log(inputFields);
   };
 
-  const handelSubmit = (e, values, {setSubmitting}) => {
+  const handelSubmit = ( e ) => {
+    e.preventDefault();
+
     fetch(`http://127.0.0.1:8000/api/admins`, {
       body: JSON.stringify({
-        ...values,
+        ...inputFields,
       }),
       headers: {
         Accept: 'application/json',
@@ -40,26 +46,22 @@ const AdminForm = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.info(res);
-        setSubmitting(true);
-        // resetForm({
-        //   values: getAdminInitialValues(undefined),
-        // });
+        console.log(res);
+        setIsSubmit(true);
       })
       .catch((error) => {
         console.error(error);
-        //setSubmitting(false);
       });
 
-    e.preventDefault();
+     
 
     const validationErrors = {};
-    if (!inputFields.fname.trim()) {
-      validationErrors.fname = 'first name required';
+    if (!inputFields.first_name.trim()) {
+      validationErrors.first_name = 'first name required';
     }
 
-    if (!inputFields.lname.trim()) {
-      validationErrors.lname = 'last name required';
+    if (!inputFields.last_name.trim()) {
+      validationErrors.last_name = 'last name required';
     }
 
     if (!inputFields.email.trim()) {
@@ -98,7 +100,8 @@ const AdminForm = () => {
 
     if (Object.keys(validationErrors).length === 0) {
       alert('Form Submitted');
-      }
+    }
+
   };
 
   return (
@@ -133,13 +136,14 @@ const AdminForm = () => {
                     </label>{' '}
                     <input
                       type='text'
-                      id='fname'
-                      name='fname'
+                      id='first_name'
+                      name='first_name'
                       placeholder='Enter your first name'
                       onChange={handleChange}
+                      value={inputFields.first_name}
                     />{' '}
-                    {errors.fname && (
-                      <span style={{ color: '#e74c3c' }}>{errors.fname}</span>
+                    {errors.first_name && (
+                      <span style={{ color: '#e74c3c' }}>{errors.first_name}</span>
                     )}
                   </div>
                   <div className='form-group col-sm-6 flex-column d-flex'>
@@ -149,13 +153,14 @@ const AdminForm = () => {
                     </label>{' '}
                     <input
                       type='text'
-                      id='lname'
-                      name='lname'
+                      id='last_name'
+                      name='last_name'
                       placeholder='Enter your last name'
                       onChange={handleChange}
+                      value={inputFields.last_name}
                     />{' '}
-                    {errors.lname && (
-                      <span style={{ color: '#e74c3c' }}>{errors.lname}</span>
+                    {errors.last_name && (
+                      <span style={{ color: '#e74c3c' }}>{errors.last_name}</span>
                     )}
                   </div>
                 </div>
@@ -171,6 +176,7 @@ const AdminForm = () => {
                       placeholder='Enter Your Email'
                       id='email'
                       onChange={handleChange}
+                      value={inputFields.email}
                     />{' '}
                     {errors.email && (
                       <span style={{ color: '#e74c3c' }}>{errors.email}</span>
@@ -187,6 +193,7 @@ const AdminForm = () => {
                       placeholder='Enter Your Designation'
                       id='designation'
                       onChange={handleChange}
+                      value={inputFields.designation}
                     />{' '}
                     {errors.designation && (
                       <span style={{ color: '#e74c3c' }}>
@@ -208,6 +215,7 @@ const AdminForm = () => {
                       placeholder='Enter Your Department'
                       id='department'
                       onChange={handleChange}
+                      value={inputFields.department}
                     />{' '}
                     {errors.department && (
                       <span style={{ color: '#e74c3c' }}>
@@ -226,6 +234,7 @@ const AdminForm = () => {
                       placeholder='Enter Your Gender'
                       id='gender'
                       onChange={handleChange}
+                      value={inputFields.gender}
                     />{' '}
                     {errors.gender && (
                       <span style={{ color: '#e74c3c' }}>{errors.gender}</span>
@@ -245,6 +254,7 @@ const AdminForm = () => {
                       placeholder='Enter Your password'
                       id='password'
                       onChange={handleChange}
+                      value={inputFields.password}
                     />{' '}
                     {errors.password && (
                       <span style={{ color: '#e74c3c' }}>
@@ -263,6 +273,7 @@ const AdminForm = () => {
                       placeholder='Enter Your Image'
                       id='image'
                       onChange={handleChange}
+                      value={inputFields.image}
                     />{' '}
                     {errors.image && (
                       <span style={{ color: '#e74c3c' }}>{errors.image}</span>
@@ -282,6 +293,7 @@ const AdminForm = () => {
                       placeholder='Enter Your user information'
                       id='user_information'
                       onChange={handleChange}
+                      value={inputFields.user_information}
                     />{' '}
                     {errors.user_information && (
                       <span style={{ color: '#e74c3c' }}>
@@ -312,3 +324,4 @@ const AdminForm = () => {
 };
 
 export default AdminForm;
+
