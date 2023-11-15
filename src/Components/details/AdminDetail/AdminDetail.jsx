@@ -1,13 +1,15 @@
 /* eslint-disable react/no-unescaped-entities */
 //import React from 'react';
 
-const AdminDetail = () => {
+const AdminDetail = ( {admin} ) => {
+
   return (
     <div>
       <div className='container'>
         <div className='row admin_show'>
           <div className='col-xl-8'>
             <div className='card'>
+
               <div className='card-body pb-0'>
                 <div className='row align-items-center'>
                   <div className='col-md-3'>
@@ -20,7 +22,7 @@ const AdminDetail = () => {
                       <h4 className='text-primary font-size-20 mt-3 mb-2'>
                         Jansh Wells
                       </h4>
-                      <h5 className='text-muted font-size-13 mb-0'>Web Designer</h5>
+                      <h5 className='text-muted font-size-13 mb-0'>gh,j</h5>
                     </div>
                   </div>
                   <div className='col-md-9'>

@@ -1,9 +1,12 @@
+/* eslint-disable react/jsx-no-undef */
 import { Link, useNavigate } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 
 const AdminTable = () => {
+
   const navigate = useNavigate();
+
   const [admins, setAdmins] = useState(null);
 
   useEffect(() => {
@@ -54,9 +57,9 @@ const AdminTable = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {admins?.map(admin => {
+                    {admins?.map((admin, index) => {
                       return (
-                        <tr className='alert' role='alert' key={admin.id}>
+                        <tr className='alert' role='alert' key={index}>
                           <td>
                             <span>image</span>
                           </td>
@@ -88,11 +91,11 @@ const AdminTable = () => {
                                 aria-labelledby='dropdownMenuButton1'
                               >
                                 <li>
-                                  <Link className='dropdown-item' 
-                                  to={`/admins/${admin.id}`}
+                                  <a className='dropdown-item' 
+                                  href={`/admins/${admin?.id}`}
                                   >
                                   Show Admin
-                                  </Link>
+                                  </a>
                                 </li>
                                 <li>
                                   <Link className='dropdown-item' to='#'>

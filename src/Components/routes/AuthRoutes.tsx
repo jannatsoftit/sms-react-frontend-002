@@ -38,7 +38,7 @@ const AuthRoutes = {
               path: 'edit',
             },
           ],
-          path: ':adminId',
+          path: ':id',
         },
       ],
       path: 'admins',
