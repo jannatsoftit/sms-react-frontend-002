@@ -1,5 +1,5 @@
 /* eslint-disable react/jsx-no-undef */
-import { Link, useNavigate } from 'react-router-dom';
+import { Link  } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 
