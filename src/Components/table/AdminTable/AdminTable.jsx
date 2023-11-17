@@ -49,6 +49,7 @@ const AdminTable = () => {
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
+                      <th>ID</th>
                       <th>Image</th>
                       <th>Designation</th>
                       <th>Email</th>
@@ -57,22 +58,25 @@ const AdminTable = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {admins?.map((admin, index) => {
+                    {admins?.map((admin) => {
                       return (
-                        <tr className='alert' role='alert' key={index}>
+                        <tr className='alert' role='alert' key={admin?.id}>
                           <td>
-                            <span>image</span>
+                            <span>{admin?.id}</span>
                           </td>
                           <td>
-                            <span>{admin.designation}</span>
+                            <span>{admin?.image}</span>
                           </td>
                           <td>
-                            <span>{admin.email}</span>
+                            <span>{admin?.designation}</span>
+                          </td>
+                          <td>
+                            <span>{admin?.email}</span>
                           </td>
                           <td>
                             <div className='email'>
-                              <span>{admin.user_information}</span>
-                              <span>{admin.user_information}</span>
+                              <span>{admin?.user_information}</span>
+                              <span>{admin?.user_information}</span>
                             </div>
                           </td>
                           <td>
@@ -91,11 +95,11 @@ const AdminTable = () => {
                                 aria-labelledby='dropdownMenuButton1'
                               >
                                 <li>
-                                  <a className='dropdown-item' 
-                                  href={`/admins/${admin?.id}`}
+                                  <Link className='dropdown-item' 
+                                  to= {`/admins/${admin?.id}`}
                                   >
                                   Show Admin
-                                  </a>
+                                  </Link>
                                 </li>
                                 <li>
                                   <Link className='dropdown-item' to='#'>

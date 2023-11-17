@@ -10,8 +10,6 @@ const SubMenu = ({ item }) => {
 
   return (
     <>
-     
-
         <NavLink
           to={item.path}
           className='link'

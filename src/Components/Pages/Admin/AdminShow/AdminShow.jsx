@@ -4,28 +4,27 @@ import { useEffect, useState } from "react";
 
 const AdminShow = () => {
 
-  const { id } = useParams();
-  console.log(id);
+ const {adminId} = useParams();
 
   const [admin, setAdmin] = useState(null);
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/admins/${id}`, {
-      headers:{
+    fetch(`http://127.0.0.1:8000/api/admins/${adminId}`, {
+      headers: {
         Accept: 'application/json',
       },
       method: 'GET',
     })
-    .then((res) => res.json()
-    .then((res) => {
-      console.info(res);
-      setAdmin(res.data?.admin);
-    }))
-    .catch((error) => {
-      console.error(error);
-      setAdmin(null);
-    })
-  }, [id]);
+      .then((response) => response.json())
+      .then((response) => {
+        console.info(response);
+        setAdmin(response.data?.admin);
+      })
+      .catch((error) => {
+        console.error(error);
+        setAdmin(null);
+      });
+  }, [adminId]);
 
   return (
     <div>
