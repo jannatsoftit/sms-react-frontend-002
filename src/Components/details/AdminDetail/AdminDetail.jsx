@@ -27,7 +27,9 @@ const AdminDetail = ({ admin }) => {
                   <div className='col-md-8'>
                     <div className='ms-3'>
                       <div>
-                        <h4 className='card-title mb-2'>Biography</h4>
+                        <h4 className='card-title mb-2'>
+                        {admin?.department}
+                        </h4>
                         <p className='mb-0 text-muted'>
                           Hi I'm Jansh,has been the industry's standard dummy
                           text To an English person alteration text.
@@ -40,16 +42,12 @@ const AdminDetail = ({ admin }) => {
                               <i className='mdi mdi-email-outline me-2'></i>
                               {admin?.email}
                             </p>
-                            <p className='text-muted fw-medium mb-0'>
-                              <i className='mdi mdi-phone-in-talk-outline me-2'></i>
-                              {admin?.department}
-                            </p>
                             <p className='text-muted mb-2 fw-medium'>
-                              <i className='mdi mdi-email-outline me-2'></i>
+                              <i className='mdi mdi-gender-male-female me-2'></i>
                               {admin?.gender}
                             </p>
                             <p className='text-muted mb-2 fw-medium'>
-                              <i className='mdi mdi-email-outline me-2'></i>
+                              <i className='mdi mdi-information me-2'></i>
                               {admin?.user_information}
                             </p>
                           </div>

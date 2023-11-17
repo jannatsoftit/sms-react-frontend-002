@@ -5,8 +5,6 @@ import { useEffect, useState } from 'react';
 
 const AdminTable = () => {
 
-  const navigate = useNavigate();
-
   const [admins, setAdmins] = useState(null);
 
   useEffect(() => {
