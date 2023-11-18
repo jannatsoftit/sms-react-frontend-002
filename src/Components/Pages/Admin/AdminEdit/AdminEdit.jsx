@@ -55,7 +55,6 @@ const AdminEdit = () => {
     .then((res) =>{
       console.info(res);
       setFormErrors(validate(admin));
-      navigate('/admins', { replace: true });
     })
     .catch((error) => {
       console.error(error);
