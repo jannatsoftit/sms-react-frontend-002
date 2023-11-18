@@ -2,6 +2,7 @@
 import { Link  } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 const AdminTable = () => {
 
@@ -12,6 +13,13 @@ const AdminTable = () => {
   const handleDelete = admin => {
 
     if(confirm(`Are You sure you want to delete admin ${admin.id}?`)){
+      Swal.fire({
+        title: 'Success!',
+        text: 'Information Delete Successfully!!',
+        icon: 'success',
+        confirmButtonText: 'Ok',
+      });
+
       fetch(`http://127.0.0.1:8000/api/admins/${admin.id}`,{
         headers:{
           Accept: 'application/json',

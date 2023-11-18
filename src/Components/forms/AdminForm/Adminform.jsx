@@ -4,13 +4,6 @@ import { RxSlash } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-// Swal.fire({
-//   title: 'Success!',
-//   text: 'Information Create Successfully!!',
-//   icon: 'success',
-//   confirmButtonText: 'Cool',
-// });
-
 const AdminForm = () => {
   const [inputFields, setInputFields] = useState({
     first_name: '',
