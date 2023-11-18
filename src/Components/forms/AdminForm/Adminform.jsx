@@ -1,11 +1,17 @@
-
 //import React from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { RxSlash } from 'react-icons/rx';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
+// Swal.fire({
+//   title: 'Success!',
+//   text: 'Information Create Successfully!!',
+//   icon: 'success',
+//   confirmButtonText: 'Cool',
+// });
 
 const AdminForm = () => {
-
   const [inputFields, setInputFields] = useState({
     first_name: '',
     last_name: '',
@@ -18,7 +24,7 @@ const AdminForm = () => {
     gender: '',
   });
 
-  const [errors, setErrors] = useState({});
+  const [formErrors, setFormErrors] = useState({});
 
   const [isSubmit, setIsSubmit] = useState(false);
 
@@ -28,11 +34,23 @@ const AdminForm = () => {
       ...inputFields,
       [name]: value,
     });
-    console.log(inputFields);
+    //console.log(inputFields);
   };
 
-  // admin info create function 
-  const handelSubmit = ( e ) => {
+  useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      Swal.fire({
+        title: 'Success!',
+        text: 'Information Create Successfully!!',
+        icon: 'success',
+        confirmButtonText: 'Ok',
+      });
+      console.log(inputFields);
+    }
+  }, [formErrors]);
+
+  // admin info create function
+  const handelSubmit = (e) => {
     e.preventDefault();
 
     fetch(`http://127.0.0.1:8000/api/admins`, {
@@ -49,63 +67,58 @@ const AdminForm = () => {
       .then((res) => {
         console.log(res);
         setIsSubmit(true);
+        setFormErrors(validate(inputFields));
       })
       .catch((error) => {
         console.error(error);
         isSubmit(false);
       });
-     
+  };
 
-    // admin information validation Errors message  
-    const validationErrors = {};
+  const validate = (values) => {
+    const errors = {};
 
-    if (!inputFields.first_name.trim()) {
-      validationErrors.first_name = 'first name required';
+    if (!values.first_name) {
+      errors.first_name = 'first name required';
     }
 
-    if (!inputFields.last_name.trim()) {
-      validationErrors.last_name = 'last name required';
+    if (!values.last_name) {
+      errors.last_name = 'last name required';
     }
 
-    if (!inputFields.email.trim()) {
-      validationErrors.email = 'email is required';
-    } else if (!/\S+@\S+\.\S+/.test(inputFields.email)) {
-      validationErrors.email = 'email is not valid';
+    if (!values.email) {
+      errors.email = 'email is required';
+    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
+      errors.email = 'email is not valid';
     }
 
-    if (!inputFields.password.trim()) {
-      validationErrors.password = 'password is required';
-    } else if (inputFields.password < 6) {
-      validationErrors.password = 'password should be at least 6 char';
+    if (!values.password) {
+      errors.password = 'password is required';
+    } else if (values.password.length < 4) {
+      errors.password = 'password should be at least 4 char';
     }
 
-    if (!inputFields.designation.trim()) {
-      validationErrors.designation = 'designation required';
+    if (!values.designation) {
+      errors.designation = 'designation required';
     }
 
-    if (!inputFields.department.trim()) {
-      validationErrors.department = 'department required';
+    if (!values.department) {
+      errors.department = 'department required';
     }
 
-    if (!inputFields.user_information.trim()) {
-      validationErrors.user_information = 'user_information required';
+    if (!values.user_information) {
+      errors.user_information = 'user_information required';
     }
 
-    if (!inputFields.image.trim()) {
-      validationErrors.image = 'image required';
+    if (!values.image) {
+      errors.image = 'image required';
     }
 
-    if (!inputFields.gender.trim()) {
-      validationErrors.gender = 'gender required';
+    if (!values.gender) {
+      errors.gender = 'gender required';
     }
 
-    setErrors(validationErrors);
-
-    // admin create success message
-    if (Object.keys(validationErrors).length === 0) {
-      alert('Form Submitted');
-    }
-
+    return errors;
   };
 
   return (
@@ -133,7 +146,7 @@ const AdminForm = () => {
               </div>
 
               {/* admin create form table*/}
-              <form className='form-card' onSubmit={handelSubmit} >
+              <form className='form-card' onSubmit={handelSubmit}>
                 <div className='row justify-content-between text-left'>
                   <div className='form-group col-sm-6 flex-column d-flex'>
                     <label className='form-control-label px-3'>
@@ -147,10 +160,13 @@ const AdminForm = () => {
                       onChange={handleChange}
                       value={inputFields.first_name}
                     />{' '}
-                    {errors.first_name && (
-                      <span style={{ color: '#e74c3c' }}>{errors.first_name}</span>
+                    {formErrors.first_name && (
+                      <span style={{ color: '#e74c3c' }}>
+                        {formErrors.first_name}
+                      </span>
                     )}
                   </div>
+
                   <div className='form-group col-sm-6 flex-column d-flex'>
                     {' '}
                     <label className='form-control-label px-3'>
@@ -164,8 +180,10 @@ const AdminForm = () => {
                       onChange={handleChange}
                       value={inputFields.last_name}
                     />{' '}
-                    {errors.last_name && (
-                      <span style={{ color: '#e74c3c' }}>{errors.last_name}</span>
+                    {formErrors.last_name && (
+                      <span style={{ color: '#e74c3c' }}>
+                        {formErrors.last_name}
+                      </span>
                     )}
                   </div>
                 </div>
@@ -183,8 +201,10 @@ const AdminForm = () => {
                       onChange={handleChange}
                       value={inputFields.email}
                     />{' '}
-                    {errors.email && (
-                      <span style={{ color: '#e74c3c' }}>{errors.email}</span>
+                    {formErrors.email && (
+                      <span style={{ color: '#e74c3c' }}>
+                        {formErrors.email}
+                      </span>
                     )}
                   </div>
                   <div className='form-group col-sm-6 flex-column d-flex'>
@@ -200,9 +220,9 @@ const AdminForm = () => {
                       onChange={handleChange}
                       value={inputFields.designation}
                     />{' '}
-                    {errors.designation && (
+                    {formErrors.designation && (
                       <span style={{ color: '#e74c3c' }}>
-                        {errors.designation}
+                        {formErrors.designation}
                       </span>
                     )}
                   </div>
@@ -222,9 +242,9 @@ const AdminForm = () => {
                       onChange={handleChange}
                       value={inputFields.department}
                     />{' '}
-                    {errors.department && (
+                    {formErrors.department && (
                       <span style={{ color: '#e74c3c' }}>
-                        {errors.department}
+                        {formErrors.department}
                       </span>
                     )}
                   </div>
@@ -241,8 +261,10 @@ const AdminForm = () => {
                       onChange={handleChange}
                       value={inputFields.gender}
                     />{' '}
-                    {errors.gender && (
-                      <span style={{ color: '#e74c3c' }}>{errors.gender}</span>
+                    {formErrors.gender && (
+                      <span style={{ color: '#e74c3c' }}>
+                        {formErrors.gender}
+                      </span>
                     )}
                   </div>
                 </div>
@@ -261,9 +283,9 @@ const AdminForm = () => {
                       onChange={handleChange}
                       value={inputFields.password}
                     />{' '}
-                    {errors.password && (
+                    {formErrors.password && (
                       <span style={{ color: '#e74c3c' }}>
-                        {errors.password}
+                        {formErrors.password}
                       </span>
                     )}
                   </div>
@@ -280,8 +302,10 @@ const AdminForm = () => {
                       onChange={handleChange}
                       value={inputFields.image}
                     />{' '}
-                    {errors.image && (
-                      <span style={{ color: '#e74c3c' }}>{errors.image}</span>
+                    {formErrors.image && (
+                      <span style={{ color: '#e74c3c' }}>
+                        {formErrors.image}
+                      </span>
                     )}
                   </div>
                 </div>
@@ -300,9 +324,9 @@ const AdminForm = () => {
                       onChange={handleChange}
                       value={inputFields.user_information}
                     />{' '}
-                    {errors.user_information && (
+                    {formErrors.user_information && (
                       <span style={{ color: '#e74c3c' }}>
-                        {errors.user_information}
+                        {formErrors.user_information}
                       </span>
                     )}
                   </div>
@@ -329,4 +353,3 @@ const AdminForm = () => {
 };
 
 export default AdminForm;
-
