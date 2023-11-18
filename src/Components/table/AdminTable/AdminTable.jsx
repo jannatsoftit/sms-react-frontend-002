@@ -132,14 +132,14 @@ const AdminTable = () => {
                                   </Link>
                                 </li>
                                 <li>
-                                  <Link className='dropdown-item' to='#'>
+                                  <Link className='dropdown-item' to={`/admins/${admin?.id}/edit`}>
                                     Edit Admin
                                   </Link>
                                 </li>
                                 <li>
-                                  <button className='dropdown-item' onClick={() => handleDelete(admin)}>
+                                  <Link className='dropdown-item' onClick={() => handleDelete(admin)}>
                                     Delete Admin
-                                  </button>
+                                  </Link>
                                 </li>
                               </ul>
                             </div>
