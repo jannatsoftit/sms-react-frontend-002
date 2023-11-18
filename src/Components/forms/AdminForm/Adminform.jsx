@@ -1,10 +1,13 @@
 //import React from 'react';
 import { useEffect, useState } from 'react';
 import { RxSlash } from 'react-icons/rx';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const AdminForm = () => {
+
+  const navigate = useNavigate();
+
   const [inputFields, setInputFields] = useState({
     first_name: '',
     last_name: '',
@@ -38,12 +41,14 @@ const AdminForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
+      navigate('/admins', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);
 
   // admin info create function
   const handelSubmit = (e) => {
+
     e.preventDefault();
 
     fetch(`http://127.0.0.1:8000/api/admins`, {
