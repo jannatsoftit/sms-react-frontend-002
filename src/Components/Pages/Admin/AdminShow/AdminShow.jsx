@@ -1,6 +1,8 @@
 import { useParams } from "react-router-dom";
 import AdminDetail from "../../../details/AdminDetail/AdminDetail";
 import { useEffect, useState } from "react";
+import {AiOutlineArrowRight} from 'react-icons/ai';
+import {Link} from 'react-router-dom';
 
 const AdminShow = () => {
 
@@ -28,6 +30,13 @@ const AdminShow = () => {
 
   return (
     <div>
+      {/* Admin create table title section */}
+      <Link to="/admins" className="add_button">
+      <button type="button" className="btn">
+        Admin Table  <AiOutlineArrowRight /> 
+      </button>
+      </Link>
+
       <AdminDetail admin={admin} />
     </div>
   );
