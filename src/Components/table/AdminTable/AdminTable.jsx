@@ -7,6 +7,30 @@ const AdminTable = () => {
 
   const [admins, setAdmins] = useState(null);
 
+  const [reload, setReload]= useState(0);
+
+  const handleDelete = admin => {
+
+    if(confirm(`Are You sure you want to delete admin ${admin.id}?`)){
+      fetch(`http://127.0.0.1:8000/api/admins/${admin.id}`,{
+        headers:{
+          Accept: 'application/json',
+        },
+        method: 'DELETE',
+      })
+      .then((res) => res.json())
+      .then((res) => {
+        console.info(res);
+        setReload(value => ++value);
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+
+    }
+  }
+  
+
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/admins?`, {
       headers: {
@@ -23,7 +47,7 @@ const AdminTable = () => {
         console.error(error);
         setAdmins(null);
       });
-  }, []);
+  }, [reload]);
 
   return (
     <div>
@@ -105,9 +129,9 @@ const AdminTable = () => {
                                   </Link>
                                 </li>
                                 <li>
-                                  <Link className='dropdown-item' to='#'>
+                                  <button className='dropdown-item' onClick={() => handleDelete(admin)}>
                                     Delete Admin
-                                  </Link>
+                                  </button>
                                 </li>
                               </ul>
                             </div>
