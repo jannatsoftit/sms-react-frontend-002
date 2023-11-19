@@ -96,7 +96,7 @@ const AdminTable = () => {
                             <span>{admin?.id}</span>
                           </td>
                           <td>
-                            <img src={`http://127.0.0.1:8000/AD_img/${admin.image}`}  width="50px" alt={admin?.name} />
+                            <img className="rounded-circle" src={`http://127.0.0.1:8000/AD_img/${admin.image}`}  width="50px" alt={admin?.name} />
                             {/* <span>{admin?.image}</span> */}
                           </td>
                           <td>
