@@ -61,12 +61,12 @@ const AdminForm = () => {
     formData.append('user_information', inputFields.user_information);
     formData.append('image', inputFields.image);
     formData.append('gender', inputFields.gender);
+    console.log(formData);
 
     fetch(`http://127.0.0.1:8000/api/admins`, {
       body: formData,
       headers: {
         Accept: 'application/json',
-        //'Content-Type': 'application/json',
       },
       method: 'POST',
     })
@@ -305,8 +305,11 @@ const AdminForm = () => {
                       className='form-control'
                       type='file'
                       name='image'
-                      placeholder='Enter Your Image'
-                      
+                      //placeholder='Enter Your Image'
+                      onChange={(e) => {
+                        setInputFields(value => ({...value, [e.target.name]:e.target.files[0]}))
+                      }     
+                    }
                     />{' '}
                     {/* <img
                     src={`http://127.0.0.1:8000/admins/${inputFields?.image}`}  width="50px" alt={inputFields?.name}
