@@ -305,15 +305,11 @@ const AdminForm = () => {
                       className='form-control'
                       type='file'
                       name='image'
-                      //placeholder='Enter Your Image'
                       onChange={(e) => {
                         setInputFields(value => ({...value, [e.target.name]:e.target.files[0]}))
                       }     
                     }
                     />{' '}
-                    {/* <img
-                    src={`http://127.0.0.1:8000/admins/${inputFields?.image}`}  width="50px" alt={inputFields?.name}
-                    /> */}
                      {formErrors.image && (
                       <span style={{ color: '#e74c3c' }}>
                         {formErrors.image}
