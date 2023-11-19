@@ -39,7 +39,7 @@ const AdminEdit = () => {
 
     e.preventDefault();
     
-    if(confirm(`Are You Sure You Want To Update Your Information?`)){
+    if(confirm(`Are you sre you want to update your information?`)){
       
       Swal.fire({
         title: 'Success!',

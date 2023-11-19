@@ -29,8 +29,8 @@ const AdminForm = () => {
     setInputFields({
       ...inputFields,
       [name]: value,
+
     });
-    //console.log(inputFields);
   };
 
   useEffect(() => {
@@ -51,13 +51,22 @@ const AdminForm = () => {
 
     e.preventDefault();
 
+    const formData = new FormData();
+    formData.append('first_name', inputFields.first_name);
+    formData.append('last_name', inputFields.last_name);
+    formData.append('email', inputFields.email);
+    formData.append('designation', inputFields.designation);
+    formData.append('department', inputFields.department);
+    formData.append('password', inputFields.password);
+    formData.append('user_information', inputFields.user_information);
+    formData.append('image', inputFields.image);
+    formData.append('gender', inputFields.gender);
+
     fetch(`http://127.0.0.1:8000/api/admins`, {
-      body: JSON.stringify({
-        ...inputFields,
-      }),
+      body: formData,
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json',
+        //'Content-Type': 'application/json',
       },
       method: 'POST',
     })
@@ -293,14 +302,16 @@ const AdminForm = () => {
                       Image <span className='text-danger'> *</span>
                     </label>{' '}
                     <input
-                      type='text'
+                      className='form-control'
+                      type='file'
                       name='image'
                       placeholder='Enter Your Image'
-                      id='image'
-                      onChange={handleChange}
-                      value={inputFields.image}
+                      
                     />{' '}
-                    {formErrors.image && (
+                    {/* <img
+                    src={`http://127.0.0.1:8000/admins/${inputFields?.image}`}  width="50px" alt={inputFields?.name}
+                    /> */}
+                     {formErrors.image && (
                       <span style={{ color: '#e74c3c' }}>
                         {formErrors.image}
                       </span>
