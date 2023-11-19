@@ -13,8 +13,6 @@ const AdminEdit = () => {
 
   const [formErrors, setFormErrors] = useState({});
 
-  //const [updateAdmin, setUpdateAdmin] = useState(false);
-
   const [admin, setAdmin] = useState({
     first_name: '',
     last_name: '',
@@ -40,35 +38,36 @@ const AdminEdit = () => {
   const handleSubmit = (e) => {
 
     e.preventDefault();
-
-    fetch(`http://127.0.0.1:8000/api/admins/${adminId}`,{
-      body: JSON.stringify({
-        ...admin,
-      }),
-      headers:{
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      method: 'PUT',
-    })
-    .then((res) => res.json())
-    .then((res) =>{
-      console.info(res);
-      setFormErrors(validate(admin));
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-
-    if (Object.keys(formErrors).length === 0 && admin) {
+    
+    if(confirm(`Are You Sure You Want To Update Your Information?`)){
+      
       Swal.fire({
         title: 'Success!',
-        text: 'Information Updated Successfully!!',
+        text: 'Information Create Successfully!!',
         icon: 'success',
         confirmButtonText: 'Ok',
       });
+        
       navigate('/admins', { replace: true });
-      console.log(admin);
+      
+      fetch(`http://127.0.0.1:8000/api/admins/${adminId}`,{
+        body: JSON.stringify({
+          ...admin,
+        }),
+        headers:{
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        method: 'PUT',
+      })
+      .then((res) => res.json())
+      .then((res) =>{
+        console.info(res);
+        setFormErrors(validate(admin));
+      })
+      .catch((error) => {
+        console.error(error);
+      });
     }
 
   }
@@ -91,6 +90,8 @@ const AdminEdit = () => {
       .catch((error) => {
         console.error(error);
       });
+
+
   }, [adminId]);
 
 

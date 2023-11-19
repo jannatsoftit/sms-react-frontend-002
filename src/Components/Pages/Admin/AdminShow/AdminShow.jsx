@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import AdminDetail from "../../../details/AdminDetail/AdminDetail";
 import { useEffect, useState } from "react";
-import {AiOutlineArrowRight} from 'react-icons/ai';
-import {Link} from 'react-router-dom';
+import { AiOutlineArrowRight } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+import AdminDetail from "../../../details/AdminDetail/AdminDetail";
 
 const AdminShow = () => {
 

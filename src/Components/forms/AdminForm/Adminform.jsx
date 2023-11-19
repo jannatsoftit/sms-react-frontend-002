@@ -8,6 +8,10 @@ const AdminForm = () => {
 
   const navigate = useNavigate();
 
+  const [formErrors, setFormErrors] = useState({});
+
+  const [isSubmit, setIsSubmit] = useState(false);
+
   const [inputFields, setInputFields] = useState({
     first_name: '',
     last_name: '',
@@ -19,10 +23,6 @@ const AdminForm = () => {
     image: '',
     gender: '',
   });
-
-  const [formErrors, setFormErrors] = useState({});
-
-  const [isSubmit, setIsSubmit] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
