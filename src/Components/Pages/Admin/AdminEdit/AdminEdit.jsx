@@ -56,6 +56,7 @@ const AdminEdit = () => {
       formData.append("user_information", admin.user_information);
       formData.append("image", admin.image);
       formData.append("gender", admin.gender);
+
       console.log(formData);
 
       fetch(`http://127.0.0.1:8000/api/admins/${adminId}`, {
@@ -247,7 +248,7 @@ const AdminEdit = () => {
                         onChange={(e) => {
                           setAdmin((value) => ({
                             ...value,
-                            [e.currentTarget.name]: e.currentTarget.files[admin.image],
+                            [e.target.name]: e.target.files[admin.image],
                           }));
                         }}
                       />{" "}
