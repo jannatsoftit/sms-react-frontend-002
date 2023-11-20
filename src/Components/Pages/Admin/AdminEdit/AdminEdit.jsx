@@ -33,6 +33,7 @@ const AdminEdit = () => {
 
   // admin data update function
   const handleSubmit = (e) => {
+
     e.preventDefault();
 
     if (confirm(`Are you sre you want to update your information?`)) {
@@ -244,12 +245,11 @@ const AdminEdit = () => {
                         className='form-control'
                         type='file'
                         name="image"
-                        id="image"
                         onChange={(e) => {
-                          setAdmin((value) => ({
-                            ...value,
-                            [e.target.name]: e.target.files[admin.image],
-                          }));
+                            setAdmin((value) => ({
+                              ...value,
+                              [e.target.name]: e.target.files[0],
+                            }));
                         }}
                       />{" "}
                     </div>
