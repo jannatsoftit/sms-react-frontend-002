@@ -106,9 +106,10 @@ const AdminTable = () => {
                             <span>{admin?.email}</span>
                           </td>
                           <td>
-                            <div className='email'>
-                              <span>{admin?.user_information}</span>
-                              <span>{admin?.user_information}</span>
+                            <div className='user_information'>
+                              <p><b>Gender:</b> {admin?.gender}</p>
+                              <p><b>Department:</b> {admin?.department}</p>
+                              <p><b>Info:</b> {admin?.user_information}</p>
                             </div>
                           </td>
                           <td>
