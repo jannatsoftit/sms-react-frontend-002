@@ -14,6 +14,7 @@ import Routes from './Components/routes';
 
 import Sidebar from './Components/Sidebar';
 import Topbar from './Components/Topbar';
+import Footer from './Components/Footer';
 
 const App = () => {
   return (
@@ -22,16 +23,14 @@ const App = () => {
         <Topbar />
         <Sidebar>
           <Routes />
-
-
-
-            {/* <Route path='/dashboard' element={<Dashboard/>} /> 
-            <Route path='/user/admin' element={<Admin />} />
-            <Route path='/user/student' element={<Student />} />
-            <Route path='/examination' element={<Examination />} />
-            <Route path='/accountant' element={<Accountant />} />
-            <Route path='/admission' element={<Admission />} />
-            <Route path='/academic' element={<Academic />} /> */}
+          {/* <Route path='/dashboard' element={<Dashboard/>} /> 
+          <Route path='/user/admin' element={<Admin />} />
+          <Route path='/user/student' element={<Student />} />
+          <Route path='/examination' element={<Examination />} />
+          <Route path='/accountant' element={<Accountant />} />
+          <Route path='/admission' element={<Admission />} />
+          <Route path='/academic' element={<Academic />} /> */}
+          <Footer />
         </Sidebar>
       </BrowserRouter>
     </>
