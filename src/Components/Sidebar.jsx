@@ -31,7 +31,7 @@ const Sidebar = ({ children }) => {
             <div className='sidebar_wrap'>
               <div className='sidebar'>
                 <div className='top_section'>
-                  <Link to="/dashboard" className='logo'>Logo</Link>
+                  <Link to="/" className='logo'>Logo</Link>
                 </div>
 
                 {/* <div className='navicon'>

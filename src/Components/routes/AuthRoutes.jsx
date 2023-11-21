@@ -12,6 +12,11 @@ import StudentCreate from "../Pages/Student/StudentCreate/StudentCreate";
 import StudentShow from "../Pages/Student/StudentShow/StudentShow";
 import StudentEdit from "../Pages/Student/StudentEdit/StudentEdit";
 
+import ParentList from "../Pages/Parent/ParentList/ParentList";
+import ParentCreate from "../Pages/Parent/ParentCreate/ParentCreate";
+import ParentShow from "../Pages/Parent/ParentShow/ParentShow";
+import ParentEdit from "../Pages/Parent/ParentEdit/ParentEdit";
+
 // import Student from './Components/Pages/Student/StudentList/StudentList';
 // import Examination from './Components/Pages/Examination/Examination';
 // import Accountant from './Components/Pages/Accountant/Accountant';
@@ -22,7 +27,7 @@ const AuthRoutes = {
   children: [
     {
       element: <Dashboard />,
-      path: '/dashboard',
+      path: '/',
     },
     {
       children: [
@@ -76,6 +81,33 @@ const AuthRoutes = {
         },
       ],
       path: 'students',
+      
+    },
+    {
+      children: [
+        {
+          element: <ParentList />,
+          path: '',
+        },
+        {
+          element: <ParentCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <ParentShow />,
+              path: '',
+            },
+            {
+              element: <ParentEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':parentId',
+        },
+      ],
+      path: 'parents',
       
     },
   ]

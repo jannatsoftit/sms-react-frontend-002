@@ -11,7 +11,7 @@ import * as PiIcons from 'react-icons/pi';
 export const SidebarData = [
   {
     title: 'Dashboard',
-    path: '/dashboard',
+    path: '/',
     icon: <AiIcons.AiFillHome />,
   },
   {
