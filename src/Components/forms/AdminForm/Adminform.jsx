@@ -257,17 +257,21 @@ const AdminForm = () => {
                   </div>
                   <div className='form-group col-sm-6 flex-column d-flex'>
                     {' '}
-                    <label className='form-control-label px-3'>
+                    <label className='form-label px-3'>
                       Gender <span className='text-danger'> *</span>
                     </label>{' '}
-                    <input
-                      type='text'
-                      name='gender'
-                      placeholder='Enter Your Gender'
-                      id='gender'
-                      onChange={handleChange}
+                    <select 
+                      name='gender' 
+                      className='form-select'
                       value={inputFields.gender}
-                    />{' '}
+                      onChange={handleChange}
+                    >
+                      <option selected>Choose...</option>
+                      <option value='Female'>Female</option>
+                      <option value='Male'>Male</option>
+                    </select>
+                    {' '}
+
                     {formErrors.gender && (
                       <span style={{ color: '#e74c3c' }}>
                         {formErrors.gender}

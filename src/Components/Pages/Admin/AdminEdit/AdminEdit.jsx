@@ -207,17 +207,20 @@ const AdminEdit = () => {
                     </div>
                     <div className="form-group col-sm-6 flex-column d-flex">
                       {" "}
-                      <label className="form-control-label px-3">
-                        Gender <span className="text-danger"> *</span>
-                      </label>{" "}
-                      <input
-                        type="text"
-                        name="gender"
-                        placeholder="Enter Your Gender"
-                        id="gender"
-                        onChange={handleChange}
-                        value={admin?.gender}
-                      />{" "}
+                      <label className='form-label px-3'>
+                      Gender <span className='text-danger'> *</span>
+                    </label>{' '}
+                    <select 
+                      name='gender' 
+                      className='form-select'
+                      value={admin?.gender}
+                      onChange={handleChange}
+                    >
+                      <option selected>Choose...</option>
+                      <option value='Female'>Female</option>
+                      <option value='Male'>Male</option>
+                    </select>
+                    {' '}
                     </div>
                   </div>
 
