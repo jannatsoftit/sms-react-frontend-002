@@ -13,7 +13,7 @@ const AdminTable = () => {
 
   // admin table pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 2;
+  const recordsPerPage = 3;
   const lastIndex = currentPage * recordsPerPage; //lastIndex = 2 (lastIndex = 2, if recordsPerPage = 2  and lastIndex = 4, if recordsPerPage = 3...)
   const firstIndex = lastIndex - recordsPerPage;  //firstIndex count kora hoy 2nd page theke...
   const records = admins?.slice(firstIndex, lastIndex);
@@ -201,7 +201,7 @@ const AdminTable = () => {
           </div>
 
           {/* admin list table pagination start  */}
-          <nav>
+          <nav className='pagination'>
             <ul className='pagination'>
               <li className='page-item'>
                 <Link 

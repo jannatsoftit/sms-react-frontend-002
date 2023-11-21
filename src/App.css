@@ -11134,3 +11134,13 @@ label{
   width: 7rem;
 }
 
+
+/* pagination  css*/
+
+.pagination{
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
