@@ -1,23 +1,23 @@
-/* eslint-disable react/jsx-no-undef */
 import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
 const StudentTable = () => {
-  // admin data
-  const [admins, setAdmins] = useState(null);
 
-  // admin table reload state
+  // student data
+  const [students, setStudents] = useState(null);
+
+  // student table reload state
   const [reload, setReload] = useState(0);
 
-  // admin table pagination
+  // student table pagination
   const [currentPage, setCurrentPage] = useState(1);
   const recordsPerPage = 3;
-  const lastIndex = currentPage * recordsPerPage; //lastIndex = 2 (lastIndex = 2, if recordsPerPage = 2  and lastIndex = 4, if recordsPerPage = 3...)
-  const firstIndex = lastIndex - recordsPerPage;  //firstIndex count kora hoy 2nd page theke...  //1st page record = recordsPerPage
-  const records = admins?.slice(firstIndex, lastIndex);
-  const nPage = Math.ceil((admins || []).length / recordsPerPage); // admin.length = 0,2,4,6,8....
+  const lastIndex = currentPage * recordsPerPage; //lastIndex = 2 (if recordsPerPage = 3  return 1st page = 3 records and lastIndex = 3; if recordsPerPage = 3  return 2nd page = 6 records and lastIndex = 6;...)
+  const firstIndex = lastIndex - recordsPerPage;  //if firstIndex = 0  return 1st page = recordsPerPage ; if firstIndex = 3  return 2nd page = 3 records...  //1st page record = recordsPerPage
+  const records = students?.slice(firstIndex, lastIndex);
+  const nPage = Math.ceil((students || []).length / recordsPerPage); // student.length = 0,3,6,9....
   const numbers = [...Array(nPage + 1).keys()].slice(1);
 
   // handle prePage, nextPage and CurrentPage function
@@ -38,9 +38,9 @@ const StudentTable = () => {
     }
   };
 
-  //admin data delete function
-  const handleDelete = (admin) => {
-    if (confirm(`Are You sure you want to delete admin ${admin.id}?`)) {
+  //student data delete function
+  const handleDelete = (student) => {
+    if (confirm(`Are You sure you want to delete student ${student.id}?`)) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Delete Successfully!!',
@@ -48,7 +48,7 @@ const StudentTable = () => {
         confirmButtonText: 'Ok',
       });
 
-      fetch(`http://127.0.0.1:8000/api/admins/${admin.id}`, {
+      fetch(`http://127.0.0.1:8000/api/students/${student.id}`, {
         headers: {
           Accept: 'application/json',
         },
@@ -65,9 +65,9 @@ const StudentTable = () => {
     }
   };
 
-  //admin all data show in the table
+  //student all data show in the table
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/admins?`, {
+    fetch(`http://127.0.0.1:8000/api/students?`, {
       headers: {
         Accept: 'application/json',
       },
@@ -76,11 +76,11 @@ const StudentTable = () => {
       .then((res) => res.json())
       .then((res) => {
         console.info(res);
-        setAdmins(res.data.admins);
+        setStudents(res.data.students);
       })
       .catch((error) => {
         console.error(error);
-        setAdmins(null);
+        setStudents(null);
       });
   }, [reload]);
 
@@ -89,14 +89,14 @@ const StudentTable = () => {
       <section className='ftco-section'>
         <div className='container'>
           <div className='col-md-6 text-center mb-5'>
-            <h2 className='heading-section'>Admin Table List</h2>
+            <h2 className='heading-section'>Student Table List</h2>
             <div className='admin'>
               <Link to='#' className='links'>
                 user
               </Link>
               <RxSlash />
               <Link to='' className='actives'>
-                admins
+                students
               </Link>
             </div>
           </div>
@@ -124,11 +124,10 @@ const StudentTable = () => {
                           <td>
                             <img
                               className='rounded-circle'
-                              src={`http://127.0.0.1:8000/storage/AD_img/${record.image}`}
+                              src={`http://127.0.0.1:8000/storage/S_img/${record.image}`}
                               width='50px'
                               alt={record?.name}
                             />
-                            {/* <span>{admin?.image}</span> */}
                           </td>
                           <td>
                             <span>{record?.designation}</span>
@@ -167,17 +166,17 @@ const StudentTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/admins/${record?.id}`}
+                                    to={`/students/${record?.id}`}
                                   >
-                                    Show Admin
+                                    Show Student
                                   </Link>
                                 </li>
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/admins/${record?.id}/edit`}
+                                    to={`/students/${record?.id}/edit`}
                                   >
-                                    Edit Admin
+                                    Edit Student
                                   </Link>
                                 </li>
                                 <li>
@@ -185,7 +184,7 @@ const StudentTable = () => {
                                     className='dropdown-item'
                                     onClick={() => handleDelete(record)}
                                   >
-                                    Delete Admin
+                                    Delete Student
                                   </Link>
                                 </li>
                               </ul>
@@ -200,7 +199,7 @@ const StudentTable = () => {
             </div>
           </div>
 
-          {/* admin list table pagination start  */}
+          {/* student list table pagination start  */}
           <nav className='pagination'>
             <ul className='pagination'>
               <li className='page-item'>
@@ -237,7 +236,7 @@ const StudentTable = () => {
               </li>
             </ul>
           </nav>
-          {/* admin list table pagination end  */}
+          {/* student list table pagination end  */}
 
         </div>
       </section>
