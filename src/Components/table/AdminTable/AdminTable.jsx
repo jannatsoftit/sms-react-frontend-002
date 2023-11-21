@@ -1,18 +1,46 @@
 /* eslint-disable react/jsx-no-undef */
-import { Link  } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
 const AdminTable = () => {
-
+  // admin data
   const [admins, setAdmins] = useState(null);
 
-  const [reload, setReload]= useState(0);
+  // admin table reload state
+  const [reload, setReload] = useState(0);
 
-  const handleDelete = admin => {
+  // admin table pagination
+  const [currentPage, setCurrentPage] = useState(1);
+  const recordsPerPage = 2;
+  const lastIndex = currentPage * recordsPerPage; //lastIndex = 2 (lastIndex = 2, if recordsPerPage = 2  and lastIndex = 4, if recordsPerPage = 3...)
+  const firstIndex = lastIndex - recordsPerPage;  //firstIndex count kora hoy 2nd page theke...
+  const records = admins?.slice(firstIndex, lastIndex);
+  const nPage = Math.ceil((admins || []).length / recordsPerPage); // admin.length = 0,2,4,6,8....
+  const numbers = [...Array(nPage + 1).keys()].slice(1);
 
-    if(confirm(`Are You sure you want to delete admin ${admin.id}?`)){
+  // handle prePage, nextPage and CurrentPage function
+
+  const perPage = () => {
+    if (currentPage !== 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  const handleCPage = (id) => {
+    setCurrentPage(id);
+  };
+
+  const nextPage = () => {
+    if (currentPage !== lastIndex) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  //admin data delete function
+  const handleDelete = (admin) => {
+    if (confirm(`Are You sure you want to delete admin ${admin.id}?`)) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Delete Successfully!!',
@@ -20,25 +48,24 @@ const AdminTable = () => {
         confirmButtonText: 'Ok',
       });
 
-      fetch(`http://127.0.0.1:8000/api/admins/${admin.id}`,{
-        headers:{
+      fetch(`http://127.0.0.1:8000/api/admins/${admin.id}`, {
+        headers: {
           Accept: 'application/json',
         },
         method: 'DELETE',
       })
-      .then((res) => res.json())
-      .then((res) => {
-        console.info(res);
-        setReload(value => ++value);
-      })
-      .catch((error) => {
-        console.error(error);
-      })
-
+        .then((res) => res.json())
+        .then((res) => {
+          console.info(res);
+          setReload((value) => ++value);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
-  }
-  
+  };
 
+  //admin all data show in the table
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/admins?`, {
       headers: {
@@ -49,13 +76,12 @@ const AdminTable = () => {
       .then((res) => res.json())
       .then((res) => {
         console.info(res);
-        setAdmins(res.data?.admins);
+        setAdmins(res.data.admins);
       })
       .catch((error) => {
         console.error(error);
         setAdmins(null);
       });
-
   }, [reload]);
 
   return (
@@ -89,27 +115,38 @@ const AdminTable = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {admins?.map((admin) => {
+                    {records?.map((record, i) => {
                       return (
-                        <tr className='alert' role='alert' key={admin?.id}>
+                        <tr className='alert' role='alert' key={i}>
                           <td>
-                            <span>{admin?.id}</span>
+                            <span>{record?.id}</span>
                           </td>
                           <td>
-                            <img className="rounded-circle" src={`http://127.0.0.1:8000/storage/AD_img/${admin.image}`}  width="50px" alt={admin?.name} />
+                            <img
+                              className='rounded-circle'
+                              src={`http://127.0.0.1:8000/storage/AD_img/${record.image}`}
+                              width='50px'
+                              alt={record?.name}
+                            />
                             {/* <span>{admin?.image}</span> */}
                           </td>
                           <td>
-                            <span>{admin?.designation}</span>
+                            <span>{record?.designation}</span>
                           </td>
                           <td>
-                            <span>{admin?.email}</span>
+                            <span>{record?.email}</span>
                           </td>
                           <td>
                             <div className='user_information'>
-                              <p><b>Gender:</b> {admin?.gender}</p>
-                              <p><b>Department:</b> {admin?.department}</p>
-                              <p><b>Info:</b> {admin?.user_information}</p>
+                              <p>
+                                <b>Gender:</b> {record?.gender}
+                              </p>
+                              <p>
+                                <b>Department:</b> {record?.department}
+                              </p>
+                              <p>
+                                <b>Info:</b> {record?.user_information}
+                              </p>
                             </div>
                           </td>
                           <td>
@@ -128,19 +165,26 @@ const AdminTable = () => {
                                 aria-labelledby='dropdownMenuButton1'
                               >
                                 <li>
-                                  <Link className='dropdown-item' 
-                                  to= {`/admins/${admin?.id}`}
+                                  <Link
+                                    className='dropdown-item'
+                                    to={`/admins/${record?.id}`}
                                   >
-                                  Show Admin
+                                    Show Admin
                                   </Link>
                                 </li>
                                 <li>
-                                  <Link className='dropdown-item' to={`/admins/${admin?.id}/edit`}>
+                                  <Link
+                                    className='dropdown-item'
+                                    to={`/admins/${record?.id}/edit`}
+                                  >
                                     Edit Admin
                                   </Link>
                                 </li>
                                 <li>
-                                  <Link className='dropdown-item' onClick={() => handleDelete(admin)}>
+                                  <Link
+                                    className='dropdown-item'
+                                    onClick={() => handleDelete(record)}
+                                  >
                                     Delete Admin
                                   </Link>
                                 </li>
@@ -155,6 +199,46 @@ const AdminTable = () => {
               </div>
             </div>
           </div>
+
+          {/* admin list table pagination start  */}
+          <nav>
+            <ul className='pagination'>
+              <li className='page-item'>
+                <Link 
+                  to={'#'} 
+                  className='page-link' 
+                  onClick={perPage}
+                >
+                  Prev
+                </Link>
+              </li>
+              {numbers.map((n, i) => (
+                <li
+                  className={`page-item ${currentPage === n ? 'active' : ''}`}
+                  key={i}
+                >
+                  <Link
+                    to={'#'}
+                    className='page-link'
+                    onClick={() => handleCPage(n)}
+                  >
+                    {n}
+                  </Link>
+                </li>
+              ))}
+              <li className='page-item'>
+                <Link 
+                  to={'#'} 
+                  className='page-link' 
+                  onClick={nextPage}
+                >
+                  Next
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          {/* admin list table pagination end  */}
+
         </div>
       </section>
     </div>
