@@ -4,7 +4,7 @@ import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
-const AdminTable = () => {
+const StudentTable = () => {
   // admin data
   const [admins, setAdmins] = useState(null);
 
@@ -245,4 +245,4 @@ const AdminTable = () => {
   );
 };
 
-export default AdminTable;
+export default StudentTable;

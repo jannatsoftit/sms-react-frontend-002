@@ -1,15 +1,15 @@
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import AdminDetail from "../../../details/AdminDetail/AdminDetail";
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import AdminDetail from '../../../details/AdminDetail/AdminDetail';
 
 const AdminShow = () => {
-
- const {adminId} = useParams();
+  const { adminId } = useParams();
 
   const [admin, setAdmin] = useState(null);
 
+  // admin data show
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/admins/${adminId}`, {
       headers: {
@@ -30,16 +30,19 @@ const AdminShow = () => {
 
   return (
     <div>
+
       {/* Admin create table title section */}
-      <Link to="/admins" className="add_button">
-      <button type="button" className="btn">
-        Admin Table  <AiOutlineArrowRight /> 
-      </button>
+      <Link to='/admins' className='add_button'>
+        <button type='button' className='btn'>
+          Admin Table <AiOutlineArrowRight />
+        </button>
       </Link>
 
+      {/* admin data details component */}
       <AdminDetail admin={admin} />
+      
     </div>
   );
-}
+};
 
 export default AdminShow;

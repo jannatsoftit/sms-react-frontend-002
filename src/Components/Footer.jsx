@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -11,10 +12,16 @@ const Footer = () => {
           className='text-center p-3'
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)"}}
         >
-          © 2020 Copyright:
-          <a className='text-white' href='/'>
-            MDBootstrap.com
-          </a>
+          © 2023 Copyright - All rights reserved <br></br>
+          <Link className='text-white' to={'//'}>
+            Legal Stuff |
+          </Link>
+          <Link className='text-white' to={'//'}>
+            Policy |
+          </Link>
+          <Link className='text-white' to={'//'}>
+            Security
+          </Link>
         </div>
         {/* Copyright  End */}
       </footer>

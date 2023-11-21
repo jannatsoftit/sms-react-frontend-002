@@ -1,7 +1,7 @@
 //import React from 'react';
-import { useEffect, useState } from 'react';
-import { RxSlash } from 'react-icons/rx';
 import { Link, useNavigate } from 'react-router-dom';
+import { RxSlash } from 'react-icons/rx';
+import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
 const AdminForm = () => {
@@ -349,7 +349,6 @@ const AdminForm = () => {
                     <button
                       type='submit'
                       className='btn-block btn-primary'
-                      //disabled={setSubmitting}
                     >
                       Submit
                     </button>

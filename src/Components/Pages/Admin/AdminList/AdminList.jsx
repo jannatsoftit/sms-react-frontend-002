@@ -1,19 +1,10 @@
-import AdminTable from '../../../table/AdminTable/AdminTable';
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-//import Pagination from "../../../Pagination/Pagination";
-//import { useState } from "react";
+import AdminTable from '../../../table/AdminTable/AdminTable';
 
 const AdminList = () => {
-
   return (
     <div>
-
-
-    
-      {/* pagination */}
-      {/* <Pagination /> */}
-
       {/* Admin table title section */}
       <Link to='create' className='add_button'>
         <button type='button' className='btn'>
