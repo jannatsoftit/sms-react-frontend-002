@@ -23,11 +23,16 @@ import TeacherCreate from "../Pages/Teacher/TeacherCreate/TeacherCreate";
 import TeacherShow from "../Pages/Teacher/TeacherShow/TeacherShow";
 import TeacherEdit from "../Pages/Teacher/TeacherEdit/TeacherEdit";
 
+import AccountantList from "../Pages/Accountant/AccountantList/AccountantList";
+import AccountantCreate from "../Pages/Accountant/AccountantCreate/AccountantCreate";
+import AccountantShow from "../Pages/Accountant/AccountantShow/AccountantShow";
+import AccountantEdit from "../Pages/Accountant/AccountantEdit/AccountantEdit";
+
 // import Student from './Components/Pages/Student/StudentList/StudentList';
 // import Examination from './Components/Pages/Examination/Examination';
 // import Accountant from './Components/Pages/Accountant/Accountant';
 // import Admission from './Components/Pages/Admission/Admission';
-// import Academic from './Components/Pages/Academic/Academic';
+// import Academic from './Components/Pages/Academic/Academic';  
 
 const AuthRoutes = {
   children: [
@@ -141,6 +146,33 @@ const AuthRoutes = {
         },
       ],
       path: 'teachers',
+      
+    },
+    {
+      children: [
+        {
+          element: <AccountantList />,
+          path: '',
+        },
+        {
+          element: <AccountantCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <AccountantShow />,
+              path: '',
+            },
+            {
+              element: <AccountantEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':accountantId',
+        },
+      ],
+      path: 'accountants',
       
     },
   ]
