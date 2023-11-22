@@ -14,7 +14,7 @@ const ExamCategoryTable = () => {   //ExamCategory examCategory examCategoryId
 
   // ExamCategory table pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 3;
+  const recordsPerPage = 4;
   const lastIndex = currentPage * recordsPerPage; //lastIndex = 2 (lastIndex = 2, if recordsPerPage = 2  and lastIndex = 4, if recordsPerPage = 3...)
   const firstIndex = lastIndex - recordsPerPage;  //firstIndex count kora hoy 2nd page theke...  //1st page record = recordsPerPage
   const records = examCategories?.slice(firstIndex, lastIndex);
@@ -108,10 +108,9 @@ const ExamCategoryTable = () => {   //ExamCategory examCategory examCategoryId
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Image</th>
-                      <th>Designation</th>
-                      <th>Email</th>
-                      <th>User Info</th>
+                      <th>Exam Type</th>
+                      <th>Class name</th>
+                      <th>Section name</th>
                       <th>Options</th>
                     </tr>
                   </thead>
@@ -123,31 +122,13 @@ const ExamCategoryTable = () => {   //ExamCategory examCategory examCategoryId
                             <span>{record?.id}</span>
                           </td>
                           <td>
-                            <img
-                              className='rounded-circle'
-                              src={`http://127.0.0.1:8000/storage/AD_img/${record.image}`}
-                              width='50px'
-                              alt={record?.name}
-                            />
+                            <span>{record?.title}</span>
                           </td>
                           <td>
-                            <span>{record?.designation}</span>
+                            <span>{record?.class_name}</span>
                           </td>
                           <td>
-                            <span>{record?.email}</span>
-                          </td>
-                          <td>
-                            <div className='user_information'>
-                              <p>
-                                <b>Gender:</b> {record?.gender}
-                              </p>
-                              <p>
-                                <b>Department:</b> {record?.department}
-                              </p>
-                              <p>
-                                <b>Info:</b> {record?.user_information}
-                              </p>
-                            </div>
+                            <span>{record?.section_name}</span>
                           </td>
                           <td>
                             <div className='dropdown'>
@@ -169,7 +150,7 @@ const ExamCategoryTable = () => {   //ExamCategory examCategory examCategoryId
                                     className='dropdown-item'
                                     to={`/examCategories/${record?.id}/edit`}
                                   >
-                                    Edit Exam-Category
+                                    Edit ExamCategory
                                   </Link>
                                 </li>
                                 <li>
@@ -177,7 +158,7 @@ const ExamCategoryTable = () => {   //ExamCategory examCategory examCategoryId
                                     className='dropdown-item'
                                     onClick={() => handleDelete(record)}
                                   >
-                                    Delete Exam-Category
+                                    Delete ExamCategory
                                   </Link>
                                 </li>
                               </ul>

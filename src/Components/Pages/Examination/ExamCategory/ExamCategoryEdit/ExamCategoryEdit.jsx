@@ -12,15 +12,9 @@ const ExamCategoryEdit = () => {
   const { examCategoryId } = useParams();
 
   const [examCategory, setExamCategory] = useState({
-    first_name: '',
-    last_name: '',
-    email: '',
-    designation: '',
-    department: '',
-    password: '',
-    user_information: '',
-    image: '',
-    gender: '',
+    title: '',
+    class_name: '',
+    section_name: '',
   });
 
   // able to change input data for edit
@@ -48,15 +42,9 @@ const ExamCategoryEdit = () => {
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
-      formData.append('first_name', examCategory.first_name);
-      formData.append('last_name', examCategory.last_name);
-      formData.append('email', examCategory.email);
-      formData.append('designation', examCategory.designation);
-      formData.append('department', examCategory.department);
-      formData.append('password', examCategory.password);
-      formData.append('user_information', examCategory.user_information);
-      formData.append('image', examCategory.image);
-      formData.append('gender', examCategory.gender);
+      formData.append('title', inputFields.title);
+      formData.append('class_name', inputFields.class_name);
+      formData.append('section_name', inputFields.section_name);
 
       console.log(formData);
 
@@ -88,7 +76,7 @@ const ExamCategoryEdit = () => {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        setExamCategory(res.data?.examCategory);
+        setExamCategory(res.data.examCategory);
       })
       .catch((error) => {
         console.error(error);
@@ -130,147 +118,58 @@ const ExamCategoryEdit = () => {
                 {/* ExamCategory create form table*/}
                 <form className='form-card' onSubmit={handleSubmit}>
                   <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      <label className='form-control-label px-3'>
-                        First name<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        id='first_name'
-                        name='first_name'
-                        placeholder='Enter your first name'
-                        onChange={handleChange}
-                        value={examCategory?.first_name}
-                      />{' '}
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
                       {' '}
-                      <label className='form-control-label px-3'>
-                        Last name<span className='text-danger'> *</span>
+                      <label className='form-label px-3'>
+                        Exam Name <span className='text-danger'> *</span>
                       </label>{' '}
-                      <input
-                        type='text'
-                        id='last_name'
-                        name='last_name'
-                        placeholder='Enter your last name'
+                      <select
+                        name='title'
+                        className='form-select'
+                        value={examCategory?.title}
                         onChange={handleChange}
-                        value={examCategory?.last_name}
-                      />{' '}
-                    </div>
-                  </div>
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-control-label px-3'>
-                        Email<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='email'
-                        name='email'
-                        placeholder='Enter Your Email'
-                        id='email'
-                        onChange={handleChange}
-                        value={examCategory?.email}
-                      />{' '}
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-control-label px-3'>
-                        Designation <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='designation'
-                        placeholder='Enter Your Designation'
-                        id='designation'
-                        onChange={handleChange}
-                        value={examCategory?.designation}
-                      />{' '}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-control-label px-3'>
-                        Department<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='department'
-                        placeholder='Enter Your Department'
-                        id='department'
-                        onChange={handleChange}
-                        value={examCategory?.department}
-                      />{' '}
+                      >
+                      <option selected>Choose...</option>
+                      <option value='Final Exam'>Final Exam</option>
+                      <option value='Half Yearly'>Half Yearly</option>
+                      <option value='Test Exam'>Test Exam</option>
+                      <option value='Pre-test Exam'>Pre-test Exam</option>
+                      </select>{' '}
                     </div>
                     <div className='form-group col-sm-6 flex-column d-flex'>
                       {' '}
                       <label className='form-label px-3'>
-                        Gender <span className='text-danger'> *</span>
+                        Class Name <span className='text-danger'> *</span>
                       </label>{' '}
                       <select
-                        name='gender'
+                        name='class_name'
                         className='form-select'
-                        value={examCategory?.gender}
+                        value={examCategory?.class_name}
                         onChange={handleChange}
                       >
-                        <option selected>Choose...</option>
-                        <option value='Female'>Female</option>
-                        <option value='Male'>Male</option>
+                      <option selected>Choose...</option>
+                      <option value='One'>One</option>
+                      <option value='Two'>Two</option>
                       </select>{' '}
                     </div>
                   </div>
-
                   <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
                       {' '}
-                      <label className='form-control-label px-3'>
-                        Password<span className='text-danger'> *</span>
+                      <label className='form-label px-3'>
+                      Section Name <span className='text-danger'> *</span>
                       </label>{' '}
-                      <input
-                        type='password'
-                        name='password'
-                        placeholder='Enter Your password'
-                        id='password'
+                      <select
+                        name='section_name'
+                        className='form-select'
+                        value={examCategory?.section_name}
                         onChange={handleChange}
-                        value={examCategory?.password}
-                      />{' '}
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-control-label px-3'>
-                        Image <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        className='form-control'
-                        type='file'
-                        name='image'
-                        onChange={(e) => {
-                          setExamCategory((value) => ({
-                            ...value,
-                            [e.target.name]: e.target.files[0],
-                          }));
-                        }}
-                      />{' '}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-control-label px-3'>
-                        User Information<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='user_information'
-                        placeholder='Enter Your user information'
-                        id='user_information'
-                        onChange={handleChange}
-                        value={examCategory?.user_information}
-                      />{' '}
-                    </div>
+                      >
+                      <option selected>Choose...</option>
+                      <option value='A'>A</option>
+                      <option value='B'>B</option>
+                      </select>{' '}
+                    </div>          
                   </div>
 
                   <div className='row justify-content-start'>

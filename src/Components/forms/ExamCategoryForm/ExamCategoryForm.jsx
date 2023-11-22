@@ -13,16 +13,9 @@ const ExamCategoryForm = () => {
   const [isSubmit, setIsSubmit] = useState(false);
 
   const [inputFields, setInputFields] = useState({
-    exam_name: '',
+    title: '',
     class_name: '',
-    class_category: '',
-    
-    designation: '',
-    department: '',
-    password: '',
-    user_information: '',
-    image: '',
-    gender: '',
+    section_name: '',
   });
 
   const handleChange = (e) => {
@@ -53,16 +46,9 @@ const ExamCategoryForm = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('first_name', inputFields.first_name);
-    formData.append('last_name', inputFields.last_name);
-    formData.append('email', inputFields.email);
-    formData.append('designation', inputFields.designation);
-    formData.append('department', inputFields.department);
-    formData.append('password', inputFields.password);
-    formData.append('user_information', inputFields.user_information);
-    formData.append('image', inputFields.image);
-    formData.append('gender', inputFields.gender);
-    console.log(formData);
+    formData.append('title', inputFields.title);
+    formData.append('class_name', inputFields.class_name);
+    formData.append('section_name', inputFields.section_name);
 
     fetch(`http://127.0.0.1:8000/api/examCategories`, {
       body: formData,
@@ -86,44 +72,16 @@ const ExamCategoryForm = () => {
   const validate = (values) => {
     const errors = {};
 
-    if (!values.first_name) {
-      errors.first_name = 'first name required';
+    if (!values.title) {
+      errors.title = 'Exam name required';
     }
 
-    if (!values.last_name) {
-      errors.last_name = 'last name required';
+    if (!values.class_name) {
+      errors.class_name = 'class name required';
     }
 
-    if (!values.email) {
-      errors.email = 'email is required';
-    } else if (!/\S+@\S+\.\S+/.test(values.email)) {
-      errors.email = 'email is not valid';
-    }
-
-    if (!values.password) {
-      errors.password = 'password is required';
-    } else if (values.password.length < 4) {
-      errors.password = 'password should be at least 4 char';
-    }
-
-    if (!values.designation) {
-      errors.designation = 'designation required';
-    }
-
-    if (!values.department) {
-      errors.department = 'department required';
-    }
-
-    if (!values.user_information) {
-      errors.user_information = 'user_information required';
-    }
-
-    if (!values.image) {
-      errors.image = 'image required';
-    }
-
-    if (!values.gender) {
-      errors.gender = 'gender required';
+    if (!values.section_name) {
+      errors.section_name = 'section name is required';
     }
 
     return errors;
@@ -156,126 +114,52 @@ const ExamCategoryForm = () => {
               {/* ExamCategory create form table*/}
               <form className='form-card' onSubmit={handelSubmit}>
                 <div className='row justify-content-between text-left'>
-                  <div className='form-group col-sm-6 flex-column d-flex'>
-                    <label className='form-control-label px-3'>
-                      First name<span className='text-danger'> *</span>
-                    </label>{' '}
-                    <input
-                      type='text'
-                      id='first_name'
-                      name='first_name'
-                      placeholder='Enter your first name'
-                      onChange={handleChange}
-                      value={inputFields.first_name}
-                    />{' '}
-                    {formErrors.first_name && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.first_name}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className='form-group col-sm-6 flex-column d-flex'>
-                    {' '}
-                    <label className='form-control-label px-3'>
-                      Last name<span className='text-danger'> *</span>
-                    </label>{' '}
-                    <input
-                      type='text'
-                      id='last_name'
-                      name='last_name'
-                      placeholder='Enter your last name'
-                      onChange={handleChange}
-                      value={inputFields.last_name}
-                    />{' '}
-                    {formErrors.last_name && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.last_name}
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div className='row justify-content-between text-left'>
-                  <div className='form-group col-sm-6 flex-column d-flex'>
-                    {' '}
-                    <label className='form-control-label px-3'>
-                      Email<span className='text-danger'> *</span>
-                    </label>{' '}
-                    <input
-                      type='email'
-                      name='email'
-                      placeholder='Enter Your Email'
-                      id='email'
-                      onChange={handleChange}
-                      value={inputFields.email}
-                    />{' '}
-                    {formErrors.email && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.email}
-                      </span>
-                    )}
-                  </div>
-                  <div className='form-group col-sm-6 flex-column d-flex'>
-                    {' '}
-                    <label className='form-control-label px-3'>
-                      Designation <span className='text-danger'> *</span>
-                    </label>{' '}
-                    <input
-                      type='text'
-                      name='designation'
-                      placeholder='Enter Your Designation'
-                      id='designation'
-                      onChange={handleChange}
-                      value={inputFields.designation}
-                    />{' '}
-                    {formErrors.designation && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.designation}
-                      </span>
-                    )}
-                  </div>
-                </div>
-
-                <div className='row justify-content-between text-left'>
-                  <div className='form-group col-sm-6 flex-column d-flex'>
-                    {' '}
-                    <label className='form-control-label px-3'>
-                      Department<span className='text-danger'> *</span>
-                    </label>{' '}
-                    <input
-                      type='text'
-                      name='department'
-                      placeholder='Enter Your Department'
-                      id='department'
-                      onChange={handleChange}
-                      value={inputFields.department}
-                    />{' '}
-                    {formErrors.department && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.department}
-                      </span>
-                    )}
-                  </div>
-                  <div className='form-group col-sm-6 flex-column d-flex'>
+                <div className='form-group col-sm-6 flex-column d-flex'>
                     {' '}
                     <label className='form-label px-3'>
-                      Gender <span className='text-danger'> *</span>
+                      Exam Name <span className='text-danger'> *</span>
                     </label>{' '}
                     <select 
-                      name='gender' 
+                      name='title' 
                       className='form-select'
-                      value={inputFields.gender}
+                      value={inputFields.title}
                       onChange={handleChange}
                     >
                       <option selected>Choose...</option>
-                      <option value='Female'>Female</option>
-                      <option value='Male'>Male</option>
+                      <option value='Final Exam'>Final Exam</option>
+                      <option value='Half Yearly'>Half Yearly</option>
+                      <option value='Test Exam'>Test Exam</option>
+                      <option value='Pre-test Exam'>Pre-test Exam</option>
                     </select>
                     {' '}
 
-                    {formErrors.gender && (
+                    {formErrors.title && (
                       <span style={{ color: '#e74c3c' }}>
-                        {formErrors.gender}
+                        {formErrors.title}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-label px-3'>
+                      Class Name <span className='text-danger'> *</span>
+                    </label>{' '}
+                    <select 
+                      name='class_name' 
+                      className='form-select'
+                      value={inputFields.class_name}
+                      onChange={handleChange}
+                    >
+                      <option selected>Choose...</option>
+                      <option value='One'>One</option>
+                      <option value='Two'>Two</option>
+                    </select>
+                    {' '}
+
+                    {formErrors.class_name && (
+                      <span style={{ color: '#e74c3c' }}>
+                        {formErrors.class_name}
                       </span>
                     )}
                   </div>
@@ -284,62 +168,24 @@ const ExamCategoryForm = () => {
                 <div className='row justify-content-between text-left'>
                   <div className='form-group col-sm-6 flex-column d-flex'>
                     {' '}
-                    <label className='form-control-label px-3'>
-                      Password<span className='text-danger'> *</span>
+                    <label className='form-label px-3'>
+                      Section Name <span className='text-danger'> *</span>
                     </label>{' '}
-                    <input
-                      type='password'
-                      name='password'
-                      placeholder='Enter Your password'
-                      id='password'
+                    <select 
+                      name='section_name' 
+                      className='form-select'
+                      value={inputFields.section_name}
                       onChange={handleChange}
-                      value={inputFields.password}
-                    />{' '}
-                    {formErrors.password && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.password}
-                      </span>
-                    )}
-                  </div>
-                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    >
+                      <option selected>Choose...</option>
+                      <option value='A'>A</option>
+                      <option value='B'>B</option>
+                    </select>
                     {' '}
-                    <label className='form-control-label px-3'>
-                      Image <span className='text-danger'> *</span>
-                    </label>{' '}
-                    <input
-                      className='form-control'
-                      type='file'
-                      name='image'
-                      onChange={(e) => {
-                        setInputFields(value => ({...value, [e.target.name]:e.target.files[0]}))
-                      }     
-                    }
-                    />{' '}
-                     {formErrors.image && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.image}
-                      </span>
-                    )}
-                  </div>
-                </div>
 
-                <div className='row justify-content-between text-left'>
-                  <div className='form-group col-sm-6 flex-column d-flex'>
-                    {' '}
-                    <label className='form-control-label px-3'>
-                      User Information<span className='text-danger'> *</span>
-                    </label>{' '}
-                    <input
-                      type='text'
-                      name='user_information'
-                      placeholder='Enter Your user information'
-                      id='user_information'
-                      onChange={handleChange}
-                      value={inputFields.user_information}
-                    />{' '}
-                    {formErrors.user_information && (
+                    {formErrors.section_name && (
                       <span style={{ color: '#e74c3c' }}>
-                        {formErrors.user_information}
+                        {formErrors.section_name}
                       </span>
                     )}
                   </div>
