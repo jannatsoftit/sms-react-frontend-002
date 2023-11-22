@@ -5,13 +5,13 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const AccountantEdit = () => {
+const LibrarianEdit = () => {
 
   const navigate = useNavigate();
 
-  const { accountantId } = useParams();
+  const { librarianId } = useParams();
 
-  const [accountant, setAccountant] = useState({
+  const [librarian, setLibrarian] = useState({
     first_name: '',
     last_name: '',
     email: '',
@@ -26,13 +26,13 @@ const AccountantEdit = () => {
   // able to change input data for edit
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setAccountant({
-      ...accountant,
+    setLibrarian({
+      ...librarian,
       [name]: value,
     });
   };
 
-  // Accountant data update function
+  // librarian data update function
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -44,23 +44,23 @@ const AccountantEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/accountants', { replace: true });
+      navigate('/librarians', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
-      formData.append('first_name', accountant.first_name);
-      formData.append('last_name', accountant.last_name);
-      formData.append('email', accountant.email);
-      formData.append('designation', accountant.designation);
-      formData.append('department', accountant.department);
-      formData.append('password', accountant.password);
-      formData.append('user_information', accountant.user_information);
-      formData.append('image', accountant.image);
-      formData.append('gender', accountant.gender);
+      formData.append('first_name', librarian.first_name);
+      formData.append('last_name', librarian.last_name);
+      formData.append('email', librarian.email);
+      formData.append('designation', librarian.designation);
+      formData.append('department', librarian.department);
+      formData.append('password', librarian.password);
+      formData.append('user_information', librarian.user_information);
+      formData.append('image', librarian.image);
+      formData.append('gender', librarian.gender);
 
       console.log(formData);
 
-      fetch(`http://127.0.0.1:8000/api/accountants/${accountantId}`, {
+      fetch(`http://127.0.0.1:8000/api/librarians/${librarianId}`, {
         body: formData,
         headers: {
           Accept: 'application/json',
@@ -77,9 +77,9 @@ const AccountantEdit = () => {
     }
   };
 
-  // Accountant data fetch for edit
+  // librarian data fetch for edit
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/accountants/${accountantId}`, {
+    fetch(`http://127.0.0.1:8000/api/librarians/${librarianId}`, {
       headers: {
         Accept: 'application/json',
       },
@@ -88,19 +88,19 @@ const AccountantEdit = () => {
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        setAccountant(res.data?.accountant);
+        setLibrarian(res.data?.librarian);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [accountantId]);
+  }, [librarianId]);
 
   return (
     <>
-      {/* Accountant create table title section */}
-      <Link to='/accountants' className='add_button'>
+      {/* Librarian create table title section */}
+      <Link to='/librarians' className='add_button'>
         <button type='button' className='btn'>
-        Accountant Table <AiOutlineArrowRight />
+          Librarian Table <AiOutlineArrowRight />
         </button>
       </Link>
 
@@ -109,16 +109,16 @@ const AccountantEdit = () => {
           <div className='row d-flex justify-content-center'>
             <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
               <div className='card'>
-                {/* Accountant create form title section */}
+                {/* Librarian create form title section */}
                 <div className='col-md-6 text-center mb-5'>
-                  <h2 className='heading-section'>Accountant Form Edit Table</h2>
+                  <h2 className='heading-section'>Librarian Form Edit Table</h2>
                   <div className='admin-create'>
                     <Link to='#' className='links'>
                       user
                     </Link>
                     <RxSlash />
                     <Link to='' className='links'>
-                      accountants
+                      librarians
                     </Link>
                     <RxSlash />
                     <Link to='' className='actives'>
@@ -127,7 +127,7 @@ const AccountantEdit = () => {
                   </div>
                 </div>
 
-                {/* Accountant create form table*/}
+                {/* Librarian create form table*/}
                 <form className='form-card' onSubmit={handleSubmit}>
                   <div className='row justify-content-between text-left'>
                     <div className='form-group col-sm-6 flex-column d-flex'>
@@ -140,7 +140,7 @@ const AccountantEdit = () => {
                         name='first_name'
                         placeholder='Enter your first name'
                         onChange={handleChange}
-                        value={accountant?.first_name}
+                        value={librarian?.first_name}
                       />{' '}
                     </div>
                     <div className='form-group col-sm-6 flex-column d-flex'>
@@ -154,7 +154,7 @@ const AccountantEdit = () => {
                         name='last_name'
                         placeholder='Enter your last name'
                         onChange={handleChange}
-                        value={accountant?.last_name}
+                        value={librarian?.last_name}
                       />{' '}
                     </div>
                   </div>
@@ -170,7 +170,7 @@ const AccountantEdit = () => {
                         placeholder='Enter Your Email'
                         id='email'
                         onChange={handleChange}
-                        value={accountant?.email}
+                        value={librarian?.email}
                       />{' '}
                     </div>
                     <div className='form-group col-sm-6 flex-column d-flex'>
@@ -184,7 +184,7 @@ const AccountantEdit = () => {
                         placeholder='Enter Your Designation'
                         id='designation'
                         onChange={handleChange}
-                        value={accountant?.designation}
+                        value={librarian?.designation}
                       />{' '}
                     </div>
                   </div>
@@ -201,7 +201,7 @@ const AccountantEdit = () => {
                         placeholder='Enter Your Department'
                         id='department'
                         onChange={handleChange}
-                        value={accountant?.department}
+                        value={librarian?.department}
                       />{' '}
                     </div>
                     <div className='form-group col-sm-6 flex-column d-flex'>
@@ -212,7 +212,7 @@ const AccountantEdit = () => {
                       <select
                         name='gender'
                         className='form-select'
-                        value={accountant?.gender}
+                        value={librarian?.gender}
                         onChange={handleChange}
                       >
                         <option selected>Choose...</option>
@@ -234,7 +234,7 @@ const AccountantEdit = () => {
                         placeholder='Enter Your password'
                         id='password'
                         onChange={handleChange}
-                        value={accountant?.password}
+                        value={librarian?.password}
                       />{' '}
                     </div>
                     <div className='form-group col-sm-6 flex-column d-flex'>
@@ -247,7 +247,7 @@ const AccountantEdit = () => {
                         type='file'
                         name='image'
                         onChange={(e) => {
-                          setAccountant((value) => ({
+                          setLibrarian((value) => ({
                             ...value,
                             [e.target.name]: e.target.files[0],
                           }));
@@ -268,7 +268,7 @@ const AccountantEdit = () => {
                         placeholder='Enter Your user information'
                         id='user_information'
                         onChange={handleChange}
-                        value={accountant?.user_information}
+                        value={librarian?.user_information}
                       />{' '}
                     </div>
                   </div>
@@ -293,4 +293,4 @@ const AccountantEdit = () => {
   );
 };
 
-export default AccountantEdit;
+export default LibrarianEdit;

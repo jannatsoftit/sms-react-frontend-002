@@ -26,7 +26,12 @@ import TeacherEdit from "../Pages/Teacher/TeacherEdit/TeacherEdit";
 import AccountantList from "../Pages/Accountant/AccountantList/AccountantList";
 import AccountantCreate from "../Pages/Accountant/AccountantCreate/AccountantCreate";
 import AccountantShow from "../Pages/Accountant/AccountantShow/AccountantShow";
-import AccountantEdit from "../Pages/Accountant/AccountantEdit/AccountantEdit";
+import AccountantEdit from "../Pages/Accountant/AccountantEdit/AccountantEdit"; 
+
+import LibrarianList from "../Pages/Librarian/LibrarianList/LibrarianList";
+import LibrarianCreate from "../Pages/Librarian/LibrarianCreate/LibrarianCreate";
+import LibrarianShow from "../Pages/Librarian/LibrarianShow/LibrarianShow";
+import LibrarianEdit from "../Pages/Librarian/LibrarianEdit/LibrarianEdit";
 
 // import Student from './Components/Pages/Student/StudentList/StudentList';
 // import Examination from './Components/Pages/Examination/Examination';
@@ -173,6 +178,33 @@ const AuthRoutes = {
         },
       ],
       path: 'accountants',
+      
+    },
+    {
+      children: [
+        {
+          element: <LibrarianList />,
+          path: '',
+        },
+        {
+          element: <LibrarianCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <LibrarianShow />,
+              path: '',
+            },
+            {
+              element: <LibrarianEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':librarianId',
+        },
+      ],
+      path: 'librarians',
       
     },
   ]

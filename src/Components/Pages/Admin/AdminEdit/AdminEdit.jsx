@@ -36,7 +36,7 @@ const AdminEdit = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (confirm(`Are you sre you want to update your information?`)) {
+    if (confirm(`Are you sure you want to update your information?`)) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Create Successfully!!',
