@@ -55,29 +55,28 @@ export const SidebarData = [
   },
   {
     title: 'Examination',
-    path: '/examination',
     icon: <FaIcons.FaBook />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: 'Exam Category',
-        path: '/examination/exam-category',
+        path: '/examCategories',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Grades',
-        path: '/examination/grades',
+        path: '/grades',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Marks',
-        path: '/examination/marks',
+        path: '/marks',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Offline Exam',
-        path: '/examination/offline-exam',
+        path: '/offline-exams',
         icon: <IoIcons.IoIosPaper />,
       },
     ],

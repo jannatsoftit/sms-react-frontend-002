@@ -33,6 +33,10 @@ import LibrarianCreate from "../Pages/Librarian/LibrarianCreate/LibrarianCreate"
 import LibrarianShow from "../Pages/Librarian/LibrarianShow/LibrarianShow";
 import LibrarianEdit from "../Pages/Librarian/LibrarianEdit/LibrarianEdit";
 
+import ExamCategoryList from "../Pages/Examination/ExamCategory/ExamCategoryList/ExamCategoryList";
+import ExamCategoryCreate from "../Pages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate";
+import ExamCategoryEdit from "../Pages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit";
+
 // import Student from './Components/Pages/Student/StudentList/StudentList';
 // import Examination from './Components/Pages/Examination/Examination';
 // import Accountant from './Components/Pages/Accountant/Accountant';
@@ -205,6 +209,29 @@ const AuthRoutes = {
         },
       ],
       path: 'librarians',
+      
+    },
+    {
+      children: [
+        {
+          element: <ExamCategoryList />,
+          path: '',
+        },
+        {
+          element: <ExamCategoryCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <ExamCategoryEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':examCategoryId',
+        },
+      ],
+      path: 'examCategories',
       
     },
   ]
