@@ -37,6 +37,10 @@ import ExamCategoryList from "../Pages/Examination/ExamCategory/ExamCategoryList
 import ExamCategoryCreate from "../Pages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate";
 import ExamCategoryEdit from "../Pages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit";
 
+import GradeList from "../Pages/Examination/Grades/GradeList/GradeList";
+import GradeCreate from "../Pages/Examination/Grades/GradeCreate/GradeCreate";
+import GradeEdit from "../Pages/Examination/Grades/GradeEdit/GradeEdit";
+
 // import Student from './Components/Pages/Student/StudentList/StudentList';
 // import Examination from './Components/Pages/Examination/Examination';
 // import Accountant from './Components/Pages/Accountant/Accountant';
@@ -232,6 +236,29 @@ const AuthRoutes = {
         },
       ],
       path: 'examCategories',
+      
+    },
+    {
+      children: [
+        {
+          element: <GradeList />,
+          path: '',
+        },
+        {
+          element: <GradeCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <GradeEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':gradeId',
+        },
+      ],
+      path: 'grades',
       
     },
   ]
