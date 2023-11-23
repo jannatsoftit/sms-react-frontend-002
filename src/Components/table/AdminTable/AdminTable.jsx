@@ -128,7 +128,6 @@ const AdminTable = () => {
                               width='50px'
                               alt={record?.name}
                             />
-                            {/* <span>{admin?.image}</span> */}
                           </td>
                           <td>
                             <span>{record?.designation}</span>

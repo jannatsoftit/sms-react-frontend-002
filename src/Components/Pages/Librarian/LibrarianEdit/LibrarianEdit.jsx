@@ -136,8 +136,8 @@ const LibrarianEdit = () => {
                       </label>{' '}
                       <input
                         type='text'
-                        id='first_name'
                         name='first_name'
+                        id='first_name'
                         placeholder='Enter your first name'
                         onChange={handleChange}
                         value={librarian?.first_name}
