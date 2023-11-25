@@ -33,6 +33,7 @@ import LibrarianCreate from "../Pages/Librarian/LibrarianCreate/LibrarianCreate"
 import LibrarianShow from "../Pages/Librarian/LibrarianShow/LibrarianShow";
 import LibrarianEdit from "../Pages/Librarian/LibrarianEdit/LibrarianEdit";
 
+// Examination 
 import ExamCategoryList from "../Pages/Examination/ExamCategory/ExamCategoryList/ExamCategoryList";
 import ExamCategoryCreate from "../Pages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate";
 import ExamCategoryEdit from "../Pages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit";
@@ -45,6 +46,9 @@ import MarkList from "../Pages/Examination/Mark/MarkList/MarkList";
 import MarkCreate from "../Pages/Examination/Mark/MarkCreate/MarkCreate";
 import MarkEdit from "../Pages/Examination/Mark/MarkEdit/MarkEdit";
 
+import OfflineExamList from "../Pages/Examination/OfflineExam/OfflineExamList/OfflineExamList";
+import OfflineExamCreate from "../Pages/Examination/OfflineExam/OfflineExamCreate/OfflineExamCreate";
+import OfflineExamEdit from "../Pages/Examination/OfflineExam/OfflineExamEdit/OfflineExamEdit";
 
 // import Student from './Components/Pages/Student/StudentList/StudentList';
 // import Examination from './Components/Pages/Examination/Examination';
@@ -287,6 +291,29 @@ const AuthRoutes = {
         },
       ],
       path: 'marks',
+      
+    },
+    {
+      children: [
+        {
+          element: <OfflineExamList />,
+          path: '',
+        },
+        {
+          element: <OfflineExamCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <OfflineExamEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':offlineExamId',
+        },
+      ],
+      path: 'offlineExams',
       
     },
   ]
