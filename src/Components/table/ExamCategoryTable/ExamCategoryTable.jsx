@@ -4,17 +4,18 @@ import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
-const ExamCategoryTable = () => {   //ExamCategory examCategory examCategoryId
+const ExamCategoryTable = () => {
 
   // ExamCategory data
   const [examCategories, setExamCategories] = useState(null);
+  console.log(examCategories);
 
   // ExamCategory table reload state
   const [reload, setReload] = useState(0);
 
   // ExamCategory table pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 4;
+  const recordsPerPage = 2;
   const lastIndex = currentPage * recordsPerPage; //lastIndex = 2 (lastIndex = 2, if recordsPerPage = 2  and lastIndex = 4, if recordsPerPage = 3...)
   const firstIndex = lastIndex - recordsPerPage;  //firstIndex count kora hoy 2nd page theke...  //1st page record = recordsPerPage
   const records = examCategories?.slice(firstIndex, lastIndex);
@@ -77,7 +78,7 @@ const ExamCategoryTable = () => {   //ExamCategory examCategory examCategoryId
       .then((res) => res.json())
       .then((res) => {
         console.info(res);
-        setExamCategories(res.data.examCategories);
+        setExamCategories(res.data?.examCategories);
       })
       .catch((error) => {
         console.error(error);
@@ -115,6 +116,8 @@ const ExamCategoryTable = () => {   //ExamCategory examCategory examCategoryId
                     </tr>
                   </thead>
                   <tbody>
+                  {console.info(records)}
+
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>

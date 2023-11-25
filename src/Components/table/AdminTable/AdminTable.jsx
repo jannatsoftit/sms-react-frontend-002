@@ -76,7 +76,7 @@ const AdminTable = () => {
       .then((res) => res.json())
       .then((res) => {
         console.info(res);
-        setAdmins(res.data.admins);
+        setAdmins(res.data?.admins);
       })
       .catch((error) => {
         console.error(error);

@@ -37,9 +37,14 @@ import ExamCategoryList from "../Pages/Examination/ExamCategory/ExamCategoryList
 import ExamCategoryCreate from "../Pages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate";
 import ExamCategoryEdit from "../Pages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit";
 
-import GradeList from "../Pages/Examination/Grades/GradeList/GradeList";
-import GradeCreate from "../Pages/Examination/Grades/GradeCreate/GradeCreate";
-import GradeEdit from "../Pages/Examination/Grades/GradeEdit/GradeEdit";
+import GradeList from "../Pages/Examination/Grade/GradeList/GradeList";
+import GradeCreate from "../Pages/Examination/Grade/GradeCreate/GradeCreate";
+import GradeEdit from "../Pages/Examination/Grade/GradeEdit/GradeEdit";
+
+import MarkList from "../Pages/Examination/Mark/MarkList/MarkList";
+import MarkCreate from "../Pages/Examination/Mark/MarkCreate/MarkCreate";
+import MarkEdit from "../Pages/Examination/Mark/MarkEdit/MarkEdit";
+
 
 // import Student from './Components/Pages/Student/StudentList/StudentList';
 // import Examination from './Components/Pages/Examination/Examination';
@@ -259,6 +264,29 @@ const AuthRoutes = {
         },
       ],
       path: 'grades',
+      
+    },
+    {
+      children: [
+        {
+          element: <MarkList />,
+          path: '',
+        },
+        {
+          element: <MarkCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <MarkEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':markId',
+        },
+      ],
+      path: 'marks',
       
     },
   ]

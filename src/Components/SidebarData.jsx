@@ -65,18 +65,18 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: 'Grades',
+        title: 'Grade',
         path: '/grades',
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: 'Marks',
+        title: 'Mark',
         path: '/marks',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Offline Exam',
-        path: '/offline-exams',
+        path: '/offlineExams',
         icon: <IoIcons.IoIosPaper />,
       },
     ],

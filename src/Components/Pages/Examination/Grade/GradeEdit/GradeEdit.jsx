@@ -6,6 +6,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const GradeEdit = () => {
+  
   const navigate = useNavigate();
 
   const { gradeId } = useParams();
@@ -22,7 +23,7 @@ const GradeEdit = () => {
     setGrade({
       ...grade,
       [name]: value,
-    });
+    })
   };
 
   // grade data update function
