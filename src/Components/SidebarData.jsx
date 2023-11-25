@@ -83,34 +83,28 @@ export const SidebarData = [
   },
   {
     title: 'Academic',
-    path: '/academic',
     icon: <IoIcons.IoMdSchool />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: 'Class Room',
-        path: '/academic/class-room',
+        path: '/class-rooms',
         icon: <SiIcons.SiGoogleclassroom />,
       },
       {
-        title: 'Class List',
-        path: '/academic/class-list',
-        icon: <IoIcons.IoIosPaper />,
-      },
-      {
         title: 'Subjects',
-        path: '/academic/subjects',
+        path: '/subjects',
         icon: <MdIcons.MdSubject />,
       },
       {
         title: 'Syllabus',
-        path: '/academic/syllabus',
+        path: '/syllabus',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Section',
-        path: '/academic/section',
+        path: '/sections',
         icon: <IoIcons.IoIosPaper />,
       },
     ],
