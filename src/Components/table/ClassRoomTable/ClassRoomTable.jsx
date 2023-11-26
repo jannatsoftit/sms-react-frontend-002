@@ -13,7 +13,7 @@ const ClassRoomTable = () => {
 
   // ClassRoom table pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 2;
+  const recordsPerPage = 4;
   const lastIndex = currentPage * recordsPerPage; //lastIndex = 2 (lastIndex = 2, if recordsPerPage = 2  and lastIndex = 4, if recordsPerPage = 3...)
   const firstIndex = lastIndex - recordsPerPage; //firstIndex count kora hoy 2nd page theke...  //1st page record = recordsPerPage
   const records = classRooms?.slice(firstIndex, lastIndex);
@@ -107,13 +107,11 @@ const ClassRoomTable = () => {
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Student Name</th>
-                      <th>Total Marks</th>
-                      <th>Grade Point</th>
-                      <th>Class name</th>
-                      <th>Letter Grade</th>
-                      <th>Section</th>
-                      <th>Comment</th>
+                      <th>Room Name</th>
+                      <th>Room Number</th>
+                      <th>Building Name</th>
+                      <th>Area</th>
+                      <th>Total Room</th>
                       <th>Options</th>
                     </tr>
                   </thead>
@@ -127,25 +125,19 @@ const ClassRoomTable = () => {
                             <span>{record?.id}</span>
                           </td>
                           <td>
-                            <span>{record?.student_name}</span>
+                            <span>{record?.class_room_name}</span>
                           </td>
                           <td>
-                            <span>{record?.total_marks}</span>
+                            <span>{record?.room_number}</span>
                           </td>
                           <td>
-                            <span>{record?.grade_point}</span>
+                            <span>{record?.building_name}</span>
                           </td>
                           <td>
-                            <span>{record?.class_name}</span>
+                            <span>{record?.area}</span>
                           </td>
                           <td>
-                            <span>{record?.letter_grade}</span>
-                          </td>
-                          <td>
-                            <span>{record?.section}</span>
-                          </td>
-                          <td>
-                            <span>{record?.comment}</span>
+                            <span>{record?.total_room}</span>
                           </td>
                           <td>
                             <div className='dropdown'>

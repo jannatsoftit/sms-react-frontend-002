@@ -50,10 +50,10 @@ import OfflineExamList from "../Pages/Examination/OfflineExam/OfflineExamList/Of
 import OfflineExamCreate from "../Pages/Examination/OfflineExam/OfflineExamCreate/OfflineExamCreate";
 import OfflineExamEdit from "../Pages/Examination/OfflineExam/OfflineExamEdit/OfflineExamEdit";
 
-// Academic
-import ClassRoomList from "../Pages/Examination/ClassRoom/ClassRoomList/ClassRoomList";
-import ClassRoomCreate from "../Pages/Examination/ClassRoom/ClassRoomCreate/ClassRoomCreate";
-import ClassRoomEdit from "../Pages/Examination/ClassRoom/ClassRoomEdit/ClassRoomEdit";
+//Academic
+import ClassRoomList from "../Pages/Academic/ClassRoom/ClassRoomList/ClassRoomList";
+import ClassRoomCreate from "../Pages/Academic/ClassRoom/ClassRoomCreate/ClassRoomCreate";
+import ClassRoomEdit from "../Pages/Academic/ClassRoom/ClassRoomEdit/ClassRoomEdit";
 
 
 // import Student from './Components/Pages/Student/StudentList/StudentList';

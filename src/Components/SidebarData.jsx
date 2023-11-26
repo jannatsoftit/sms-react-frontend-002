@@ -89,7 +89,7 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Class Room',
-        path: '/class-rooms',
+        path: '/classRooms',
         icon: <SiIcons.SiGoogleclassroom />,
       },
       {
