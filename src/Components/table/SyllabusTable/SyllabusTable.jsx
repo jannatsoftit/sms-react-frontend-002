@@ -104,6 +104,9 @@ const SyllabusTable = () => { //Syllabus
           <div className='row admin_table'>
             <div className='col-md-12'>
               <div className='table-wrap'>
+                <div>
+                  <h2 style={{display: 'flex', justifyContent: 'center'}}><bold>Syllabus For Class IX & X</bold></h2>
+                </div>
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
