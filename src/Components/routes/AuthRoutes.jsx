@@ -55,6 +55,9 @@ import ClassRoomList from "../Pages/Academic/ClassRoom/ClassRoomList/ClassRoomLi
 import ClassRoomCreate from "../Pages/Academic/ClassRoom/ClassRoomCreate/ClassRoomCreate";
 import ClassRoomEdit from "../Pages/Academic/ClassRoom/ClassRoomEdit/ClassRoomEdit";
 
+import SubjectList from "../Pages/Academic/Subject/SubjectList/SubjectList";
+import SubjectCreate from "../Pages/Academic/Subject/SubjectCreate/SubjectCreate";
+import SubjectEdit from "../Pages/Academic/Subject/SubjectEdit/SubjectEdit";
 
 // import Student from './Components/Pages/Student/StudentList/StudentList';
 // import Examination from './Components/Pages/Examination/Examination';
@@ -343,6 +346,29 @@ const AuthRoutes = {
         },
       ],
       path: 'classRooms',
+      
+    },
+    {
+      children: [
+        {
+          element: <SubjectList />,
+          path: '',
+        },
+        {
+          element: <SubjectCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <SubjectEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':subjectId',
+        },
+      ],
+      path: 'subjects',
       
     },
   ]
