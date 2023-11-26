@@ -103,8 +103,8 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: 'Section',
-        path: '/sections',
+        title: 'Class Routine',
+        path: '/classRoutines',
         icon: <IoIcons.IoIosPaper />,
       },
     ],

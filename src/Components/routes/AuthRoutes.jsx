@@ -65,6 +65,10 @@ import SyllabusCreate from "../Pages/Academic/Syllabus/SyllabusCreate/SyllabusCr
 import SyllabusEdit from "../Pages/Academic/Syllabus/SyllabusEdit/SyllabusEdit";
 import SyllabusList from "../Pages/Academic/Syllabus/SyllabusList/SyllabusList";
 
+import ClassRoutineCreate from "../Pages/Academic/ClassRoutine/ClassRoutineCreate/ClassRoutineCreate";
+import ClassRoutineEdit from "../Pages/Academic/ClassRoutine/ClassRoutineEdit/ClassRoutineEdit";
+import ClassRoutineList from "../Pages/Academic/ClassRoutine/ClassRoutineList/ClassRoutineList"; 
+
 
 
 const AuthRoutes = {
@@ -394,6 +398,29 @@ const AuthRoutes = {
         },
       ],
       path: 'syllabuses',
+      
+    },
+    {
+      children: [
+        {
+          element: <ClassRoutineList />,
+          path: '',
+        },
+        {
+          element: <ClassRoutineCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <ClassRoutineEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':classRoutineId',
+        },
+      ],
+      path: 'classRoutines',
       
     },
   ]
