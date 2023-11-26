@@ -99,7 +99,7 @@ export const SidebarData = [
       },
       {
         title: 'Syllabus',
-        path: '/syllabus',
+        path: '/syllabuses',
         icon: <IoIcons.IoIosPaper />,
       },
       {

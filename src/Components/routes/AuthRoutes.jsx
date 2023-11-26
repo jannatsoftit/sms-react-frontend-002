@@ -1,69 +1,71 @@
 //import React from "react";
 
+// Dashboard
 import Dashboard from '../Pages/Dashboard/Dashboard';
 
-import AdminList from "../Pages/Admin/AdminList/AdminList";
+// User
 import AdminCreate from "../Pages/Admin/AdminCreate/AdminCreate";
-import AdminShow from "../Pages/Admin/AdminShow/AdminShow";
 import AdminEdit from "../Pages/Admin/AdminEdit/AdminEdit";
+import AdminList from "../Pages/Admin/AdminList/AdminList";
+import AdminShow from "../Pages/Admin/AdminShow/AdminShow";
 
-import StudentList from "../Pages/Student/StudentList/StudentList";
 import StudentCreate from "../Pages/Student/StudentCreate/StudentCreate";
-import StudentShow from "../Pages/Student/StudentShow/StudentShow";
 import StudentEdit from "../Pages/Student/StudentEdit/StudentEdit";
+import StudentList from "../Pages/Student/StudentList/StudentList";
+import StudentShow from "../Pages/Student/StudentShow/StudentShow";
 
-import ParentList from "../Pages/Parent/ParentList/ParentList";
 import ParentCreate from "../Pages/Parent/ParentCreate/ParentCreate";
-import ParentShow from "../Pages/Parent/ParentShow/ParentShow";
 import ParentEdit from "../Pages/Parent/ParentEdit/ParentEdit";
+import ParentList from "../Pages/Parent/ParentList/ParentList";
+import ParentShow from "../Pages/Parent/ParentShow/ParentShow";
 
 
-import TeacherList from "../Pages/Teacher/TeacherList/TeacherList";
 import TeacherCreate from "../Pages/Teacher/TeacherCreate/TeacherCreate";
-import TeacherShow from "../Pages/Teacher/TeacherShow/TeacherShow";
 import TeacherEdit from "../Pages/Teacher/TeacherEdit/TeacherEdit";
+import TeacherList from "../Pages/Teacher/TeacherList/TeacherList";
+import TeacherShow from "../Pages/Teacher/TeacherShow/TeacherShow";
 
-import AccountantList from "../Pages/Accountant/AccountantList/AccountantList";
 import AccountantCreate from "../Pages/Accountant/AccountantCreate/AccountantCreate";
-import AccountantShow from "../Pages/Accountant/AccountantShow/AccountantShow";
 import AccountantEdit from "../Pages/Accountant/AccountantEdit/AccountantEdit"; 
+import AccountantList from "../Pages/Accountant/AccountantList/AccountantList";
+import AccountantShow from "../Pages/Accountant/AccountantShow/AccountantShow";
 
-import LibrarianList from "../Pages/Librarian/LibrarianList/LibrarianList";
 import LibrarianCreate from "../Pages/Librarian/LibrarianCreate/LibrarianCreate";
-import LibrarianShow from "../Pages/Librarian/LibrarianShow/LibrarianShow";
 import LibrarianEdit from "../Pages/Librarian/LibrarianEdit/LibrarianEdit";
+import LibrarianList from "../Pages/Librarian/LibrarianList/LibrarianList";
+import LibrarianShow from "../Pages/Librarian/LibrarianShow/LibrarianShow";
 
 // Examination 
-import ExamCategoryList from "../Pages/Examination/ExamCategory/ExamCategoryList/ExamCategoryList";
 import ExamCategoryCreate from "../Pages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate";
 import ExamCategoryEdit from "../Pages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit";
+import ExamCategoryList from "../Pages/Examination/ExamCategory/ExamCategoryList/ExamCategoryList";
 
-import GradeList from "../Pages/Examination/Grade/GradeList/GradeList";
 import GradeCreate from "../Pages/Examination/Grade/GradeCreate/GradeCreate";
 import GradeEdit from "../Pages/Examination/Grade/GradeEdit/GradeEdit";
+import GradeList from "../Pages/Examination/Grade/GradeList/GradeList";
 
-import MarkList from "../Pages/Examination/Mark/MarkList/MarkList";
 import MarkCreate from "../Pages/Examination/Mark/MarkCreate/MarkCreate";
 import MarkEdit from "../Pages/Examination/Mark/MarkEdit/MarkEdit";
+import MarkList from "../Pages/Examination/Mark/MarkList/MarkList";
 
-import OfflineExamList from "../Pages/Examination/OfflineExam/OfflineExamList/OfflineExamList";
 import OfflineExamCreate from "../Pages/Examination/OfflineExam/OfflineExamCreate/OfflineExamCreate";
 import OfflineExamEdit from "../Pages/Examination/OfflineExam/OfflineExamEdit/OfflineExamEdit";
+import OfflineExamList from "../Pages/Examination/OfflineExam/OfflineExamList/OfflineExamList";
 
 //Academic
-import ClassRoomList from "../Pages/Academic/ClassRoom/ClassRoomList/ClassRoomList";
 import ClassRoomCreate from "../Pages/Academic/ClassRoom/ClassRoomCreate/ClassRoomCreate";
 import ClassRoomEdit from "../Pages/Academic/ClassRoom/ClassRoomEdit/ClassRoomEdit";
+import ClassRoomList from "../Pages/Academic/ClassRoom/ClassRoomList/ClassRoomList";
 
-import SubjectList from "../Pages/Academic/Subject/SubjectList/SubjectList";
 import SubjectCreate from "../Pages/Academic/Subject/SubjectCreate/SubjectCreate";
 import SubjectEdit from "../Pages/Academic/Subject/SubjectEdit/SubjectEdit";
+import SubjectList from "../Pages/Academic/Subject/SubjectList/SubjectList";
 
-// import Student from './Components/Pages/Student/StudentList/StudentList';
-// import Examination from './Components/Pages/Examination/Examination';
-// import Accountant from './Components/Pages/Accountant/Accountant';
-// import Admission from './Components/Pages/Admission/Admission';
-// import Academic from './Components/Pages/Academic/Academic';  
+import SyllabusCreate from "../Pages/Academic/Syllabus/SyllabusCreate/SyllabusCreate";
+import SyllabusEdit from "../Pages/Academic/Syllabus/SyllabusEdit/SyllabusEdit";
+import SyllabusList from "../Pages/Academic/Syllabus/SyllabusList/SyllabusList";
+
+
 
 const AuthRoutes = {
   children: [
@@ -369,6 +371,29 @@ const AuthRoutes = {
         },
       ],
       path: 'subjects',
+      
+    },
+    {
+      children: [
+        {
+          element: <SyllabusList />,
+          path: '',
+        },
+        {
+          element: <SyllabusCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <SyllabusEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':syllabusId',
+        },
+      ],
+      path: 'syllabuses',
       
     },
   ]
