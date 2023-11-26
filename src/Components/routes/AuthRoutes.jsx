@@ -25,7 +25,7 @@ import TeacherEdit from "../Pages/Teacher/TeacherEdit/TeacherEdit";
 import TeacherList from "../Pages/Teacher/TeacherList/TeacherList";
 import TeacherShow from "../Pages/Teacher/TeacherShow/TeacherShow";
 
-import AccountantCreate from "../Pages/Accountant/AccountantCreate/AccountantCreate";
+import AccountantCreate from "../Pages/Accountant/StudentFee/StudentFeeCreate";
 import AccountantEdit from "../Pages/Accountant/AccountantEdit/AccountantEdit"; 
 import AccountantList from "../Pages/Accountant/AccountantList/AccountantList";
 import AccountantShow from "../Pages/Accountant/AccountantShow/AccountantShow";
@@ -63,11 +63,16 @@ import SubjectList from "../Pages/Academic/Subject/SubjectList/SubjectList";
 
 import SyllabusCreate from "../Pages/Academic/Syllabus/SyllabusCreate/SyllabusCreate";
 import SyllabusEdit from "../Pages/Academic/Syllabus/SyllabusEdit/SyllabusEdit";
-import SyllabusList from "../Pages/Academic/Syllabus/SyllabusList/SyllabusList";
+import SyllabusList from "../Pages/Academic/Syllabus/SyllabusList/SyllabusList"; 
 
 import ClassRoutineCreate from "../Pages/Academic/ClassRoutine/ClassRoutineCreate/ClassRoutineCreate";
 import ClassRoutineEdit from "../Pages/Academic/ClassRoutine/ClassRoutineEdit/ClassRoutineEdit";
 import ClassRoutineList from "../Pages/Academic/ClassRoutine/ClassRoutineList/ClassRoutineList"; 
+
+// Accountant
+import StudentFeeCreate from "../Pages/Accountant/StudentFee/StudentFeeCreate/StudentFeeCreate";
+import StudentFeeEdit from "../Pages/Accountant/StudentFee/StudentFeeEdit/StudentFeeEdit";
+import StudentFeeList from "../Pages/Accountant/StudentFee/StudentFeeList/StudentFeeList";
 
 
 
@@ -401,7 +406,7 @@ const AuthRoutes = {
       
     },
     {
-      children: [
+      children: [ 
         {
           element: <ClassRoutineList />,
           path: '',
@@ -421,6 +426,29 @@ const AuthRoutes = {
         },
       ],
       path: 'classRoutines',
+      
+    },
+    {
+      children: [
+        {
+          element: <StudentFeeList />,
+          path: '',
+        },
+        {
+          element: <StudentFeeCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <StudentFeeEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':studentFeeId',
+        },
+      ],
+      path: 'studentFees',
       
     },
   ]

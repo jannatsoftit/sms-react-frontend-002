@@ -111,14 +111,13 @@ export const SidebarData = [
   },
   {
     title: 'Accountant',
-    path: '/accountant',
     icon: <FaIcons.FaMoneyCheckAlt />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: 'Student Fee',
-        path: '/accountant/student-fee',
+        path: '/studentFees',
         icon: <BiIcons.BiMoney />,
       },
       {
@@ -130,19 +129,18 @@ export const SidebarData = [
   },
   {
     title: 'Settings',
-    path: '/settings',
     icon: <AiIcons.AiFillSetting />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: 'School Info',
-        path: '/Settings/school-info',
+        path: '/schoolInfo',
         icon: <BsIcons.BsInfoCircleFill />,
       },
       {
         title: 'Logout',
-        path: '/Settings/logout',
+        path: '/logout',
         icon: <RiIcons.RiLogoutCircleFill />,
       },
     ],

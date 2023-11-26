@@ -4,7 +4,7 @@ import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
-const ClassRoutineForm = () => {
+const StudentFeeForm = () => {
   const navigate = useNavigate();
 
   const [formErrors, setFormErrors] = useState({});
@@ -12,11 +12,12 @@ const ClassRoutineForm = () => {
   const [isSubmit, setIsSubmit] = useState(false);
 
   const [inputFields, setInputFields] = useState({
-    day: '',
-    class_name: '',
-    subject_name: '',
-    paper: '',
-    class_time: '',
+    invoice_no: '',
+    student: '',
+    invoice_title: '',
+    total_amount: '',
+    paid_amount: '',
+    status: '',
   });
 
   const handleChange = (e) => {
@@ -35,23 +36,24 @@ const ClassRoutineForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/classRoutines', { replace: true });
+      navigate('/studentFees', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);
 
-  // ClassRoutine data create function
+  // StudentFee data create function
   const handelSubmit = (e) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('day', inputFields.day);
-    formData.append('class_name', inputFields.class_name);
-    formData.append('subject_name', inputFields.subject_name);
-    formData.append('paper', inputFields.paper);
-    formData.append('class_time', inputFields.class_time);
+    formData.append('invoice_no', inputFields.invoice_no);
+    formData.append('student', inputFields.student);
+    formData.append('invoice_title', inputFields.invoice_title);
+    formData.append('total_amount', inputFields.total_amount);
+    formData.append('paid_amount', inputFields.paid_amount);
+    formData.append('status', inputFields.status);
 
-    fetch(`http://127.0.0.1:8000/api/classRoutines`, {
+    fetch(`http://127.0.0.1:8000/api/studentFees`, {
       body: formData,
       headers: {
         Accept: 'application/json',
@@ -73,23 +75,27 @@ const ClassRoutineForm = () => {
   const validate = (values) => {
     const errors = {};
 
-    if (!values.subject_name) {
-      errors.subject_name = 'subject name required';
+    if (!values.invoice_no) {
+      errors.invoice_no = 'invoice no required';
     }
 
-    if (!values.day) {
-      errors.day = 'day required';
+    if (!values.student) {
+      errors.student = 'student required';
     }
 
-    if (!values.class_name) {
-      errors.class_name = 'class name required';
+    if (!values.invoice_title) {
+      errors.invoice_title = 'invoice title required';
     }
-    if (!values.paper) {
-      errors.paper = 'paper is required';
+    if (!values.total_amount) {
+      errors.total_amount = 'total amount is required';
     }
 
-    if (!values.class_time) {
-      errors.class_time = 'class time is required';
+    if (!values.paid_amount) {
+      errors.paid_amount = 'paid amount is required';
+    }
+
+    if (!values.status) {
+      errors.status = 'status is required';
     }
 
     return errors;
@@ -101,16 +107,16 @@ const ClassRoutineForm = () => {
         <div className='row d-flex justify-content-center'>
           <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
             <div className='card'>
-              {/* ClassRoutine create form title section */}
+              {/* studentFee create form title section */}
               <div className='col-md-6 text-center mb-5'>
-                <h2 className='heading-section'>Class Routine Form Table</h2>
+                <h2 className='heading-section'>Student Fee Form Table</h2>
                 <div className='admin-create'>
                   <Link to='#' className='links'>
                     user
                   </Link>
                   <RxSlash />
                   <Link to='' className='links'>
-                    class-routine
+                    student-fee
                   </Link>
                   <RxSlash />
                   <Link to='' className='actives'>
@@ -119,25 +125,25 @@ const ClassRoutineForm = () => {
                 </div>
               </div>
 
-              {/* ClassRoutine create form table*/}
+              {/* studentFee create form table*/}
               <form className='form-card' onSubmit={handelSubmit}>
                 <div className='row justify-content-between text-left'>
                 <div className='form-group col-sm-6 flex-column d-flex'>
                     {' '}
                     <label className='form-label px-3'>
-                      Class Name<span className='text-danger'> *</span>
+                      Invoice No<span className='text-danger'> *</span>
                     </label>{' '}
                     <input
                       type='text'
-                      name='class_name'
-                      placeholder='Enter class name'
-                      id='class_name'
+                      name='invoice_no'
+                      placeholder='Enter invoice no'
+                      id='invoice_no'
                       onChange={handleChange}
-                      value={inputFields.class_name}
+                      value={inputFields.invoice_no}
                     />{' '}
-                    {formErrors.class_name && (
+                    {formErrors.invoice_no && (
                       <span style={{ color: '#e74c3c' }}>
-                        {formErrors.class_name}
+                        {formErrors.invoice_no}
                       </span>
                     )}
                   </div>
@@ -145,19 +151,19 @@ const ClassRoutineForm = () => {
                   <div className='form-group col-sm-6 flex-column d-flex'>
                     {' '}
                     <label className='form-label px-3'>
-                      Subject Name <span className='text-danger'> *</span>
+                      Student Name <span className='text-danger'> *</span>
                     </label>{' '}
                     <input
                       type='text'
-                      name='subject_name'
-                      placeholder='Enter subject name'
-                      id='subject_name'
+                      name='student'
+                      placeholder='Enter student'
+                      id='student'
                       onChange={handleChange}
-                      value={inputFields.subject_name}
+                      value={inputFields.student}
                     />{' '}
-                    {formErrors.subject_name && (
+                    {formErrors.student && (
                       <span style={{ color: '#e74c3c' }}>
-                        {formErrors.subject_name}
+                        {formErrors.student}
                       </span>
                     )}
                   </div>    
@@ -167,38 +173,38 @@ const ClassRoutineForm = () => {
                   <div className='form-group col-sm-6 flex-column d-flex'>
                     {' '}
                     <label className='form-label px-3'>
-                      Day<span className='text-danger'> *</span>
+                      Invoice Title<span className='text-danger'> *</span>
                     </label>{' '}
                     <input
                       type='text'
-                      name='day'
-                      placeholder='Enter day'
-                      id='day'
+                      name='invoice_title'
+                      placeholder='Enter invoice title'
+                      id='invoice_title'
                       onChange={handleChange}
-                      value={inputFields.day}
+                      value={inputFields.invoice_title}
                     />{' '}
-                    {formErrors.day && (
+                    {formErrors.invoice_title && (
                       <span style={{ color: '#e74c3c' }}>
-                        {formErrors.day}
+                        {formErrors.invoice_title}
                       </span>
                     )}
                   </div>
                   <div className='form-group col-sm-6 flex-column d-flex'>
                     {' '}
                     <label className='form-label px-3'>
-                      Paper<span className='text-danger'> *</span>
+                     Total Amount<span className='text-danger'> *</span>
                     </label>{' '}
                     <input
                       type='text'
-                      name='paper'
-                      placeholder='Enter paper'
-                      id='paper'
+                      name='total_amount'
+                      placeholder='Enter total_amount'
+                      id='total_amount'
                       onChange={handleChange}
-                      value={inputFields.paper}
+                      value={inputFields.total_amount}
                     />{' '}
-                    {formErrors.paper && (
+                    {formErrors.total_amount && (
                       <span style={{ color: '#e74c3c' }}>
-                        {formErrors.paper}
+                        {formErrors.total_amount}
                       </span>
                     )}
                   </div>
@@ -208,19 +214,38 @@ const ClassRoutineForm = () => {
                   <div className='form-group col-sm-6 flex-column d-flex'>
                     {' '}
                     <label className='form-label px-3'>
-                      Class Time<span className='text-danger'> *</span>
+                      Paid Amount<span className='text-danger'> *</span>
                     </label>{' '}
                     <input
                       type='text'
-                      name='class_time'
-                      placeholder='Enter class time'
-                      id='class_time'
+                      name='paid_amount'
+                      placeholder='Enter paid amount'
+                      id='paid_amount'
                       onChange={handleChange}
-                      value={inputFields.class_time}
+                      value={inputFields.paid_amount}
                     />{' '}
-                    {formErrors.class_time && (
+                    {formErrors.paid_amount && (
                       <span style={{ color: '#e74c3c' }}>
-                        {formErrors.class_time}
+                        {formErrors.paid_amount}
+                      </span>
+                    )}
+                  </div>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-label px-3'>
+                      Status<span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='text'
+                      name='status'
+                      placeholder='Enter status'
+                      id='status'
+                      onChange={handleChange}
+                      value={inputFields.status}
+                    />{' '}
+                    {formErrors.status && (
+                      <span style={{ color: '#e74c3c' }}>
+                        {formErrors.status}
                       </span>
                     )}
                   </div>
@@ -242,4 +267,4 @@ const ClassRoutineForm = () => {
   );
 };
 
-export default ClassRoutineForm;
+export default StudentFeeForm;
