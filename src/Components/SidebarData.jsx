@@ -110,7 +110,7 @@ export const SidebarData = [
     ],
   },
   {
-    title: 'Accountant',
+    title: 'Accountants',
     icon: <FaIcons.FaMoneyCheckAlt />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,

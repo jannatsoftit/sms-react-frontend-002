@@ -25,7 +25,7 @@ import TeacherEdit from "../Pages/Teacher/TeacherEdit/TeacherEdit";
 import TeacherList from "../Pages/Teacher/TeacherList/TeacherList";
 import TeacherShow from "../Pages/Teacher/TeacherShow/TeacherShow";
 
-import AccountantCreate from "../Pages/Accountant/StudentFee/StudentFeeCreate";
+import AccountantCreate from "../Pages/Accountant/AccountantCreate/AccountantCreate";
 import AccountantEdit from "../Pages/Accountant/AccountantEdit/AccountantEdit"; 
 import AccountantList from "../Pages/Accountant/AccountantList/AccountantList";
 import AccountantShow from "../Pages/Accountant/AccountantShow/AccountantShow";
@@ -70,9 +70,9 @@ import ClassRoutineEdit from "../Pages/Academic/ClassRoutine/ClassRoutineEdit/Cl
 import ClassRoutineList from "../Pages/Academic/ClassRoutine/ClassRoutineList/ClassRoutineList"; 
 
 // Accountant
-import StudentFeeCreate from "../Pages/Accountant/StudentFee/StudentFeeCreate/StudentFeeCreate";
-import StudentFeeEdit from "../Pages/Accountant/StudentFee/StudentFeeEdit/StudentFeeEdit";
-import StudentFeeList from "../Pages/Accountant/StudentFee/StudentFeeList/StudentFeeList";
+import StudentFeeCreate from "../Pages/StudentFee/StudentFeeCreate/StudentFeeCreate";
+import StudentFeeEdit from "../Pages/StudentFee/StudentFeeEdit/StudentFeeEdit";
+import StudentFeeList from "../Pages/StudentFee/StudentFeeList/StudentFeeList";
 
 
 

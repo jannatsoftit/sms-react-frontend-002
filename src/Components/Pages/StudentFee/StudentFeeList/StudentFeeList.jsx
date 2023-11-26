@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import StudentFeeTable from '../../../../table/StudentFeeTable/StudentFeeTable';
+import StudentFeeTable from '../../../../Components/table/StudentFeeTable/StudentFeeTable';
 
 const StudentFeeList = () => {
   return (
