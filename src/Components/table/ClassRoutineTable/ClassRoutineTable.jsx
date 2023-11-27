@@ -110,7 +110,6 @@ const ClassRoutineTable = () => {
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Day</th>
                       <th>Class Name</th>
                       <th>Subject Name</th>
@@ -124,9 +123,6 @@ const ClassRoutineTable = () => {
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.id}</span>
-                          </td>
                           <td>
                             <span>{record?.day}</span>
                           </td>

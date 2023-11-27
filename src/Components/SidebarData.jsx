@@ -135,7 +135,7 @@ export const SidebarData = [
     subNav: [
       {
         title: 'School Info',
-        path: '/schoolInfo',
+        path: '/schools',
         icon: <BsIcons.BsInfoCircleFill />,
       },
       {

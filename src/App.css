@@ -10924,7 +10924,10 @@ h5,
 }
 .table thead th {
   border: none;
-  padding: 30px;
+  /* padding: 30px; */
+  padding-left: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-size: 16px;
   font-weight: bold;
   color: black;
@@ -10943,7 +10946,11 @@ h5,
 .table tbody th,
 .table tbody td {
   border: none;
-  padding: 30px;
+  /* padding: 30px; */
+  /* padding-right: ; */
+  padding-left: 60px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   font-size: 14px;
   background: #fff;
   vertical-align: middle;

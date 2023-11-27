@@ -108,7 +108,6 @@ const ExamCategoryTable = () => {
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Exam Type</th>
                       <th>Class name</th>
                       <th>Section name</th>
@@ -121,9 +120,6 @@ const ExamCategoryTable = () => {
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.id}</span>
-                          </td>
                           <td>
                             <span>{record?.title}</span>
                           </td>

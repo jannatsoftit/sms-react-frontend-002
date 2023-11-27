@@ -106,7 +106,6 @@ const ExpanseCategoryTable = () => {
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Expanse Category Name</th>
                       <th>Options</th>
                     </tr>
@@ -116,9 +115,6 @@ const ExpanseCategoryTable = () => {
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.id}</span>
-                          </td>
                           <td>
                             <span>{record?.name}</span>
                           </td>

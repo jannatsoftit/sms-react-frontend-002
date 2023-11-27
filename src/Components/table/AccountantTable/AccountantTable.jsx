@@ -107,7 +107,7 @@ const AccountantTable = () => {
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
+                      {/* <th>ID</th> */}
                       <th>Image</th>
                       <th>Designation</th>
                       <th>Email</th>
@@ -119,9 +119,9 @@ const AccountantTable = () => {
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
+                          {/* <td>
                             <span>{record?.id}</span>
-                          </td>
+                          </td> */}
                           <td>
                             <img
                               className='rounded-circle'

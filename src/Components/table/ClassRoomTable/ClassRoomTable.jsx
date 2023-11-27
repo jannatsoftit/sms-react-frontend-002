@@ -106,7 +106,6 @@ const ClassRoomTable = () => {
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Room Name</th>
                       <th>Room Number</th>
                       <th>Building Name</th>
@@ -121,9 +120,6 @@ const ClassRoomTable = () => {
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.id}</span>
-                          </td>
                           <td>
                             <span>{record?.class_room_name}</span>
                           </td>

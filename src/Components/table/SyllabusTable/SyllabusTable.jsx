@@ -110,7 +110,6 @@ const SyllabusTable = () => { //Syllabus
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Class Name</th>
                       <th>Subject Name</th>
                       <th>Topic</th>
@@ -123,9 +122,6 @@ const SyllabusTable = () => { //Syllabus
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.id}</span>
-                          </td>
                           <td>
                             <span>{record?.class_name}</span>
                           </td>

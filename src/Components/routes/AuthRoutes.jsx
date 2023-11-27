@@ -78,6 +78,18 @@ import ExpanseCategoryCreate from "../Pages/ExpanseCategory/ExpanseCategoryCreat
 import ExpanseCategoryEdit from "../Pages/ExpanseCategory/ExpanseCategoryEdit/ExpanseCategoryEdit";
 import ExpanseCategoryList from "../Pages/ExpanseCategory/ExpanseCategoryList/ExpanseCategoryList"; 
 
+
+// Settings
+import SchoolList from "../Pages/School/SchoolList/SchoolList";
+import SchoolCreate from "../Pages/School/SchoolCreate/SchoolCreate";
+import SchoolEdit from "../Pages/School/SchoolEdit/SchoolEdit";
+import SchoolShow from "../Pages/School/SchoolShow/SchoolShow";
+
+
+
+
+
+
 const AuthRoutes = {
   children: [
     {
@@ -474,6 +486,33 @@ const AuthRoutes = {
         },
       ],
       path: 'expanseCategories',
+      
+    },
+    {
+      children: [
+        {
+          element: <SchoolList />,
+          path: '',
+        },
+        {
+          element: <SchoolCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <SchoolShow />,
+              path: '',
+            },
+            {
+              element: <SchoolEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':schoolId',
+        },
+      ],
+      path: 'schools',
       
     },
   ]

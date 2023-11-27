@@ -105,7 +105,6 @@ const ParentTable = () => {
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Image</th>
                       <th>Designation</th>
                       <th>Email</th>
@@ -117,9 +116,6 @@ const ParentTable = () => {
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.id}</span>
-                          </td>
                           <td>
                             <img
                               className='rounded-circle'

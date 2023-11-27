@@ -106,7 +106,6 @@ const OfflineExamTable = () => {
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Exam Name</th>
                       <th>Paper</th>
                       <th>Class Name</th>
@@ -127,9 +126,6 @@ const OfflineExamTable = () => {
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.id}</span>
-                          </td>
                           <td>
                             <span>{record?.exam_name}</span>
                           </td>

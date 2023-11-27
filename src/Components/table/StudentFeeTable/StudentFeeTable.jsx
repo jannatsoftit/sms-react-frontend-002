@@ -107,7 +107,6 @@ const StudentFeeTable = () => { //StudentFee
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Invoice No</th>
                       <th>Student</th>
                       <th>Invoice Title</th>
@@ -122,9 +121,6 @@ const StudentFeeTable = () => { //StudentFee
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.id}</span>
-                          </td>
                           <td>
                             <span>{record?.invoice_no}</span>
                           </td>

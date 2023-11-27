@@ -106,7 +106,6 @@ const GradeTable = () => {
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Grade point</th>
                       <th>Letter grade</th>
                       <th>Marks interval</th>
@@ -118,9 +117,6 @@ const GradeTable = () => {
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.id}</span>
-                          </td>
                           <td>
                             <span>{record?.grade_point}</span>
                           </td>

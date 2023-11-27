@@ -106,7 +106,6 @@ const MarkTable = () => {
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Student Name</th>
                       <th>Total Marks</th>
                       <th>Grade Point</th>
@@ -122,9 +121,6 @@ const MarkTable = () => {
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.id}</span>
-                          </td>
                           <td>
                             <span>{record?.student_name}</span>
                           </td>

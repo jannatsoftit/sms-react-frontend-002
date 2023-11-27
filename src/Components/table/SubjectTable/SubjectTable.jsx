@@ -107,7 +107,6 @@ const SubjectTable = () => {
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
-                      <th>ID</th>
                       <th>Subject Name</th>
                       <th>Class Name</th>
                       <th>Subject Code</th>
@@ -120,9 +119,6 @@ const SubjectTable = () => {
                     {records?.map((record, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.id}</span>
-                          </td>
                           <td>
                             <span>{record?.subject_name}</span>
                           </td>
