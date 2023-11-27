@@ -74,7 +74,9 @@ import StudentFeeCreate from "../Pages/StudentFee/StudentFeeCreate/StudentFeeCre
 import StudentFeeEdit from "../Pages/StudentFee/StudentFeeEdit/StudentFeeEdit";
 import StudentFeeList from "../Pages/StudentFee/StudentFeeList/StudentFeeList";
 
-
+import ExpanseCategoryCreate from "../Pages/ExpanseCategory/ExpanseCategoryCreate/ExpanseCategoryCreate";
+import ExpanseCategoryEdit from "../Pages/ExpanseCategory/ExpanseCategoryEdit/ExpanseCategoryEdit";
+import ExpanseCategoryList from "../Pages/ExpanseCategory/ExpanseCategoryList/ExpanseCategoryList"; 
 
 const AuthRoutes = {
   children: [
@@ -449,6 +451,29 @@ const AuthRoutes = {
         },
       ],
       path: 'studentFees',
+      
+    },
+    {
+      children: [
+        {
+          element: <ExpanseCategoryList />,
+          path: '',
+        },
+        {
+          element: <ExpanseCategoryCreate />,
+          path: 'create',
+        },
+        {
+          children: [
+            {
+              element: <ExpanseCategoryEdit />,
+              path: 'edit',
+            },
+          ],
+          path: ':expanseCategoryId',
+        },
+      ],
+      path: 'expanseCategories',
       
     },
   ]

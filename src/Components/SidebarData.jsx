@@ -110,7 +110,7 @@ export const SidebarData = [
     ],
   },
   {
-    title: 'Accountants',
+    title: 'Accountant',
     icon: <FaIcons.FaMoneyCheckAlt />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -122,7 +122,7 @@ export const SidebarData = [
       },
       {
         title: 'Expense Category',
-        path: '/accountant/expense-category',
+        path: '/expanseCategories',
         icon: <IoIcons.IoIosPaper />,
       },
     ],

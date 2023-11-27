@@ -7,7 +7,6 @@ const GradeTable = () => {
 
   // Grade data
   const [grades, setGrades] = useState(null);
-  console.log(grades);
 
   // Grade table reload state
   const [reload, setReload] = useState(0);
@@ -115,7 +114,6 @@ const GradeTable = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {console.info(records)}
 
                     {records?.map((record, i) => {
                       return (

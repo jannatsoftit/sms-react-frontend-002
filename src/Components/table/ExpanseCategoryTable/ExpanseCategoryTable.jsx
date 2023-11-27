@@ -1,25 +1,23 @@
-/* eslint-disable react/jsx-no-undef */
 import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
-const ExamCategoryTable = () => {
+const ExpanseCategoryTable = () => {
 
-  // ExamCategory data
-  const [examCategories, setExamCategories] = useState(null);
-  console.log(examCategories);
+  // ExpanseCategory data
+  const [expanseCategories, setExpanseCategories] = useState(null);
 
-  // ExamCategory table reload state
+  // ExpanseCategory table reload state
   const [reload, setReload] = useState(0);
 
-  // ExamCategory table pagination
+  // ExpanseCategory table pagination
   const [currentPage, setCurrentPage] = useState(1);
-  const recordsPerPage = 6;
+  const recordsPerPage = 4;
   const lastIndex = currentPage * recordsPerPage; //lastIndex = 2 (lastIndex = 2, if recordsPerPage = 2  and lastIndex = 4, if recordsPerPage = 3...)
   const firstIndex = lastIndex - recordsPerPage;  //firstIndex count kora hoy 2nd page theke...  //1st page record = recordsPerPage
-  const records = examCategories?.slice(firstIndex, lastIndex);
-  const nPage = Math.ceil((examCategories || []).length / recordsPerPage); // examCategories.length = 0,2,4,6,8....
+  const records = expanseCategories?.slice(firstIndex, lastIndex);
+  const nPage = Math.ceil((expanseCategories || []).length / recordsPerPage); // expanseCategories.length = 0,2,4,6,8....
   const numbers = [...Array(nPage + 1).keys()].slice(1);
 
   // handle prePage, nextPage and CurrentPage function
@@ -40,9 +38,9 @@ const ExamCategoryTable = () => {
     }
   };
 
-  //Exam Category data delete function
-  const handleDelete = (examCategory) => {
-    if (confirm(`Are You sure you want to delete exam category ${examCategory.id}?`)) {
+  //expanseCategory data delete function
+  const handleDelete = (expanseCategory) => {
+    if (confirm(`Are You sure you want to delete expanse category ${expanseCategory.id}?`)) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Delete Successfully!!',
@@ -50,7 +48,7 @@ const ExamCategoryTable = () => {
         confirmButtonText: 'Ok',
       });
 
-      fetch(`http://127.0.0.1:8000/api/examCategories/${examCategory.id}`, {
+      fetch(`http://127.0.0.1:8000/api/expanseCategories/${expanseCategory.id}`, {
         headers: {
           Accept: 'application/json',
         },
@@ -67,9 +65,9 @@ const ExamCategoryTable = () => {
     }
   };
 
-  //ExamCategory all data show in the table
+  //expanseCategory all data show in the table
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/examCategories?`, {
+    fetch(`http://127.0.0.1:8000/api/expanseCategories?`, {
       headers: {
         Accept: 'application/json',
       },
@@ -78,11 +76,11 @@ const ExamCategoryTable = () => {
       .then((res) => res.json())
       .then((res) => {
         console.info(res);
-        setExamCategories(res.data?.examCategories);
+        setExpanseCategories(res.data?.expanseCategories);
       })
       .catch((error) => {
         console.error(error);
-        setExamCategories(null);
+        setExpanseCategories(null);
       });
   }, [reload]);
 
@@ -91,14 +89,14 @@ const ExamCategoryTable = () => {
       <section className='ftco-section'>
         <div className='container'>
           <div className='col-md-6 text-center mb-5'>
-            <h2 className='heading-section'>Exam Category Table List</h2>
+            <h2 className='heading-section'>Expanse Category Table List</h2>
             <div className='admin'>
               <Link to='#' className='links'>
                 user
               </Link>
               <RxSlash />
               <Link to='' className='actives'>
-                exam-categories
+                expanse-categories
               </Link>
             </div>
           </div>
@@ -109,14 +107,11 @@ const ExamCategoryTable = () => {
                   <thead>
                     <tr>
                       <th>ID</th>
-                      <th>Exam Type</th>
-                      <th>Class name</th>
-                      <th>Section name</th>
+                      <th>Expanse Category Name</th>
                       <th>Options</th>
                     </tr>
                   </thead>
                   <tbody>
-                  {console.info(records)}
 
                     {records?.map((record, i) => {
                       return (
@@ -125,13 +120,7 @@ const ExamCategoryTable = () => {
                             <span>{record?.id}</span>
                           </td>
                           <td>
-                            <span>{record?.title}</span>
-                          </td>
-                          <td>
-                            <span>{record?.class_name}</span>
-                          </td>
-                          <td>
-                            <span>{record?.section_name}</span>
+                            <span>{record?.name}</span>
                           </td>
                           <td>
                             <div className='dropdown'>
@@ -151,9 +140,9 @@ const ExamCategoryTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/examCategories/${record?.id}/edit`}
+                                    to={`/expanseCategories/${record?.id}/edit`}
                                   >
-                                    Edit ExamCategory
+                                    Edit ExpanseCategory
                                   </Link>
                                 </li>
                                 <li>
@@ -161,7 +150,7 @@ const ExamCategoryTable = () => {
                                     className='dropdown-item'
                                     onClick={() => handleDelete(record)}
                                   >
-                                    Delete ExamCategory
+                                    Delete ExpanseCategory
                                   </Link>
                                 </li>
                               </ul>
@@ -176,7 +165,7 @@ const ExamCategoryTable = () => {
             </div>
           </div>
 
-          {/* Exam Category list table pagination start  */}
+          {/* expanseCategory list table pagination start  */}
           <nav className='pagination'>
             <ul className='pagination'>
               <li className='page-item'>
@@ -213,7 +202,7 @@ const ExamCategoryTable = () => {
               </li>
             </ul>
           </nav>
-          {/* Exam Category list table pagination end  */}
+          {/* expanseCategory list table pagination end  */}
 
         </div>
       </section>
@@ -221,4 +210,4 @@ const ExamCategoryTable = () => {
   );
 };
 
-export default ExamCategoryTable;
+export default ExpanseCategoryTable;
