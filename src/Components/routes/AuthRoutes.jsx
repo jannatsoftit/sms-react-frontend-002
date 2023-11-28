@@ -86,15 +86,11 @@ import SchoolEdit from "../Pages/School/SchoolEdit/SchoolEdit";
 import SchoolShow from "../Pages/School/SchoolShow/SchoolShow";
 
 
-
-
-
-
 const AuthRoutes = {
   children: [
     {
       element: <Dashboard />,
-      path: '/',
+      path: '/dashboard',
     },
     {
       children: [

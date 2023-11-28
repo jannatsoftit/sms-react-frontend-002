@@ -8,7 +8,7 @@ import Table from './Table';
 const Dashboard = () => {
   return (
     <>
-    <div className='p-3'>
+    <div className='p-3 pb-5'>
       <div className='container-fluid'>
         
         <div className='row'>

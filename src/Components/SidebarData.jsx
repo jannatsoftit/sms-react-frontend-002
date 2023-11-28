@@ -11,7 +11,7 @@ import * as PiIcons from 'react-icons/pi';
 export const SidebarData = [
   {
     title: 'Dashboard',
-    path: '/',
+    path: '/dashboard',
     icon: <AiIcons.AiFillHome />,
   },
   {
@@ -135,8 +135,18 @@ export const SidebarData = [
     subNav: [
       {
         title: 'School Info',
-        path: '/schools',
+        path:`/schools`, // '/schools' 
         icon: <BsIcons.BsInfoCircleFill />,
+      },
+      {
+        title: 'Login',
+        path: '/',
+        icon: <RiIcons.RiLogoutCircleFill />,
+      },
+      {
+        title: 'Registration',
+        path: '/register',
+        icon: <RiIcons.RiLogoutCircleFill />,
       },
       {
         title: 'Logout',
