@@ -34,7 +34,7 @@ const SchoolTable = () => {
         <div className='container'>
           <div className='col-md-6 text-center mb-5'>
             <h2 className='heading-section'>School Table List</h2>
-            <div className='School'>
+            <div className='admin'>
               <Link to='#' className='links'>
                 user
               </Link>

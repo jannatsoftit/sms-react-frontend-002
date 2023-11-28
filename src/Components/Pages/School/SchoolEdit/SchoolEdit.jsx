@@ -41,7 +41,7 @@ const SchoolEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/schools', { replace: true });
+      navigate(`/schools/${schoolId}`, { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -93,9 +93,9 @@ const SchoolEdit = () => {
   return (
     <>
       {/* school create table title section */}
-      <Link to='/schools' className='add_button'>
+      <Link  to={`/schools/${school?.id}`} className='add_button'>
         <button type='button' className='btn'>
-          School Table <AiOutlineArrowRight />
+          School Info <AiOutlineArrowRight />
         </button>
       </Link>
 

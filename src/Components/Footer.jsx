@@ -12,8 +12,11 @@ const Footer = () => {
           className='text-center p-3'
           style={{ backgroundColor: "rgba(0, 0, 0, 0.2)"}}
         >
-          © 2023 Copyright - All rights reserved <br></br>
-          <Link className='text-white' to={'#'}>
+          {/* © 2023 Copyright - All rights reserved  */}
+          Proudly powered by ITLOGIKO.
+          
+          <br></br>
+          {/* <Link className='text-white' to={'#'}>
             Legal Stuff |
           </Link>
           <Link className='text-white' to={'#'}>
@@ -21,7 +24,7 @@ const Footer = () => {
           </Link>
           <Link className='text-white' to={'#'}>
             Security
-          </Link>
+          </Link> */}
         </div>
         {/* Copyright  End */}
       </footer>

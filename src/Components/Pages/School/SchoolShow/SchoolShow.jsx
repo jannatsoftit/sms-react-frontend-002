@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 import SchoolDetail from '../../../details/SchoolDetail/SchoolDetail';
 
 const SchoolShow = () => {
-
   const { schoolId } = useParams();
 
   const [school, setSchool] = useState(null);
@@ -32,11 +31,35 @@ const SchoolShow = () => {
   return (
     <div>
       {/* school create table title section */}
-      <Link to='/schools' className='add_button'>
+      {/* <Link to='/schools' className='add_button'>
         <button type='button' className='btn'>
           School Table <AiOutlineArrowRight />
         </button>
-      </Link>
+      </Link> */}
+
+      <div className='dropdown add_button' >
+        <button
+          className='btn btn-secondary dropdown-toggle'
+          type='button'
+          id='dropdownMenuButton1'
+          data-bs-toggle='dropdown'
+          aria-expanded='false'
+        >
+          Actions
+        </button>
+        <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
+          <li>
+            <Link className='dropdown-item' to={`/schools`}>
+              School Table
+            </Link>
+          </li>
+          <li>
+            <Link className='dropdown-item' to={`/schools/${school?.id}/edit`}>
+              School Edit
+            </Link>
+          </li>
+        </ul>
+      </div>
 
       {/* school data details component */}
       <SchoolDetail school={school} />
