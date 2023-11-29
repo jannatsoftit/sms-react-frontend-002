@@ -6,7 +6,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const AccountantEdit = () => {
-
   const navigate = useNavigate();
 
   const { accountantId } = useParams();
@@ -15,10 +14,14 @@ const AccountantEdit = () => {
     first_name: '',
     last_name: '',
     email: '',
+    phone_number: '',
+    date_of_birth: '',
+    address: '',
+    blood_group: '',
+    password_confirmation: '',
+    password: '',
     designation: '',
     department: '',
-    password: '',
-    user_information: '',
     image: '',
     gender: '',
   });
@@ -51,10 +54,17 @@ const AccountantEdit = () => {
       formData.append('first_name', accountant.first_name);
       formData.append('last_name', accountant.last_name);
       formData.append('email', accountant.email);
+      formData.append('phone_number', accountant.phone_number);
+      formData.append('date_of_birth', accountant.date_of_birth);
+      formData.append('address', accountant.address);
+      formData.append('blood_group', accountant.blood_group);
+      formData.append('password', accountant.password);
+      formData.append(
+        'password_confirmation',
+        accountant.password_confirmation
+      );
       formData.append('designation', accountant.designation);
       formData.append('department', accountant.department);
-      formData.append('password', accountant.password);
-      formData.append('user_information', accountant.user_information);
       formData.append('image', accountant.image);
       formData.append('gender', accountant.gender);
 
@@ -100,7 +110,7 @@ const AccountantEdit = () => {
       {/* Accountant create table title section */}
       <Link to='/accountants' className='add_button'>
         <button type='button' className='btn'>
-        Accountant Table <AiOutlineArrowRight />
+          Accountant Table <AiOutlineArrowRight />
         </button>
       </Link>
 
@@ -111,7 +121,9 @@ const AccountantEdit = () => {
               <div className='card'>
                 {/* Accountant create form title section */}
                 <div className='col-md-6 text-center mb-5'>
-                  <h2 className='heading-section'>Accountant Form Edit Table</h2>
+                  <h2 className='heading-section'>
+                    Accountant Form Edit Table
+                  </h2>
                   <div className='admin-create'>
                     <Link to='#' className='links'>
                       user
@@ -260,25 +272,105 @@ const AccountantEdit = () => {
                     <div className='form-group col-sm-6 flex-column d-flex'>
                       {' '}
                       <label className='form-control-label px-3'>
-                        User Information<span className='text-danger'> *</span>
+                        Phone Number <span className='text-danger'> *</span>
                       </label>{' '}
                       <input
                         type='text'
-                        name='user_information'
-                        placeholder='Enter Your user information'
-                        id='user_information'
+                        id='phone_number'
+                        name='phone_number'
+                        placeholder='Enter your phone number'
                         onChange={handleChange}
-                        value={accountant?.user_information}
+                        value={accountant?.phone_number}
+                      />{' '}
+                    </div>
+
+                    <div className='form-group col-sm-6 flex-column d-flex'>
+                      {' '}
+                      <label className='form-control-label px-3'>
+                        Date Of Birth <span className='text-danger'> *</span>
+                      </label>{' '}
+                      <input
+                        type='date'
+                        id='date_of_birth'
+                        name='date_of_birth'
+                        placeholder='Enter your date_of_birth'
+                        onChange={handleChange}
+                        value={accountant?.date_of_birth}
+                      />{' '}
+                    </div>
+                  </div>
+
+                  <div className='row justify-content-between text-left'>
+                    <div className='form-group col-sm-6 flex-column d-flex'>
+                      {' '}
+                      <label className='form-control-label px-3'>
+                        Address <span className='text-danger'> *</span>
+                      </label>{' '}
+                      <select
+                        name='address'
+                        className='form-select'
+                        value={accountant?.address}
+                        onChange={handleChange}
+                      >
+                        <option selected hidden>
+                          Enter Address
+                        </option>
+                        <option value='Dhaka'>Dhaka</option>
+                        <option value='Khulna'>Khulna</option>
+                        <option value='Jessore'>Jessore</option>
+                        <option value='Barishal'>Barishal</option>
+                        <option value='Chittagong'>Chittagong</option>
+                        <option value='Sylhet'>Sylhet</option>
+                      </select>{' '}
+                    </div>
+
+                    <div className='form-group col-sm-6 flex-column d-flex'>
+                      {' '}
+                      <label className='form-control-label px-3'>
+                        Blood Group <span className='text-danger'> *</span>
+                      </label>{' '}
+                      <select
+                        name='blood_group'
+                        className='form-select'
+                        value={accountant?.blood_group}
+                        onChange={handleChange}
+                      >
+                        <option selected hidden>
+                          Enter Blood Group
+                        </option>
+                        <option value='A+'>A+</option>
+                        <option value='A-'>A-</option>
+                        <option value='B+'>B+</option>
+                        <option value='B-'>B-</option>
+                        <option value='AB+'>AB+</option>
+                        <option value='AB-'>AB-</option>
+                        <option value='O-'>O-</option>
+                        <option value='O+'>O+</option>
+                      </select>{' '}
+                    </div>
+                  </div>
+
+                  <div className='row justify-content-between text-left'>
+                    <div className='form-group col-sm-6 flex-column d-flex'>
+                      {' '}
+                      <label className='form-control-label px-3'>
+                        Password Confirmation{' '}
+                        <span className='text-danger'> *</span>
+                      </label>{' '}
+                      <input
+                        type='text'
+                        id='password_confirmation'
+                        name='password_confirmation'
+                        placeholder='Enter your password confirmation'
+                        onChange={handleChange}
+                        value={accountant?.password_confirmation}
                       />{' '}
                     </div>
                   </div>
 
                   <div className='row justify-content-start'>
                     <div className='form-group col-sm-4'>
-                      <button
-                        type='submit'
-                        className='btn-block btn-primary'
-                      >
+                      <button type='submit' className='btn-block btn-primary'>
                         Submit
                       </button>
                     </div>

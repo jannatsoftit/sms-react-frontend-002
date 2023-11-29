@@ -145,7 +145,13 @@ const AccountantTable = () => {
                                 <b>Department:</b> {record?.department}
                               </p>
                               <p>
-                                <b>Info:</b> {record?.user_information}
+                                <b>Phone Number:</b> {record?.phone_number}
+                              </p>
+                              <p>
+                                <b>Date Of Birth:</b> {record?.date_of_birth}
+                              </p>
+                              <p>
+                                <b>Info:</b> {record?.blood_group}, {record?.address}
                               </p>
                             </div>
                           </td>

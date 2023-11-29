@@ -62,12 +62,12 @@ const Register = () => {
   return (
     <div className='register'>
       <div className='container'>
-        <div className='title'>Registration</div>
+        <div className='title'>Registration Form</div>
         <div className='content'>
           <form onSubmit={handleSubmit}>
             <div className='user-details'>
               <div className='input-box'>
-                <span className='details'>First Name</span>
+                <span className='details'>First Name <span className='text-danger'> *</span></span>
                 <input
                   type='text'
                   name='first_name'
@@ -77,7 +77,7 @@ const Register = () => {
                 />
               </div>
               <div className='input-box'>
-                <span className='details'>Last Name</span>
+                <span className='details'>Last Name <span className='text-danger'> *</span></span>
                 <input
                   type='text'
                   name='last_name'
@@ -87,7 +87,7 @@ const Register = () => {
                 />
               </div>
               <div className='input-box'>
-                <span className='details'>Email</span>
+                <span className='details'>Email <span className='text-danger'> *</span></span>
                 <input
                   type='text'
                   name='email'
@@ -97,7 +97,7 @@ const Register = () => {
                 />
               </div>
               <div className='input-box'>
-                <span className='details'>Phone Number</span>
+                <span className='details'>Phone Number <span className='text-danger'> *</span></span>
                 <input
                   type='text'
                   name='phone_number'
@@ -107,7 +107,7 @@ const Register = () => {
                 />
               </div>
               <div className='input-box'>
-                <span className='details'>Date Of Birth</span>
+                <span className='details'>Date Of Birth <span className='text-danger'> *</span></span>
                 <input
                   type='date'
                   name='date_of_birth'
@@ -117,7 +117,7 @@ const Register = () => {
                 />
               </div>
               <div className='input-box'>
-                <span className='details'>Designation</span>
+                <span className='details'>Designation <span className='text-danger'> *</span></span>
                 <input
                   type='text'
                   name='designation'
@@ -127,7 +127,7 @@ const Register = () => {
                 />
               </div>
               <div className='input-box'>
-                <span className='details'>Department</span>
+                <span className='details'>Department <span className='text-danger'> *</span></span>
                 <input
                   type='text'
                   name='department'
@@ -138,7 +138,7 @@ const Register = () => {
               </div>
 
               <div className='input-box'>
-                <span className='details'>Address</span>
+                <span className='details'>Address <span className='text-danger'> *</span></span>
                 <select
                   name='address'
                   className='form-select'
@@ -156,7 +156,7 @@ const Register = () => {
               </div>
 
               <div className='input-box'>
-                <span className='details'>Blood Group</span>
+                <span className='details'>Blood Group <span className='text-danger'> *</span></span>
                 <select
                   name='blood_group'
                   className='form-select'
@@ -176,7 +176,7 @@ const Register = () => {
               </div>
 
               <div className='input-box'>
-                <span className='details'>Image</span>
+                <span className='details'>Image <span className='text-danger'> *</span></span>
                 <input
                   type='file'
                   name='image'
@@ -206,7 +206,7 @@ const Register = () => {
               </div> */}
 
               <div className='input-box'>
-                <span className='details'>Password</span>
+                <span className='details'>Password <span className='text-danger'> *</span></span>
                 <input
                   type='text'
                   name='password'
@@ -216,7 +216,7 @@ const Register = () => {
                 />
               </div>
               <div className='input-box'>
-                <span className='details'>Confirm Password</span>
+                <span className='details'>Confirm Password <span className='text-danger'> *</span></span>
                 <input
                   type='text'
                   name='password_confirmation'

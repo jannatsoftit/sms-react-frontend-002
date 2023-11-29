@@ -4,7 +4,8 @@ import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 
-const ParentForm = () => { // Parent parent
+const ParentForm = () => {
+  // Parent parent
 
   const navigate = useNavigate();
 
@@ -16,10 +17,14 @@ const ParentForm = () => { // Parent parent
     first_name: '',
     last_name: '',
     email: '',
+    phone_number: '',
+    date_of_birth: '',
+    address: '',
+    blood_group: '',
+    password_confirmation: '',
+    password: '',
     designation: '',
     department: '',
-    password: '',
-    user_information: '',
     image: '',
     gender: '',
   });
@@ -29,7 +34,6 @@ const ParentForm = () => { // Parent parent
     setInputFields({
       ...inputFields,
       [name]: value,
-
     });
   };
 
@@ -48,17 +52,20 @@ const ParentForm = () => { // Parent parent
 
   // Parent info create function
   const handelSubmit = (e) => {
-
     e.preventDefault();
 
     const formData = new FormData();
     formData.append('first_name', inputFields.first_name);
     formData.append('last_name', inputFields.last_name);
     formData.append('email', inputFields.email);
+    formData.append('phone_number', inputFields.phone_number);
+    formData.append('date_of_birth', inputFields.date_of_birth);
+    formData.append('address', inputFields.address);
+    formData.append('blood_group', inputFields.blood_group);
+    formData.append('password', inputFields.password);
+    formData.append('password_confirmation', inputFields.password_confirmation);
     formData.append('designation', inputFields.designation);
     formData.append('department', inputFields.department);
-    formData.append('password', inputFields.password);
-    formData.append('user_information', inputFields.user_information);
     formData.append('image', inputFields.image);
     formData.append('gender', inputFields.gender);
     console.log(formData);
@@ -260,8 +267,8 @@ const ParentForm = () => { // Parent parent
                     <label className='form-label px-3'>
                       Gender <span className='text-danger'> *</span>
                     </label>{' '}
-                    <select 
-                      name='gender' 
+                    <select
+                      name='gender'
                       className='form-select'
                       value={inputFields.gender}
                       onChange={handleChange}
@@ -269,9 +276,7 @@ const ParentForm = () => { // Parent parent
                       <option selected>Choose...</option>
                       <option value='Female'>Female</option>
                       <option value='Male'>Male</option>
-                    </select>
-                    {' '}
-
+                    </select>{' '}
                     {formErrors.gender && (
                       <span style={{ color: '#e74c3c' }}>
                         {formErrors.gender}
@@ -310,11 +315,13 @@ const ParentForm = () => { // Parent parent
                       type='file'
                       name='image'
                       onChange={(e) => {
-                        setInputFields(value => ({...value, [e.target.name]:e.target.files[0]}))
-                      }     
-                    }
+                        setInputFields((value) => ({
+                          ...value,
+                          [e.target.name]: e.target.files[0],
+                        }));
+                      }}
                     />{' '}
-                     {formErrors.image && (
+                    {formErrors.image && (
                       <span style={{ color: '#e74c3c' }}>
                         {formErrors.image}
                       </span>
@@ -326,19 +333,122 @@ const ParentForm = () => { // Parent parent
                   <div className='form-group col-sm-6 flex-column d-flex'>
                     {' '}
                     <label className='form-control-label px-3'>
-                      User Information<span className='text-danger'> *</span>
+                      Phone Number <span className='text-danger'> *</span>
                     </label>{' '}
                     <input
                       type='text'
-                      name='user_information'
-                      placeholder='Enter Your user information'
-                      id='user_information'
+                      id='phone_number'
+                      name='phone_number'
+                      placeholder='Enter your phone number'
                       onChange={handleChange}
-                      value={inputFields.user_information}
+                      value={inputFields?.phone_number}
                     />{' '}
-                    {formErrors.user_information && (
+                    {formErrors.phone_number && (
                       <span style={{ color: '#e74c3c' }}>
-                        {formErrors.user_information}
+                        {formErrors.phone_number}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                      Date Of Birth <span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='date'
+                      id='date_of_birth'
+                      name='date_of_birth'
+                      placeholder='Enter your date_of_birth'
+                      onChange={handleChange}
+                      value={inputFields?.date_of_birth}
+                    />{' '}
+                    {formErrors.date_of_birth && (
+                      <span style={{ color: '#e74c3c' }}>
+                        {formErrors.date_of_birth}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className='row justify-content-between text-left'>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                      Address <span className='text-danger'> *</span>
+                    </label>{' '}
+                    <select
+                      name='address'
+                      className='form-select'
+                      value={inputFields?.address}
+                      onChange={handleChange}
+                    >
+                      <option selected hidden>
+                        Enter Address
+                      </option>
+                      <option value='Dhaka'>Dhaka</option>
+                      <option value='Khulna'>Khulna</option>
+                      <option value='Jessore'>Jessore</option>
+                      <option value='Barishal'>Barishal</option>
+                      <option value='Chittagong'>Chittagong</option>
+                      <option value='Sylhet'>Sylhet</option>
+                    </select>{' '}
+                    {formErrors.address && (
+                      <span style={{ color: '#e74c3c' }}>
+                        {formErrors.address}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                      Blood Group <span className='text-danger'> *</span>
+                    </label>{' '}
+                    <select
+                      name='blood_group'
+                      className='form-select'
+                      value={inputFields?.blood_group}
+                      onChange={handleChange}
+                    >
+                      <option selected hidden>
+                        Enter Blood Group
+                      </option>
+                      <option value='A+'>A+</option>
+                      <option value='A-'>A-</option>
+                      <option value='B+'>B+</option>
+                      <option value='B-'>B-</option>
+                      <option value='AB+'>AB+</option>
+                      <option value='AB-'>AB-</option>
+                      <option value='O-'>O-</option>
+                      <option value='O+'>O+</option>
+                    </select>{' '}
+                    {formErrors.blood_group && (
+                      <span style={{ color: '#e74c3c' }}>
+                        {formErrors.blood_group}
+                      </span>
+                    )}
+                  </div>
+                </div>
+
+                <div className='row justify-content-between text-left'>
+                  <div className='form-group col-sm-6 flex-column d-flex'>
+                    {' '}
+                    <label className='form-control-label px-3'>
+                      Password Confirmation{' '}
+                      <span className='text-danger'> *</span>
+                    </label>{' '}
+                    <input
+                      type='text'
+                      id='password_confirmation'
+                      name='password_confirmation'
+                      placeholder='Enter your password confirmation'
+                      onChange={handleChange}
+                      value={inputFields?.password_confirmation}
+                    />{' '}
+                    {formErrors.password_confirmation && (
+                      <span style={{ color: '#e74c3c' }}>
+                        {formErrors.password_confirmation}
                       </span>
                     )}
                   </div>
@@ -346,10 +456,7 @@ const ParentForm = () => { // Parent parent
 
                 <div className='row justify-content-start'>
                   <div className='form-group col-sm-4'>
-                    <button
-                      type='submit'
-                      className='btn-block btn-primary'
-                    >
+                    <button type='submit' className='btn-block btn-primary'>
                       Submit
                     </button>
                   </div>

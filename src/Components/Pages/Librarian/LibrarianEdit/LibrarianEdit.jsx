@@ -15,10 +15,14 @@ const LibrarianEdit = () => {
     first_name: '',
     last_name: '',
     email: '',
+    phone_number: '',
+    date_of_birth: '',
+    address: '',
+    blood_group: '',
+    password_confirmation: '',
+    password: '',
     designation: '',
     department: '',
-    password: '',
-    user_information: '',
     image: '',
     gender: '',
   });
@@ -51,10 +55,17 @@ const LibrarianEdit = () => {
       formData.append('first_name', librarian.first_name);
       formData.append('last_name', librarian.last_name);
       formData.append('email', librarian.email);
+      formData.append('phone_number', librarian.phone_number);
+      formData.append('date_of_birth', librarian.date_of_birth);
+      formData.append('address', librarian.address);
+      formData.append('blood_group', librarian.blood_group);
+      formData.append('password', librarian.password);
+      formData.append(
+        'password_confirmation',
+        librarian.password_confirmation
+      );
       formData.append('designation', librarian.designation);
       formData.append('department', librarian.department);
-      formData.append('password', librarian.password);
-      formData.append('user_information', librarian.user_information);
       formData.append('image', librarian.image);
       formData.append('gender', librarian.gender);
 
@@ -260,15 +271,98 @@ const LibrarianEdit = () => {
                     <div className='form-group col-sm-6 flex-column d-flex'>
                       {' '}
                       <label className='form-control-label px-3'>
-                        User Information<span className='text-danger'> *</span>
+                        Phone Number <span className='text-danger'> *</span>
                       </label>{' '}
                       <input
                         type='text'
-                        name='user_information'
-                        placeholder='Enter Your user information'
-                        id='user_information'
+                        id='phone_number'
+                        name='phone_number'
+                        placeholder='Enter your phone number'
                         onChange={handleChange}
-                        value={librarian?.user_information}
+                        value={librarian?.phone_number}
+                      />{' '}
+                    </div>
+
+                    <div className='form-group col-sm-6 flex-column d-flex'>
+                      {' '}
+                      <label className='form-control-label px-3'>
+                        Date Of Birth <span className='text-danger'> *</span>
+                      </label>{' '}
+                      <input
+                        type='date'
+                        id='date_of_birth'
+                        name='date_of_birth'
+                        placeholder='Enter your date_of_birth'
+                        onChange={handleChange}
+                        value={librarian?.date_of_birth}
+                      />{' '}
+                    </div>
+                  </div>
+
+                  <div className='row justify-content-between text-left'>
+                    <div className='form-group col-sm-6 flex-column d-flex'>
+                      {' '}
+                      <label className='form-control-label px-3'>
+                        Address <span className='text-danger'> *</span>
+                      </label>{' '}
+                      <select
+                        name='address'
+                        className='form-select'
+                        value={librarian?.address}
+                        onChange={handleChange}
+                      >
+                        <option selected hidden>
+                          Enter Address
+                        </option>
+                        <option value='Dhaka'>Dhaka</option>
+                        <option value='Khulna'>Khulna</option>
+                        <option value='Jessore'>Jessore</option>
+                        <option value='Barishal'>Barishal</option>
+                        <option value='Chittagong'>Chittagong</option>
+                        <option value='Sylhet'>Sylhet</option>
+                      </select>{' '}
+                    </div>
+
+                    <div className='form-group col-sm-6 flex-column d-flex'>
+                      {' '}
+                      <label className='form-control-label px-3'>
+                        Blood Group <span className='text-danger'> *</span>
+                      </label>{' '}
+                      <select
+                        name='blood_group'
+                        className='form-select'
+                        value={librarian?.blood_group}
+                        onChange={handleChange}
+                      >
+                        <option selected hidden>
+                          Enter Blood Group
+                        </option>
+                        <option value='A+'>A+</option>
+                        <option value='A-'>A-</option>
+                        <option value='B+'>B+</option>
+                        <option value='B-'>B-</option>
+                        <option value='AB+'>AB+</option>
+                        <option value='AB-'>AB-</option>
+                        <option value='O-'>O-</option>
+                        <option value='O+'>O+</option>
+                      </select>{' '}
+                    </div>
+                  </div>
+
+                  <div className='row justify-content-between text-left'>
+                    <div className='form-group col-sm-6 flex-column d-flex'>
+                      {' '}
+                      <label className='form-control-label px-3'>
+                        Password Confirmation{' '}
+                        <span className='text-danger'> *</span>
+                      </label>{' '}
+                      <input
+                        type='text'
+                        id='password_confirmation'
+                        name='password_confirmation'
+                        placeholder='Enter your password confirmation'
+                        onChange={handleChange}
+                        value={librarian?.password_confirmation}
                       />{' '}
                     </div>
                   </div>
