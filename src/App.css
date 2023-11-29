@@ -11162,18 +11162,20 @@ body{
   /* padding: 10px; */
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-/* .container{
+.register_container{
   max-width: 700px;
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-} */
+}
 
 .register{
   padding-top: 30px;
   padding-bottom: 30px;
+  display: flex;
+  justify-content: center;
 }
 
 .title{
@@ -11181,12 +11183,12 @@ body{
   justify-content: center;
   margin-bottom: 40px;
 }
-.container .title{
+.register_container .title{
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
-/* .container .title::before{
+/* .register_container .title::before{
   content: "";
   position: absolute;
   left: 0;
@@ -11281,7 +11283,7 @@ form .input-box span.details{
   background: linear-gradient(-135deg, #71b7e6, #9b59b6);
   }
  @media(max-width: 584px){
- .container{
+ .register_container{
   max-width: 100%;
 }
 form .user-details .input-box{
@@ -11300,7 +11302,7 @@ form .user-details .input-box{
   }
   }
   @media(max-width: 459px){
-  .container .content .category{
+  .register_container .content .category{
     flex-direction: column;
   }
 }
