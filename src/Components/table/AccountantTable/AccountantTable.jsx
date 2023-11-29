@@ -110,8 +110,12 @@ const AccountantTable = () => {
                       {/* <th>ID</th> */}
                       <th>Image</th>
                       <th>Designation</th>
+                      <th>Department</th>
                       <th>Email</th>
+                      <th>Phone Number</th>
                       <th>User Info</th>
+                      <th>Date Of Birth</th>
+                      <th>Gender</th>
                       <th>Options</th>
                     </tr>
                   </thead>
@@ -134,26 +138,26 @@ const AccountantTable = () => {
                             <span>{record?.designation}</span>
                           </td>
                           <td>
+                            <span>{record?.department}</span>
+                          </td>
+                          <td>
                             <span>{record?.email}</span>
+                          </td>
+                          <td>
+                            <span>{record?.phone_number}</span>
                           </td>
                           <td>
                             <div className='user_information'>
                               <p>
-                                <b>Gender:</b> {record?.gender}
-                              </p>
-                              <p>
-                                <b>Department:</b> {record?.department}
-                              </p>
-                              <p>
-                                <b>Phone Number:</b> {record?.phone_number}
-                              </p>
-                              <p>
-                                <b>Date Of Birth:</b> {record?.date_of_birth}
-                              </p>
-                              <p>
-                                <b>Info:</b> {record?.blood_group}, {record?.address}
+                                <b>Info:</b> Blood Group:{record?.blood_group}, Address:{record?.address}
                               </p>
                             </div>
+                          </td>
+                          <td>
+                            <span>{record?.date_of_birth}</span>
+                          </td>
+                          <td>
+                            <span>{record?.gender}</span>
                           </td>
                           <td>
                             <div className='dropdown'>

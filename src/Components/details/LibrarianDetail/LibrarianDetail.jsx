@@ -28,7 +28,7 @@ const LibrarianDetail = ({ librarian }) => {
                       <div>
                         <h4 className='card-title mb-2'>{librarian?.department}</h4>
                         <p className='mb-0 text-muted'>
-                          Hi I'm Jansh,has been the industry's standard dummy
+                          Hi I'm {librarian?.first_name},has been the industry's standard dummy
                           text To an English person alteration text.
                         </p>
                       </div>
@@ -37,15 +37,23 @@ const LibrarianDetail = ({ librarian }) => {
                           <div>
                             <p className='text-muted mb-2 fw-medium'>
                               <i className='mdi mdi-email-outline me-2'></i>
-                              {librarian?.email}
+                              Email Address: {librarian?.email}
                             </p>
                             <p className='text-muted mb-2 fw-medium'>
-                              <i className='mdi mdi-gender-male-female me-2'></i>
-                              {librarian?.gender}
+                              <i className='mdi mdi-cellphone me-2'></i>
+                              Phone Number: {librarian?.phone_number}
+                            </p>
+                            <p className='text-muted mb-2 fw-medium'>
+                              <i className='mdi mdi-calendar me-2'></i>
+                              Date Of Birth: {librarian?.date_of_birth}
                             </p>
                             <p className='text-muted mb-2 fw-medium'>
                               <i className='mdi mdi-information me-2'></i>
-                              {librarian?.user_information}
+                              Address: {librarian?.address}
+                            </p>
+                            <p className='text-muted mb-2 fw-medium'>
+                              <i className='mdi mdi-gender-male-female me-2'></i>
+                              Gender: {librarian?.gender}
                             </p>
                           </div>
                         </div>

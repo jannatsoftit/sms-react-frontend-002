@@ -28,7 +28,7 @@ const StudentDetail = ({ student }) => {
                       <div>
                         <h4 className='card-title mb-2'>{student?.department}</h4>
                         <p className='mb-0 text-muted'>
-                          Hi I'm Jansh,has been the industry's standard dummy
+                          Hi I'm {student?.first_name},has been the industry's standard dummy
                           text To an English person alteration text.
                         </p>
                       </div>
@@ -37,15 +37,23 @@ const StudentDetail = ({ student }) => {
                           <div>
                             <p className='text-muted mb-2 fw-medium'>
                               <i className='mdi mdi-email-outline me-2'></i>
-                              {student?.email}
+                              Email Address: {student?.email}
                             </p>
                             <p className='text-muted mb-2 fw-medium'>
-                              <i className='mdi mdi-gender-male-female me-2'></i>
-                              {student?.gender}
+                              <i className='mdi mdi-cellphone me-2'></i>
+                              Phone Number: {student?.phone_number}
+                            </p>
+                            <p className='text-muted mb-2 fw-medium'>
+                              <i className='mdi mdi-calendar me-2'></i>
+                              Date Of Birth: {student?.date_of_birth}
                             </p>
                             <p className='text-muted mb-2 fw-medium'>
                               <i className='mdi mdi-information me-2'></i>
-                              {student?.user_information}
+                              Address: {student?.address}
+                            </p>
+                            <p className='text-muted mb-2 fw-medium'>
+                              <i className='mdi mdi-gender-male-female me-2'></i>
+                              Gender: {student?.gender}
                             </p>
                           </div>
                         </div>

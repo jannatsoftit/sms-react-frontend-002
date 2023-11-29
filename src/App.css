@@ -784,7 +784,7 @@ pre code {
 
 .container {
   width: 100%;
-  padding-right: 15px;
+  padding-right: 10px;
   padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
@@ -10932,6 +10932,7 @@ h5,
   font-size: 16px;
   font-weight: bold;
   color: black;
+  background: #71b7e6;
 }
 .table thead tr {
   background: #fff;
@@ -10948,7 +10949,7 @@ h5,
 .table tbody td {
   border: none;
   /* padding: 30px; */
-  /* padding-right: ; */
+  /* padding-right: 60px; */
   padding-left: 60px;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -11161,14 +11162,14 @@ body{
   /* padding: 10px; */
   background: linear-gradient(135deg, #71b7e6, #9b59b6);
 }
-.container{
+/* .container{
   max-width: 700px;
   width: 100%;
   background-color: #fff;
   padding: 25px 30px;
   border-radius: 5px;
   box-shadow: 0 5px 10px rgba(0,0,0,0.15);
-}
+} */
 
 .register{
   padding-top: 30px;
