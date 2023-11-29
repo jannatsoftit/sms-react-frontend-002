@@ -61,6 +61,7 @@ const AdminForm = () => {
     formData.append('user_information', inputFields.user_information);
     formData.append('image', inputFields.image);
     formData.append('gender', inputFields.gender);
+    
     console.log(formData);
 
     fetch(`http://127.0.0.1:8000/api/admins`, {

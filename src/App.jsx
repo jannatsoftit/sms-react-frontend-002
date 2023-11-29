@@ -4,6 +4,10 @@ import Footer from './Components/Footer';
 import Routes from './Components/routes';
 import Sidebar from './Components/Sidebar';
 import Topbar from './Components/Topbar';
+
+
+//import Register from './Components/Register';
+// import Login from './Components/Login';
 //import 'bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {

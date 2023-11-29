@@ -140,12 +140,12 @@ export const SidebarData = [
       },
       {
         title: 'Login',
-        path: '/',
+        path: '/login',
         icon: <RiIcons.RiLogoutCircleFill />,
       },
       {
         title: 'Registration',
-        path: '/register',
+        path: '/',
         icon: <RiIcons.RiLogoutCircleFill />,
       },
       {
