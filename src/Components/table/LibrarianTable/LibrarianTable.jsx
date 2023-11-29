@@ -107,6 +107,7 @@ const LibrarianTable = () => { //Librarian librarian
                   <thead>
                     <tr>
                       <th>Image</th>
+                      <th>Name</th>
                       <th>Designation</th>
                       <th>Department</th>
                       <th>Email</th>
@@ -128,6 +129,9 @@ const LibrarianTable = () => { //Librarian librarian
                               width='50px'
                               alt={record?.name}
                             />
+                          </td>
+                          <td>
+                            <span>{record?.first_name} {record?.last_name}</span>
                           </td>
                           <td>
                             <span>{record?.designation}</span>

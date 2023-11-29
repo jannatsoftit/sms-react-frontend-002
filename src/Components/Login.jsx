@@ -1,83 +1,89 @@
+import { useState } from "react";
+
+
 const Login = () => {
+
+  const [loginInput, setLoginInput] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleInput = (e) => {
+    setLoginInput({
+      ...loginInput,
+      [e.target.name]: e.target.value      
+    }); 
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const data = {
+      email: loginInput.email,
+      password: loginInput.password,
+    }
+
+    fetch(`http://127.0.0.1:8000/api/login`, {
+      body: JSON.stringify({
+        ...data,
+      }),
+      headers: {
+        Accept: 'application/json',
+        "Content-Type": "application/json",
+      },
+      method: 'POST',
+    })
+    .then((res) => res.json())
+    .then((res) => {
+
+    })
+
+
+
+
+
+  }
+
   return (
-    <div className='row justify-content-center'>
-      <div className='col-md-8'>
-        <div className='card'>
-          <div className='card-header'>Login</div>
-
-          <div className='card-body'>
-            <form method='POST' action='#'>
-              <div className='row mb-3'>
-                <label
-                  htmlFor='email'
-                  className='col-md-4 col-form-label text-md-end'
-                >
-                  Email Address
-                </label>
-
-                <div className='col-md-6'>
-                  <input
-                    id='email'
-                    type='email'
-                    className='form-control'
-                    name='email'
-                    required
-                    autoComplete='email'
-                    autoFocus
-                  />
-                </div>
+    <>
+      <div className='register_container'>
+        <div className='title'>Login Form</div>
+        <div className='content'>
+          <form onSubmit={handleSubmit}>
+              <div className='input-box'>
+                <span className='details'>
+                  Email ID<span className='text-danger'> *</span>
+                </span>
+                <input
+                  type='email'
+                  name='email'
+                  value={loginInput.email}
+                  onChange={handleInput}
+                  placeholder='Enter your email'
+                />
+                {/* <span className='text-danger'>{loginInput.error_list.email}</span> */}
               </div>
 
-              <div className='row mb-3'>
-                <label
-                  htmlFor='password'
-                  className='col-md-4 col-form-label text-md-end'
-                >
-                  Password
-                </label>
-
-                <div className='col-md-6'>
-                  <input
-                    id='password'
-                    type='password'
-                    className='form-control'
-                    name='password'
-                    required
-                    autoComplete='current-password'
-                  />
-                </div>
+              <div className='input-box'>
+                <span className='details'>
+                  Password <span className='text-danger'> *</span>
+                </span>
+                <input
+                  type='password'
+                  name='password'
+                  value={loginInput.password}
+                  onChange={handleInput}
+                  placeholder='Enter your password'
+                />
+                {/* <span className='text-danger'>{loginInput.error_list.password}</span> */}
               </div>
-
-              <div className='row mb-3'>
-                <div className='col-md-6 offset-md-4'>
-                  <div className='form-check'>
-                    <input
-                      className='form-check-input'
-                      type='checkbox'
-                      name='remember'
-                      id='remember'
-                      checked
-                    />
-
-                    <label className='form-check-label' htmlFor='remember'>
-                      Remember Me
-                    </label>
-                  </div>
-                </div>
-              </div>
-
-              <div className='row mb-0'>
-                <div className='col-md-8 offset-md-4'>
-                  <button type='submit' className='btn btn-primary'>
-                    Login
-                  </button>
-                </div>
-              </div>
-            </form>
-          </div>
+            <div className='button'>
+              <input type='submit' value='Login' />
+            </div>
+          </form>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

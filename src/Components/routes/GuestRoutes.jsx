@@ -6,7 +6,7 @@ const GuestRoutes = {
   children: [
     {
       element: <Login />,
-      path: '/',
+      path: '/login',
     },
     {
       element: <Register />,
