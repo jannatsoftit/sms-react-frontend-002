@@ -118,10 +118,27 @@ const LibrarianForm = () => {
       errors.department = 'department required';
     }
 
-    if (!values.user_information) {
-      errors.user_information = 'user_information required';
+    if (!values.phone_number) {
+      errors.phone_number = 'phone number required';
     }
 
+    if (!values.date_of_birth) {
+      errors.date_of_birth = 'date of birth required';
+    }
+
+    if (!values.address) {
+      errors.address = 'address required';
+    }
+
+    if (!values.blood_group) {
+      errors.blood_group = 'blood group required';
+    }
+
+    if (!values.password_confirmation) {
+      errors.password_confirmation = 'password confirmation is required';
+    } else if (values.password_confirmation.length < 4) {
+      errors.password_confirmation = 'password confirmation should be at least 4 char';
+    }
     if (!values.image) {
       errors.image = 'image required';
     }

@@ -55,6 +55,10 @@ const TeacherDetail = ({ teacher }) => {
                               <i className='mdi mdi-gender-male-female me-2'></i>
                               Gender: {teacher?.gender}
                             </p>
+                            <p className='text-muted mb-2 fw-medium'>
+                              <i className='mdi mdi-gender-male-female me-2'></i>
+                              Blood Group: {admin?.blood_group}
+                            </p>
                           </div>
                         </div>
                       </div>

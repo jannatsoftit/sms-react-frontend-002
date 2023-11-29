@@ -18,65 +18,68 @@ const Register = () => {
     password_confirmation: '',
     designation: '',
     department: '',
-    image: '',
     gender: '',
     error_list: [],
   });
 
   const handleInput = (e) => {
-    e.preventDefault();
-    setRegisterInput({ ...registerInput, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setRegisterInput({
+      ...registerInput,
+      [name]: value,
+    });
+    //setRegisterInput({...registerInput, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formData = new FormData();
-    formData.append('first_name', registerInput.first_name);
-    formData.append('last_name', registerInput.last_name);
-    formData.append('email', registerInput.email);
-    formData.append('phone_number', registerInput.phone_number);
-    formData.append('date_of_birth', registerInput.date_of_birth);
-    formData.append('address', registerInput.address);
-    formData.append('blood_group', registerInput.blood_group);
-    formData.append('password', registerInput.password);
-    formData.append(
-      'password_confirmation',
-      registerInput.password_confirmation
-    );
-    formData.append('designation', registerInput.designation);
-    formData.append('department', registerInput.department);
-    formData.append('image', registerInput.image);
-    formData.append('gender', registerInput.gender);
+    const data = {
+      first_name: registerInput.first_name,
+      last_name: registerInput.last_name,
+      email: registerInput.email,
+      phone_number: registerInput.phone_number,
+      date_of_birth: registerInput.date_of_birth,
+      address: registerInput.address,
+      blood_group: registerInput.blood_group,
+      password: registerInput.password,
+      password_confirmation:registerInput.password_confirmation,
+      designation: registerInput.designation,
+      department: registerInput.department,
+      gender: registerInput.gender,
+    }
 
     fetch(`http://127.0.0.1:8000/api/register`, {
-      body: formData,
+      body: JSON.stringify({
+        ...data,
+      }),
       headers: {
         Accept: 'application/json',
+        "Content-Type": "application/json",
       },
       method: 'POST',
     })
       .then((res) => res.json())
       .then((res) => {
-        if (res.data.status === 200) {
-          localStorage.setItem('auth_token', res.data.token);
-          localStorage.setItem('auth_name', res.data.username);
+        if (res?.status === 200) {
+          localStorage.setItem('auth_token', res.token);
+          localStorage.setItem('auth_name', res.username);
+          console.log(res);
           Swal.fire({
             title: 'Success!',
-            text: 'Registration Successfully Complete!!',
+            text: 'Registration Successfully Completed!',
             icon: 'success',
             confirmButtonText: 'Ok',
           });
-
-          navigate('/dashboard', { replace: true });
+          navigate('/dashboard');
 
         } else {
           setRegisterInput({
             ...registerInput,
-            error_list: res.data.validation_errors,
+            error_list: res.validation_errors,
           });
+          //Swal.fire('Warning', response?.message, "warning");
         }
-        console.log(res);
       })
       .catch((error) => {
         console.error(error);
@@ -97,11 +100,11 @@ const Register = () => {
                 <input
                   type='text'
                   name='first_name'
-                  value={registerInput?.first_name}
+                  value={registerInput.first_name}
                   onChange={handleInput}
                   placeholder='Enter your first name'
                 />
-                <span>{registerInput.error_list.first_name}</span>
+                <span className='text-danger'>{registerInput.error_list.first_name}</span>
               </div>
               <div className='input-box'>
                 <span className='details'>
@@ -110,11 +113,11 @@ const Register = () => {
                 <input
                   type='text'
                   name='last_name'
-                  value={registerInput?.last_name}
+                  value={registerInput.last_name}
                   onChange={handleInput}
                   placeholder='Enter your last name'
                 />
-                <span>{registerInput.error_list.last_name}</span>
+                <span className='text-danger'>{registerInput.error_list.last_name}</span>
               </div>
               <div className='input-box'>
                 <span className='details'>
@@ -123,11 +126,11 @@ const Register = () => {
                 <input
                   type='email'
                   name='email'
-                  value={registerInput?.email}
+                  value={registerInput.email}
                   onChange={handleInput}
                   placeholder='Enter your email'
                 />
-                <span>{registerInput.error_list.email}</span>
+                <span className='text-danger'>{registerInput.error_list.email}</span>
               </div>
               <div className='input-box'>
                 <span className='details'>
@@ -136,11 +139,11 @@ const Register = () => {
                 <input
                   type='text'
                   name='phone_number'
-                  value={registerInput?.phone_number}
+                  value={registerInput.phone_number}
                   onChange={handleInput}
                   placeholder='Enter your phone number'
                 />
-                <span>{registerInput.error_list.phone_number}</span>
+                <span className='text-danger'>{registerInput.error_list.phone_number}</span>
               </div>
               <div className='input-box'>
                 <span className='details'>
@@ -149,11 +152,11 @@ const Register = () => {
                 <input
                   type='date'
                   name='date_of_birth'
-                  value={registerInput?.date_of_birth}
+                  value={registerInput.date_of_birth}
                   onChange={handleInput}
                   placeholder='Enter your date of birth'
                 />
-                <span>{registerInput.error_list.date_of_birth}</span>
+                <span className='text-danger'>{registerInput.error_list.date_of_birth}</span>
               </div>
               <div className='input-box'>
                 <span className='details'>
@@ -162,11 +165,11 @@ const Register = () => {
                 <input
                   type='text'
                   name='designation'
-                  value={registerInput?.designation}
+                  value={registerInput.designation}
                   onChange={handleInput}
                   placeholder='Enter your designation'
                 />
-                <span>{registerInput.error_list.designation}</span>
+                <span className='text-danger'>{registerInput.error_list.designation}</span>
               </div>
               <div className='input-box'>
                 <span className='details'>
@@ -175,11 +178,11 @@ const Register = () => {
                 <input
                   type='text'
                   name='department'
-                  value={registerInput?.department}
+                  value={registerInput.department}
                   onChange={handleInput}
                   placeholder='Enter your department'
                 />
-                <span>{registerInput.error_list.department}</span>
+                <span className='text-danger'>{registerInput.error_list.department}</span>
               </div>
 
               <div className='input-box'>
@@ -189,7 +192,7 @@ const Register = () => {
                 <select
                   name='address'
                   className='form-select'
-                  value={registerInput?.address}
+                  value={registerInput.address}
                   onChange={handleInput}
                 >
                   <option selected hidden>
@@ -202,7 +205,7 @@ const Register = () => {
                   <option value='Chittagong'>Chittagong</option>
                   <option value='Sylhet'>Sylhet</option>
                 </select>
-                <span>{registerInput.error_list.address}</span>
+                <span className='text-danger'>{registerInput.error_list.address}</span>
               </div>
 
               <div className='input-box'>
@@ -212,7 +215,7 @@ const Register = () => {
                 <select
                   name='blood_group'
                   className='form-select'
-                  value={registerInput?.blood_group}
+                  value={registerInput.blood_group}
                   onChange={handleInput}
                 >
                   <option selected hidden>
@@ -227,42 +230,8 @@ const Register = () => {
                   <option value='O-'>O-</option>
                   <option value='O+'>O+</option>
                 </select>
-                <span>{registerInput.error_list.blood_group}</span>
+                <span className='text-danger'>{registerInput.error_list.blood_group}</span>
               </div>
-
-              <div className='input-box'>
-                <span className='details'>
-                  Image <span className='text-danger'> *</span>
-                </span>
-                <input
-                  type='file'
-                  name='image'
-                  className='form-control'
-                  placeholder='Enter your image'
-                  onChange={(e) => {
-                    setRegisterInput((value) => ({
-                      ...value,
-                      [e.target.name]: e.target.files[0],
-                    }));
-                  }}
-                />
-                <span>{registerInput.error_list.image}</span>
-              </div>
-
-              {/* <div className='input-box'>
-                <span className='details'>Gender</span>
-                <select
-                  name='gender'
-                  className='form-select'
-                  value={registerInput?.gender}
-                  onChange={handleInput}
-                >
-                  <option selected>Choose...</option>
-                  <option value='Female'>Female</option>
-                  <option value='Male'>Male</option>
-                </select>{' '}
-              </div> */}
-
               <div className='input-box'>
                 <span className='details'>
                   Password <span className='text-danger'> *</span>
@@ -270,11 +239,11 @@ const Register = () => {
                 <input
                   type='text'
                   name='password'
-                  value={registerInput?.password}
+                  value={registerInput.password}
                   onChange={handleInput}
                   placeholder='Enter your password'
                 />
-                <span>{registerInput.error_list.password}</span>
+                <span className='text-danger'>{registerInput.error_list.password}</span>
               </div>
               <div className='input-box'>
                 <span className='details'>
@@ -283,59 +252,31 @@ const Register = () => {
                 <input
                   type='text'
                   name='password_confirmation'
-                  value={registerInput?.password_confirmation}
+                  value={registerInput.password_confirmation}
                   onChange={handleInput}
                   placeholder='Confirm your password'
                 />
-                <span>{registerInput.error_list.password_confirmation}</span>
+                <span className='text-danger'>{registerInput.error_list.password_confirmation}</span>
               </div>
-            </div>
-            <div className='gender-details'>
-              {/* <select
-                name='gender'
-                className='form-select'
-                value={registerInput?.gender}
-                onChange={handleInput}
-              >
-                <option selected>Choose...</option>
-                <option value='Female'>Female</option>
-                <option value='Male'>Male</option>
-              </select>{' '} */}
-              <input
-                type='radio'
-                name='gender'
-                id='dot-1'
-                value={registerInput?.gender}
-                onChange={handleInput}
-              />
-              <input
-                type='radio'
-                name='gender'
-                id='dot-2'
-                value={registerInput?.gender}
-                onChange={handleInput}
-              />
-              <input
-                type='radio'
-                name='gender'
-                id='dot-3'
-                value={registerInput?.gender}
-                onChange={handleInput}
-              />
-              <span className='gender-title'>Gender</span>
-              <div className='category'>
-                <label htmlFor='dot-1'>
-                  <span className='dot one' value='Male'></span>
-                  <span className='gender'>Male</span>
-                </label>
-                <label htmlFor='dot-2'>
-                  <span className='dot two' value='Female'></span>
-                  <span className='gender'>Female</span>
-                </label>
-                <label htmlFor='dot-3'>
-                  <span className='dot three' value='Other'></span>
-                  <span className='gender'>Other</span>
-                </label>
+
+              <div className='input-box'>
+                <span className='details'>
+                  Gender <span className='text-danger'> *</span>
+                </span>
+                <select
+                  name='gender'
+                  className='form-select'
+                  value={registerInput.gender}
+                  onChange={handleInput}
+                >
+                  <option selected hidden>
+                    Enter Gender
+                  </option>
+                  <option value='Female'>Female</option>
+                  <option value='Male'>Male</option>
+                  <option value='Other'>Other</option>
+                </select>
+                <span className='text-danger'>{registerInput.error_list.gender}</span>
               </div>
             </div>
             <div className='button'>

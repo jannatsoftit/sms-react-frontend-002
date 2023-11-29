@@ -43,7 +43,7 @@ const AdminEdit = () => {
     if (confirm(`Are you sure you want to update your information?`)) {
       Swal.fire({
         title: 'Success!',
-        text: 'Information Create Successfully!!',
+        text: 'Information Update Successfully!!',
         icon: 'success',
         confirmButtonText: 'Ok',
       });
