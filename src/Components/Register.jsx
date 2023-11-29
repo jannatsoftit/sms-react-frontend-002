@@ -1,6 +1,11 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Register = () => {
+
+  const navigate = useNavigate();
+
   const [registerInput, setRegisterInput] = useState({
     first_name: '',
     last_name: '',
@@ -15,6 +20,7 @@ const Register = () => {
     department: '',
     image: '',
     gender: '',
+    error_list: [],
   });
 
   const handleInput = (e) => {
@@ -52,6 +58,24 @@ const Register = () => {
     })
       .then((res) => res.json())
       .then((res) => {
+        if (res.data.status === 200) {
+          localStorage.setItem('auth_token', res.data.token);
+          localStorage.setItem('auth_name', res.data.username);
+          Swal.fire({
+            title: 'Success!',
+            text: 'Registration Successfully Complete!!',
+            icon: 'success',
+            confirmButtonText: 'Ok',
+          });
+
+          navigate('/dashboard', { replace: true });
+
+        } else {
+          setRegisterInput({
+            ...registerInput,
+            error_list: res.data.validation_errors,
+          });
+        }
         console.log(res);
       })
       .catch((error) => {
@@ -67,7 +91,9 @@ const Register = () => {
           <form onSubmit={handleSubmit}>
             <div className='user-details'>
               <div className='input-box'>
-                <span className='details'>First Name <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  First Name <span className='text-danger'> *</span>
+                </span>
                 <input
                   type='text'
                   name='first_name'
@@ -75,9 +101,12 @@ const Register = () => {
                   onChange={handleInput}
                   placeholder='Enter your first name'
                 />
+                <span>{registerInput.error_list.first_name}</span>
               </div>
               <div className='input-box'>
-                <span className='details'>Last Name <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  Last Name <span className='text-danger'> *</span>
+                </span>
                 <input
                   type='text'
                   name='last_name'
@@ -85,19 +114,25 @@ const Register = () => {
                   onChange={handleInput}
                   placeholder='Enter your last name'
                 />
+                <span>{registerInput.error_list.last_name}</span>
               </div>
               <div className='input-box'>
-                <span className='details'>Email <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  Email <span className='text-danger'> *</span>
+                </span>
                 <input
-                  type='text'
+                  type='email'
                   name='email'
                   value={registerInput?.email}
                   onChange={handleInput}
                   placeholder='Enter your email'
                 />
+                <span>{registerInput.error_list.email}</span>
               </div>
               <div className='input-box'>
-                <span className='details'>Phone Number <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  Phone Number <span className='text-danger'> *</span>
+                </span>
                 <input
                   type='text'
                   name='phone_number'
@@ -105,9 +140,12 @@ const Register = () => {
                   onChange={handleInput}
                   placeholder='Enter your phone number'
                 />
+                <span>{registerInput.error_list.phone_number}</span>
               </div>
               <div className='input-box'>
-                <span className='details'>Date Of Birth <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  Date Of Birth <span className='text-danger'> *</span>
+                </span>
                 <input
                   type='date'
                   name='date_of_birth'
@@ -115,9 +153,12 @@ const Register = () => {
                   onChange={handleInput}
                   placeholder='Enter your date of birth'
                 />
+                <span>{registerInput.error_list.date_of_birth}</span>
               </div>
               <div className='input-box'>
-                <span className='details'>Designation <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  Designation <span className='text-danger'> *</span>
+                </span>
                 <input
                   type='text'
                   name='designation'
@@ -125,9 +166,12 @@ const Register = () => {
                   onChange={handleInput}
                   placeholder='Enter your designation'
                 />
+                <span>{registerInput.error_list.designation}</span>
               </div>
               <div className='input-box'>
-                <span className='details'>Department <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  Department <span className='text-danger'> *</span>
+                </span>
                 <input
                   type='text'
                   name='department'
@@ -135,17 +179,22 @@ const Register = () => {
                   onChange={handleInput}
                   placeholder='Enter your department'
                 />
+                <span>{registerInput.error_list.department}</span>
               </div>
 
               <div className='input-box'>
-                <span className='details'>Address <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  Address <span className='text-danger'> *</span>
+                </span>
                 <select
                   name='address'
                   className='form-select'
                   value={registerInput?.address}
                   onChange={handleInput}
                 >
-                  <option selected hidden>Enter Address</option>
+                  <option selected hidden>
+                    Enter Address
+                  </option>
                   <option value='Dhaka'>Dhaka</option>
                   <option value='Khulna'>Khulna</option>
                   <option value='Jessore'>Jessore</option>
@@ -153,17 +202,22 @@ const Register = () => {
                   <option value='Chittagong'>Chittagong</option>
                   <option value='Sylhet'>Sylhet</option>
                 </select>
+                <span>{registerInput.error_list.address}</span>
               </div>
 
               <div className='input-box'>
-                <span className='details'>Blood Group <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  Blood Group <span className='text-danger'> *</span>
+                </span>
                 <select
                   name='blood_group'
                   className='form-select'
                   value={registerInput?.blood_group}
                   onChange={handleInput}
                 >
-                  <option selected hidden>Enter Blood Group</option>
+                  <option selected hidden>
+                    Enter Blood Group
+                  </option>
                   <option value='A+'>A+</option>
                   <option value='A-'>A-</option>
                   <option value='B+'>B+</option>
@@ -173,10 +227,13 @@ const Register = () => {
                   <option value='O-'>O-</option>
                   <option value='O+'>O+</option>
                 </select>
+                <span>{registerInput.error_list.blood_group}</span>
               </div>
 
               <div className='input-box'>
-                <span className='details'>Image <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  Image <span className='text-danger'> *</span>
+                </span>
                 <input
                   type='file'
                   name='image'
@@ -189,6 +246,7 @@ const Register = () => {
                     }));
                   }}
                 />
+                <span>{registerInput.error_list.image}</span>
               </div>
 
               {/* <div className='input-box'>
@@ -206,7 +264,9 @@ const Register = () => {
               </div> */}
 
               <div className='input-box'>
-                <span className='details'>Password <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  Password <span className='text-danger'> *</span>
+                </span>
                 <input
                   type='text'
                   name='password'
@@ -214,9 +274,12 @@ const Register = () => {
                   onChange={handleInput}
                   placeholder='Enter your password'
                 />
+                <span>{registerInput.error_list.password}</span>
               </div>
               <div className='input-box'>
-                <span className='details'>Confirm Password <span className='text-danger'> *</span></span>
+                <span className='details'>
+                  Confirm Password <span className='text-danger'> *</span>
+                </span>
                 <input
                   type='text'
                   name='password_confirmation'
@@ -224,6 +287,7 @@ const Register = () => {
                   onChange={handleInput}
                   placeholder='Confirm your password'
                 />
+                <span>{registerInput.error_list.password_confirmation}</span>
               </div>
             </div>
             <div className='gender-details'>

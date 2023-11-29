@@ -6,11 +6,11 @@ const GuestRoutes = {
   children: [
     {
       element: <Login />,
-      path: '/login',
+      path: '/',
     },
     {
       element: <Register />,
-      path: '/',
+      path: '/register',
     },
   ],
 
