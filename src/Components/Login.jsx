@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
+  const navigate = useNavigate();
+
   const [loginInput, setLoginInput] = useState({
     email: '',
     password: '',
@@ -35,14 +39,36 @@ const Login = () => {
       method: 'POST',
     })
       .then((res) => res.json())
-      .then(() => {
-
+      .then((res) => {
+        if (res.status === 200) {
+          localStorage.setItem('auth_token', res.token);
+          localStorage.setItem('auth_name', res.user_name);
+          console.log(res);
+          Swal.fire({
+            title: 'Success!',
+            text: 'Login Successfully Completed!',
+            icon: 'success',
+            confirmButtonText: 'Ok',
+          });
+          navigate('/admin/dashboard');
+        } else {
+          if (res.status === 401) {
+            Swal.fire({
+              title: 'Warning!',
+              text: 'Login Unsuccessful',
+              icon: 'warning',
+              confirmButtonText: 'Ok',
+            });
+          }
+        }
+      })
+      .catch((error) => {
+        console.error(error);
       });
   };
 
   return (
     <>
-
       <div className='login_body'>
         <div className='wrapper'>
           <div className='title'>Login Form</div>
@@ -77,20 +103,11 @@ const Login = () => {
               />
               <label>Password Confirmation</label>
             </div>
-            <div className='content'>
-              <div className='checkbox'>
-                <input type='checkbox' id='remember-me' />
-                <label htmlFor='remember-me'>Remember me</label>
-              </div>
-              <div className='pass-link'>
-                <Link to='##'>Forgot password?</Link>
-              </div>
-            </div>
             <div className='field'>
               <input type='submit' value='Login' />
             </div>
             <div className='signup-link'>
-              Not a member? <Link to='/register'>Register now</Link>
+              Don't have an account? <Link to='/register'>Register now</Link>
             </div>
           </form>
         </div>

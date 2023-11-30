@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Register = () => {
@@ -71,9 +72,9 @@ const Register = () => {
             icon: 'success',
             confirmButtonText: 'Ok',
           });
-          navigate('/admin/dashboard');
+          navigate('/login');
 
-        } else {
+        }else {
           setRegisterInput({
             ...registerInput,
             error_list: res.validation_errors,
@@ -280,6 +281,9 @@ const Register = () => {
             </div>
             <div className='button'>
               <input type='submit' value='Register' />
+            </div>
+            <div className='signup-link'>
+              Already have an account? <Link to='/login'>Login</Link>
             </div>
           </form>
         </div>
