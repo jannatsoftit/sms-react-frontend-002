@@ -1,4 +1,74 @@
+import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
+
+
 const Topbar = () => {
+
+  const navigate = useNavigate();
+
+const logoutSubmit = (e) => {
+
+  e.preventDefault();
+
+  fetch(`http://127.0.0.1:8000/api/logout`)
+    .then((res) => {
+      if(res.status === 200){
+        localStorage.removeItem('auth_token', res.token);
+        localStorage.removeItem('auth_name', res.username);
+        Swal.fire({
+          title: 'Success!',
+          text: 'Login Successfully Completed!',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+        });
+        navigate('/public/dashboard');
+
+      }
+    })
+
+
+
+}
+
+
+
+  var AuthButtons1 = '';
+  var AuthButtons2 = '';
+
+  if (!localStorage.getItem('auth_token')) {
+    AuthButtons1 = (
+      <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
+        <li>
+          <Link className='dropdown-item' to='/login'>
+            Login
+          </Link>
+        </li>
+        <li>
+          <Link className='dropdown-item' href='/register'>
+            Register
+          </Link>
+        </li>
+      </ul>
+    );
+  } 
+  else 
+  {
+    AuthButtons2 = (
+      <li>
+        <button
+          className='btn btn-outline-dark'
+          type='submit'
+          onSubmit={logoutSubmit}
+          style={{ backgroundColor: '#ADD8E6', color: 'black' }}
+        >
+          Logout
+        </button>
+      </li>
+    );
+  }
+
   return (
     <>
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
@@ -33,23 +103,15 @@ const Topbar = () => {
                 </a>
                 <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
                   <li>
-                    <a className='dropdown-item' href='/'>
+                    <Link className='dropdown-item' to='/##'>
                       Profile
-                    </a>
+                    </Link>
                   </li>
-                  <li>
-                    <a className='dropdown-item' href='/'>
-                      Logout
-                    </a>
-                  </li>
-                  <li>
-                    <a className='dropdown-item' href='/'>
-                      Settings
-                    </a>
-                  </li>
+                  {AuthButtons1}
                 </ul>
               </li>
             </ul>
+            {AuthButtons2}
           </div>
         </div>
       </nav>

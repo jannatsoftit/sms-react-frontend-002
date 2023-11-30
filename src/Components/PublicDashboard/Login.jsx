@@ -42,7 +42,7 @@ const Login = () => {
       .then((res) => {
         if (res.status === 200) {
           localStorage.setItem('auth_token', res.token);
-          localStorage.setItem('auth_name', res.username);
+          localStorage.setItem('auth_name', res.user_name);
           console.log(res);
           Swal.fire({
             title: 'Success!',
