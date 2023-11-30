@@ -61,7 +61,7 @@ const Register = () => {
     })
       .then((res) => res.json())
       .then((res) => {
-        if (res?.status === 200) {
+        if (res.status === 200) {
           localStorage.setItem('auth_token', res.token);
           localStorage.setItem('auth_name', res.username);
           console.log(res);
@@ -71,14 +71,13 @@ const Register = () => {
             icon: 'success',
             confirmButtonText: 'Ok',
           });
-          navigate('/dashboard');
+          navigate('/admin/dashboard');
 
         } else {
           setRegisterInput({
             ...registerInput,
             error_list: res.validation_errors,
           });
-          //Swal.fire('Warning', response?.message, "warning");
         }
       })
       .catch((error) => {

@@ -90,7 +90,7 @@ const AuthRoutes = {
   children: [
     {
       element: <Dashboard />,
-      path: '/dashboard',
+      path: '/admin/dashboard',
     },
     {
       children: [
