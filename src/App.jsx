@@ -1,126 +1,128 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 import {
   // Navigate,
-  // Route,
-   Routes,
-   Link,
+  //  Route,
+  //  Routes,
+  Link,
   Outlet,
   Routes,
   useRoutes,
-} from 'react-router-dom';
+} from "react-router-dom";
 
-import './App.css';
+import "./App.css";
 // import Admin from "./Components/Admin";
-// import AdminLayout from './Components/routes/AdminLayout';
+import AdminLayout from "./Components/routes/AdminLayout";
 // import AdminProtectedRoutes from './Components/AdminProtectedRoutes';
 // import AdminRoutes from "./Components/routes";
 // import Dashboard from './Components/Pages/Dashboard/Dashboard';
 // import Register from "./Components/Register";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-import Footer from './Components/Footer';
-import Login from './Components/Login';
-import Sidebar from './Components/Sidebar';
-import Topbar from './Components/Topbar';
+import Footer from "./Components/Footer";
+import Login from "./Components/Login";
+import Sidebar from "./Components/Sidebar";
+import Topbar from "./Components/Topbar";
 
 //------------------  Admin Dashboard Route  ----------------//
 
 // Dashboard
-import Dashboard from './Components/Pages/Dashboard/Dashboard';
+import Dashboard from "./Components/Pages/Dashboard/Dashboard";
 
 // User
-import AdminCreate from './Components/Pages/Admin/AdminCreate/AdminCreate';
-import AdminEdit from './Components/Pages/Admin/AdminEdit/AdminEdit';
-import AdminList from './Components/Pages/Admin/AdminList/AdminList';
-import AdminShow from './Components/Pages/Admin/AdminShow/AdminShow';
+import AdminCreate from "./Components/Pages/Admin/AdminCreate/AdminCreate";
+import AdminEdit from "./Components/Pages/Admin/AdminEdit/AdminEdit";
+import AdminList from "./Components/Pages/Admin/AdminList/AdminList";
+import AdminShow from "./Components/Pages/Admin/AdminShow/AdminShow";
 
-import StudentCreate from './Components/Pages/Student/StudentCreate/StudentCreate';
-import StudentEdit from './Components/Pages/Student/StudentEdit/StudentEdit';
-import StudentList from './Components/Pages/Student/StudentList/StudentList';
-import StudentShow from './Components/Pages/Student/StudentShow/StudentShow';
+import StudentCreate from "./Components/Pages/Student/StudentCreate/StudentCreate";
+import StudentEdit from "./Components/Pages/Student/StudentEdit/StudentEdit";
+import StudentList from "./Components/Pages/Student/StudentList/StudentList";
+import StudentShow from "./Components/Pages/Student/StudentShow/StudentShow";
 
-import ParentCreate from './Components/Pages/Parent/ParentCreate/ParentCreate';
-import ParentEdit from './Components/Pages/Parent/ParentEdit/ParentEdit';
-import ParentList from './Components/Pages/Parent/ParentList/ParentList';
-import ParentShow from './Components/Pages/Parent/ParentShow/ParentShow';
+import ParentCreate from "./Components/Pages/Parent/ParentCreate/ParentCreate";
+import ParentEdit from "./Components/Pages/Parent/ParentEdit/ParentEdit";
+import ParentList from "./Components/Pages/Parent/ParentList/ParentList";
+import ParentShow from "./Components/Pages/Parent/ParentShow/ParentShow";
 
-import TeacherCreate from './Components/Pages/Teacher/TeacherCreate/TeacherCreate';
-import TeacherEdit from './Components/Pages/Teacher/TeacherEdit/TeacherEdit';
-import TeacherList from './Components/Pages/Teacher/TeacherList/TeacherList';
-import TeacherShow from './Components/Pages/Teacher/TeacherShow/TeacherShow';
+import TeacherCreate from "./Components/Pages/Teacher/TeacherCreate/TeacherCreate";
+import TeacherEdit from "./Components/Pages/Teacher/TeacherEdit/TeacherEdit";
+import TeacherList from "./Components/Pages/Teacher/TeacherList/TeacherList";
+import TeacherShow from "./Components/Pages/Teacher/TeacherShow/TeacherShow";
 
-import AccountantCreate from './Components/Pages/Accountant/AccountantCreate/AccountantCreate';
-import AccountantEdit from './Components/Pages/Accountant/AccountantEdit/AccountantEdit';
-import AccountantList from './Components/Pages/Accountant/AccountantList/AccountantList';
-import AccountantShow from './Components/Pages/Accountant/AccountantShow/AccountantShow';
+import AccountantCreate from "./Components/Pages/Accountant/AccountantCreate/AccountantCreate";
+import AccountantEdit from "./Components/Pages/Accountant/AccountantEdit/AccountantEdit";
+import AccountantList from "./Components/Pages/Accountant/AccountantList/AccountantList";
+import AccountantShow from "./Components/Pages/Accountant/AccountantShow/AccountantShow";
 
-import LibrarianCreate from './Components/Pages/Librarian/LibrarianCreate/LibrarianCreate';
-import LibrarianEdit from './Components/Pages/Librarian/LibrarianEdit/LibrarianEdit';
-import LibrarianList from './Components/Pages/Librarian/LibrarianList/LibrarianList';
-import LibrarianShow from './Components/Pages/Librarian/LibrarianShow/LibrarianShow';
+import LibrarianCreate from "./Components/Pages/Librarian/LibrarianCreate/LibrarianCreate";
+import LibrarianEdit from "./Components/Pages/Librarian/LibrarianEdit/LibrarianEdit";
+import LibrarianList from "./Components/Pages/Librarian/LibrarianList/LibrarianList";
+import LibrarianShow from "./Components/Pages/Librarian/LibrarianShow/LibrarianShow";
 
 // Examination
-import ExamCategoryCreate from './Components/Pages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate';
-import ExamCategoryEdit from './Components/Pages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit';
-import ExamCategoryList from './Components/Pages/Examination/ExamCategory/ExamCategoryList/ExamCategoryList';
+import ExamCategoryCreate from "./Components/Pages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate";
+import ExamCategoryEdit from "./Components/Pages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit";
+import ExamCategoryList from "./Components/Pages/Examination/ExamCategory/ExamCategoryList/ExamCategoryList";
 
-import GradeCreate from './Components/Pages/Examination/Grade/GradeCreate/GradeCreate';
-import GradeEdit from './Components/Pages/Examination/Grade/GradeEdit/GradeEdit';
-import GradeList from './Components/Pages/Examination/Grade/GradeList/GradeList';
+import GradeCreate from "./Components/Pages/Examination/Grade/GradeCreate/GradeCreate";
+import GradeEdit from "./Components/Pages/Examination/Grade/GradeEdit/GradeEdit";
+import GradeList from "./Components/Pages/Examination/Grade/GradeList/GradeList";
 
-import MarkCreate from './Components/Pages/Examination/Mark/MarkCreate/MarkCreate';
-import MarkEdit from './Components/Pages/Examination/Mark/MarkEdit/MarkEdit';
-import MarkList from './Components/Pages/Examination/Mark/MarkList/MarkList';
+import MarkCreate from "./Components/Pages/Examination/Mark/MarkCreate/MarkCreate";
+import MarkEdit from "./Components/Pages/Examination/Mark/MarkEdit/MarkEdit";
+import MarkList from "./Components/Pages/Examination/Mark/MarkList/MarkList";
 
-import OfflineExamCreate from './Components/Pages/Examination/OfflineExam/OfflineExamCreate/OfflineExamCreate';
-import OfflineExamEdit from './Components/Pages/Examination/OfflineExam/OfflineExamEdit/OfflineExamEdit';
-import OfflineExamList from './Components/Pages/Examination/OfflineExam/OfflineExamList/OfflineExamList';
+import OfflineExamCreate from "./Components/Pages/Examination/OfflineExam/OfflineExamCreate/OfflineExamCreate";
+import OfflineExamEdit from "./Components/Pages/Examination/OfflineExam/OfflineExamEdit/OfflineExamEdit";
+import OfflineExamList from "./Components/Pages/Examination/OfflineExam/OfflineExamList/OfflineExamList";
 
 //Academic
-import ClassRoomCreate from './Components/Pages/Academic/ClassRoom/ClassRoomCreate/ClassRoomCreate';
-import ClassRoomEdit from './Components/Pages/Academic/ClassRoom/ClassRoomEdit/ClassRoomEdit';
-import ClassRoomList from './Components/Pages/Academic/ClassRoom/ClassRoomList/ClassRoomList';
+import ClassRoomCreate from "./Components/Pages/Academic/ClassRoom/ClassRoomCreate/ClassRoomCreate";
+import ClassRoomEdit from "./Components/Pages/Academic/ClassRoom/ClassRoomEdit/ClassRoomEdit";
+import ClassRoomList from "./Components/Pages/Academic/ClassRoom/ClassRoomList/ClassRoomList";
 
-import SubjectCreate from './Components/Pages/Academic/Subject/SubjectCreate/SubjectCreate';
-import SubjectEdit from './Components/Pages/Academic/Subject/SubjectEdit/SubjectEdit';
-import SubjectList from './Components/Pages/Academic/Subject/SubjectList/SubjectList';
+import SubjectCreate from "./Components/Pages/Academic/Subject/SubjectCreate/SubjectCreate";
+import SubjectEdit from "./Components/Pages/Academic/Subject/SubjectEdit/SubjectEdit";
+import SubjectList from "./Components/Pages/Academic/Subject/SubjectList/SubjectList";
 
-import SyllabusCreate from './Components/Pages/Academic/Syllabus/SyllabusCreate/SyllabusCreate';
-import SyllabusEdit from './Components/Pages/Academic/Syllabus/SyllabusEdit/SyllabusEdit';
-import SyllabusList from './Components/Pages/Academic/Syllabus/SyllabusList/SyllabusList';
+import SyllabusCreate from "./Components/Pages/Academic/Syllabus/SyllabusCreate/SyllabusCreate";
+import SyllabusEdit from "./Components/Pages/Academic/Syllabus/SyllabusEdit/SyllabusEdit";
+import SyllabusList from "./Components/Pages/Academic/Syllabus/SyllabusList/SyllabusList";
 
-import ClassRoutineCreate from './Components/Pages/Academic/ClassRoutine/ClassRoutineCreate/ClassRoutineCreate';
-import ClassRoutineEdit from './Components/Pages/Academic/ClassRoutine/ClassRoutineEdit/ClassRoutineEdit';
-import ClassRoutineList from './Components/Pages/Academic/ClassRoutine/ClassRoutineList/ClassRoutineList';
+import ClassRoutineCreate from "./Components/Pages/Academic/ClassRoutine/ClassRoutineCreate/ClassRoutineCreate";
+import ClassRoutineEdit from "./Components/Pages/Academic/ClassRoutine/ClassRoutineEdit/ClassRoutineEdit";
+import ClassRoutineList from "./Components/Pages/Academic/ClassRoutine/ClassRoutineList/ClassRoutineList";
 
 // Accountant
-import StudentFeeCreate from './Components/Pages/StudentFee/StudentFeeCreate/StudentFeeCreate';
-import StudentFeeEdit from './Components/Pages/StudentFee/StudentFeeEdit/StudentFeeEdit';
-import StudentFeeList from './Components/Pages/StudentFee/StudentFeeList/StudentFeeList';
+import StudentFeeCreate from "./Components/Pages/StudentFee/StudentFeeCreate/StudentFeeCreate";
+import StudentFeeEdit from "./Components/Pages/StudentFee/StudentFeeEdit/StudentFeeEdit";
+import StudentFeeList from "./Components/Pages/StudentFee/StudentFeeList/StudentFeeList";
 
-import ExpanseCategoryCreate from './Components/Pages/ExpanseCategory/ExpanseCategoryCreate/ExpanseCategoryCreate';
-import ExpanseCategoryEdit from './Components/Pages/ExpanseCategory/ExpanseCategoryEdit/ExpanseCategoryEdit';
-import ExpanseCategoryList from './Components/Pages/ExpanseCategory/ExpanseCategoryList/ExpanseCategoryList';
+import ExpanseCategoryCreate from "./Components/Pages/ExpanseCategory/ExpanseCategoryCreate/ExpanseCategoryCreate";
+import ExpanseCategoryEdit from "./Components/Pages/ExpanseCategory/ExpanseCategoryEdit/ExpanseCategoryEdit";
+import ExpanseCategoryList from "./Components/Pages/ExpanseCategory/ExpanseCategoryList/ExpanseCategoryList";
 
 // Settings
-import SchoolList from './Components/Pages/School/SchoolList/SchoolList';
-import SchoolCreate from './Components/Pages/School/SchoolCreate/SchoolCreate';
-import SchoolEdit from './Components/Pages/School/SchoolEdit/SchoolEdit';
-import SchoolShow from './Components/Pages/School/SchoolShow/SchoolShow';
+import SchoolList from "./Components/Pages/School/SchoolList/SchoolList";
+import SchoolCreate from "./Components/Pages/School/SchoolCreate/SchoolCreate";
+import SchoolEdit from "./Components/Pages/School/SchoolEdit/SchoolEdit";
+import SchoolShow from "./Components/Pages/School/SchoolShow/SchoolShow";
+
+import PublicDashboard from "./Components/PublicDashboard/Dashboard/PublicDashboard";
 
 const App = () => {
-  const [isAuthenticated, setAuthenticated] = useState(
-    () => JSON.parse(localStorage.getItem('role_id')) || false
-  );
+  // const [isAuthenticated, setAuthenticated] = useState(
+  //   () => JSON.parse(localStorage.getItem("role_id")) || false
+  // );
 
-  const setAuth = (value) => {
-    setAuthenticated(value);
-  };
+  // const setAuth = (value) => {
+  //   setAuthenticated(value);
+  // };
 
-  useEffect(() => {
-    localStorage.setItem('role_id', JSON.stringify(isAuthenticated));
-  }, [isAuthenticated]);
+  // useEffect(() => {
+  //   localStorage.setItem("role_id", JSON.stringify(isAuthenticated));
+  // }, [isAuthenticated]);
 
   // admin routes
   // student routes
@@ -202,442 +204,426 @@ const App = () => {
 
     {
       children: [
-
+        {
+          element: <Dashboard />,
+          path: "/admin",
+        },
         {
           children: [
             {
               element: <AdminList />,
-              path: '',
+              path: "",
             },
             {
               element: <AdminCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <AdminShow />,
-                  path: '',
+                  path: "",
                 },
                 {
                   element: <AdminEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':adminId',
+              path: ":adminId",
             },
           ],
-          path: '/admin/admins',
+          path: "/admin/admins",
         },
         {
           children: [
             {
               element: <StudentList />,
-              path: '',
+              path: "",
             },
             {
               element: <StudentCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <StudentShow />,
-                  path: '',
+                  path: "",
                 },
                 {
                   element: <StudentEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':studentId',
+              path: ":studentId",
             },
           ],
-          path: '/admin/students',
+          path: "/admin/students",
         },
         {
           children: [
             {
               element: <ParentList />,
-              path: '',
+              path: "",
             },
             {
               element: <ParentCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <ParentShow />,
-                  path: '',
+                  path: "",
                 },
                 {
                   element: <ParentEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':parentId',
+              path: ":parentId",
             },
           ],
-          path: 'parents',
+          path: "parents",
         },
         {
           children: [
             {
               element: <TeacherList />,
-              path: '',
+              path: "",
             },
             {
               element: <TeacherCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <TeacherShow />,
-                  path: '',
+                  path: "",
                 },
                 {
                   element: <TeacherEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':teacherId',
+              path: ":teacherId",
             },
           ],
-          path: 'teachers',
+          path: "teachers",
         },
         {
           children: [
             {
               element: <AccountantList />,
-              path: '',
+              path: "",
             },
             {
               element: <AccountantCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <AccountantShow />,
-                  path: '',
+                  path: "",
                 },
                 {
                   element: <AccountantEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':accountantId',
+              path: ":accountantId",
             },
           ],
-          path: 'accountants',
+          path: "accountants",
         },
         {
           children: [
             {
               element: <LibrarianList />,
-              path: '',
+              path: "",
             },
             {
               element: <LibrarianCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <LibrarianShow />,
-                  path: '',
+                  path: "",
                 },
                 {
                   element: <LibrarianEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':librarianId',
+              path: ":librarianId",
             },
           ],
-          path: 'librarians',
+          path: "librarians",
         },
         {
           children: [
             {
               element: <ExamCategoryList />,
-              path: '',
+              path: "",
             },
             {
               element: <ExamCategoryCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <ExamCategoryEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':examCategoryId',
+              path: ":examCategoryId",
             },
           ],
-          path: 'examCategories',
+          path: "examCategories",
         },
         {
           children: [
             {
               element: <GradeList />,
-              path: '',
+              path: "",
             },
             {
               element: <GradeCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <GradeEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':gradeId',
+              path: ":gradeId",
             },
           ],
-          path: 'grades',
+          path: "grades",
         },
         {
           children: [
             {
               element: <MarkList />,
-              path: '',
+              path: "",
             },
             {
               element: <MarkCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <MarkEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':markId',
+              path: ":markId",
             },
           ],
-          path: 'marks',
+          path: "marks",
         },
         {
           children: [
             {
               element: <OfflineExamList />,
-              path: '',
+              path: "",
             },
             {
               element: <OfflineExamCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <OfflineExamEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':offlineExamId',
+              path: ":offlineExamId",
             },
           ],
-          path: 'offlineExams',
+          path: "offlineExams",
         },
         {
           children: [
             {
               element: <ClassRoomList />,
-              path: '',
+              path: "",
             },
             {
               element: <ClassRoomCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <ClassRoomEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':classRoomId',
+              path: ":classRoomId",
             },
           ],
-          path: 'classRooms',
+          path: "classRooms",
         },
         {
           children: [
             {
               element: <SubjectList />,
-              path: '',
+              path: "",
             },
             {
               element: <SubjectCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <SubjectEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':subjectId',
+              path: ":subjectId",
             },
           ],
-          path: 'subjects',
+          path: "subjects",
         },
         {
           children: [
             {
               element: <SyllabusList />,
-              path: '',
+              path: "",
             },
             {
               element: <SyllabusCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <SyllabusEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':syllabusId',
+              path: ":syllabusId",
             },
           ],
-          path: 'syllabuses',
+          path: "syllabuses",
         },
         {
           children: [
             {
               element: <ClassRoutineList />,
-              path: '',
+              path: "",
             },
             {
               element: <ClassRoutineCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <ClassRoutineEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':classRoutineId',
+              path: ":classRoutineId",
             },
           ],
-          path: 'classRoutines',
+          path: "classRoutines",
         },
         {
           children: [
             {
               element: <StudentFeeList />,
-              path: '',
+              path: "",
             },
             {
               element: <StudentFeeCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <StudentFeeEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':studentFeeId',
+              path: ":studentFeeId",
             },
           ],
-          path: 'studentFees',
+          path: "studentFees",
         },
         {
           children: [
             {
               element: <ExpanseCategoryList />,
-              path: '',
+              path: "",
             },
             {
               element: <ExpanseCategoryCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <ExpanseCategoryEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':expanseCategoryId',
+              path: ":expanseCategoryId",
             },
           ],
-          path: 'expanseCategories',
+          path: "expanseCategories",
         },
         {
           children: [
             {
               element: <SchoolList />,
-              path: '',
+              path: "",
             },
             {
               element: <SchoolCreate />,
-              path: 'create',
+              path: "create",
             },
             {
               children: [
                 {
                   element: <SchoolShow />,
-                  path: '',
+                  path: "",
                 },
                 {
                   element: <SchoolEdit />,
-                  path: 'edit',
+                  path: "edit",
                 },
               ],
-              path: ':schoolId',
+              path: ":schoolId",
             },
           ],
-          path: 'schools',
+          path: "schools",
         },
-        // {
-        //   element: <Dashboard />,
-        //   path: '/admin',
-        // },
       ],
 
-    element: (
-      <div>
-        
-        <Topbar />
-        <Sidebar>
-          <Routes >
-          <Link to='/admin'><Dashboard/></Link>
-          <Link to='/admin/admins'><AdminList/></Link>
-          </Routes>
-          <Footer />
-        </Sidebar>
-        <Outlet />
-      </div>
-    ),
-
-    path: '/admin',
-
-  },
+      element: <AdminLayout />,
+      path: "/admin",
+    },
 
     {
       children: [
         {
-          path: '/',
+          path: "/",
           element: <Login />,
         },
       ],
-      path: '/',
+      path: "/",
     },
   ]);
 

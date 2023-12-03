@@ -3,7 +3,7 @@ import { FaChalkboardTeacher } from 'react-icons/fa';
 import { TbBooks } from 'react-icons/tb';
 import { MdNotificationsActive } from 'react-icons/md';
 
-const Dashboard = () => {
+const PublicDashboard = () => {
   return (
     <>
     <div className='p-3 pb-5'>
@@ -57,4 +57,4 @@ const Dashboard = () => {
   )
 }
 
-export default Dashboard;
+export default PublicDashboard;

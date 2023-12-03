@@ -9,7 +9,6 @@ import * as MdIcons from 'react-icons/md';
 import * as PiIcons from 'react-icons/pi';
 
 export const SidebarData = [
-
   {
     title: 'Dashboard',
     path: '/admin',

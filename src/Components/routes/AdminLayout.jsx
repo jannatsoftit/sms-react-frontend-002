@@ -1,41 +1,54 @@
-// import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
-// import Topbar from '../Topbar';
-// import Sidebar from '../Sidebar';
-// import Footer from '../Footer';
+import Topbar from "../Topbar";
+//import Sidebar from "../Sidebar";
+import Footer from "../Footer";
 
-// import Login from '../Login';
-// import Dashboard from '../Pages/Dashboard/Dashboard';
+import Login from "../Login";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import Sidebar from "../Sidebar";
+//import AdminProtectedRoutes from '../AdminProtectedRoutes';
+import AdminList from '../Pages/Admin/AdminList/AdminList';
 
-// const userAuth = () => {
+import { useNavigate } from "react-router-dom";
 
-//   const userRole = localStorage.getItem('role_id');
+const AdminLayout = () => {
+  const [isAuthenticated, setAuthenticated] = useState(
+    () => JSON.parse(localStorage.getItem("role_id")) || false
+  );
 
-//   if (userRole === '1') {
-//     return ((localStorage.getItem()) && true);
-//   }else{
-//     return false;
-//   }
-// };
+  // const [isAuthToken, setAuthToken] = useState(
+  //   () => JSON.parse(localStorage.getItem("auth_token")) || false
+  // );
 
-// const AdminLayout = () => {
+  const setAuth = (value) => {
+    setAuthenticated(value);
+  };
 
-//   const auth = userAuth();
+  useEffect(() => {
+    localStorage.setItem("role_id", JSON.stringify(isAuthenticated));
+  }, [isAuthenticated]);
 
-//   return auth ? (
-//     <>
-//       <div>
-//         <Topbar />
-//         <Sidebar>
-//           <Link to='/admin'><Dashboard /></Link>
-//           <Footer />
-//         </Sidebar>
-//       </div>
-//       <Outlet />
-//     </>
-//   ) : (
-//     <Login />
-//   );
-// };
+  //const navigate = useNavigate();
 
-// export default AdminLayout;
+  const userRole = localStorage.getItem("role_id");
+
+  if(isAuthenticated){
+    if( userRole === '1'){
+      return (
+        <>
+          {/* <AdminProtectedRoutes> */}
+          <Topbar />
+          <Sidebar>
+            <Dashboard />
+            <Footer />
+          </Sidebar>
+          {/* </AdminProtectedRoutes> */}
+        </>
+      )
+    }
+  }
+};
+
+export default AdminLayout;
