@@ -112,17 +112,20 @@ import SchoolShow from "./Components/Pages/School/SchoolShow/SchoolShow";
 import PublicDashboard from "./Components/PublicDashboard/Dashboard/PublicDashboard";
 
 const App = () => {
-  // const [isAuthenticated, setAuthenticated] = useState(
-  //   () => JSON.parse(localStorage.getItem("role_id")) || false
-  // );
 
-  // const setAuth = (value) => {
-  //   setAuthenticated(value);
-  // };
+  const [isAuthenticated, setAuthenticated] = useState(
+    () => JSON.parse(localStorage.getItem("role_id")) || false
+  );
 
-  // useEffect(() => {
-  //   localStorage.setItem("role_id", JSON.stringify(isAuthenticated));
-  // }, [isAuthenticated]);
+  const setAuth = (value) => {
+    setAuthenticated(value);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("role_id", JSON.stringify(isAuthenticated));
+  }, [isAuthenticated]);
+
+  const userRole = localStorage.getItem("role_id");
 
   // admin routes
   // student routes
@@ -131,6 +134,7 @@ const App = () => {
   // register
 
   return useRoutes([
+
     // { path: '/same', element: <h3>Different 1</h3> },
     // { path: '/same', element: <h3>Different 2</h3> },
 
@@ -612,8 +616,16 @@ const App = () => {
         },
       ],
 
-      element: <AdminLayout />,
-      path: "/admin",
+      element: (
+      <>
+        <Topbar />
+          <Sidebar>
+            <Footer />
+          </Sidebar>
+      </>
+  ),
+    path: "/admin",
+
     },
 
     {

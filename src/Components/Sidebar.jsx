@@ -15,7 +15,6 @@ const Sidebar = ({ children }) => {
 
   const userRole = localStorage.getItem("role_id");
 
-
     return (
       <>
         <div className='con'>
@@ -35,9 +34,11 @@ const Sidebar = ({ children }) => {
                   {/* <div className='navicon'>
               <AiIcons.AiOutlineClose />
             </div> */}
-              {SidebarData?.map((item, index) => {
-                return <SubMenu item={item} key={index} />;
-              })}
+              {
+                SidebarData?.map((item, index) => {
+                  return <SubMenu item={item} key={index} />;
+                })
+              }
                 </div>
               </div>
             </SidebarNav>
@@ -46,7 +47,6 @@ const Sidebar = ({ children }) => {
         </div>
       </>
     );
-  
 };
 
 const SidebarNav = styled.nav`

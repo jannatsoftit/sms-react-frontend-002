@@ -176,7 +176,7 @@ const AdminTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/admins/${record?.id}`}
+                                    to={`/admin/admins/${record?.id}`}
                                   >
                                     Show Admin
                                   </Link>
@@ -184,7 +184,7 @@ const AdminTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/admins/${record?.id}/edit`}
+                                    to={`/admin/admins/${record?.id}/edit`}
                                   >
                                     Edit Admin
                                   </Link>

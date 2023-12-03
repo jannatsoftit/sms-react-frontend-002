@@ -109,7 +109,7 @@ const AdminEdit = () => {
   return (
     <>
       {/* Admin create table title section */}
-      <Link to='/admins' className='add_button'>
+      <Link to='/admin/admins' className='add_button'>
         <button type='button' className='btn'>
           Admin Table <AiOutlineArrowRight />
         </button>
