@@ -4,10 +4,10 @@ import Register from '../../Components/Register';
 
 const GuestRoutes = {
   children: [
-    {
-      element: <Login />,
-      path: '/',
-    },
+    // {
+    //   element: <Login />,
+    //   path: '/',
+    // },
     {
       element: <Register />,
       path: '/register',

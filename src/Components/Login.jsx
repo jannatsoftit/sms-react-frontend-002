@@ -48,7 +48,7 @@ const Login = () => {
           const userRole = localStorage.getItem("role_id");
           console.log(userRole);
           if (userRole === "1") {
-            navigate("/admin/dashboard");
+            navigate("/admin");
           } else if (userRole === "2") {
             navigate("/student/dashboard");
           } else if (userRole === "3") {

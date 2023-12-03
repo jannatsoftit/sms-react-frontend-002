@@ -12,7 +12,7 @@ export const SidebarData = [
 
   {
     title: 'Dashboard',
-    path: '/admin/dashboard',
+    path: '/admin',
     icon: <AiIcons.AiFillHome />,
   },
   {
@@ -24,12 +24,12 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Admin',
-        path: '/admins',
+        path: '/admin/admins',
         icon: <MdIcons.MdAdminPanelSettings />,
       },
       {
         title: 'Student',
-        path: '/students',
+        path: '/admin/students',
         icon: <PiIcons.PiStudentFill />,
       },
       {

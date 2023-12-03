@@ -4,4 +4,7 @@ import GuestRoutes from "./GuestRoutes";
 
 export default function AdminRoutes() {
   return useRoutes([ AuthRoutes, GuestRoutes]);
+  AuthRoutes
+   - admin routes
+   - student routes
 }
