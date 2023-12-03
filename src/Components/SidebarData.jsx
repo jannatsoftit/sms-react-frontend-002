@@ -9,6 +9,7 @@ import * as MdIcons from 'react-icons/md';
 import * as PiIcons from 'react-icons/pi';
 
 export const SidebarData = [
+
   {
     title: 'Dashboard',
     path: '/admin/dashboard',
@@ -140,7 +141,7 @@ export const SidebarData = [
       },
       {
         title: 'Login',
-        path: '/login',
+        path: '/',
         icon: <RiIcons.RiLogoutCircleFill />,
       },
       {
@@ -156,5 +157,4 @@ export const SidebarData = [
     ],
   },
 
- 
 ];

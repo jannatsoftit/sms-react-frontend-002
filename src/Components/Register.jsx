@@ -72,7 +72,7 @@ const Register = () => {
             icon: 'success',
             confirmButtonText: 'Ok',
           });
-          navigate('/login');
+          navigate('/');
 
         }else {
           setRegisterInput({
@@ -89,7 +89,7 @@ const Register = () => {
   return (
     <div className='register'>
       <div className='register_container'>
-        <div className='title'>Registration Form</div>
+        <div className='register_title'>Registration Form</div>
         <div className='content'>
           <form onSubmit={handleSubmit}>
             <div className='user-details'>

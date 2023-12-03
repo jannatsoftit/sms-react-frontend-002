@@ -74,11 +74,11 @@ main {
 /* Top section */
 
 .navbar-nav {
-  margin-left: 660px;
+  margin-left: 450px;
 }
 
 .search {
-  margin-left: 160px;
+  margin-left: 150px;
 }
 
 /* dashboard */
@@ -93,6 +93,11 @@ main {
 
 span {
   font-weight: bold;
+}
+
+.dashboard_table {
+  padding-bottom: 88px;
+
 }
 
 /* Sidebar main-menu design */
@@ -11178,26 +11183,26 @@ body{
   justify-content: center;
 }
 
-.title{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 40px;
+.register_title{
+  width: 700px;
+  margin-top: -35px;
+  margin-left: -30px;
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, #c850c0, #4158d0);
 }
+
 .register_container .title{
   font-size: 25px;
   font-weight: 500;
   position: relative;
 }
-/* .register_container .title::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 3px;
-  width: 30px;
-  border-radius: 5px;
-  background: linear-gradient(135deg, #71b7e6, #9b59b6);
-} */
+
 .content form .user-details{
   display: flex;
   flex-wrap: wrap;
@@ -11276,7 +11281,7 @@ form .input-box span.details{
    letter-spacing: 1px;
    cursor: pointer;
    transition: all 0.3s ease;
-   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+   background: linear-gradient(-135deg, #c850c0, #4158d0);
  }
  form .button input:hover{
   /* transform: scale(0.99); */
@@ -11311,7 +11316,7 @@ form .user-details .input-box{
 /*********** Login form css ************/
 .login_body{
   display: grid;
-  height: 100%;
+  height: 875px;
   width: 100%;
   place-items: center;
   background: #f2f2f2;
