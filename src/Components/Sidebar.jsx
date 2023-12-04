@@ -1,52 +1,51 @@
-import { useState } from 'react';
+import { IconContext } from 'react-icons/lib';
 import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
+import { useState } from 'react';
 import SubMenu from './SubMenu';
+import styled from 'styled-components';
 // import * as FaIcons from 'react-icons/fa';
 // import * as AiIcons from 'react-icons/ai';
-import { IconContext } from 'react-icons/lib';
-import styled from 'styled-components';
 
 const Sidebar = ({ children }) => {
-
   const [sidebar, setSidebar] = useState('true');
 
   const showSidebar = () => setSidebar(!sidebar);
 
-  const userRole = localStorage.getItem("role_id");
+  //const userRole = localStorage.getItem('role_id');
 
-    return (
-      <>
-        <div className='con'>
-          <IconContext.Provider value={{}}>
-            {/* <div className='nav'>
-          <div className='navicon'>
-            <FaIcons.FaBars onClick={showSidebar} />
-          </div>
-        </div> */}
-          <SidebarNav sidebar={sidebar}>
-              <div className='sidebar_wrap'>
-                <div className='sidebar'>
-                  <div className='top_section'>
-                    <Link to="/" className='logo'>Logo</Link>
-                  </div>
-  
-                  {/* <div className='navicon'>
-              <AiIcons.AiOutlineClose />
-            </div> */}
-              {
-                SidebarData?.map((item, index) => {
-                  return <SubMenu item={item} key={index} />;
-                })
-              }
-                </div>
-              </div>
-            </SidebarNav>
-          </IconContext.Provider>
-          <main>{children}</main>
+  return (
+    <>
+      <div className='con'>
+        <IconContext.Provider value={{}}>
+          {/* <div className='nav'>
+        <div className='navicon'>
+          <FaIcons.FaBars onClick={showSidebar} />
         </div>
-      </>
-    );
+      </div> */}
+          <SidebarNav sidebar={sidebar}>
+            <div className='sidebar_wrap'>
+              <div className='sidebar'>
+                <div className='top_section'>
+                  <Link to='/' className='logo'>
+                    Logo
+                  </Link>
+                </div>
+
+                {/* <div className='navicon'>
+            <AiIcons.AiOutlineClose />
+          </div> */}
+                {SidebarData?.map((item, index) => {
+                  return <SubMenu item={item} key={index} />;
+                })}
+              </div>
+            </div>
+          </SidebarNav>
+        </IconContext.Provider>
+        <main>{children}</main>
+      </div>
+    </>
+  );
 };
 
 const SidebarNav = styled.nav`

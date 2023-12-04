@@ -1,21 +1,21 @@
-import { Outlet, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { Outlet, Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
-import Topbar from "../Topbar";
-//import Sidebar from "../Sidebar";
-import Footer from "../Footer";
+import Topbar from '../Topbar';
+import Sidebar from '../Sidebar';
+import Footer from '../Footer';
+import Login from '../Login';
 
-import Login from "../Login";
-import Dashboard from "../Pages/Dashboard/Dashboard";
-import Sidebar from "../Sidebar";
-//import AdminProtectedRoutes from '../AdminProtectedRoutes';
-import AdminList from '../Pages/Admin/AdminList/AdminList';
+//import Login from '../Login';
+//import Dashboard from '../Pages/Dashboard/Dashboard';
+//import AdminProtectedRoute from '../AdminProtectedRoute';
+//import AdminList from '../Pages/Admin/AdminList/AdminList';
 
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from 'react-router-dom';
 
 const AdminLayout = () => {
   const [isAuthenticated, setAuthenticated] = useState(
-    () => JSON.parse(localStorage.getItem("role_id")) || false
+    () => JSON.parse(localStorage.getItem('role_id')) || false
   );
 
   // const [isAuthToken, setAuthToken] = useState(
@@ -27,27 +27,23 @@ const AdminLayout = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem("role_id", JSON.stringify(isAuthenticated));
+    localStorage.setItem('role_id', JSON.stringify(isAuthenticated));
   }, [isAuthenticated]);
 
   //const navigate = useNavigate();
 
-  const userRole = localStorage.getItem("role_id");
-
-  if(isAuthenticated){
-    if( userRole === '1'){
-      return (
-        <>
-          {/* <AdminProtectedRoutes> */}
-          <Topbar />
-          <Sidebar>
-            <Dashboard />
-            <Footer />
-          </Sidebar>
-          {/* </AdminProtectedRoutes> */}
-        </>
-      )
-    }
+  if (isAuthenticated) {
+    return (
+      <>
+        <Topbar />
+        <Sidebar>
+          <Footer />
+        </Sidebar>
+        <Outlet />
+      </>
+    );
+  } else {
+    <Login />;
   }
 };
 

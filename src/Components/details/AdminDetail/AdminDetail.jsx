@@ -11,7 +11,7 @@ const AdminDetail = ({ admin }) => {
                     <div className="text-center border-end">
                       <img
                         className="img-fluid avatar-xxl rounded-circle"
-                        src={`http://127.0.0.1:8000/api/storage/AD_img/${admin?.image}`}
+                        src={`http://127.0.0.1:8000/storage/AD_img/${admin?.image}`}
                         width="50px"
                         alt={admin?.name}
                       />
@@ -50,15 +50,11 @@ const AdminDetail = ({ admin }) => {
                             </p>
                             <p className="text-muted mb-2 fw-medium">
                               <i className="mdi mdi-information me-2"></i>
-                              Address: {admin?.address}
+                              Address: {admin?.address}, Blood Group: {admin?.blood_group}
                             </p>
                             <p className="text-muted mb-2 fw-medium">
                               <i className="mdi mdi-gender-male-female me-2"></i>
                               Gender: {admin?.gender}
-                            </p>
-                            <p className="text-muted mb-2 fw-medium">
-                              <i className="mdi mdi-gender-male-female me-2"></i>
-                              Blood Group: {admin?.blood_group}
                             </p>
                           </div>
                         </div>

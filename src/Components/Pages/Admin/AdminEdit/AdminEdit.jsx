@@ -48,7 +48,7 @@ const AdminEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/admins', { replace: true });
+      navigate('/admin/admins', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');

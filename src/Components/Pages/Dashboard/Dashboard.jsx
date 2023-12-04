@@ -1,7 +1,7 @@
-import { PiUsersFill } from "react-icons/pi";
 import { FaChalkboardTeacher } from "react-icons/fa";
-import { TbBooks } from "react-icons/tb";
 import { MdNotificationsActive } from "react-icons/md";
+import { PiUsersFill } from "react-icons/pi";
+import { TbBooks } from "react-icons/tb";
 import BarChart from "./BarChart";
 import Table from "./Table";
 

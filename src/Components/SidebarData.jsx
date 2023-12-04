@@ -8,8 +8,7 @@ import * as SiIcons from 'react-icons/si';
 import * as MdIcons from 'react-icons/md';
 import * as PiIcons from 'react-icons/pi';
 
-
-  export const SidebarData = [
+export const SidebarData = [
     {
       title: 'Dashboard',
       path: '/admin',
@@ -34,22 +33,22 @@ import * as PiIcons from 'react-icons/pi';
         },
         {
           title: 'Teacher',
-          path: '/teachers',
+          path: '/admin/teachers',
           icon: <FaIcons.FaChalkboardTeacher />,
         },
         {
           title: 'Parent',
-          path: '/parents',
+          path: '/admin/parents',
           icon: <RiIcons.RiParentFill />,
         },
         {
           title: 'Accountant',
-          path: '/accountants',
+          path: '/admin/accountants',
           icon: <BsIcons.BsBank2 />,
         },
         {
           title: 'Librarian',
-          path: '/librarians',
+          path: '/admin/librarians',
           icon: <MdIcons.MdLocalLibrary />,
         },
       ],
@@ -62,22 +61,22 @@ import * as PiIcons from 'react-icons/pi';
       subNav: [
         {
           title: 'Exam Category',
-          path: '/examCategories',
+          path: '/admin/examCategories',
           icon: <IoIcons.IoIosPaper />,
         },
         {
           title: 'Grade',
-          path: '/grades',
+          path: '/admin/grades',
           icon: <IoIcons.IoIosPaper />,
         },
         {
           title: 'Mark',
-          path: '/marks',
+          path: '/admin/marks',
           icon: <IoIcons.IoIosPaper />,
         },
         {
           title: 'Offline Exam',
-          path: '/offlineExams',
+          path: '/admin/offlineExams',
           icon: <IoIcons.IoIosPaper />,
         },
       ],
@@ -90,22 +89,22 @@ import * as PiIcons from 'react-icons/pi';
       subNav: [
         {
           title: 'Class Room',
-          path: '/classRooms',
+          path: '/admin/classRooms',
           icon: <SiIcons.SiGoogleclassroom />,
         },
         {
           title: 'Subjects',
-          path: '/subjects',
+          path: '/admin/subjects',
           icon: <MdIcons.MdSubject />,
         },
         {
           title: 'Syllabus',
-          path: '/syllabuses',
+          path: '/admin/syllabuses',
           icon: <IoIcons.IoIosPaper />,
         },
         {
           title: 'Class Routine',
-          path: '/classRoutines',
+          path: '/admin/classRoutines',
           icon: <IoIcons.IoIosPaper />,
         },
       ],
@@ -118,12 +117,12 @@ import * as PiIcons from 'react-icons/pi';
       subNav: [
         {
           title: 'Student Fee',
-          path: '/studentFees',
+          path: '/admin/studentFees',
           icon: <BiIcons.BiMoney />,
         },
         {
           title: 'Expense Category',
-          path: '/expanseCategories',
+          path: '/admin/expanseCategories',
           icon: <IoIcons.IoIosPaper />,
         },
       ],
@@ -136,7 +135,7 @@ import * as PiIcons from 'react-icons/pi';
       subNav: [
         {
           title: 'School Info',
-          path:`/schools`, // '/schools' 
+          path:`/admin/schools`, // '/schools' 
           icon: <BsIcons.BsInfoCircleFill />,
         },
         {
@@ -156,7 +155,4 @@ import * as PiIcons from 'react-icons/pi';
         },
       ],
     },
-  
   ];
-
-
