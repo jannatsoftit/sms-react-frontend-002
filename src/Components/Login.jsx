@@ -65,8 +65,8 @@ const Login = () => {
           }
           console.info(res);
           Swal.fire({
-            title: 'Success!',
-            text: 'Login Successfully Completed!',
+            title: 'Success',
+            text: 'Logged in Successfully Completed!',
             icon: 'success',
             confirmButtonText: 'Ok',
           });

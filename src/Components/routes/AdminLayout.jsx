@@ -1,7 +1,7 @@
 import { Outlet, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import Topbar from '../Topbar';
+import TopBar from '../TopBar';
 import Sidebar from '../Sidebar';
 import Footer from '../Footer';
 import Login from '../Login';
@@ -14,6 +14,7 @@ import Login from '../Login';
 //import { useNavigate } from 'react-router-dom';
 
 const AdminLayout = () => {
+  
   const [isAuthenticated, setAuthenticated] = useState(
     () => JSON.parse(localStorage.getItem('role_id')) || false
   );
@@ -35,7 +36,7 @@ const AdminLayout = () => {
   if (isAuthenticated) {
     return (
       <>
-        <Topbar />
+        <TopBar />
         <Sidebar>
           <Footer />
         </Sidebar>

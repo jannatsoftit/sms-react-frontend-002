@@ -11,7 +11,7 @@ import {
 
 import './App.css';
 // import Admin from "./Components/Admin";
-import AdminLayout from './Components/routes/AdminLayout';
+import AdminLayout from './Components/routes/AdminLayout.jsx';
  import AdminProtectedRoutes from './Components/AdminProtectedRoute';
 // import AdminRoutes from "./Components/routes";
 // import Dashboard from './Components/Pages/Dashboard/Dashboard';
@@ -21,7 +21,7 @@ import AdminLayout from './Components/routes/AdminLayout';
 import Footer from './Components/Footer';
 import Login from './Components/Login';
 import Sidebar from './Components/Sidebar';
-import Topbar from './Components/Topbar';
+import TopBar from './Components/TopBar';
 
 //------------------  Admin Dashboard Route  ----------------//
 
@@ -617,10 +617,10 @@ const App = () => {
 
       element: (
         <>
-          <Topbar />
-            <Sidebar>
+          {/* <TopBar />
+            <Sidebar> */}
               <Routes>
-              <Route element={<AdminLayout />}>
+              {/* <Route element={<AdminLayout />}> */}
 
                 {/* <Route element={<AdminProtectedRoute />}>
                 <Route element={<AdminLayout />}> */}
@@ -704,15 +704,15 @@ const App = () => {
 
                 {/* </Route>
                 </Route> */}
-                </Route>
+                {/* </Route> */}
               </Routes>
-              <Outlet/>
+              {/* <Outlet/>
             </Sidebar>
-          <Footer />
+          <Footer /> */}
         </>
       ),
 
-      path: '/admin',
+      // path: '/admin',
     },
 
     {

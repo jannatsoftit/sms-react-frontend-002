@@ -1,7 +1,7 @@
 // --------------------------------------------------------------
 
 import React from 'react';
-import Topbar from '../Components/Topbar';
+import Topbar from './TopBar';
 import Sidebar from '../Components/Sidebar';
 import Footer from '../Components/Footer';
 

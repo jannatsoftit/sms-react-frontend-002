@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import AdminDetail from '../../../details/AdminDetail/AdminDetail';
+import Sidebar from '../../../Sidebar';
+import TopBar from '../../../TopBar';
 
 const AdminShow = () => {
   const { adminId } = useParams();
@@ -30,17 +32,18 @@ const AdminShow = () => {
 
   return (
     <div>
+      <TopBar />
+      <Sidebar>
+        {/* Admin create table title section */}
+        <Link to='/admin/admins' className='add_button'>
+          <button type='button' className='btn'>
+            Admin Table <AiOutlineArrowRight />
+          </button>
+        </Link>
 
-      {/* Admin create table title section */}
-      <Link to='/admin/admins' className='add_button'>
-        <button type='button' className='btn'>
-          Admin Table <AiOutlineArrowRight />
-        </button>
-      </Link>
-
-      {/* admin data details component */}
-      <AdminDetail admin={admin} />
-      
+        {/* admin data details component */}
+        <AdminDetail admin={admin} />
+      </Sidebar>
     </div>
   );
 };

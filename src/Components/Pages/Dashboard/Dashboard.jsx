@@ -5,13 +5,15 @@ import { TbBooks } from "react-icons/tb";
 import BarChart from "./BarChart";
 import Table from "./Table";
 
-// import Sidebar from "../../Sidebar";
-// import Topbar from "../../Topbar";
-// import Footer from "../../Footer";
+import Sidebar from "../../Sidebar";
+import TopBar from "../../TopBar";
+import Footer from "../../Footer";
 
 const Dashboard = () => {
   return (
     <>
+    <TopBar/>
+    <Sidebar>
       <div className="p-3 pb-5">
         <div className="container-fluid  dashboard_table">
           <div className="row">
@@ -66,6 +68,9 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
+
+      </Sidebar>
+      <Footer />
     </>
   );
 };

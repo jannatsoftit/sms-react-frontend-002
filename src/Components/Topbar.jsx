@@ -3,22 +3,25 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
-const Topbar = () => {
-
+const TopBar = () => {
   const navigate = useNavigate();
 
-const logoutClick = (e) => {
-
-  e.preventDefault();
-
-  localStorage.clear();
-  navigate('/');
-}
+  const logoutClick = () => {
+    localStorage.clear();
+    Swal.fire({
+      title: 'Success',
+      text: 'Logged Out Successfully!',
+      icon: 'success',
+      confirmButtonText: 'Ok',
+    });
+    navigate('/');
+  };
 
   var AuthButtons1 = '';
   var AuthButtons2 = '';
 
   if (localStorage.clear()) {
+
     AuthButtons1 = (
       <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
         <li>
@@ -33,9 +36,7 @@ const logoutClick = (e) => {
         </li>
       </ul>
     );
-  } 
-  else 
-  {
+  } else {
     AuthButtons2 = (
       <li>
         <button
@@ -98,4 +99,4 @@ const logoutClick = (e) => {
   );
 };
 
-export default Topbar;
+export default TopBar;
