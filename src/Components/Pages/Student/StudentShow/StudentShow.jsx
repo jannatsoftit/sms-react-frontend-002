@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import StudentDetail from '../../../details/StudentDetail/StudentDetail';
+import Sidebar from '../../../Sidebar';
+import TopBar from '../../../TopBar';
 
 const StudentShow = () => {
   const { studentId } = useParams();
@@ -30,17 +32,18 @@ const StudentShow = () => {
 
   return (
     <div>
+      <TopBar />
+      <Sidebar>
+        {/* student create table title section */}
+        <Link to='/admin/students' className='add_button'>
+          <button type='button' className='btn'>
+            Student Table <AiOutlineArrowRight />
+          </button>
+        </Link>
 
-      {/* student create table title section */}
-      <Link to='/students' className='add_button'>
-        <button type='button' className='btn'>
-         Student Table <AiOutlineArrowRight />
-        </button>
-      </Link>
-
-      {/* student data details component */}
-      <StudentDetail student={student} />
-      
+        {/* student data details component */}
+        <StudentDetail student={student} />
+      </Sidebar>
     </div>
   );
 };

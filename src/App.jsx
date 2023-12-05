@@ -632,30 +632,30 @@ const App = () => {
                 <Route path='/admin/admins/:adminId' element={<AdminShow/>}/>
                 <Route path='/admin/admins/:adminId/edit' element={<AdminEdit/>}/>
 
-                <Route path='/admin/students' element={<StudentList/>}></Route>
-                <Route path='/admin/students/create' element={<StudentCreate/>}></Route>
-                <Route path='/admin/students/:adminId' element={<StudentShow/>}></Route>
-                <Route path='/admin/students/:adminId/edit' element={<StudentEdit/>}></Route>
+                <Route path='/admin/students' element={<StudentList/>} />
+                <Route path='/admin/students/create' element={<StudentCreate/>} />
+                <Route path='/admin/students/:studentId' element={<StudentShow/>} />
+                <Route path='/admin/students/:studentId/edit' element={<StudentEdit/>} />
 
                 <Route path='/admin/teachers' element={<TeacherList/>}></Route>
                 <Route path='/admin/teachers/create' element={<TeacherCreate/>}></Route>
-                <Route path='/admin/teachers/:adminId' element={<TeacherShow/>}></Route>
-                <Route path='/admin/teachers/:adminId/edit' element={<TeacherEdit/>}></Route>
+                <Route path='/admin/teachers/:teacherId' element={<TeacherShow/>}></Route>
+                <Route path='/admin/teachers/:teacherId/edit' element={<TeacherEdit/>}></Route>
 
                 <Route path='/admin/parents' element={<ParentList/>}></Route>
                 <Route path='/admin/parents/create' element={<ParentCreate/>}></Route>
-                <Route path='/admin/parents/:adminId' element={<ParentShow/>}></Route>
-                <Route path='/admin/parents/:adminId/edit' element={<ParentEdit/>}></Route>
+                <Route path='/admin/parents/:parentId' element={<ParentShow/>}></Route>
+                <Route path='/admin/parents/:parentId/edit' element={<ParentEdit/>}></Route>
 
                 <Route path='/admin/accountants' element={<AccountantList/>}></Route>
                 <Route path='/admin/accountants/create' element={<AccountantCreate/>}></Route>
-                <Route path='/admin/accountants/:adminId' element={<AccountantShow/>}></Route>
-                <Route path='/admin/accountants/:adminId/edit' element={<AccountantEdit/>}></Route>
+                <Route path='/admin/accountants/:accountantId' element={<AccountantShow/>}></Route>
+                <Route path='/admin/accountants/:accountantId/edit' element={<AccountantEdit/>}></Route>
 
                 <Route path='/admin/librarians' element={<LibrarianList/>}></Route>
                 <Route path='/admin/librarians/create' element={<LibrarianCreate/>}></Route>
-                <Route path='/admin/librarians/:adminId' element={<LibrarianShow/>}></Route>
-                <Route path='/admin/librarians/:adminId/edit' element={<LibrarianEdit/>}></Route>
+                <Route path='/admin/librarians/:librarianId' element={<LibrarianShow/>}></Route>
+                <Route path='/admin/librarians/:librarianId/edit' element={<LibrarianEdit/>}></Route>
 
                 <Route path='/admin/examCategories' element={<ExamCategoryList/>}></Route>
                 <Route path='/admin/examCategories/create' element={<ExamCategoryCreate/>}></Route>

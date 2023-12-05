@@ -54,13 +54,13 @@ const AdminDetail = ({ admin }) => {
                                 Date Of Birth: {admin?.date_of_birth}
                               </p>
                               <p className='text-muted mb-2 fw-medium'>
+                                <i className='mdi mdi-gender-male-female me-2'></i>
+                                Gender: {admin?.gender}
+                              </p>
+                              <p className='text-muted mb-2 fw-medium'>
                                 <i className='mdi mdi-information me-2'></i>
                                 Address: {admin?.address}, Blood Group:{' '}
                                 {admin?.blood_group}
-                              </p>
-                              <p className='text-muted mb-2 fw-medium'>
-                                <i className='mdi mdi-gender-male-female me-2'></i>
-                                Gender: {admin?.gender}
                               </p>
                             </div>
                           </div>
