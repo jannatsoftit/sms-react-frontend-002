@@ -16,11 +16,13 @@ const userAuth = () => {
 };
 
 const AdminProtectedRoute = () => {
+
   const auth = userAuth();
+
   return auth ? (
     <Outlet />
   ) : (
-    <Navigate to={'/'} state={{ from: location.pathname }} replace />
+    <Navigate to={'/login'} state={{ from: location.pathname }} replace />
   );
 };
 

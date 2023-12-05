@@ -43,14 +43,13 @@ const Login = () => {
         if (res?.status === 200) {
           localStorage.setItem('auth_token', res?.token);
           localStorage.setItem('auth_name', res?.username);
-          let role = localStorage.setItem('role_id', res?.role_id);
-          console.log(role);
+          localStorage.setItem('role_id', res?.role_id);
 
           const userRole = localStorage.getItem('role_id');
           console.log(userRole);
 
           if (userRole === '1') {
-            navigate('/admin');
+            navigate('/admin/dashboard');
           } else if (userRole === '2') {
             navigate('/student/dashboard');
           } else if (userRole === '3') {
@@ -78,7 +77,7 @@ const Login = () => {
             icon: 'warning',
             confirmButtonText: 'Ok',
           });
-          navigate('/');
+          navigate('/login');
         }
       });
   };

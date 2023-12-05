@@ -68,7 +68,6 @@ const Dashboard = () => {
           </div>
         </div>
       </div>
-
       <Footer />
       </Sidebar>
     </>
