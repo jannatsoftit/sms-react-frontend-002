@@ -4,24 +4,19 @@ import {
   // Navigate,
   Route,
   Routes,
-  Link,
+  //Link,
   Outlet,
   useRoutes,
 } from 'react-router-dom';
 
-import './App.css';
 // import Admin from "./Components/Admin";
-import AdminLayout from './Components/routes/AdminLayout.jsx';
- import AdminProtectedRoutes from './Components/AdminProtectedRoute';
 // import AdminRoutes from "./Components/routes";
 // import Dashboard from './Components/Pages/Dashboard/Dashboard';
 // import Register from "./Components/Register";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-import Footer from './Components/Footer';
 import Login from './Components/Login';
-import Sidebar from './Components/Sidebar';
-import TopBar from './Components/TopBar';
+
+import './App.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 //------------------  Admin Dashboard Route  ----------------//
 
@@ -113,17 +108,18 @@ import AdminProtectedRoute from './Components/AdminProtectedRoute';
 //import PublicDashboard from './Components/PublicDashboard/Dashboard/PublicDashboard';
 
 const App = () => {
-  const [isAuthenticated, setAuthenticated] = useState(
-    () => JSON.parse(localStorage.getItem('role_id')) || false
-  );
 
-  const setAuth = (value) => {
-    setAuthenticated(value);
-  };
+  // const [isAuthenticated, setAuthenticated] = useState(
+  //   () => JSON.parse(localStorage.getItem('role_id')) || false
+  // );
 
-  useEffect(() => {
-    localStorage.setItem('role_id', JSON.stringify(isAuthenticated));
-  }, [isAuthenticated]);
+  // const setAuth = (value) => {
+  //   setAuthenticated(value);
+  // };
+
+  // useEffect(() => {
+  //   localStorage.setItem('role_id', JSON.stringify(isAuthenticated));
+  // }, [isAuthenticated]);
 
   //const userRole = localStorage.getItem('role_id');
 
@@ -617,102 +613,93 @@ const App = () => {
 
       element: (
         <>
-          {/* <TopBar />
-            <Sidebar> */}
-              <Routes>
-              {/* <Route element={<AdminLayout />}> */}
+          <Routes>
+            <Route element={<AdminProtectedRoute />}>
 
-                {/* <Route element={<AdminProtectedRoute />}>
-                <Route element={<AdminLayout />}> */}
+            <Route path='/admin' element={<Dashboard />}/>
 
-                <Route path='/admin' element={<Dashboard />}/>
+            <Route path='/admin/admins' element={<AdminList/>}/>
+            <Route path='/admin/admins/create' element={<AdminCreate/>}/>
+            <Route path='/admin/admins/:adminId' element={<AdminShow/>}/>
+            <Route path='/admin/admins/:adminId/edit' element={<AdminEdit/>}/>
 
-                <Route path='/admin/admins' element={<AdminList/>}/>
-                <Route path='/admin/admins/create' element={<AdminCreate/>}/>
-                <Route path='/admin/admins/:adminId' element={<AdminShow/>}/>
-                <Route path='/admin/admins/:adminId/edit' element={<AdminEdit/>}/>
+            <Route path='/admin/students' element={<StudentList/>}/>
+            <Route path='/admin/students/create' element={<StudentCreate/>}/>
+            <Route path='/admin/students/:studentId' element={<StudentShow/>}/>
+            <Route path='/admin/students/:studentId/edit' element={<StudentEdit/>}/>
 
-                <Route path='/admin/students' element={<StudentList/>}/>
-                <Route path='/admin/students/create' element={<StudentCreate/>}/>
-                <Route path='/admin/students/:studentId' element={<StudentShow/>}/>
-                <Route path='/admin/students/:studentId/edit' element={<StudentEdit/>}/>
+            <Route path='/admin/teachers' element={<TeacherList/>} />
+            <Route path='/admin/teachers/create' element={<TeacherCreate/>} />
+            <Route path='/admin/teachers/:teacherId' element={<TeacherShow/>} />
+            <Route path='/admin/teachers/:teacherId/edit' element={<TeacherEdit/>} />
 
-                <Route path='/admin/teachers' element={<TeacherList/>} />
-                <Route path='/admin/teachers/create' element={<TeacherCreate/>} />
-                <Route path='/admin/teachers/:teacherId' element={<TeacherShow/>} />
-                <Route path='/admin/teachers/:teacherId/edit' element={<TeacherEdit/>} />
+            <Route path='/admin/parents' element={<ParentList/>}/>
+            <Route path='/admin/parents/create' element={<ParentCreate/>}/>
+            <Route path='/admin/parents/:parentId' element={<ParentShow/>}/>
+            <Route path='/admin/parents/:parentId/edit' element={<ParentEdit/>}/>
 
-                <Route path='/admin/parents' element={<ParentList/>}/>
-                <Route path='/admin/parents/create' element={<ParentCreate/>}/>
-                <Route path='/admin/parents/:parentId' element={<ParentShow/>}/>
-                <Route path='/admin/parents/:parentId/edit' element={<ParentEdit/>}/>
+            <Route path='/admin/accountants' element={<AccountantList/>}/>
+            <Route path='/admin/accountants/create' element={<AccountantCreate/>}/>
+            <Route path='/admin/accountants/:accountantId' element={<AccountantShow/>}/>
+            <Route path='/admin/accountants/:accountantId/edit' element={<AccountantEdit/>}/>
 
-                <Route path='/admin/accountants' element={<AccountantList/>}/>
-                <Route path='/admin/accountants/create' element={<AccountantCreate/>}/>
-                <Route path='/admin/accountants/:accountantId' element={<AccountantShow/>}/>
-                <Route path='/admin/accountants/:accountantId/edit' element={<AccountantEdit/>}/>
+            <Route path='/admin/librarians' element={<LibrarianList/>}/>
+            <Route path='/admin/librarians/create' element={<LibrarianCreate/>}/>
+            <Route path='/admin/librarians/:librarianId' element={<LibrarianShow/>}/>
+            <Route path='/admin/librarians/:librarianId/edit' element={<LibrarianEdit/>}/>
 
-                <Route path='/admin/librarians' element={<LibrarianList/>}/>
-                <Route path='/admin/librarians/create' element={<LibrarianCreate/>}/>
-                <Route path='/admin/librarians/:librarianId' element={<LibrarianShow/>}/>
-                <Route path='/admin/librarians/:librarianId/edit' element={<LibrarianEdit/>}/>
+            <Route path='/admin/examCategories' element={<ExamCategoryList/>}/>
+            <Route path='/admin/examCategories/create' element={<ExamCategoryCreate/>}/>
+            <Route path='/admin/examCategories/:examCategoryId/edit' element={<ExamCategoryEdit/>}/>
 
-                <Route path='/admin/examCategories' element={<ExamCategoryList/>}/>
-                <Route path='/admin/examCategories/create' element={<ExamCategoryCreate/>}/>
-                <Route path='/admin/examCategories/:examCategoryId/edit' element={<ExamCategoryEdit/>}/>
+            <Route path='/admin/grades' element={<GradeList/>}/>
+            <Route path='/admin/grades/create' element={<GradeCreate/>}/>
+            <Route path='/admin/grades/:gradeId/edit' element={<GradeEdit/>}/>
 
-                <Route path='/admin/grades' element={<GradeList/>}/>
-                <Route path='/admin/grades/create' element={<GradeCreate/>}/>
-                <Route path='/admin/grades/:gradeId/edit' element={<GradeEdit/>}/>
+            <Route path='/admin/marks' element={<MarkList/>}/>
+            <Route path='/admin/marks/create' element={<MarkCreate/>}/>
+            <Route path='/admin/marks/:markId/edit' element={<MarkEdit/>}/>
 
-                <Route path='/admin/marks' element={<MarkList/>}/>
-                <Route path='/admin/marks/create' element={<MarkCreate/>}/>
-                <Route path='/admin/marks/:markId/edit' element={<MarkEdit/>}/>
+            <Route path='/admin/offlineExams' element={<OfflineExamList/>}/>
+            <Route path='/admin/offlineExams/create' element={<OfflineExamCreate/>}/>
+            <Route path='/admin/offlineExams/:offlineExamId/edit' element={<OfflineExamEdit/>}/>
 
-                <Route path='/admin/offlineExams' element={<OfflineExamList/>}/>
-                <Route path='/admin/offlineExams/create' element={<OfflineExamCreate/>}/>
-                <Route path='/admin/offlineExams/:offlineExamId/edit' element={<OfflineExamEdit/>}/>
+            <Route path='/admin/classRooms' element={<ClassRoomList/>}/>
+            <Route path='/admin/classRooms/create' element={<ClassRoomCreate/>}/>
+            <Route path='/admin/classRooms/:classRoomId/edit' element={<ClassRoomEdit/>}/>
+            
+            <Route path='/admin/subjects' element={<SubjectList/>}/>
+            <Route path='/admin/subjects/create' element={<SubjectCreate/>}/>
+            <Route path='/admin/subjects/:subjectId/edit' element={<SubjectEdit/>}/>
+            
+            <Route path='/admin/syllabuses' element={<SyllabusList/>}/>
+            <Route path='/admin/syllabuses/create' element={<SyllabusCreate/>}/>
+            <Route path='/admin/syllabuses/:syllabusId/edit' element={<SyllabusEdit/>}/>
 
-                <Route path='/admin/classRooms' element={<ClassRoomList/>}/>
-                <Route path='/admin/classRooms/create' element={<ClassRoomCreate/>}/>
-                <Route path='/admin/classRooms/:classRoomId/edit' element={<ClassRoomEdit/>}/>
-                
-                <Route path='/admin/subjects' element={<SubjectList/>}/>
-                <Route path='/admin/subjects/create' element={<SubjectCreate/>}/>
-                <Route path='/admin/subjects/:subjectId/edit' element={<SubjectEdit/>}/>
-                
-                <Route path='/admin/syllabuses' element={<SyllabusList/>}/>
-                <Route path='/admin/syllabuses/create' element={<SyllabusCreate/>}/>
-                <Route path='/admin/syllabuses/:syllabusId/edit' element={<SyllabusEdit/>}/>
+            <Route path='/admin/classRoutines' element={<ClassRoutineList/>}/>
+            <Route path='/admin/classRoutines/create' element={<ClassRoutineCreate/>}/>
+            <Route path='/admin/classRoutines/:classRoutineId/edit' element={<ClassRoutineEdit/>}/>
 
-                <Route path='/admin/classRoutines' element={<ClassRoutineList/>}/>
-                <Route path='/admin/classRoutines/create' element={<ClassRoutineCreate/>}/>
-                <Route path='/admin/classRoutines/:classRoutineId/edit' element={<ClassRoutineEdit/>}/>
+            <Route path='/admin/studentFees' element={<StudentFeeList/>}/>
+            <Route path='/admin/studentFees/create' element={<StudentFeeCreate/>}/>
+            <Route path='/admin/studentFees/:studentFeeId/edit' element={<StudentFeeEdit/>}/>
 
-                <Route path='/admin/studentFees' element={<StudentFeeList/>}/>
-                <Route path='/admin/studentFees/create' element={<StudentFeeCreate/>}/>
-                <Route path='/admin/studentFees/:studentFeeId/edit' element={<StudentFeeEdit/>}/>
+            <Route path='/admin/expanseCategories' element={<ExpanseCategoryList/>}/>
+            <Route path='/admin/expanseCategories/create' element={<ExpanseCategoryCreate/>}/>
+            <Route path='/admin/expanseCategories/:expanseCategoryId/edit' element={<ExpanseCategoryEdit/>}/>
 
-                <Route path='/admin/expanseCategories' element={<ExpanseCategoryList/>}/>
-                <Route path='/admin/expanseCategories/create' element={<ExpanseCategoryCreate/>}/>
-                <Route path='/admin/expanseCategories/:expanseCategoryId/edit' element={<ExpanseCategoryEdit/>}/>
+            <Route path='/admin/schools' element={<SchoolList/>}/>
+            <Route path='/admin/schools/create' element={<SchoolCreate/>}/>
+            <Route path='/admin/schools/:schoolId' element={<SchoolShow/>}/>
+            <Route path='/admin/schools/:schoolId/edit' element={<SchoolEdit/>}/>
 
-                <Route path='/admin/schools' element={<SchoolList/>}/>
-                <Route path='/admin/schools/create' element={<SchoolCreate/>}/>
-                <Route path='/admin/schools/:schoolId' element={<SchoolShow/>}/>
-                <Route path='/admin/schools/:schoolId/edit' element={<SchoolEdit/>}/>
-
-                {/* </Route>
-                </Route> */}
-                {/* </Route> */}
-              </Routes>
-              {/* <Outlet/>
-            </Sidebar>
-          <Footer /> */}
+            </Route>
+          </Routes>
+          {/* <Outlet/> */}
         </>
       ),
 
-      // path: '/admin',
+      path: '/admin',
     },
 
     {

@@ -19,10 +19,10 @@ const Sidebar = ({ children }) => {
       <div className='con'>
         <IconContext.Provider value={{}}>
           {/* <div className='nav'>
-        <div className='navicon'>
-          <FaIcons.FaBars onClick={showSidebar} />
-        </div>
-      </div> */}
+          <div className='navicon'>
+            <FaIcons.FaBars onClick={showSidebar} />
+          </div>
+        </div> */}
           <SidebarNav sidebar={sidebar}>
             <div className='sidebar_wrap'>
               <div className='sidebar'>
@@ -33,8 +33,8 @@ const Sidebar = ({ children }) => {
                 </div>
 
                 {/* <div className='navicon'>
-            <AiIcons.AiOutlineClose />
-          </div> */}
+              <AiIcons.AiOutlineClose />
+            </div> */}
                 {SidebarData?.map((item, index) => {
                   return <SubMenu item={item} key={index} />;
                 })}

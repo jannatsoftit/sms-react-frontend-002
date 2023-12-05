@@ -36,11 +36,7 @@ const AdminLayout = () => {
   if (isAuthenticated) {
     return (
       <>
-        <TopBar />
-        <Sidebar>
-          <Footer />
-        </Sidebar>
-        <Outlet />
+
       </>
     );
   } else {

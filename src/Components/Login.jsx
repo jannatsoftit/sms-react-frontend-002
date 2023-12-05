@@ -43,7 +43,8 @@ const Login = () => {
         if (res?.status === 200) {
           localStorage.setItem('auth_token', res?.token);
           localStorage.setItem('auth_name', res?.username);
-          localStorage.setItem('role_id', res?.role_id);
+          let role = localStorage.setItem('role_id', res?.role_id);
+          console.log(role);
 
           const userRole = localStorage.getItem('role_id');
           console.log(userRole);

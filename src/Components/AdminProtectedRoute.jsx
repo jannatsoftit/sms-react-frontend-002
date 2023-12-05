@@ -1,15 +1,9 @@
-// --------------------------------------------------------------
-
 import React from 'react';
-import Topbar from './TopBar';
-import Sidebar from '../Components/Sidebar';
-import Footer from '../Components/Footer';
 
 import { Outlet, Navigate, useLocation } from 'react-router-dom';
 
 const userAuth = () => {
   const location = useLocation();
-
   //const navigate = useNavigate();
 
   const userRole = localStorage.getItem('role_id');
