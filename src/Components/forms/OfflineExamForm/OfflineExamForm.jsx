@@ -41,7 +41,7 @@ const OfflineExamForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/offlineExams', { replace: true });
+      navigate('/admin/offlineExams', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

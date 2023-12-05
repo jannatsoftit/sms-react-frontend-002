@@ -144,7 +144,7 @@ const GradeTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/grades/${record?.id}/edit`}
+                                    to={`/admin/grades/${record?.id}/edit`}
                                   >
                                     Edit ExamCategory
                                   </Link>

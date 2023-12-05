@@ -34,7 +34,7 @@ const SyllabusForm = () => { //Syllabus
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/syllabuses', { replace: true });
+      navigate('/admin/syllabuses', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

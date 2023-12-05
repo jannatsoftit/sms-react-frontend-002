@@ -6,7 +6,7 @@ const ExpanseCategoryCreate = () => {
   return (
     <div>
       {/* ExpanseCategory create table title section */}
-      <Link to='/expanseCategories' className='add_button'>
+      <Link to='/admin/expanseCategories' className='add_button'>
         <button type='button' className='btn'>
           Expanse Category Table <AiOutlineArrowRight />
         </button>

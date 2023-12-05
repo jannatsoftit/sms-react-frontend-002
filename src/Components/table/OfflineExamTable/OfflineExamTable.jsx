@@ -177,7 +177,7 @@ const OfflineExamTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/offlineExams/${record?.id}/edit`}
+                                    to={`/admin/offlineExams/${record?.id}/edit`}
                                   >
                                     Edit Offline Exam
                                   </Link>

@@ -41,7 +41,7 @@ const StudentFeeEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/subjects', { replace: true });
+      navigate('/admin/studentFees', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -93,7 +93,7 @@ const StudentFeeEdit = () => {
   return (
     <>
       {/* StudentFee create table title section */}
-      <Link to='/students' className='add_button'>
+      <Link to='/admin/studentFees' className='add_button'>
         <button type='button' className='btn'>
         Student Fee Table <AiOutlineArrowRight />
         </button>

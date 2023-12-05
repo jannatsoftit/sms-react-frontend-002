@@ -152,7 +152,7 @@ const SyllabusTable = () => { //Syllabus
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/syllabuses/${record?.id}/edit`}
+                                    to={`/admin/syllabuses/${record?.id}/edit`}
                                   >
                                     Edit Syllabus
                                   </Link>

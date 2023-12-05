@@ -99,7 +99,7 @@ const SchoolTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/schools/${school?.id}`}
+                                    to={`/admin/schools/${school?.id}`}
                                   >
                                     Show School
                                   </Link>
@@ -107,7 +107,7 @@ const SchoolTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/schools/${school?.id}/edit`}
+                                    to={`/admin/schools/${school?.id}/edit`}
                                   >
                                     Edit School
                                   </Link>

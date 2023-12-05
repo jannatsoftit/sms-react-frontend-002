@@ -35,7 +35,7 @@ const ClassRoutineForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/classRoutines', { replace: true });
+      navigate('/admin/classRoutines', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

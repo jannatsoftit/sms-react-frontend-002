@@ -48,7 +48,7 @@ const ParentEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/parents', { replace: true });
+      navigate('/admin/parents', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -109,7 +109,7 @@ const ParentEdit = () => {
   return (
     <>
       {/* Parent create table title section */}
-      <Link to='/parents' className='add_button'>
+      <Link to='/admin/parents' className='add_button'>
         <button type='button' className='btn'>
           Parent Table <AiOutlineArrowRight />
         </button>

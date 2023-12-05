@@ -40,7 +40,7 @@ const ClassRoutineEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/classRoutines', { replace: true });
+      navigate('/admin/classRoutines', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -91,7 +91,7 @@ const ClassRoutineEdit = () => {
   return (
     <>
       {/* ClassRoutine create table title section */}
-      <Link to='/classRoutines' className='add_button'>
+      <Link to='/admin/classRoutines' className='add_button'>
         <button type='button' className='btn'>
         Class Routine Table <AiOutlineArrowRight />
         </button>

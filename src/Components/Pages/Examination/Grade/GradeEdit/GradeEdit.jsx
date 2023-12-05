@@ -38,7 +38,7 @@ const GradeEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/grades', { replace: true });
+      navigate('/admin/grades', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -87,7 +87,7 @@ const GradeEdit = () => {
   return (
     <>
       {/* Grade create table title section */}
-      <Link to='/grades' className='add_button'>
+      <Link to='/admin/grades' className='add_button'>
         <button type='button' className='btn'>
           Grade Table <AiOutlineArrowRight />
         </button>

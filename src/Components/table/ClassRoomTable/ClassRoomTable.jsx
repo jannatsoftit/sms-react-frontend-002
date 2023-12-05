@@ -153,7 +153,7 @@ const ClassRoomTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/classRooms/${record?.id}/edit`}
+                                    to={`/admin/classRooms/${record?.id}/edit`}
                                   >
                                     Edit ClassRoom
                                   </Link>

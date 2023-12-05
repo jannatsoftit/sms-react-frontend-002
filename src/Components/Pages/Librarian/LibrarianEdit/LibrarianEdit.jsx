@@ -48,7 +48,7 @@ const LibrarianEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/librarians', { replace: true });
+      navigate('/admin/librarians', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -109,7 +109,7 @@ const LibrarianEdit = () => {
   return (
     <>
       {/* Librarian create table title section */}
-      <Link to='/librarians' className='add_button'>
+      <Link to='/admin/librarians' className='add_button'>
         <button type='button' className='btn'>
           Librarian Table <AiOutlineArrowRight />
         </button>

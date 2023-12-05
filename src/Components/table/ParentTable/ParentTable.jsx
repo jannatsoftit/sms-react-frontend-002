@@ -175,7 +175,7 @@ const ParentTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/parents/${record?.id}`}
+                                    to={`/admin/parents/${record?.id}`}
                                   >
                                     Show Parent
                                   </Link>
@@ -183,7 +183,7 @@ const ParentTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/parents/${record?.id}/edit`}
+                                    to={`/admin/parents/${record?.id}/edit`}
                                   >
                                     Edit Parent
                                   </Link>

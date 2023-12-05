@@ -35,7 +35,7 @@ const ClassRoomForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/classRooms', { replace: true });
+      navigate('/admin/classRooms', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

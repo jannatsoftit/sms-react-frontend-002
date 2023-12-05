@@ -43,7 +43,7 @@ const LibrarianForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/librarians', { replace: true });
+      navigate('/admin/librarians', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

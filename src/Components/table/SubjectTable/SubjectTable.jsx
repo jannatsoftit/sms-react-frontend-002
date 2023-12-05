@@ -149,7 +149,7 @@ const SubjectTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/subjects/${record?.id}/edit`}
+                                    to={`/admin/subjects/${record?.id}/edit`}
                                   >
                                     Edit Subject
                                   </Link>

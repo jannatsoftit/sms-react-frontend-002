@@ -6,7 +6,7 @@ const ClassRoutineCreate = () => {
   return (
     <div>
       {/* ClassRoutine create table title section */}
-      <Link to='/classRoutines' className='add_button'>
+      <Link to='/admin/classRoutines' className='add_button'>
         <button type='button' className='btn'>
           Class Routine Table <AiOutlineArrowRight />
         </button>

@@ -36,7 +36,7 @@ const StudentFeeForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/studentFees', { replace: true });
+      navigate('/admin/studentFees', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

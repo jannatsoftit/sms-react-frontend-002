@@ -6,7 +6,7 @@ const SyllabusCreate = () => {
   return (
     <div>
       {/* Syllabus create table title section */}
-      <Link to='/syllabuses' className='add_button'>
+      <Link to='/admin/syllabuses' className='add_button'>
         <button type='button' className='btn'>
           Syllabus Table <AiOutlineArrowRight />
         </button>

@@ -41,7 +41,7 @@ const MarkEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/marks', { replace: true });
+      navigate('/admin/marks', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -94,7 +94,7 @@ const MarkEdit = () => {
   return (
     <>
       {/* mark create table title section */}
-      <Link to='/marks' className='add_button'>
+      <Link to='/admin/marks' className='add_button'>
         <button type='button' className='btn'>
           Mark Table <AiOutlineArrowRight />
         </button>

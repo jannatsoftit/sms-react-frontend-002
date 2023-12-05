@@ -37,7 +37,7 @@ const ExamCategoryEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/examCategories', { replace: true });
+      navigate('/admin/examCategories', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -86,7 +86,7 @@ const ExamCategoryEdit = () => {
   return (
     <>
       {/* ExamCategory create table title section */}
-      <Link to='/examCategories' className='add_button'>
+      <Link to='/admin/examCategories' className='add_button'>
         <button type='button' className='btn'>
           Exam Category Table <AiOutlineArrowRight />
         </button>

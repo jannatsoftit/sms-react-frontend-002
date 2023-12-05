@@ -157,7 +157,7 @@ const ClassRoutineTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/classRoutines/${record?.id}/edit`}
+                                    to={`/admin/classRoutines/${record?.id}/edit`}
                                   >
                                     Edit ClassRoutine
                                   </Link>

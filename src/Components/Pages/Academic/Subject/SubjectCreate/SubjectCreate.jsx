@@ -6,7 +6,7 @@ const SubjectCreate = () => {
   return (
     <div>
       {/* Subject create table title section */}
-      <Link to='/subjects' className='add_button'>
+      <Link to='/admin/subjects' className='add_button'>
         <button type='button' className='btn'>
           Subject Table <AiOutlineArrowRight />
         </button>

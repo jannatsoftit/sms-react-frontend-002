@@ -157,7 +157,7 @@ const StudentFeeTable = () => { //StudentFee
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/studentFees/${record?.id}/edit`}
+                                    to={`/admin/studentFees/${record?.id}/edit`}
                                   >
                                     Edit StudentFee
                                   </Link>

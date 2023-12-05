@@ -6,7 +6,7 @@ const StudentFeeCreate = () => {
   return (
     <div>
       {/* StudentFee create table title section */}
-      <Link to='/studentFees' className='add_button'>
+      <Link to='/admin/studentFees' className='add_button'>
         <button type='button' className='btn'>
           Student Fee Table <AiOutlineArrowRight />
         </button>

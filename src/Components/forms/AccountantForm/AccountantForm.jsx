@@ -43,7 +43,7 @@ const AccountantForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/accountants', { replace: true });
+      navigate('/admin/accountants', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

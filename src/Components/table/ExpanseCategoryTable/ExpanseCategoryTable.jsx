@@ -136,7 +136,7 @@ const ExpanseCategoryTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/expanseCategories/${record?.id}/edit`}
+                                    to={`/admin/expanseCategories/${record?.id}/edit`}
                                   >
                                     Edit ExpanseCategory
                                   </Link>

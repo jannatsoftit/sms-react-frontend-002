@@ -39,7 +39,7 @@ const SyllabusEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/syllabuses', { replace: true });
+      navigate('/admin/syllabuses', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -89,7 +89,7 @@ const SyllabusEdit = () => {
   return (
     <>
       {/* syllabus create table title section */}
-      <Link to='/students' className='add_button'>
+      <Link to='/admin/students' className='add_button'>
         <button type='button' className='btn'>
         Syllabus Table <AiOutlineArrowRight />
         </button>

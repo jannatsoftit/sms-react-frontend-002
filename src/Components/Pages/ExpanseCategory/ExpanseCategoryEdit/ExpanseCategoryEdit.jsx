@@ -36,7 +36,7 @@ const ExpanseCategoryEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/expanseCategories', { replace: true });
+      navigate('/admin/expanseCategories', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -83,7 +83,7 @@ const ExpanseCategoryEdit = () => {
   return (
     <>
       {/* expanseCategory create table title section */}
-      <Link to='/expanseCategories' className='add_button'>
+      <Link to='/admin/expanseCategories' className='add_button'>
         <button type='button' className='btn'>
           Expanse Category Table <AiOutlineArrowRight />
         </button>

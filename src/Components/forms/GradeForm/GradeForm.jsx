@@ -35,7 +35,7 @@ const GradeForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/grades', { replace: true });
+      navigate('/admin/grades', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

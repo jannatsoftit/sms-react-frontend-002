@@ -6,7 +6,7 @@ const ParentCreate = () => {
   return (
     <div>
       {/* Parent create table title section */}
-      <Link to='/parents' className='add_button'>
+      <Link to='/admin/parents' className='add_button'>
         <button type='button' className='btn'>
           Parent Table <AiOutlineArrowRight />
         </button>

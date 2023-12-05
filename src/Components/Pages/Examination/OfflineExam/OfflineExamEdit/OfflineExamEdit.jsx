@@ -45,7 +45,7 @@ const OfflineExamEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/offlineExams', { replace: true });
+      navigate('/admin/offlineExams', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -102,7 +102,7 @@ const OfflineExamEdit = () => {
   return (
     <>
       {/* offline Exam create table title section */}
-      <Link to='/offlineExams' className='add_button'>
+      <Link to='/admin/offlineExams' className='add_button'>
         <button type='button' className='btn'>
          Offline Exam Table <AiOutlineArrowRight />
         </button>

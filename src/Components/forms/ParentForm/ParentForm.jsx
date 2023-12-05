@@ -45,7 +45,7 @@ const ParentForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/parents', { replace: true });
+      navigate('/admin/parents', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

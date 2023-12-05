@@ -39,7 +39,7 @@ const ClassRoomEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/classRooms', { replace: true });
+      navigate('/admin/classRooms', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -90,7 +90,7 @@ const ClassRoomEdit = () => {
   return (
     <>
       {/* ClassRoom create table title section */}
-      <Link to='/classRooms' className='add_button'>
+      <Link to='/admin/classRooms' className='add_button'>
         <button type='button' className='btn'>
           Class Room Table <AiOutlineArrowRight />
         </button>

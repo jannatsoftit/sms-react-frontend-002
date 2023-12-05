@@ -49,12 +49,12 @@ const SchoolShow = () => {
         </button>
         <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
           <li>
-            <Link className='dropdown-item' to={`/schools`}>
+            <Link className='dropdown-item' to={`/admin/schools`}>
               School Table
             </Link>
           </li>
           <li>
-            <Link className='dropdown-item' to={`/schools/${school?.id}/edit`}>
+            <Link className='dropdown-item' to={`/admin/schools/${school?.id}/edit`}>
               School Edit
             </Link>
           </li>

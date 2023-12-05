@@ -47,7 +47,7 @@ const AccountantEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/accountants', { replace: true });
+      navigate('/admin/accountants', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -108,7 +108,7 @@ const AccountantEdit = () => {
   return (
     <>
       {/* Accountant create table title section */}
-      <Link to='/accountants' className='add_button'>
+      <Link to='/admin/accountants' className='add_button'>
         <button type='button' className='btn'>
           Accountant Table <AiOutlineArrowRight />
         </button>

@@ -32,7 +32,7 @@ const AccountantShow = () => {
     <div>
 
       {/* Accountant create table title section */}
-      <Link to='/accountants' className='add_button'>
+      <Link to='/admin/accountants' className='add_button'>
         <button type='button' className='btn'>
           Accountant Table <AiOutlineArrowRight />
         </button>

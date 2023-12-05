@@ -43,7 +43,7 @@ const TeacherForm = () => {
         icon: "success",
         confirmButtonText: "Ok",
       });
-      navigate("/teachers", { replace: true });
+      navigate("/admin/teachers", { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

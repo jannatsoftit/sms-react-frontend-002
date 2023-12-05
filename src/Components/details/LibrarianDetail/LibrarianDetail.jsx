@@ -48,16 +48,12 @@ const LibrarianDetail = ({ librarian }) => {
                               Date Of Birth: {librarian?.date_of_birth}
                             </p>
                             <p className='text-muted mb-2 fw-medium'>
-                              <i className='mdi mdi-information me-2'></i>
-                              Address: {librarian?.address}
-                            </p>
-                            <p className='text-muted mb-2 fw-medium'>
                               <i className='mdi mdi-gender-male-female me-2'></i>
                               Gender: {librarian?.gender}
                             </p>
                             <p className='text-muted mb-2 fw-medium'>
-                              <i className='mdi mdi-gender-male-female me-2'></i>
-                              Blood Group: {admin?.blood_group}
+                              <i className='mdi mdi-information me-2'></i>
+                              Address: {librarian?.address}, Blood Group: {librarian?.blood_group}
                             </p>
                           </div>
                         </div>

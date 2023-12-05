@@ -34,7 +34,7 @@ const SubjectForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/subjects', { replace: true });
+      navigate('/admin/subjects', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

@@ -39,7 +39,7 @@ const SubjectEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/subjects', { replace: true });
+      navigate('/admin/subjects', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -89,7 +89,7 @@ const SubjectEdit = () => {
   return (
     <>
       {/* subject create table title section */}
-      <Link to='/students' className='add_button'>
+      <Link to='/admin/students' className='add_button'>
         <button type='button' className='btn'>
         Subject Table <AiOutlineArrowRight />
         </button>

@@ -33,7 +33,7 @@ const ExpanseCategoryForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/expanseCategories', { replace: true });
+      navigate('/admin/expanseCategories', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

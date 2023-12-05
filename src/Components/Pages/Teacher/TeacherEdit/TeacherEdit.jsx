@@ -48,7 +48,7 @@ const TeacherEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/teachers', { replace: true });
+      navigate('/admin/teachers', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -109,7 +109,7 @@ const TeacherEdit = () => {
   return (
     <>
       {/* Teacher create table title section */}
-      <Link to='/teachers' className='add_button'>
+      <Link to='/admin/teachers' className='add_button'>
         <button type='button' className='btn'>
         Teacher Table <AiOutlineArrowRight />
         </button>

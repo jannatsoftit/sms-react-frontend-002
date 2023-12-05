@@ -6,7 +6,7 @@ const MarkCreate = () => {
   return (
     <div>
       {/* Mark create table title section */}
-      <Link to='/marks' className='add_button'>
+      <Link to='/admin/marks' className='add_button'>
         <button type='button' className='btn'>
           Mark Table <AiOutlineArrowRight />
         </button>

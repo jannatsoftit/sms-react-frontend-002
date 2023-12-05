@@ -35,7 +35,7 @@ const ExamCategoryForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/examCategories', { replace: true });
+      navigate('/admin/examCategories', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);

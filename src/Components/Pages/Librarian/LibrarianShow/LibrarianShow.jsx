@@ -32,7 +32,7 @@ const LibrarianShow = () => {
     <div>
 
       {/* Librarian create table title section */}
-      <Link to='/librarians' className='add_button'>
+      <Link to='/admin/librarians' className='add_button'>
         <button type='button' className='btn'>
           Librarian Table <AiOutlineArrowRight />
         </button>

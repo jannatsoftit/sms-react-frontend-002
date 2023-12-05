@@ -6,7 +6,7 @@ const TeacherCreate = () => {
   return (
     <div>
       {/* Teacher create table title section */}
-      <Link to='/teachers' className='add_button'>
+      <Link to='/admin/teachers' className='add_button'>
         <button type='button' className='btn'>
           Teacher Table <AiOutlineArrowRight />
         </button>

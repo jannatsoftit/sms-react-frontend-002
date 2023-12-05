@@ -1,12 +1,12 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import SchoolForm from '../../../forms/GradeForm copy/SchoolForm';
+import SchoolForm from '../../../forms/SchoolForm/SchoolForm';
 
 const SchoolCreate = () => {
   return (
     <div>
       {/* School create table title section */}
-      <Link to='/schools' className='add_button'>
+      <Link to='/admin/schools' className='add_button'>
         <button type='button' className='btn'>
           School Table <AiOutlineArrowRight />
         </button>

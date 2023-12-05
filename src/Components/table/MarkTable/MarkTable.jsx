@@ -160,7 +160,7 @@ const MarkTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/marks/${record?.id}/edit`}
+                                    to={`/admin/marks/${record?.id}/edit`}
                                   >
                                     Edit Mark
                                   </Link>

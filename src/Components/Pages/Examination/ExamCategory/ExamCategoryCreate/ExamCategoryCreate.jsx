@@ -6,7 +6,7 @@ const ExamCategoryCreate = () => {
   return (
     <div>
       {/* ExamCategory create table title section */}
-      <Link to='/examCategories' className='add_button'>
+      <Link to='/admin/examCategories' className='add_button'>
         <button type='button' className='btn'>
           ExamCategory Table <AiOutlineArrowRight />
         </button>

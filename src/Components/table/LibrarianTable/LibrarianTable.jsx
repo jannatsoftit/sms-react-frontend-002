@@ -176,7 +176,7 @@ const LibrarianTable = () => { //Librarian librarian
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/librarians/${record?.id}`}
+                                    to={`/admin/librarians/${record?.id}`}
                                   >
                                     Show Librarian
                                   </Link>
@@ -184,7 +184,7 @@ const LibrarianTable = () => { //Librarian librarian
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/librarians/${record?.id}/edit`}
+                                    to={`/admin/librarians/${record?.id}/edit`}
                                   >
                                     Edit Librarian
                                   </Link>

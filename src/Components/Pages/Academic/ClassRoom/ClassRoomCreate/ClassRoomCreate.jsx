@@ -6,7 +6,7 @@ const ClassRoomCreate = () => {
   return (
     <div>
       {/* ClassRoom create table title section */}
-      <Link to='/classRooms' className='add_button'>
+      <Link to='/admin/classRooms' className='add_button'>
         <button type='button' className='btn'>
           ClassRoom Table <AiOutlineArrowRight />
         </button>
