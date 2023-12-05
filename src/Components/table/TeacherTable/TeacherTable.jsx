@@ -1,8 +1,10 @@
 /* eslint-disable react/jsx-no-undef */
-import { Link } from "react-router-dom";
-import { RxSlash } from "react-icons/rx";
-import { useEffect, useState } from "react";
-import Swal from "sweetalert2";
+import { Link } from 'react-router-dom';
+import { RxSlash } from 'react-icons/rx';
+import { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
+import Sidebar from '../../Sidebar';
+import Footer from '../../Footer';
 
 const TeacherTable = () => {
   // Teacher data
@@ -42,17 +44,17 @@ const TeacherTable = () => {
   const handleDelete = (teacher) => {
     if (confirm(`Are You sure you want to delete teacher ${teacher.id}?`)) {
       Swal.fire({
-        title: "Success!",
-        text: "Information Delete Successfully!!",
-        icon: "success",
-        confirmButtonText: "Ok",
+        title: 'Success!',
+        text: 'Information Delete Successfully!!',
+        icon: 'success',
+        confirmButtonText: 'Ok',
       });
 
       fetch(`http://127.0.0.1:8000/api/teachers/${teacher.id}`, {
         headers: {
-          Accept: "application/json",
+          Accept: 'application/json',
         },
-        method: "DELETE",
+        method: 'DELETE',
       })
         .then((res) => res.json())
         .then((res) => {
@@ -69,9 +71,9 @@ const TeacherTable = () => {
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/teachers?`, {
       headers: {
-        Accept: "application/json",
+        Accept: 'application/json',
       },
-      method: "GET",
+      method: 'GET',
     })
       .then((res) => res.json())
       .then((res) => {
@@ -85,164 +87,169 @@ const TeacherTable = () => {
   }, [reload]);
 
   return (
-    <div>
-      <section className="ftco-section">
-        <div className="container">
-          <div className="col-md-6 text-center mb-5">
-            <h2 className="heading-section">Teacher Table List</h2>
-            <div className="admin">
-              <Link to="#" className="links">
-                user
-              </Link>
-              <RxSlash />
-              <Link to="" className="actives">
-                teachers
-              </Link>
-            </div>
-          </div>
-          <div className="row admin_table">
-            <div className="col-md-12">
-              <div className="table-wrap">
-                <table className="table table-responsive-xl">
-                  <thead>
-                    <tr>
-                      <th>Image</th>
-                      <th>Name</th>
-                      <th>Designation</th>
-                      <th>Department</th>
-                      <th>Email</th>
-                      <th>Phone Number</th>
-                      <th>User Info</th>
-                      <th>Date Of Birth</th>
-                      <th>Gender</th>
-                      <th>Options</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {records?.map((record, i) => {
-                      return (
-                        <tr className="alert" role="alert" key={i}>
-                          <td>
-                            <img
-                              className="rounded-circle"
-                              src={`http://127.0.0.1:8000/storage/T_img/${record.image}`}
-                              width="50px"
-                              alt={record?.name}
-                            />
-                          </td>
-                          <td>
-                            <span>{record?.first_name} {record?.last_name}</span>
-                          </td>
-                          <td>
-                            <span>{record?.designation}</span>
-                          </td>
-                          <td>
-                            <span>{record?.department}</span>
-                          </td>
-                          <td>
-                            <span>{record?.email}</span>
-                          </td>
-                          <td>
-                            <span>{record?.phone_number}</span>
-                          </td>
-                          <td>
-                            <div className="user_information">
-                              <p>
-                                <b>Info:</b> Blood Group:{record?.blood_group},
-                                Address:{record?.address}
-                              </p>
-                            </div>
-                          </td>
-                          <td>
-                            <span>{record?.date_of_birth}</span>
-                          </td>
-                          <td>
-                            <span>{record?.gender}</span>
-                          </td>
-                          <td>
-                            <div className="dropdown">
-                              <button
-                                className="btn btn-secondary dropdown-toggle"
-                                type="button"
-                                id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                              >
-                                Actions
-                              </button>
-                              <ul
-                                className="dropdown-menu"
-                                aria-labelledby="dropdownMenuButton1"
-                              >
-                                <li>
-                                  <Link
-                                    className="dropdown-item"
-                                    to={`/admin/teachers/${record?.id}`}
-                                  >
-                                    Show Teacher
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link
-                                    className="dropdown-item"
-                                    to={`/admin/teachers/${record?.id}/edit`}
-                                  >
-                                    Edit Teacher
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link
-                                    className="dropdown-item"
-                                    onClick={() => handleDelete(record)}
-                                  >
-                                    Delete Teacher
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
+    <>
+      <Sidebar>
+        <section className='ftco-section'>
+          <div className='container'>
+            <div className='col-md-6 text-center mb-5'>
+              <h2 className='heading-section'>Teacher Table List</h2>
+              <div className='admin'>
+                <Link to='#' className='links'>
+                  user
+                </Link>
+                <RxSlash />
+                <Link to='' className='actives'>
+                  teachers
+                </Link>
               </div>
             </div>
-          </div>
+            <div className='row admin_table'>
+              <div className='col-md-12'>
+                <div className='table-wrap'>
+                  <table className='table table-responsive-xl'>
+                    <thead>
+                      <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Designation</th>
+                        <th>Department</th>
+                        <th>Email</th>
+                        <th>Phone Number</th>
+                        <th>User Info</th>
+                        <th>Date Of Birth</th>
+                        <th>Gender</th>
+                        <th>Options</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {records?.map((record, i) => {
+                        return (
+                          <tr className='alert' role='alert' key={i}>
+                            <td>
+                              <img
+                                className='rounded-circle'
+                                src={`http://127.0.0.1:8000/storage/T_img/${record.image}`}
+                                width='50px'
+                                alt={record?.name}
+                              />
+                            </td>
+                            <td>
+                              <span>
+                                {record?.first_name} {record?.last_name}
+                              </span>
+                            </td>
+                            <td>
+                              <span>{record?.designation}</span>
+                            </td>
+                            <td>
+                              <span>{record?.department}</span>
+                            </td>
+                            <td>
+                              <span>{record?.email}</span>
+                            </td>
+                            <td>
+                              <span>{record?.phone_number}</span>
+                            </td>
+                            <td>
+                              <div className='user_information'>
+                                <p>
+                                  <b>Info:</b> Blood Group:{record?.blood_group}
+                                  , Address:{record?.address}
+                                </p>
+                              </div>
+                            </td>
+                            <td>
+                              <span>{record?.date_of_birth}</span>
+                            </td>
+                            <td>
+                              <span>{record?.gender}</span>
+                            </td>
+                            <td>
+                              <div className='dropdown'>
+                                <button
+                                  className='btn btn-secondary dropdown-toggle'
+                                  type='button'
+                                  id='dropdownMenuButton1'
+                                  data-bs-toggle='dropdown'
+                                  aria-expanded='false'
+                                >
+                                  Actions
+                                </button>
+                                <ul
+                                  className='dropdown-menu'
+                                  aria-labelledby='dropdownMenuButton1'
+                                >
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      to={`/admin/teachers/${record?.id}`}
+                                    >
+                                      Show Teacher
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      to={`/admin/teachers/${record?.id}/edit`}
+                                    >
+                                      Edit Teacher
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      onClick={() => handleDelete(record)}
+                                    >
+                                      Delete Teacher
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
 
-          {/* Teacher list table pagination start  */}
-          <nav className="pagination">
-            <ul className="pagination">
-              <li className="page-item">
-                <Link to={"#"} className="page-link" onClick={perPage}>
-                  Prev
-                </Link>
-              </li>
-              {numbers.map((n, i) => (
-                <li
-                  className={`page-item ${currentPage === n ? "active" : ""}`}
-                  key={i}
-                >
-                  <Link
-                    to={"#"}
-                    className="page-link"
-                    onClick={() => handleCPage(n)}
-                  >
-                    {n}
+            {/* Teacher list table pagination start  */}
+            <nav className='pagination'>
+              <ul className='pagination'>
+                <li className='page-item'>
+                  <Link to={'#'} className='page-link' onClick={perPage}>
+                    Prev
                   </Link>
                 </li>
-              ))}
-              <li className="page-item">
-                <Link to={"#"} className="page-link" onClick={nextPage}>
-                  Next
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          {/* Teacher list table pagination end  */}
-        </div>
-      </section>
-    </div>
+                {numbers.map((n, i) => (
+                  <li
+                    className={`page-item ${currentPage === n ? 'active' : ''}`}
+                    key={i}
+                  >
+                    <Link
+                      to={'#'}
+                      className='page-link'
+                      onClick={() => handleCPage(n)}
+                    >
+                      {n}
+                    </Link>
+                  </li>
+                ))}
+                <li className='page-item'>
+                  <Link to={'#'} className='page-link' onClick={nextPage}>
+                    Next
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            {/* Teacher list table pagination end  */}
+          </div>
+        </section>
+        <Footer />
+      </Sidebar>
+    </>
   );
 };
 

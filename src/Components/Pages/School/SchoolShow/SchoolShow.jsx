@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import SchoolDetail from '../../../details/SchoolDetail/SchoolDetail';
+import Sidebar from '../../../Sidebar';
+import TopBar from '../../../TopBar';
 
 const SchoolShow = () => {
   const { schoolId } = useParams();
@@ -30,39 +32,45 @@ const SchoolShow = () => {
 
   return (
     <div>
-      {/* school create table title section */}
-      {/* <Link to='/schools' className='add_button'>
+      <TopBar />
+      <Sidebar>
+        {/* school create table title section */}
+        {/* <Link to='/schools' className='add_button'>
         <button type='button' className='btn'>
           School Table <AiOutlineArrowRight />
         </button>
       </Link> */}
 
-      <div className='dropdown add_button' >
-        <button
-          className='btn btn-secondary dropdown-toggle'
-          type='button'
-          id='dropdownMenuButton1'
-          data-bs-toggle='dropdown'
-          aria-expanded='false'
-        >
-          Actions
-        </button>
-        <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
-          <li>
-            <Link className='dropdown-item' to={`/admin/schools`}>
-              School Table
-            </Link>
-          </li>
-          <li>
-            <Link className='dropdown-item' to={`/admin/schools/${school?.id}/edit`}>
-              School Edit
-            </Link>
-          </li>
-        </ul>
-      </div>
+        <div className='dropdown add_button'>
+          <button
+            className='btn btn-secondary dropdown-toggle'
+            type='button'
+            id='dropdownMenuButton1'
+            data-bs-toggle='dropdown'
+            aria-expanded='false'
+          >
+            Actions
+          </button>
+          <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
+            <li>
+              <Link className='dropdown-item' to={`/admin/schools`}>
+                School Table
+              </Link>
+            </li>
+            <li>
+              <Link
+                className='dropdown-item'
+                to={`/admin/schools/${school?.id}/edit`}
+              >
+                School Edit
+              </Link>
+            </li>
+          </ul>
+        </div>
 
-      {/* school data details component */}
-      <SchoolDetail school={school} />
+        {/* school data details component */}
+        <SchoolDetail school={school} />
+      </Sidebar>
     </div>
   );
 };

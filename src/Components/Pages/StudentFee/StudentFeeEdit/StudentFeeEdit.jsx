@@ -4,9 +4,11 @@ import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Sidebar from '../../../Sidebar';
+import Footer from '../../../Footer';
+import TopBar from '../../../TopBar';
 
 const StudentFeeEdit = () => {
-
   const navigate = useNavigate();
 
   const { studentFeeId } = useParams();
@@ -92,147 +94,153 @@ const StudentFeeEdit = () => {
 
   return (
     <>
-      {/* StudentFee create table title section */}
-      <Link to='/admin/studentFees' className='add_button'>
-        <button type='button' className='btn'>
-        Student Fee Table <AiOutlineArrowRight />
-        </button>
-      </Link>
+      <TopBar />
+      <Sidebar>
+        {/* StudentFee create table title section */}
+        <Link to='/admin/studentFees' className='add_button'>
+          <button type='button' className='btn'>
+            Student Fee Table <AiOutlineArrowRight />
+          </button>
+        </Link>
 
-      <div className='admin_form'>
-        <div className='container-fluid px-1 py-5 mx-auto'>
-          <div className='row d-flex justify-content-center'>
-            <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
-              <div className='card'>
-                {/* StudentFee create form title section */}
-                <div className='col-md-6 text-center mb-5'>
-                  <h2 className='heading-section'>Student Fee Form Edit Table</h2>
-                  <div className='admin-create'>
-                    <Link to='#' className='links'>
-                      user
-                    </Link>
-                    <RxSlash />
-                    <Link to='' className='links'>
-                     student-fee
-                    </Link>
-                    <RxSlash />
-                    <Link to='' className='actives'>
-                      edit
-                    </Link>
+        <div className='admin_form'>
+          <div className='container-fluid px-1 py-5 mx-auto'>
+            <div className='row d-flex justify-content-center'>
+              <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
+                <div className='card'>
+                  {/* StudentFee create form title section */}
+                  <div className='col-md-6 text-center mb-5'>
+                    <h2 className='heading-section'>
+                      Student Fee Form Edit Table
+                    </h2>
+                    <div className='admin-create'>
+                      <Link to='#' className='links'>
+                        user
+                      </Link>
+                      <RxSlash />
+                      <Link to='' className='links'>
+                        student-fee
+                      </Link>
+                      <RxSlash />
+                      <Link to='' className='actives'>
+                        edit
+                      </Link>
+                    </div>
                   </div>
+
+                  {/* StudentFee create form table*/}
+                  <form className='form-card' onSubmit={handleSubmit}>
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Invoice No <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='invoice_no'
+                          placeholder='Enter invoice_no'
+                          id='invoice_no'
+                          onChange={handleChange}
+                          value={studentFee?.invoice_no}
+                        />{' '}
+                      </div>
+
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Student Name<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='student'
+                          placeholder='Enter student'
+                          id='student'
+                          onChange={handleChange}
+                          value={studentFee?.student}
+                        />{' '}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Invoice Title
+                          <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='invoice_title'
+                          placeholder='Enter invoice title'
+                          id='invoice_title'
+                          onChange={handleChange}
+                          value={studentFee?.invoice_title}
+                        />{' '}
+                      </div>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Total Amount<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='total_amount'
+                          placeholder='Enter total_amount'
+                          id='total_amount'
+                          onChange={handleChange}
+                          value={studentFee?.total_amount}
+                        />{' '}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Paid Amount
+                          <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='paid_amount'
+                          placeholder='Enter paid amount'
+                          id='paid_amount'
+                          onChange={handleChange}
+                          value={studentFee?.paid_amount}
+                        />{' '}
+                      </div>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Status<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='status'
+                          placeholder='Enter status'
+                          id='status'
+                          onChange={handleChange}
+                          value={studentFee?.status}
+                        />{' '}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-start'>
+                      <div className='form-group col-sm-4'>
+                        <button type='submit' className='btn-block btn-primary'>
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-
-                {/* StudentFee create form table*/}
-                <form className='form-card' onSubmit={handleSubmit}>
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Invoice No <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='invoice_no'
-                        placeholder='Enter invoice_no'
-                        id='invoice_no'
-                        onChange={handleChange}
-                        value={studentFee?.invoice_no}
-                      />{' '}
-                    </div>
-
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Student Name<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='student'
-                        placeholder='Enter student'
-                        id='student'
-                        onChange={handleChange}
-                        value={studentFee?.student}
-                      />{' '}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Invoice Title
-                        <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='invoice_title'
-                        placeholder='Enter invoice title'
-                        id='invoice_title'
-                        onChange={handleChange}
-                        value={studentFee?.invoice_title}
-                      />{' '}
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Total Amount<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='total_amount'
-                        placeholder='Enter total_amount'
-                        id='total_amount'
-                        onChange={handleChange}
-                        value={studentFee?.total_amount}
-                      />{' '}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Paid Amount
-                        <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='paid_amount'
-                        placeholder='Enter paid amount'
-                        id='paid_amount'
-                        onChange={handleChange}
-                        value={studentFee?.paid_amount}
-                      />{' '}
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Status<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='status'
-                        placeholder='Enter status'
-                        id='status'
-                        onChange={handleChange}
-                        value={studentFee?.status}
-                      />{' '}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-start'>
-                    <div className='form-group col-sm-4'>
-                      <button type='submit' className='btn-block btn-primary'>
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <Footer />
+      </Sidebar>
     </>
   );
 };

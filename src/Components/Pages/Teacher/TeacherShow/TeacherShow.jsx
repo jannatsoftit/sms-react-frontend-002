@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import TeacherDetail from '../../../details/TeacherDetail/TeacherDetail';
+import Sidebar from '../../../Sidebar';
+import TopBar from '../../../TopBar';
 
 const TeacherShow = () => {
-
   const { teacherId } = useParams();
 
   const [teacher, setTeacher] = useState(null);
@@ -31,17 +32,18 @@ const TeacherShow = () => {
 
   return (
     <div>
+      <TopBar />
+      <Sidebar>
+        {/* Teacher create table title section */}
+        <Link to='/admin/teachers' className='add_button'>
+          <button type='button' className='btn'>
+            Teacher Table <AiOutlineArrowRight />
+          </button>
+        </Link>
 
-      {/* Teacher create table title section */}
-      <Link to='/admin/teachers' className='add_button'>
-        <button type='button' className='btn'>
-          Teacher Table <AiOutlineArrowRight />
-        </button>
-      </Link>
-
-      {/* Teacher data details component */}
-      <TeacherDetail teacher={teacher} />
-      
+        {/* Teacher data details component */}
+        <TeacherDetail teacher={teacher} />
+      </Sidebar>
     </div>
   );
 };

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import AccountantDetail from '../../../details/AccountantDetail/AccountantDetail';
+import Sidebar from "../../../Sidebar";
+import TopBar from "../../../TopBar";
 
 const AccountantShow = () => {
   const { accountantId } = useParams();
@@ -30,17 +32,18 @@ const AccountantShow = () => {
 
   return (
     <div>
+      <TopBar />
+      <Sidebar>
+        {/* Accountant create table title section */}
+        <Link to='/admin/accountants' className='add_button'>
+          <button type='button' className='btn'>
+            Accountant Table <AiOutlineArrowRight />
+          </button>
+        </Link>
 
-      {/* Accountant create table title section */}
-      <Link to='/admin/accountants' className='add_button'>
-        <button type='button' className='btn'>
-          Accountant Table <AiOutlineArrowRight />
-        </button>
-      </Link>
-
-      {/* Accountant data details component */}
-      <AccountantDetail accountant={accountant} />
-      
+        {/* Accountant data details component */}
+        <AccountantDetail accountant={accountant} />
+      </Sidebar>
     </div>
   );
 };

@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ParentDetail from '../../../details/ParentDetail/ParentDetail';
+import Sidebar from '../../../Sidebar';
+import TopBar from '../../../TopBar';
 
 const ParentShow = () => {
   const { parentId } = useParams();
@@ -30,17 +32,18 @@ const ParentShow = () => {
 
   return (
     <div>
+      <TopBar />
+      <Sidebar>
+        {/* Parent create table title section */}
+        <Link to='/admin/parents' className='add_button'>
+          <button type='button' className='btn'>
+            Parent Table <AiOutlineArrowRight />
+          </button>
+        </Link>
 
-      {/* Parent create table title section */}
-      <Link to='/admin/parents' className='add_button'>
-        <button type='button' className='btn'>
-          Parent Table <AiOutlineArrowRight />
-        </button>
-      </Link>
-
-      {/* Parent data details component */}
-      <ParentDetail parent={parent} />
-      
+        {/* Parent data details component */}
+        <ParentDetail parent={parent} />
+      </Sidebar>
     </div>
   );
 };

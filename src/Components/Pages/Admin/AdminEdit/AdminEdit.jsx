@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { SidebarData } from '../../../SidebarData';
 import Swal from 'sweetalert2';
 
 import Footer from '../../../Footer';

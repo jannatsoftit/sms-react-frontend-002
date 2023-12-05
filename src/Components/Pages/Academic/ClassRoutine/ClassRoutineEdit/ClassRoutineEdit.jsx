@@ -4,9 +4,11 @@ import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Footer from '../../../../Footer';
+import Sidebar from '../../../../Sidebar';
+import TopBar from '../../../../TopBar';
 
 const ClassRoutineEdit = () => {
-
   const navigate = useNavigate();
 
   const { classRoutineId } = useParams();
@@ -90,133 +92,139 @@ const ClassRoutineEdit = () => {
 
   return (
     <>
-      {/* ClassRoutine create table title section */}
-      <Link to='/admin/classRoutines' className='add_button'>
-        <button type='button' className='btn'>
-        Class Routine Table <AiOutlineArrowRight />
-        </button>
-      </Link>
+      <TopBar />
+      <Sidebar>
+        {/* ClassRoutine create table title section */}
+        <Link to='/admin/classRoutines' className='add_button'>
+          <button type='button' className='btn'>
+            Class Routine Table <AiOutlineArrowRight />
+          </button>
+        </Link>
 
-      <div className='admin_form'>
-        <div className='container-fluid px-1 py-5 mx-auto'>
-          <div className='row d-flex justify-content-center'>
-            <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
-              <div className='card'>
-                {/* ClassRoutine create form title section */}
-                <div className='col-md-6 text-center mb-5'>
-                  <h2 className='heading-section'>Class Routine Form Edit Table</h2>
-                  <div className='admin-create'>
-                    <Link to='#' className='links'>
-                      user
-                    </Link>
-                    <RxSlash />
-                    <Link to='' className='links'>
-                      class-routine
-                    </Link>
-                    <RxSlash />
-                    <Link to='' className='actives'>
-                      edit
-                    </Link>
+        <div className='admin_form'>
+          <div className='container-fluid px-1 py-5 mx-auto'>
+            <div className='row d-flex justify-content-center'>
+              <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
+                <div className='card'>
+                  {/* ClassRoutine create form title section */}
+                  <div className='col-md-6 text-center mb-5'>
+                    <h2 className='heading-section'>
+                      Class Routine Form Edit Table
+                    </h2>
+                    <div className='admin-create'>
+                      <Link to='#' className='links'>
+                        user
+                      </Link>
+                      <RxSlash />
+                      <Link to='' className='links'>
+                        class-routine
+                      </Link>
+                      <RxSlash />
+                      <Link to='' className='actives'>
+                        edit
+                      </Link>
+                    </div>
                   </div>
+
+                  {/* ClassRoutine create form table*/}
+                  <form className='form-card' onSubmit={handleSubmit}>
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Class Name<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='class_name'
+                          placeholder='Enter class name'
+                          id='class_name'
+                          onChange={handleChange}
+                          value={classRoutine?.class_name}
+                        />{' '}
+                      </div>
+
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Subject Name <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='subject_name'
+                          placeholder='Enter subject name'
+                          id='subject_name'
+                          onChange={handleChange}
+                          value={classRoutine?.subject_name}
+                        />{' '}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Day
+                          <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='day'
+                          placeholder='Enter day'
+                          id='day'
+                          onChange={handleChange}
+                          value={classRoutine?.day}
+                        />{' '}
+                      </div>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Paper<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='paper'
+                          placeholder='Enter paper'
+                          id='paper'
+                          onChange={handleChange}
+                          value={classRoutine?.paper}
+                        />{' '}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Class Time
+                          <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='class_time'
+                          placeholder='Enter class time'
+                          id='class_time'
+                          onChange={handleChange}
+                          value={classRoutine?.class_time}
+                        />{' '}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-start'>
+                      <div className='form-group col-sm-4'>
+                        <button type='submit' className='btn-block btn-primary'>
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-
-                {/* ClassRoutine create form table*/}
-                <form className='form-card' onSubmit={handleSubmit}>
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Class Name<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='class_name'
-                        placeholder='Enter class name'
-                        id='class_name'
-                        onChange={handleChange}
-                        value={classRoutine?.class_name}
-                      />{' '}
-                    </div>
-
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Subject Name <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='subject_name'
-                        placeholder='Enter subject name'
-                        id='subject_name'
-                        onChange={handleChange}
-                        value={classRoutine?.subject_name}
-                      />{' '}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Day
-                        <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='day'
-                        placeholder='Enter day'
-                        id='day'
-                        onChange={handleChange}
-                        value={classRoutine?.day}
-                      />{' '}
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Paper<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='paper'
-                        placeholder='Enter paper'
-                        id='paper'
-                        onChange={handleChange}
-                        value={classRoutine?.paper}
-                      />{' '}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Class Time
-                        <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='class_time'
-                        placeholder='Enter class time'
-                        id='class_time'
-                        onChange={handleChange}
-                        value={classRoutine?.class_time}
-                      />{' '}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-start'>
-                    <div className='form-group col-sm-4'>
-                      <button type='submit' className='btn-block btn-primary'>
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <Footer />
+      </Sidebar>
     </>
   );
 };

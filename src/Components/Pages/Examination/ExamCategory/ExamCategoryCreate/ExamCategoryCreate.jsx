@@ -1,10 +1,12 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import ExamCategoryForm from '../../../../forms/ExamCategoryForm/ExamCategoryForm';
+import TopBar from "../../../../TopBar";
 
 const ExamCategoryCreate = () => {
   return (
     <div>
+      <TopBar/>
       {/* ExamCategory create table title section */}
       <Link to='/admin/examCategories' className='add_button'>
         <button type='button' className='btn'>

@@ -4,9 +4,11 @@ import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import Sidebar from '../../../Sidebar';
+import Footer from '../../../Footer';
+import TopBar from '../../../TopBar';
 
 const SchoolEdit = () => {
-  
   const navigate = useNavigate();
 
   const { schoolId } = useParams();
@@ -26,7 +28,7 @@ const SchoolEdit = () => {
     setSchool({
       ...school,
       [name]: value,
-    })
+    });
   };
 
   // School data update function
@@ -92,146 +94,149 @@ const SchoolEdit = () => {
 
   return (
     <>
-      {/* school create table title section */}
-      <Link  to={`/admin/schools/${school?.id}`} className='add_button'>
-        <button type='button' className='btn'>
-          School Info <AiOutlineArrowRight />
-        </button>
-      </Link>
+      <TopBar />
+      <Sidebar>
+        {/* school create table title section */}
+        <Link to={`/admin/schools/${school?.id}`} className='add_button'>
+          <button type='button' className='btn'>
+            School Info <AiOutlineArrowRight />
+          </button>
+        </Link>
 
-      <div className='admin_form'>
-        <div className='container-fluid px-1 py-5 mx-auto'>
-          <div className='row d-flex justify-content-center'>
-            <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
-              <div className='card'>
-                {/* school create form title section */}
-                <div className='col-md-6 text-center mb-5'>
-                  <h2 className='heading-section'>
-                    School Form Edit Table
-                  </h2>
-                  <div className='admin-create'>
-                    <Link to='#' className='links'>
-                      user
-                    </Link>
-                    <RxSlash />
-                    <Link to='' className='links'>
-                      school
-                    </Link>
-                    <RxSlash />
-                    <Link to='' className='actives'>
-                      edit
-                    </Link>
+        <div className='admin_form'>
+          <div className='container-fluid px-1 py-5 mx-auto'>
+            <div className='row d-flex justify-content-center'>
+              <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
+                <div className='card'>
+                  {/* school create form title section */}
+                  <div className='col-md-6 text-center mb-5'>
+                    <h2 className='heading-section'>School Form Edit Table</h2>
+                    <div className='admin-create'>
+                      <Link to='#' className='links'>
+                        user
+                      </Link>
+                      <RxSlash />
+                      <Link to='' className='links'>
+                        school
+                      </Link>
+                      <RxSlash />
+                      <Link to='' className='actives'>
+                        edit
+                      </Link>
+                    </div>
                   </div>
+
+                  {/* school create form table*/}
+                  <form className='form-card' onSubmit={handleSubmit}>
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          School Name <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          id='title'
+                          name='title'
+                          placeholder='Enter school name'
+                          onChange={handleChange}
+                          value={school?.title}
+                        />{' '}
+                      </div>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Email<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          id='email'
+                          name='email'
+                          placeholder='Enter email'
+                          onChange={handleChange}
+                          value={school?.email}
+                        />{' '}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Phone <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          id='phone'
+                          name='phone'
+                          placeholder='Enter phone number'
+                          onChange={handleChange}
+                          value={school?.phone}
+                        />{' '}
+                      </div>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Address <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          id='address'
+                          name='address'
+                          placeholder='Enter address'
+                          onChange={handleChange}
+                          value={school?.address}
+                        />{' '}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Facebook Page Link{' '}
+                          <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          id='facebook_page'
+                          name='facebook_page'
+                          placeholder='Enter facebook_page'
+                          onChange={handleChange}
+                          value={school?.facebook_page}
+                        />{' '}
+                      </div>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Status <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          id='status'
+                          name='status'
+                          placeholder='Enter status'
+                          onChange={handleChange}
+                          value={school?.status}
+                        />{' '}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-start'>
+                      <div className='form-group col-sm-4'>
+                        <button type='submit' className='btn-block btn-primary'>
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
-
-                {/* school create form table*/}
-                <form className='form-card' onSubmit={handleSubmit}>
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        School Name <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        id='title'
-                        name='title'
-                        placeholder='Enter school name'
-                        onChange={handleChange}
-                        value={school?.title}
-                      />{' '}
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Email<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        id='email'
-                        name='email'
-                        placeholder='Enter email'
-                        onChange={handleChange}
-                        value={school?.email}
-                      />{' '}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Phone <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        id='phone'
-                        name='phone'
-                        placeholder='Enter phone number'
-                        onChange={handleChange}
-                        value={school?.phone}
-                      />{' '} 
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Address <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        id='address'
-                        name='address'
-                        placeholder='Enter address'
-                        onChange={handleChange}
-                        value={school?.address}
-                      />{' '} 
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Facebook Page Link <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        id='facebook_page'
-                        name='facebook_page'
-                        placeholder='Enter facebook_page'
-                        onChange={handleChange}
-                        value={school?.facebook_page}
-                      />{' '}
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Status <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        id='status'
-                        name='status'
-                        placeholder='Enter status'
-                        onChange={handleChange}
-                        value={school?.status}
-                      />{' '}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-start'>
-                    <div className='form-group col-sm-4'>
-                      <button type='submit' className='btn-block btn-primary'>
-                        Submit
-                      </button>
-                    </div>
-                  </div>
-                </form>
               </div>
             </div>
           </div>
         </div>
-      </div>
+        <Footer />
+      </Sidebar>
     </>
   );
 };

@@ -9,7 +9,6 @@ import Sidebar from "../../../Sidebar";
 import TopBar from "../../../TopBar";
 
 
-
 const StudentEdit = () => {
   const navigate = useNavigate();
 

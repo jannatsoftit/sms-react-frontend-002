@@ -1,11 +1,12 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
 import AccountantTable from '../../../table/AccountantTable/AccountantTable';
+import TopBar from '../../../TopBar';
 
 const AccountantList = () => {
   return (
     <div>
-
+      <TopBar/>
       {/* Accountant table title section */}
       <Link to='create' className='add_button'>
         <button type='button' className='btn'>

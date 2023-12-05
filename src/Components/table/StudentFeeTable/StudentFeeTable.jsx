@@ -3,8 +3,11 @@ import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
+import Sidebar from '../../Sidebar';
+import Footer from '../../Footer';
 
-const StudentFeeTable = () => { //StudentFee
+const StudentFeeTable = () => {
+  //StudentFee
 
   // StudentFee data
   const [studentFees, setStudentFees] = useState(null);
@@ -41,7 +44,9 @@ const StudentFeeTable = () => { //StudentFee
 
   // StudentFee data delete function
   const handleDelete = (studentFee) => {
-    if (confirm(`Are You sure you want to delete student fee ${studentFee.id}?`)) {
+    if (
+      confirm(`Are You sure you want to delete student fee ${studentFee.id}?`)
+    ) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Delete Successfully!!',
@@ -86,135 +91,137 @@ const StudentFeeTable = () => { //StudentFee
   }, [reload]);
 
   return (
-    <div>
-      <section className='ftco-section'>
-        <div className='container'>
-          <div className='col-md-6 text-center mb-5'>
-            <h2 className='heading-section'>Student Fee Table List</h2>
-            <div className='admin'>
-              <Link to='#' className='links'>
-                user
-              </Link>
-              <RxSlash />
-              <Link to='' className='actives'>
-                student-fees
-              </Link>
-            </div>
-          </div>
-          <div className='row admin_table'>
-            <div className='col-md-12'>
-              <div className='table-wrap'>
-                <table className='table table-responsive-xl'>
-                  <thead>
-                    <tr>
-                      <th>Invoice No</th>
-                      <th>Student</th>
-                      <th>Invoice Title</th>
-                      <th>Total Amount</th>
-                      <th>Paid Amount</th>
-                      <th>Status</th>
-                      <th>Options</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                    {records?.map((record, i) => {
-                      return (
-                        <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.invoice_no}</span>
-                          </td>
-                          <td>
-                            <span>{record?.student}</span>
-                          </td>
-                          <td>
-                            <span>{record?.invoice_title}</span>
-                          </td>
-                          <td>
-                            <span>{record?.total_amount}</span>
-                          </td>
-                          <td>
-                            <span>{record?.paid_amount}</span>
-                          </td>
-                          <td>
-                            <span>{record?.status}</span>
-                          </td>
-                          <td>
-                            <div className='dropdown'>
-                              <button
-                                className='btn btn-secondary dropdown-toggle'
-                                type='button'
-                                id='dropdownMenuButton1'
-                                data-bs-toggle='dropdown'
-                                aria-expanded='false'
-                              >
-                                Actions
-                              </button>
-                              <ul
-                                className='dropdown-menu'
-                                aria-labelledby='dropdownMenuButton1'
-                              >
-                                <li>
-                                  <Link
-                                    className='dropdown-item'
-                                    to={`/admin/studentFees/${record?.id}/edit`}
-                                  >
-                                    Edit StudentFee
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link
-                                    className='dropdown-item'
-                                    onClick={() => handleDelete(record)}
-                                  >
-                                    Delete StudentFee
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
+    <>
+      <Sidebar>
+        <section className='ftco-section'>
+          <div className='container'>
+            <div className='col-md-6 text-center mb-5'>
+              <h2 className='heading-section'>Student Fee Table List</h2>
+              <div className='admin'>
+                <Link to='#' className='links'>
+                  user
+                </Link>
+                <RxSlash />
+                <Link to='' className='actives'>
+                  student-fees
+                </Link>
               </div>
             </div>
-          </div>
+            <div className='row admin_table'>
+              <div className='col-md-12'>
+                <div className='table-wrap'>
+                  <table className='table table-responsive-xl'>
+                    <thead>
+                      <tr>
+                        <th>Invoice No</th>
+                        <th>Student</th>
+                        <th>Invoice Title</th>
+                        <th>Total Amount</th>
+                        <th>Paid Amount</th>
+                        <th>Status</th>
+                        <th>Options</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {records?.map((record, i) => {
+                        return (
+                          <tr className='alert' role='alert' key={i}>
+                            <td>
+                              <span>{record?.invoice_no}</span>
+                            </td>
+                            <td>
+                              <span>{record?.student}</span>
+                            </td>
+                            <td>
+                              <span>{record?.invoice_title}</span>
+                            </td>
+                            <td>
+                              <span>{record?.total_amount}</span>
+                            </td>
+                            <td>
+                              <span>{record?.paid_amount}</span>
+                            </td>
+                            <td>
+                              <span>{record?.status}</span>
+                            </td>
+                            <td>
+                              <div className='dropdown'>
+                                <button
+                                  className='btn btn-secondary dropdown-toggle'
+                                  type='button'
+                                  id='dropdownMenuButton1'
+                                  data-bs-toggle='dropdown'
+                                  aria-expanded='false'
+                                >
+                                  Actions
+                                </button>
+                                <ul
+                                  className='dropdown-menu'
+                                  aria-labelledby='dropdownMenuButton1'
+                                >
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      to={`/admin/studentFees/${record?.id}/edit`}
+                                    >
+                                      Edit StudentFee
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      onClick={() => handleDelete(record)}
+                                    >
+                                      Delete StudentFee
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
 
-          {/* StudentFee list table pagination start  */}
-          <nav className='pagination'>
-            <ul className='pagination'>
-              <li className='page-item'>
-                <Link to={'#'} className='page-link' onClick={perPage}>
-                  Prev
-                </Link>
-              </li>
-              {numbers.map((n, i) => (
-                <li
-                  className={`page-item ${currentPage === n ? 'active' : ''}`}
-                  key={i}
-                >
-                  <Link
-                    to={'#'}
-                    className='page-link'
-                    onClick={() => handleCPage(n)}
-                  >
-                    {n}
+            {/* StudentFee list table pagination start  */}
+            <nav className='pagination'>
+              <ul className='pagination'>
+                <li className='page-item'>
+                  <Link to={'#'} className='page-link' onClick={perPage}>
+                    Prev
                   </Link>
                 </li>
-              ))}
-              <li className='page-item'>
-                <Link to={'#'} className='page-link' onClick={nextPage}>
-                  Next
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          {/* StudentFee list table pagination end  */}
-        </div>
-      </section>
-    </div>
+                {numbers.map((n, i) => (
+                  <li
+                    className={`page-item ${currentPage === n ? 'active' : ''}`}
+                    key={i}
+                  >
+                    <Link
+                      to={'#'}
+                      className='page-link'
+                      onClick={() => handleCPage(n)}
+                    >
+                      {n}
+                    </Link>
+                  </li>
+                ))}
+                <li className='page-item'>
+                  <Link to={'#'} className='page-link' onClick={nextPage}>
+                    Next
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            {/* StudentFee list table pagination end  */}
+          </div>
+        </section>
+        <Footer />
+      </Sidebar>
+    </>
   );
 };
 

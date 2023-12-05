@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
+import Sidebar from '../../Sidebar';
+import Footer from '../../Footer';
 
 const ClassRoutineTable = () => {
-
   // ClassRoutine data
   const [classRoutines, setClassRoutines] = useState(null);
 
@@ -41,7 +42,11 @@ const ClassRoutineTable = () => {
 
   // classRoutine data delete function
   const handleDelete = (classRoutine) => {
-    if (confirm(`Are You sure you want to delete Class Routine ${classRoutine.id}?`)) {
+    if (
+      confirm(
+        `Are You sure you want to delete Class Routine ${classRoutine.id}?`
+      )
+    ) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Delete Successfully!!',
@@ -86,135 +91,139 @@ const ClassRoutineTable = () => {
   }, [reload]);
 
   return (
-    <div>
-      <section className='ftco-section'>
-        <div className='container'>
-          <div className='col-md-6 text-center mb-5'>
-            <h2 className='heading-section'>Class Routine Table List</h2>
-            <div className='admin'>
-              <Link to='#' className='links'>
-                user
-              </Link>
-              <RxSlash />
-              <Link to='' className='actives'>
-                class-routines
-              </Link>
-            </div>
-          </div>
-          <div className='row admin_table'>
-            <div className='col-md-12'>
-              <div className='table-wrap'>
-                <div>
-                  <h2 style={{display: 'flex', justifyContent: 'center'}}><bold>Class Routine For Class IX & X</bold></h2>
-                </div>
-                <table className='table table-responsive-xl'>
-                  <thead>
-                    <tr>
-                      <th>Day</th>
-                      <th>Class Name</th>
-                      <th>Subject Name</th>
-                      <th>Paper</th>
-                      <th>Class Time</th>
-                      <th>Options</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-
-                    {records?.map((record, i) => {
-                      return (
-                        <tr className='alert' role='alert' key={i}>
-                          <td>
-                            <span>{record?.day}</span>
-                          </td>
-                          <td>
-                            <span>{record?.class_name}</span>
-                          </td>
-                          <td>
-                            <span>{record?.subject_name}</span>
-                          </td>
-                          <td>
-                            <span>{record?.paper}</span>
-                          </td>
-                          <td>
-                            <span>{record?.class_time}</span>
-                          </td>
-                         
-                          <td>
-                            <div className='dropdown'>
-                              <button
-                                className='btn btn-secondary dropdown-toggle'
-                                type='button'
-                                id='dropdownMenuButton1'
-                                data-bs-toggle='dropdown'
-                                aria-expanded='false'
-                              >
-                                Actions
-                              </button>
-                              <ul
-                                className='dropdown-menu'
-                                aria-labelledby='dropdownMenuButton1'
-                              >
-                                <li>
-                                  <Link
-                                    className='dropdown-item'
-                                    to={`/admin/classRoutines/${record?.id}/edit`}
-                                  >
-                                    Edit ClassRoutine
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link
-                                    className='dropdown-item'
-                                    onClick={() => handleDelete(record)}
-                                  >
-                                    Delete ClassRoutine
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
-                          </td>
-                        </tr>
-                      );
-                    })}
-                  </tbody>
-                </table>
+    <>
+      <Sidebar>
+        <section className='ftco-section'>
+          <div className='container'>
+            <div className='col-md-6 text-center mb-5'>
+              <h2 className='heading-section'>Class Routine Table List</h2>
+              <div className='admin'>
+                <Link to='#' className='links'>
+                  user
+                </Link>
+                <RxSlash />
+                <Link to='' className='actives'>
+                  class-routines
+                </Link>
               </div>
             </div>
-          </div>
+            <div className='row admin_table'>
+              <div className='col-md-12'>
+                <div className='table-wrap'>
+                  <div>
+                    <h2 style={{ display: 'flex', justifyContent: 'center' }}>
+                      <bold>Class Routine For Class IX & X</bold>
+                    </h2>
+                  </div>
+                  <table className='table table-responsive-xl'>
+                    <thead>
+                      <tr>
+                        <th>Day</th>
+                        <th>Class Name</th>
+                        <th>Subject Name</th>
+                        <th>Paper</th>
+                        <th>Class Time</th>
+                        <th>Options</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {records?.map((record, i) => {
+                        return (
+                          <tr className='alert' role='alert' key={i}>
+                            <td>
+                              <span>{record?.day}</span>
+                            </td>
+                            <td>
+                              <span>{record?.class_name}</span>
+                            </td>
+                            <td>
+                              <span>{record?.subject_name}</span>
+                            </td>
+                            <td>
+                              <span>{record?.paper}</span>
+                            </td>
+                            <td>
+                              <span>{record?.class_time}</span>
+                            </td>
 
-          {/* classRoutine list table pagination start  */}
-          <nav className='pagination'>
-            <ul className='pagination'>
-              <li className='page-item'>
-                <Link to={'#'} className='page-link' onClick={perPage}>
-                  Prev
-                </Link>
-              </li>
-              {numbers.map((n, i) => (
-                <li
-                  className={`page-item ${currentPage === n ? 'active' : ''}`}
-                  key={i}
-                >
-                  <Link
-                    to={'#'}
-                    className='page-link'
-                    onClick={() => handleCPage(n)}
-                  >
-                    {n}
+                            <td>
+                              <div className='dropdown'>
+                                <button
+                                  className='btn btn-secondary dropdown-toggle'
+                                  type='button'
+                                  id='dropdownMenuButton1'
+                                  data-bs-toggle='dropdown'
+                                  aria-expanded='false'
+                                >
+                                  Actions
+                                </button>
+                                <ul
+                                  className='dropdown-menu'
+                                  aria-labelledby='dropdownMenuButton1'
+                                >
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      to={`/admin/classRoutines/${record?.id}/edit`}
+                                    >
+                                      Edit ClassRoutine
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      onClick={() => handleDelete(record)}
+                                    >
+                                      Delete ClassRoutine
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* classRoutine list table pagination start  */}
+            <nav className='pagination'>
+              <ul className='pagination'>
+                <li className='page-item'>
+                  <Link to={'#'} className='page-link' onClick={perPage}>
+                    Prev
                   </Link>
                 </li>
-              ))}
-              <li className='page-item'>
-                <Link to={'#'} className='page-link' onClick={nextPage}>
-                  Next
-                </Link>
-              </li>
-            </ul>
-          </nav>
-          {/* classRoutine list table pagination end  */}
-        </div>
-      </section>
-    </div>
+                {numbers.map((n, i) => (
+                  <li
+                    className={`page-item ${currentPage === n ? 'active' : ''}`}
+                    key={i}
+                  >
+                    <Link
+                      to={'#'}
+                      className='page-link'
+                      onClick={() => handleCPage(n)}
+                    >
+                      {n}
+                    </Link>
+                  </li>
+                ))}
+                <li className='page-item'>
+                  <Link to={'#'} className='page-link' onClick={nextPage}>
+                    Next
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+            {/* classRoutine list table pagination end  */}
+          </div>
+        </section>
+        <Footer />
+      </Sidebar>
+    </>
   );
 };
 

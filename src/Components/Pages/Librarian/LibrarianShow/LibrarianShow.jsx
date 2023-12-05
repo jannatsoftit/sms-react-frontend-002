@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import LibrarianDetail from '../../../details/LibrarianDetail/LibrarianDetail';
+import Sidebar from '../../../Sidebar';
+import TopBar from '../../../TopBar';
 
 const LibrarianShow = () => {
   const { librarianId } = useParams();
@@ -30,17 +32,18 @@ const LibrarianShow = () => {
 
   return (
     <div>
+      <TopBar />
+      <Sidebar>
+        {/* Librarian create table title section */}
+        <Link to='/admin/librarians' className='add_button'>
+          <button type='button' className='btn'>
+            Librarian Table <AiOutlineArrowRight />
+          </button>
+        </Link>
 
-      {/* Librarian create table title section */}
-      <Link to='/admin/librarians' className='add_button'>
-        <button type='button' className='btn'>
-          Librarian Table <AiOutlineArrowRight />
-        </button>
-      </Link>
-
-      {/* Librarian data details component */}
-      <LibrarianDetail librarian={librarian} />
-      
+        {/* Librarian data details component */}
+        <LibrarianDetail librarian={librarian} />
+      </Sidebar>
     </div>
   );
 };

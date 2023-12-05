@@ -3,6 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
+import Sidebar from '../../Sidebar';
+import Footer from '../../Footer';
 
 const OfflineExamForm = () => {
   const navigate = useNavigate();
@@ -133,278 +135,285 @@ const OfflineExamForm = () => {
   };
 
   return (
-    <div className='admin_form'>
-      <div className='container-fluid px-1 py-5 mx-auto'>
-        <div className='row d-flex justify-content-center'>
-          <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
-            <div className='card'>
-              {/* offlineExams create form title section */}
-              <div className='col-md-6 text-center mb-5'>
-                <h2 className='heading-section'>Offline Exams Form Table</h2>
-                <div className='admin-create'>
-                  <Link to='#' className='links'>
-                    user
-                  </Link>
-                  <RxSlash />
-                  <Link to='' className='links'>
-                   offline-exams
-                  </Link>
-                  <RxSlash />
-                  <Link to='' className='actives'>
-                    create
-                  </Link>
+    <>
+      <Sidebar>
+        <div className='admin_form'>
+          <div className='container-fluid px-1 py-5 mx-auto'>
+            <div className='row d-flex justify-content-center'>
+              <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
+                <div className='card'>
+                  {/* offlineExams create form title section */}
+                  <div className='col-md-6 text-center mb-5'>
+                    <h2 className='heading-section'>
+                      Offline Exams Form Table
+                    </h2>
+                    <div className='admin-create'>
+                      <Link to='#' className='links'>
+                        user
+                      </Link>
+                      <RxSlash />
+                      <Link to='' className='links'>
+                        offline-exams
+                      </Link>
+                      <RxSlash />
+                      <Link to='' className='actives'>
+                        create
+                      </Link>
+                    </div>
+                  </div>
+
+                  {/* offlineExams create form table*/}
+                  <form className='form-card' onSubmit={handelSubmit}>
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Exam Name<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='exam_name'
+                          placeholder='Enter exam name'
+                          id='exam_name'
+                          onChange={handleChange}
+                          value={inputFields?.exam_name}
+                        />{' '}
+                        {formErrors.exam_name && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.exam_name}
+                          </span>
+                        )}
+                      </div>
+
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Paper<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='paper'
+                          placeholder='Enter paper'
+                          id='paper'
+                          onChange={handleChange}
+                          value={inputFields?.paper}
+                        />{' '}
+                        {formErrors.paper && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.paper}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Class Name
+                          <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='class_name'
+                          placeholder='Enter class name'
+                          id='class_name'
+                          onChange={handleChange}
+                          value={inputFields?.class_name}
+                        />{' '}
+                        {formErrors.class_name && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.class_name}
+                          </span>
+                        )}
+                      </div>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Section<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='section'
+                          placeholder='Enter section'
+                          id='section'
+                          onChange={handleChange}
+                          value={inputFields?.section}
+                        />{' '}
+                        {formErrors.section && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.section}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Date Time <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='date_time'
+                          placeholder='Enter exam date '
+                          id='date_time'
+                          onChange={handleChange}
+                          value={inputFields?.date_time}
+                        />{' '}
+                        {formErrors.date_time && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.date_time}
+                          </span>
+                        )}
+                      </div>
+
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Exam Start Time{' '}
+                          <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='time'
+                          name='exam_start_time'
+                          placeholder='Enter exam start time'
+                          id='exam_start_time'
+                          onChange={handleChange}
+                          value={inputFields?.exam_start_time}
+                        />{' '}
+                        {formErrors.exam_start_time && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.exam_start_time}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Exam End Time
+                          <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='time'
+                          name='exam_end_time'
+                          placeholder='Enter total exam end time'
+                          id='exam_end_time'
+                          onChange={handleChange}
+                          value={inputFields?.exam_end_time}
+                        />{' '}
+                        {formErrors.exam_end_time && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.exam_end_time}
+                          </span>
+                        )}
+                      </div>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Building Name <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='building_name'
+                          placeholder='Enter building name'
+                          id='building_name'
+                          onChange={handleChange}
+                          value={inputFields?.building_name}
+                        />{' '}
+                        {formErrors.building_name && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.building_name}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Room Number
+                          <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='room_number'
+                          placeholder='Enter room number'
+                          id='room_number'
+                          onChange={handleChange}
+                          value={inputFields?.room_number}
+                        />{' '}
+                        {formErrors.room_number && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.room_number}
+                          </span>
+                        )}
+                      </div>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Total Marks<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='number'
+                          name='total_marks'
+                          placeholder='Enter total marks'
+                          id='total_marks'
+                          onChange={handleChange}
+                          value={inputFields?.total_marks}
+                        />{' '}
+                        {formErrors.total_marks && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.total_marks}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Subject Code
+                          <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='number'
+                          name='subject_code'
+                          placeholder='Enter subject code'
+                          id='subject_code'
+                          onChange={handleChange}
+                          value={inputFields?.subject_code}
+                        />{' '}
+                        {formErrors.subject_code && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.subject_code}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    <div className='row justify-content-start'>
+                      <div className='form-group col-sm-4'>
+                        <button type='submit' className='btn-block btn-primary'>
+                          Submit
+                        </button>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
-
-              {/* offlineExams create form table*/}
-              <form className='form-card' onSubmit={handelSubmit}>
-              <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Exam Name<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='exam_name'
-                        placeholder='Enter exam name'
-                        id='exam_name'
-                        onChange={handleChange}
-                        value={inputFields?.exam_name}
-                      />{' '}
-                      {formErrors.exam_name && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.exam_name}
-                      </span>
-                    )}
-                    </div>
-
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                      Paper<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='paper'
-                        placeholder='Enter paper'
-                        id='paper'
-                        onChange={handleChange}
-                        value={inputFields?.paper}
-                      />{' '}
-                      {formErrors.paper && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.paper}
-                      </span>
-                    )}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                      Class Name
-                        <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='class_name'
-                        placeholder='Enter class name'
-                        id='class_name'
-                        onChange={handleChange}
-                        value={inputFields?.class_name}
-                      />{' '}
-                      {formErrors.class_name && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.class_name}
-                      </span>
-                    )}
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                       Section<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='section'
-                        placeholder='Enter section'
-                        id='section'
-                        onChange={handleChange}
-                        value={inputFields?.section}
-                      />{' '}
-                      {formErrors.section && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.section}
-                      </span>
-                    )}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Date Time <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='date_time'
-                        placeholder='Enter exam date '
-                        id='date_time'
-                        onChange={handleChange}
-                        value={inputFields?.date_time}
-                      />{' '}
-                      {formErrors.date_time && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.date_time}
-                      </span>
-                    )}
-                    </div>
-
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                       Exam Start Time <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='time'
-                        name='exam_start_time'
-                        placeholder='Enter exam start time'
-                        id='exam_start_time'
-                        onChange={handleChange}
-                        value={inputFields?.exam_start_time}
-                      />{' '}
-                      {formErrors.exam_start_time && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.exam_start_time}
-                      </span>
-                    )}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Exam End Time
-                        <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='time'
-                        name='exam_end_time'
-                        placeholder='Enter total exam end time'
-                        id='exam_end_time'
-                        onChange={handleChange}
-                        value={inputFields?.exam_end_time}
-                      />{' '}
-                      {formErrors.exam_end_time && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.exam_end_time}
-                      </span>
-                    )}
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                      Building Name <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='building_name'
-                        placeholder='Enter building name'
-                        id='building_name'
-                        onChange={handleChange}
-                        value={inputFields?.building_name}
-                      />{' '}
-                      {formErrors.building_name && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.building_name}
-                      </span>
-                    )}
-                    </div>
-
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Room Number
-                        <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='text'
-                        name='room_number'
-                        placeholder='Enter room number'
-                        id='room_number'
-                        onChange={handleChange}
-                        value={inputFields?.room_number}
-                      />{' '}
-                      {formErrors.room_number && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.room_number}
-                      </span>
-                    )}
-                    </div>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                       Total Marks<span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='number'
-                        name='total_marks'
-                        placeholder='Enter total marks'
-                        id='total_marks'
-                        onChange={handleChange}
-                        value={inputFields?.total_marks}
-                      />{' '}
-                    {formErrors.total_marks && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.total_marks}
-                      </span>
-                    )}
-                    </div>
-                  </div>
-
-                  <div className='row justify-content-between text-left'>
-                    <div className='form-group col-sm-6 flex-column d-flex'>
-                      {' '}
-                      <label className='form-label px-3'>
-                        Subject Code
-                        <span className='text-danger'> *</span>
-                      </label>{' '}
-                      <input
-                        type='number'
-                        name='subject_code'
-                        placeholder='Enter subject code'
-                        id='subject_code'
-                        onChange={handleChange}
-                        value={inputFields?.subject_code}
-                      />{' '}
-                      {formErrors.subject_code && (
-                      <span style={{ color: '#e74c3c' }}>
-                        {formErrors.subject_code}
-                      </span>
-                    )}
-                    </div>
-                  </div>
-
-                <div className='row justify-content-start'>
-                  <div className='form-group col-sm-4'>
-                    <button type='submit' className='btn-block btn-primary'>
-                      Submit
-                    </button>
-                  </div>
-                </div>
-              </form>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+        <Footer />
+      </Sidebar>
+    </>
   );
 };
 

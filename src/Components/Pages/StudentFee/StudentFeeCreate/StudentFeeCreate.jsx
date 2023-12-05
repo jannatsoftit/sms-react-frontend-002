@@ -1,10 +1,12 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import StudentFeeForm from '../../../../Components/forms/StudentFeeForm/StudentFeeForm';
+import TopBar from '../../../TopBar';
 
 const StudentFeeCreate = () => {
   return (
     <div>
+      <TopBar/>
       {/* StudentFee create table title section */}
       <Link to='/admin/studentFees' className='add_button'>
         <button type='button' className='btn'>
