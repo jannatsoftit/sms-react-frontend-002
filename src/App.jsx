@@ -12,7 +12,7 @@ import {
 // import Admin from "./Components/Admin";
 // import AdminRoutes from "./Components/routes";
 // import Dashboard from './Components/Pages/Dashboard/Dashboard';
-// import Register from "./Components/Register";
+import Register from "./Components/Register";
 import Login from './Components/Login';
 
 import './App.css';
@@ -108,6 +108,7 @@ import NotFound from './Components/NotFound';
 //import PublicDashboard from './Components/PublicDashboard/Dashboard/PublicDashboard';
 
 const App = () => {
+
   // const [isAuthenticated, setAuthenticated] = useState(
   //   () => JSON.parse(localStorage.getItem('role_id')) || false
   // );
@@ -795,11 +796,12 @@ const App = () => {
     <>
       <Routes>
 
+        <Route path='/register' element={<Register />}/>
         <Route path='/login' element={<Login />}/>
         <Route path='/' element={<Login />}/>
         <Route path='*' element={<NotFound />}/>
 
-        <Route path='/admin' > 
+        <Route path='/admin' element={<AdminProtectedRoute />}> 
 
           <Route path='dashboard' element={<Dashboard />} />
 
