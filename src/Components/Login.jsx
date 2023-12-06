@@ -1,6 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 const Login = () => {
@@ -13,13 +12,10 @@ const Login = () => {
   });
 
   const handleInput = (e) => {
-    setLoginInput({
-      ...loginInput,
-      [e.target.name]: e.target.value,
-    });
+    setLoginInput((values) => ({ ...values, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const submitLogin = (e) => {
     e.preventDefault();
 
     const LoginData = {
@@ -38,39 +34,39 @@ const Login = () => {
       },
       method: 'POST',
     })
-      .then((res) => res.json())
-      .then((res) => {
-        if (res?.status === 200) {
-          localStorage.setItem('auth_token', res?.token);
-          localStorage.setItem('auth_name', res?.username);
-          localStorage.setItem('role_id', res?.role_id);
+      .then((response) => response.json())
+      .then((response) => {
+        if (response?.status === 200) {
+          localStorage.setItem('auth_token', response?.token);
+          localStorage.setItem('auth_name', response?.username);
+          localStorage.setItem('role', response?.role_id);
+          
+          const userRoleId = localStorage.getItem('role');
+          console.log(userRoleId);
 
-          const userRole = localStorage.getItem('role_id');
-          console.log(userRole);
-
-          if (userRole === '1') {
+          if (userRoleId === '1') {
             navigate('/admin/dashboard');
-          } else if (userRole === '2') {
+          } else if (userRoleId === '2') {
             navigate('/student/dashboard');
-          } else if (userRole === '3') {
+          } else if (userRoleId === '3') {
             navigate('/teacher/dashboard');
-          } else if (userRole === '4') {
+          } else if (userRoleId === '4') {
             navigate('/parent/dashboard');
-          } else if (userRole === '5') {
+          } else if (userRoleId === '5') {
             navigate('/accountant/dashboard');
-          } else if (userRole === '6') {
+          } else if (userRoleId === '6') {
             navigate('/librarian/dashboard');
-          } else if (userRole === '7') {
+          } else if (userRoleId === '7') {
             navigate('/public/dashboard');
           }
-          console.info(res);
+          console.info(response);
           Swal.fire({
             title: 'Success',
             text: 'Logged in Successfully Completed!',
             icon: 'success',
             confirmButtonText: 'Ok',
           });
-        } else if (res?.status === 401) {
+        } else if (response?.status === 401) {
           Swal.fire({
             title: 'Warning!',
             text: 'Login Unsuccessful',
@@ -79,6 +75,9 @@ const Login = () => {
           });
           navigate('/login');
         }
+      })
+      .catch((error) => {
+        console.error(error);
       });
   };
 
@@ -87,10 +86,10 @@ const Login = () => {
       <div className='login_body'>
         <div className='wrapper'>
           <div className='title'>Login Form</div>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={submitLogin}>
             <div className='field'>
               <input
-                type='email'
+                //type='email'
                 name='email'
                 value={loginInput.email}
                 onChange={handleInput}
@@ -100,7 +99,7 @@ const Login = () => {
             </div>
             <div className='field'>
               <input
-                type='text'
+                //type='text'
                 name='password'
                 value={loginInput.password}
                 onChange={handleInput}
@@ -110,7 +109,7 @@ const Login = () => {
             </div>
             <div className='field'>
               <input
-                type='text'
+                //type='text'
                 name='password_confirmation'
                 value={loginInput.password_confirmation}
                 onChange={handleInput}

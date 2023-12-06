@@ -1,47 +1,47 @@
-import { Outlet, Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+// import { Outlet, Link } from 'react-router-dom';
+// import { useEffect, useState } from 'react';
 
-import TopBar from '../TopBar';
-import Sidebar from '../Sidebar';
-import Footer from '../Footer';
-import Login from '../Login';
+// import TopBar from '../TopBar';
+// import Sidebar from '../Sidebar';
+// import Footer from '../Footer';
+// import Login from '../Login';
 
-//import Login from '../Login';
-//import Dashboard from '../Pages/Dashboard/Dashboard';
-//import AdminProtectedRoute from '../AdminProtectedRoute';
-//import AdminList from '../Pages/Admin/AdminList/AdminList';
+// //import Login from '../Login';
+// //import Dashboard from '../Pages/Dashboard/Dashboard';
+// //import AdminProtectedRoute from '../AdminProtectedRoute';
+// //import AdminList from '../Pages/Admin/AdminList/AdminList';
 
-//import { useNavigate } from 'react-router-dom';
+// //import { useNavigate } from 'react-router-dom';
 
-const AdminLayout = () => {
+// const AdminLayout = () => {
   
-  const [isAuthenticated, setAuthenticated] = useState(
-    () => JSON.parse(localStorage.getItem('role_id')) || false
-  );
+//   const [isAuthenticated, setAuthenticated] = useState(
+//     () => JSON.parse(localStorage.getItem('role_id')) || false
+//   );
 
-  // const [isAuthToken, setAuthToken] = useState(
-  //   () => JSON.parse(localStorage.getItem("auth_token")) || false
-  // );
+//   // const [isAuthToken, setAuthToken] = useState(
+//   //   () => JSON.parse(localStorage.getItem("auth_token")) || false
+//   // );
 
-  const setAuth = (value) => {
-    setAuthenticated(value);
-  };
+//   const setAuth = (value) => {
+//     setAuthenticated(value);
+//   };
 
-  useEffect(() => {
-    localStorage.setItem('role_id', JSON.stringify(isAuthenticated));
-  }, [isAuthenticated]);
+//   useEffect(() => {
+//     localStorage.setItem('role_id', JSON.stringify(isAuthenticated));
+//   }, [isAuthenticated]);
 
-  //const navigate = useNavigate();
+//   //const navigate = useNavigate();
 
-  if (isAuthenticated) {
-    return (
-      <>
+//   if (isAuthenticated) {
+//     return (
+//       <>
 
-      </>
-    );
-  } else {
-    <Login />;
-  }
-};
+//       </>
+//     );
+//   } else {
+//     <Login />;
+//   }
+// };
 
-export default AdminLayout;
+// export default AdminLayout;

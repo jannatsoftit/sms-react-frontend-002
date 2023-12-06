@@ -9,13 +9,27 @@ import Sidebar from "../../Sidebar";
 import TopBar from "../../TopBar";
 import Footer from "../../Footer";
 
+
+
 const Dashboard = () => {
+
+  const userName = localStorage.getItem("auth_name");
+
   return (
     <>
     <TopBar/>
     <Sidebar>
       <div className="p-3 pb-5">
         <div className="container-fluid  dashboard_table">
+          <div style={{marginTop: '20px',}}>
+            <h3 className="dashboard_page_title">
+              <span className="dashboard-page-title-icon bg-gradient-primary text-black mr-2">
+              <i className="mdi mdi-home"></i>
+              </span>
+                {userName} Dashboard
+            </h3>
+          </div>
+
           <div className="row">
             <div className="col-12 col-sm-6 col-md-3 col-lg-3 p-3">
               <div className="d-flex p-4 justify-content-center align-items-center bg-white shadow-lg">
