@@ -7,111 +7,110 @@ import {
   //Link,
   //Outlet,
   //useRoutes,
-} from 'react-router-dom';
+} from "react-router-dom";
 
-import './App.css';
+import "./App.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Register from "./Components/Register";
-import Login from './Components/Login';
-import NotFound from './Components/NotFound';
+import Login from "./Components/Login";
+import NotFound from "./Components/NotFound";
 
-import ProfileShow from './Components/Profile/ProfileShow';
-import ProfileEdit from './Components/Profile/ProfileEdit';
+import AdminProfile from "./Components/Profile/AdminProfile";
+
 
 //------------------ Public Route  ----------------//
 //import PublicDashboard from './Components/PublicDashboard/Dashboard/PublicDashboard';
 
-
 //------------------  Admin Route  ----------------//
 
 // Admin Protected Routes
-import AdminProtectedRoute from './Components/ProtectedRoute/AdminProtectedRoute';
+import AdminProtectedRoute from "./Components/ProtectedRoute/AdminProtectedRoute";
+
 // Dashboard
-import Dashboard from './Components/Pages/AdminPages/Dashboard/Dashboard';
+import Dashboard from "./Components/Pages/AdminPages/Dashboard/Dashboard";
+
 // User
-import AdminCreate from './Components/Pages/AdminPages/Admin/AdminCreate/AdminCreate';
-import AdminEdit from './Components/Pages/AdminPages/Admin/AdminEdit/AdminEdit';
-import AdminList from './Components/Pages/AdminPages/Admin/AdminList/AdminList';
-import AdminShow from './Components/Pages/AdminPages/Admin/AdminShow/AdminShow';
+import AdminCreate from "./Components/Pages/AdminPages/Admin/AdminCreate/AdminCreate";
+import AdminEdit from "./Components/Pages/AdminPages/Admin/AdminEdit/AdminEdit";
+import AdminList from "./Components/Pages/AdminPages/Admin/AdminList/AdminList";
+import AdminShow from "./Components/Pages/AdminPages/Admin/AdminShow/AdminShow";
 
-import StudentCreate from './Components/Pages/AdminPages/Student/StudentCreate/StudentCreate';
-import StudentEdit from './Components/Pages/AdminPages/Student/StudentEdit/StudentEdit';
-import StudentList from './Components/Pages/AdminPages/Student/StudentList/StudentList';
-import StudentShow from './Components/Pages/AdminPages/Student/StudentShow/StudentShow';
+import StudentCreate from "./Components/Pages/AdminPages/Student/StudentCreate/StudentCreate";
+import StudentEdit from "./Components/Pages/AdminPages/Student/StudentEdit/StudentEdit";
+import StudentList from "./Components/Pages/AdminPages/Student/StudentList/StudentList";
+import StudentShow from "./Components/Pages/AdminPages/Student/StudentShow/StudentShow";
 
-import ParentCreate from './Components/Pages/AdminPages/Parent/ParentCreate/ParentCreate';
-import ParentEdit from './Components/Pages/AdminPages/Parent/ParentEdit/ParentEdit';
-import ParentList from './Components/Pages/AdminPages/Parent/ParentList/ParentList';
-import ParentShow from './Components/Pages/AdminPages/Parent/ParentShow/ParentShow';
+import ParentCreate from "./Components/Pages/AdminPages/Parent/ParentCreate/ParentCreate";
+import ParentEdit from "./Components/Pages/AdminPages/Parent/ParentEdit/ParentEdit";
+import ParentList from "./Components/Pages/AdminPages/Parent/ParentList/ParentList";
+import ParentShow from "./Components/Pages/AdminPages/Parent/ParentShow/ParentShow";
 
-import TeacherCreate from './Components/Pages/AdminPages/Teacher/TeacherCreate/TeacherCreate';
-import TeacherEdit from './Components/Pages/AdminPages/Teacher/TeacherEdit/TeacherEdit';
-import TeacherList from './Components/Pages/AdminPages/Teacher/TeacherList/TeacherList';
-import TeacherShow from './Components/Pages/AdminPages/Teacher/TeacherShow/TeacherShow';
+import TeacherCreate from "./Components/Pages/AdminPages/Teacher/TeacherCreate/TeacherCreate";
+import TeacherEdit from "./Components/Pages/AdminPages/Teacher/TeacherEdit/TeacherEdit";
+import TeacherList from "./Components/Pages/AdminPages/Teacher/TeacherList/TeacherList";
+import TeacherShow from "./Components/Pages/AdminPages/Teacher/TeacherShow/TeacherShow";
 
-import AccountantCreate from './Components/Pages/AdminPages/Accountant/AccountantCreate/AccountantCreate';
-import AccountantEdit from './Components/Pages/AdminPages/Accountant/AccountantEdit/AccountantEdit';
-import AccountantList from './Components/Pages/AdminPages/Accountant/AccountantList/AccountantList';
-import AccountantShow from './Components/Pages/AdminPages/Accountant/AccountantShow/AccountantShow';
+import AccountantCreate from "./Components/Pages/AdminPages/Accountant/AccountantCreate/AccountantCreate";
+import AccountantEdit from "./Components/Pages/AdminPages/Accountant/AccountantEdit/AccountantEdit";
+import AccountantList from "./Components/Pages/AdminPages/Accountant/AccountantList/AccountantList";
+import AccountantShow from "./Components/Pages/AdminPages/Accountant/AccountantShow/AccountantShow";
 
-import LibrarianCreate from './Components/Pages/AdminPages/Librarian/LibrarianCreate/LibrarianCreate';
-import LibrarianEdit from './Components/Pages/AdminPages/Librarian/LibrarianEdit/LibrarianEdit';
-import LibrarianList from './Components/Pages/AdminPages/Librarian/LibrarianList/LibrarianList';
-import LibrarianShow from './Components/Pages/AdminPages/Librarian/LibrarianShow/LibrarianShow';
+import LibrarianCreate from "./Components/Pages/AdminPages/Librarian/LibrarianCreate/LibrarianCreate";
+import LibrarianEdit from "./Components/Pages/AdminPages/Librarian/LibrarianEdit/LibrarianEdit";
+import LibrarianList from "./Components/Pages/AdminPages/Librarian/LibrarianList/LibrarianList";
+import LibrarianShow from "./Components/Pages/AdminPages/Librarian/LibrarianShow/LibrarianShow";
 
 // Examination
-import ExamCategoryCreate from './Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate';
-import ExamCategoryEdit from './Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit';
-import ExamCategoryList from './Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryList/ExamCategoryList';
+import ExamCategoryCreate from "./Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate";
+import ExamCategoryEdit from "./Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit";
+import ExamCategoryList from "./Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryList/ExamCategoryList";
 
-import GradeCreate from './Components/Pages/AdminPages/Examination/Grade/GradeCreate/GradeCreate';
-import GradeEdit from './Components/Pages/AdminPages/Examination/Grade/GradeEdit/GradeEdit';
-import GradeList from './Components/Pages/AdminPages/Examination/Grade/GradeList/GradeList';
+import GradeCreate from "./Components/Pages/AdminPages/Examination/Grade/GradeCreate/GradeCreate";
+import GradeEdit from "./Components/Pages/AdminPages/Examination/Grade/GradeEdit/GradeEdit";
+import GradeList from "./Components/Pages/AdminPages/Examination/Grade/GradeList/GradeList";
 
-import MarkCreate from './Components/Pages/AdminPages/Examination/Mark/MarkCreate/MarkCreate';
-import MarkEdit from './Components/Pages/AdminPages/Examination/Mark/MarkEdit/MarkEdit';
-import MarkList from './Components/Pages/AdminPages/Examination/Mark/MarkList/MarkList';
+import MarkCreate from "./Components/Pages/AdminPages/Examination/Mark/MarkCreate/MarkCreate";
+import MarkEdit from "./Components/Pages/AdminPages/Examination/Mark/MarkEdit/MarkEdit";
+import MarkList from "./Components/Pages/AdminPages/Examination/Mark/MarkList/MarkList";
 
-import OfflineExamCreate from './Components/Pages/AdminPages/Examination/OfflineExam/OfflineExamCreate/OfflineExamCreate';
-import OfflineExamEdit from './Components/Pages/AdminPages/Examination/OfflineExam/OfflineExamEdit/OfflineExamEdit';
-import OfflineExamList from './Components/Pages/AdminPages/Examination/OfflineExam/OfflineExamList/OfflineExamList';
+import OfflineExamCreate from "./Components/Pages/AdminPages/Examination/OfflineExam/OfflineExamCreate/OfflineExamCreate";
+import OfflineExamEdit from "./Components/Pages/AdminPages/Examination/OfflineExam/OfflineExamEdit/OfflineExamEdit";
+import OfflineExamList from "./Components/Pages/AdminPages/Examination/OfflineExam/OfflineExamList/OfflineExamList";
 
 //Academic
-import ClassRoomCreate from './Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomCreate/ClassRoomCreate';
-import ClassRoomEdit from './Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomEdit/ClassRoomEdit';
-import ClassRoomList from './Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomList/ClassRoomList';
+import ClassRoomCreate from "./Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomCreate/ClassRoomCreate";
+import ClassRoomEdit from "./Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomEdit/ClassRoomEdit";
+import ClassRoomList from "./Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomList/ClassRoomList";
 
-import SubjectCreate from './Components/Pages/AdminPages/Academic/Subject/SubjectCreate/SubjectCreate';
-import SubjectEdit from './Components/Pages/AdminPages/Academic/Subject/SubjectEdit/SubjectEdit';
-import SubjectList from './Components/Pages/AdminPages/Academic/Subject/SubjectList/SubjectList';
+import SubjectCreate from "./Components/Pages/AdminPages/Academic/Subject/SubjectCreate/SubjectCreate";
+import SubjectEdit from "./Components/Pages/AdminPages/Academic/Subject/SubjectEdit/SubjectEdit";
+import SubjectList from "./Components/Pages/AdminPages/Academic/Subject/SubjectList/SubjectList";
 
-import SyllabusCreate from './Components/Pages/AdminPages/Academic/Syllabus/SyllabusCreate/SyllabusCreate';
-import SyllabusEdit from './Components/Pages/AdminPages/Academic/Syllabus/SyllabusEdit/SyllabusEdit';
-import SyllabusList from './Components/Pages/AdminPages/Academic/Syllabus/SyllabusList/SyllabusList';
+import SyllabusCreate from "./Components/Pages/AdminPages/Academic/Syllabus/SyllabusCreate/SyllabusCreate";
+import SyllabusEdit from "./Components/Pages/AdminPages/Academic/Syllabus/SyllabusEdit/SyllabusEdit";
+import SyllabusList from "./Components/Pages/AdminPages/Academic/Syllabus/SyllabusList/SyllabusList";
 
-import ClassRoutineCreate from './Components/Pages/AdminPages/Academic/ClassRoutine/ClassRoutineCreate/ClassRoutineCreate';
-import ClassRoutineEdit from './Components/Pages/AdminPages/Academic/ClassRoutine/ClassRoutineEdit/ClassRoutineEdit';
-import ClassRoutineList from './Components/Pages/AdminPages/Academic/ClassRoutine/ClassRoutineList/ClassRoutineList';
+import ClassRoutineCreate from "./Components/Pages/AdminPages/Academic/ClassRoutine/ClassRoutineCreate/ClassRoutineCreate";
+import ClassRoutineEdit from "./Components/Pages/AdminPages/Academic/ClassRoutine/ClassRoutineEdit/ClassRoutineEdit";
+import ClassRoutineList from "./Components/Pages/AdminPages/Academic/ClassRoutine/ClassRoutineList/ClassRoutineList";
 
 // Accountant
-import StudentFeeCreate from './Components/Pages/AdminPages/StudentFee/StudentFeeCreate/StudentFeeCreate';
-import StudentFeeEdit from './Components/Pages/AdminPages/StudentFee/StudentFeeEdit/StudentFeeEdit';
-import StudentFeeList from './Components/Pages/AdminPages/StudentFee/StudentFeeList/StudentFeeList';
+import StudentFeeCreate from "./Components/Pages/AdminPages/StudentFee/StudentFeeCreate/StudentFeeCreate";
+import StudentFeeEdit from "./Components/Pages/AdminPages/StudentFee/StudentFeeEdit/StudentFeeEdit";
+import StudentFeeList from "./Components/Pages/AdminPages/StudentFee/StudentFeeList/StudentFeeList";
 
-import ExpanseCategoryCreate from './Components/Pages/AdminPages/ExpanseCategory/ExpanseCategoryCreate/ExpanseCategoryCreate';
-import ExpanseCategoryEdit from './Components/Pages/AdminPages/ExpanseCategory/ExpanseCategoryEdit/ExpanseCategoryEdit';
-import ExpanseCategoryList from './Components/Pages/AdminPages/ExpanseCategory/ExpanseCategoryList/ExpanseCategoryList';
+import ExpanseCategoryCreate from "./Components/Pages/AdminPages/ExpanseCategory/ExpanseCategoryCreate/ExpanseCategoryCreate";
+import ExpanseCategoryEdit from "./Components/Pages/AdminPages/ExpanseCategory/ExpanseCategoryEdit/ExpanseCategoryEdit";
+import ExpanseCategoryList from "./Components/Pages/AdminPages/ExpanseCategory/ExpanseCategoryList/ExpanseCategoryList";
 
 // Settings
-import SchoolList from './Components/Pages/AdminPages/School/SchoolList/SchoolList';
-import SchoolCreate from './Components/Pages/AdminPages/School/SchoolCreate/SchoolCreate';
-import SchoolEdit from './Components/Pages/AdminPages/School/SchoolEdit/SchoolEdit';
-import SchoolShow from './Components/Pages/AdminPages/School/SchoolShow/SchoolShow';
-
+import SchoolList from "./Components/Pages/AdminPages/School/SchoolList/SchoolList";
+import SchoolCreate from "./Components/Pages/AdminPages/School/SchoolCreate/SchoolCreate";
+import SchoolEdit from "./Components/Pages/AdminPages/School/SchoolEdit/SchoolEdit";
+import SchoolShow from "./Components/Pages/AdminPages/School/SchoolShow/SchoolShow";
 
 const App = () => {
-
   // const [isAuthenticated, setAuthenticated] = useState(
   //   () => JSON.parse(localStorage.getItem('role_id')) || false
   // );
@@ -793,137 +792,130 @@ const App = () => {
   //   </>
   // );
 
-  
   return (
     <>
       <Routes>
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
 
-        <Route path='/register' element={<Register />}/>
-        <Route path='/login' element={<Login />}/>
-        <Route path='/' element={<Login />}/>
-        <Route path='*' element={<NotFound />}/>
+        <Route path="/admin" element={<AdminProtectedRoute />}>
 
-        <Route path='/admin' element={<AdminProtectedRoute />}> 
+          <Route path="profile" element={<AdminProfile />} />
+          <Route path="dashboard" element={<Dashboard />} />
 
-          <Route path='userProfile/:profileId' element={<ProfileShow />}/>
-          <Route path='userProfile/:profileId/edit' element={<ProfileEdit />}/>
+          <Route path="admins" element={<AdminList />} />
+          <Route path="admins/create" element={<AdminCreate />} />
+          <Route path="admins/:adminId" element={<AdminShow />} />
+          <Route path="admins/:adminId/edit" element={<AdminEdit />} />
 
-          <Route path='dashboard' element={<Dashboard />} />
+          <Route path="students" element={<StudentList />} />
+          <Route path="students/create" element={<StudentCreate />} />
+          <Route path="students/:studentId" element={<StudentShow />} />
+          <Route path="students/:studentId/edit" element={<StudentEdit />} />
 
-          <Route path='admins' element={<AdminList />} />
-          <Route path='admins/create' element={<AdminCreate />} />
-          <Route path='admins/:adminId' element={<AdminShow />} />
-          <Route path='admins/:adminId/edit' element={<AdminEdit />} />
+          <Route path="teachers" element={<TeacherList />} />
+          <Route path="teachers/create" element={<TeacherCreate />} />
+          <Route path="teachers/:teacherId" element={<TeacherShow />} />
+          <Route path="teachers/:teacherId/edit" element={<TeacherEdit />} />
 
-          <Route path='students' element={<StudentList />} />
-          <Route path='students/create' element={<StudentCreate />} />
-          <Route path='students/:studentId' element={<StudentShow />} />
-          <Route path='students/:studentId/edit' element={<StudentEdit />} />
+          <Route path="parents" element={<ParentList />} />
+          <Route path="parents/create" element={<ParentCreate />} />
+          <Route path="parents/:parentId" element={<ParentShow />} />
+          <Route path="parents/:parentId/edit" element={<ParentEdit />} />
 
-          <Route path='teachers' element={<TeacherList />} />
-          <Route path='teachers/create' element={<TeacherCreate />} />
-          <Route path='teachers/:teacherId' element={<TeacherShow />} />
-          <Route path='teachers/:teacherId/edit' element={<TeacherEdit />} />
-
-          <Route path='parents' element={<ParentList />} />
-          <Route path='parents/create' element={<ParentCreate />} />
-          <Route path='parents/:parentId' element={<ParentShow />} />
-          <Route path='parents/:parentId/edit' element={<ParentEdit />} />
-
-          <Route path='accountants' element={<AccountantList />} />
-          <Route path='accountants/create' element={<AccountantCreate />} />
+          <Route path="accountants" element={<AccountantList />} />
+          <Route path="accountants/create" element={<AccountantCreate />} />
           <Route
-            path='accountants/:accountantId'
+            path="accountants/:accountantId"
             element={<AccountantShow />}
           />
           <Route
-            path='accountants/:accountantId/edit'
+            path="accountants/:accountantId/edit"
             element={<AccountantEdit />}
           />
 
-          <Route path='librarians' element={<LibrarianList />} />
-          <Route path='librarians/create' element={<LibrarianCreate />} />
-          <Route path='librarians/:librarianId' element={<LibrarianShow />} />
+          <Route path="librarians" element={<LibrarianList />} />
+          <Route path="librarians/create" element={<LibrarianCreate />} />
+          <Route path="librarians/:librarianId" element={<LibrarianShow />} />
           <Route
-            path='librarians/:librarianId/edit'
+            path="librarians/:librarianId/edit"
             element={<LibrarianEdit />}
           />
 
-          <Route path='examCategories' element={<ExamCategoryList />} />
+          <Route path="examCategories" element={<ExamCategoryList />} />
           <Route
-            path='examCategories/create'
+            path="examCategories/create"
             element={<ExamCategoryCreate />}
           />
           <Route
-            path='examCategories/:examCategoryId/edit'
+            path="examCategories/:examCategoryId/edit"
             element={<ExamCategoryEdit />}
           />
 
-          <Route path='grades' element={<GradeList />} />
-          <Route path='grades/create' element={<GradeCreate />} />
-          <Route path='grades/:gradeId/edit' element={<GradeEdit />} />
+          <Route path="grades" element={<GradeList />} />
+          <Route path="grades/create" element={<GradeCreate />} />
+          <Route path="grades/:gradeId/edit" element={<GradeEdit />} />
 
-          <Route path='marks' element={<MarkList />} />
-          <Route path='marks/create' element={<MarkCreate />} />
-          <Route path='marks/:markId/edit' element={<MarkEdit />} />
+          <Route path="marks" element={<MarkList />} />
+          <Route path="marks/create" element={<MarkCreate />} />
+          <Route path="marks/:markId/edit" element={<MarkEdit />} />
 
-          <Route path='offlineExams' element={<OfflineExamList />} />
-          <Route path='offlineExams/create' element={<OfflineExamCreate />} />
+          <Route path="offlineExams" element={<OfflineExamList />} />
+          <Route path="offlineExams/create" element={<OfflineExamCreate />} />
           <Route
-            path='offlineExams/:offlineExamId/edit'
+            path="offlineExams/:offlineExamId/edit"
             element={<OfflineExamEdit />}
           />
 
-          <Route path='classRooms' element={<ClassRoomList />} />
-          <Route path='classRooms/create' element={<ClassRoomCreate />} />
+          <Route path="classRooms" element={<ClassRoomList />} />
+          <Route path="classRooms/create" element={<ClassRoomCreate />} />
           <Route
-            path='classRooms/:classRoomId/edit'
+            path="classRooms/:classRoomId/edit"
             element={<ClassRoomEdit />}
           />
 
-          <Route path='subjects' element={<SubjectList />} />
-          <Route path='subjects/create' element={<SubjectCreate />} />
-          <Route path='subjects/:subjectId/edit' element={<SubjectEdit />} />
+          <Route path="subjects" element={<SubjectList />} />
+          <Route path="subjects/create" element={<SubjectCreate />} />
+          <Route path="subjects/:subjectId/edit" element={<SubjectEdit />} />
 
-          <Route path='syllabuses' element={<SyllabusList />} />
-          <Route path='syllabuses/create' element={<SyllabusCreate />} />
+          <Route path="syllabuses" element={<SyllabusList />} />
+          <Route path="syllabuses/create" element={<SyllabusCreate />} />
           <Route
-            path='syllabuses/:syllabusId/edit'
+            path="syllabuses/:syllabusId/edit"
             element={<SyllabusEdit />}
           />
 
-          <Route path='classRoutines' element={<ClassRoutineList />} />
-          <Route path='classRoutines/create' element={<ClassRoutineCreate />} />
+          <Route path="classRoutines" element={<ClassRoutineList />} />
+          <Route path="classRoutines/create" element={<ClassRoutineCreate />} />
           <Route
-            path='classRoutines/:classRoutineId/edit'
+            path="classRoutines/:classRoutineId/edit"
             element={<ClassRoutineEdit />}
           />
 
-          <Route path='studentFees' element={<StudentFeeList />} />
-          <Route path='studentFees/create' element={<StudentFeeCreate />} />
+          <Route path="studentFees" element={<StudentFeeList />} />
+          <Route path="studentFees/create" element={<StudentFeeCreate />} />
           <Route
-            path='studentFees/:studentFeeId/edit'
+            path="studentFees/:studentFeeId/edit"
             element={<StudentFeeEdit />}
           />
 
-          <Route path='expanseCategories' element={<ExpanseCategoryList />} />
+          <Route path="expanseCategories" element={<ExpanseCategoryList />} />
           <Route
-            path='expanseCategories/create'
+            path="expanseCategories/create"
             element={<ExpanseCategoryCreate />}
           />
           <Route
-            path='expanseCategories/:expanseCategoryId/edit'
+            path="expanseCategories/:expanseCategoryId/edit"
             element={<ExpanseCategoryEdit />}
           />
 
-          <Route path='schools' element={<SchoolList />} />
-          <Route path='schools/create' element={<SchoolCreate />} />
-          <Route path='schools/:schoolId' element={<SchoolShow />} />
-          <Route path='schools/:schoolId/edit' element={<SchoolEdit />} />
-
+          <Route path="schools" element={<SchoolList />} />
+          <Route path="schools/create" element={<SchoolCreate />} />
+          <Route path="schools/:schoolId" element={<SchoolShow />} />
+          <Route path="schools/:schoolId/edit" element={<SchoolEdit />} />
         </Route>
-
-
       </Routes>
     </>
   );

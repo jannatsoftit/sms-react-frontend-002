@@ -39,6 +39,16 @@ const Login = () => {
         if (response?.status === 200) {
           localStorage.setItem('auth_token', response?.token);
           localStorage.setItem('auth_name', response?.username);
+
+          localStorage.setItem('last_name', response?.last_name);
+          localStorage.setItem('email', response?.email);
+          localStorage.setItem('address', response?.address);
+          localStorage.setItem('phone_number', response?.phone_number);
+          localStorage.setItem('gender', response?.gender);
+          localStorage.setItem('blood_group', response?.blood_group);
+          localStorage.setItem('department', response?.department);
+          localStorage.setItem('image', response?.image);
+
           localStorage.setItem('role', response?.role_id);
           
           const userRoleId = localStorage.getItem('role');

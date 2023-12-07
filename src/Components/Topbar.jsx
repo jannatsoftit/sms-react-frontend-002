@@ -1,8 +1,7 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import Profile from './Profile/ProfileShow';
+import { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const TopBar = () => {
   const navigate = useNavigate();
@@ -10,26 +9,24 @@ const TopBar = () => {
   const logoutClick = () => {
     localStorage.clear();
     Swal.fire({
-      title: 'Success',
-      text: 'Logged Out Successfully!',
-      icon: 'success',
-      confirmButtonText: 'Ok',
+      title: "Success",
+      text: "Logged Out Successfully!",
+      icon: "success",
+      confirmButtonText: "Ok",
     });
-    navigate('/login');
+    navigate("/login");
   };
 
-  var AuthButtons1 = '';
-	
-  var AuthButtons2 = '';
+  var AuthButtons1 = "";
+  var AuthButtons2 = "";
 
   if (localStorage.getItem("auth_token")) {
-
     AuthButtons2 = (
       <li>
         <button
-          className='btn btn-outline-dark'
+          className="btn btn-outline-dark"
           onClick={logoutClick}
-          style={{ backgroundColor: '#ADD8E6', color: 'black' }}
+          style={{ backgroundColor: "#ADD8E6", color: "black" }}
         >
           Logout
         </button>
@@ -39,7 +36,7 @@ const TopBar = () => {
 
   return (
     <>
-      <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
+       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
         <div className='container-fluid'>
           <div className='navbar-collapse' id='navbarSupportedContent'>
             <form className='d-flex search'>
@@ -59,22 +56,31 @@ const TopBar = () => {
             </form>
             <ul className='navbar-nav me-auto mb-2'>
               <li className='nav-item dropdown d-flex'>
+                <a
+                  className='nav-link dropdown-toggle'
+                  href='/'
+                  id='navbarDropdown'
+                  role='button'
+                  data-bs-toggle='dropdown'
+                  aria-expanded='false'
+                >
                   User
+                </a>
                 <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
                   <li>
-                    <Link className='dropdown-item' to='##'>
+                    <Link className='dropdown-item' to='/admin/profile'>
                       Profile
                     </Link>
                   </li>
                 </ul>
               </li>
             </ul>
+            {AuthButtons2}
           </div>
         </div>
       </nav>
 
-      
-			{/* new topbar code */}
+      {/* new topbar code */}
 
       {/* <nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
