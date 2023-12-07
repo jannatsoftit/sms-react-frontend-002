@@ -26,84 +26,84 @@ import AdminProtectedRoute from './Components/ProtectedRoute/AdminProtectedRoute
 // Dashboard
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
 // User
-import AdminCreate from './Components/Pages/Admin/AdminCreate/AdminCreate';
-import AdminEdit from './Components/Pages/Admin/AdminEdit/AdminEdit';
-import AdminList from './Components/Pages/Admin/AdminList/AdminList';
-import AdminShow from './Components/Pages/Admin/AdminShow/AdminShow';
+import AdminCreate from './Components/Pages/AdminPages/Admin/AdminCreate/AdminCreate';
+import AdminEdit from './Components/Pages/AdminPages/Admin/AdminEdit/AdminEdit';
+import AdminList from './Components/Pages/AdminPages/Admin/AdminList/AdminList';
+import AdminShow from './Components/Pages/AdminPages/Admin/AdminShow/AdminShow';
 
-import StudentCreate from './Components/Pages/Student/StudentCreate/StudentCreate';
-import StudentEdit from './Components/Pages/Student/StudentEdit/StudentEdit';
-import StudentList from './Components/Pages/Student/StudentList/StudentList';
-import StudentShow from './Components/Pages/Student/StudentShow/StudentShow';
+import StudentCreate from './Components/Pages/AdminPages/Student/StudentCreate/StudentCreate';
+import StudentEdit from './Components/Pages/AdminPages/Student/StudentEdit/StudentEdit';
+import StudentList from './Components/Pages/AdminPages/Student/StudentList/StudentList';
+import StudentShow from './Components/Pages/AdminPages/Student/StudentShow/StudentShow';
 
-import ParentCreate from './Components/Pages/Parent/ParentCreate/ParentCreate';
-import ParentEdit from './Components/Pages/Parent/ParentEdit/ParentEdit';
-import ParentList from './Components/Pages/Parent/ParentList/ParentList';
-import ParentShow from './Components/Pages/Parent/ParentShow/ParentShow';
+import ParentCreate from './Components/Pages/AdminPages/Parent/ParentCreate/ParentCreate';
+import ParentEdit from './Components/Pages/AdminPages/Parent/ParentEdit/ParentEdit';
+import ParentList from './Components/Pages/AdminPages/Parent/ParentList/ParentList';
+import ParentShow from './Components/Pages/AdminPages/Parent/ParentShow/ParentShow';
 
-import TeacherCreate from './Components/Pages/Teacher/TeacherCreate/TeacherCreate';
-import TeacherEdit from './Components/Pages/Teacher/TeacherEdit/TeacherEdit';
-import TeacherList from './Components/Pages/Teacher/TeacherList/TeacherList';
-import TeacherShow from './Components/Pages/Teacher/TeacherShow/TeacherShow';
+import TeacherCreate from './Components/Pages/AdminPages/Teacher/TeacherCreate/TeacherCreate';
+import TeacherEdit from './Components/Pages/AdminPages/Teacher/TeacherEdit/TeacherEdit';
+import TeacherList from './Components/Pages/AdminPages/Teacher/TeacherList/TeacherList';
+import TeacherShow from './Components/Pages/AdminPages/Teacher/TeacherShow/TeacherShow';
 
-import AccountantCreate from './Components/Pages/Accountant/AccountantCreate/AccountantCreate';
-import AccountantEdit from './Components/Pages/Accountant/AccountantEdit/AccountantEdit';
-import AccountantList from './Components/Pages/Accountant/AccountantList/AccountantList';
-import AccountantShow from './Components/Pages/Accountant/AccountantShow/AccountantShow';
+import AccountantCreate from './Components/Pages/AdminPages/Accountant/AccountantCreate/AccountantCreate';
+import AccountantEdit from './Components/Pages/AdminPages/Accountant/AccountantEdit/AccountantEdit';
+import AccountantList from './Components/Pages/AdminPages/Accountant/AccountantList/AccountantList';
+import AccountantShow from './Components/Pages/AdminPages/Accountant/AccountantShow/AccountantShow';
 
-import LibrarianCreate from './Components/Pages/Librarian/LibrarianCreate/LibrarianCreate';
-import LibrarianEdit from './Components/Pages/Librarian/LibrarianEdit/LibrarianEdit';
-import LibrarianList from './Components/Pages/Librarian/LibrarianList/LibrarianList';
-import LibrarianShow from './Components/Pages/Librarian/LibrarianShow/LibrarianShow';
+import LibrarianCreate from './Components/Pages/AdminPages/Librarian/LibrarianCreate/LibrarianCreate';
+import LibrarianEdit from './Components/Pages/AdminPages/Librarian/LibrarianEdit/LibrarianEdit';
+import LibrarianList from './Components/Pages/AdminPages/Librarian/LibrarianList/LibrarianList';
+import LibrarianShow from './Components/Pages/AdminPages/Librarian/LibrarianShow/LibrarianShow';
 
 // Examination
-import ExamCategoryCreate from './Components/Pages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate';
-import ExamCategoryEdit from './Components/Pages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit';
-import ExamCategoryList from './Components/Pages/Examination/ExamCategory/ExamCategoryList/ExamCategoryList';
+import ExamCategoryCreate from './Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate';
+import ExamCategoryEdit from './Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit';
+import ExamCategoryList from './Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryList/ExamCategoryList';
 
-import GradeCreate from './Components/Pages/Examination/Grade/GradeCreate/GradeCreate';
-import GradeEdit from './Components/Pages/Examination/Grade/GradeEdit/GradeEdit';
-import GradeList from './Components/Pages/Examination/Grade/GradeList/GradeList';
+import GradeCreate from './Components/Pages/AdminPages/Examination/Grade/GradeCreate/GradeCreate';
+import GradeEdit from './Components/Pages/AdminPages/Examination/Grade/GradeEdit/GradeEdit';
+import GradeList from './Components/Pages/AdminPages/Examination/Grade/GradeList/GradeList';
 
-import MarkCreate from './Components/Pages/Examination/Mark/MarkCreate/MarkCreate';
-import MarkEdit from './Components/Pages/Examination/Mark/MarkEdit/MarkEdit';
-import MarkList from './Components/Pages/Examination/Mark/MarkList/MarkList';
+import MarkCreate from './Components/Pages/AdminPages/Examination/Mark/MarkCreate/MarkCreate';
+import MarkEdit from './Components/Pages/AdminPages/Examination/Mark/MarkEdit/MarkEdit';
+import MarkList from './Components/Pages/AdminPages/Examination/Mark/MarkList/MarkList';
 
-import OfflineExamCreate from './Components/Pages/Examination/OfflineExam/OfflineExamCreate/OfflineExamCreate';
-import OfflineExamEdit from './Components/Pages/Examination/OfflineExam/OfflineExamEdit/OfflineExamEdit';
-import OfflineExamList from './Components/Pages/Examination/OfflineExam/OfflineExamList/OfflineExamList';
+import OfflineExamCreate from './Components/Pages/AdminPages/Examination/OfflineExam/OfflineExamCreate/OfflineExamCreate';
+import OfflineExamEdit from './Components/Pages/AdminPages/Examination/OfflineExam/OfflineExamEdit/OfflineExamEdit';
+import OfflineExamList from './Components/Pages/AdminPages/Examination/OfflineExam/OfflineExamList/OfflineExamList';
 
 //Academic
-import ClassRoomCreate from './Components/Pages/Academic/ClassRoom/ClassRoomCreate/ClassRoomCreate';
-import ClassRoomEdit from './Components/Pages/Academic/ClassRoom/ClassRoomEdit/ClassRoomEdit';
-import ClassRoomList from './Components/Pages/Academic/ClassRoom/ClassRoomList/ClassRoomList';
+import ClassRoomCreate from './Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomCreate/ClassRoomCreate';
+import ClassRoomEdit from './Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomEdit/ClassRoomEdit';
+import ClassRoomList from './Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomList/ClassRoomList';
 
-import SubjectCreate from './Components/Pages/Academic/Subject/SubjectCreate/SubjectCreate';
-import SubjectEdit from './Components/Pages/Academic/Subject/SubjectEdit/SubjectEdit';
-import SubjectList from './Components/Pages/Academic/Subject/SubjectList/SubjectList';
+import SubjectCreate from './Components/Pages/AdminPages/Academic/Subject/SubjectCreate/SubjectCreate';
+import SubjectEdit from './Components/Pages/AdminPages/Academic/Subject/SubjectEdit/SubjectEdit';
+import SubjectList from './Components/Pages/AdminPages/Academic/Subject/SubjectList/SubjectList';
 
-import SyllabusCreate from './Components/Pages/Academic/Syllabus/SyllabusCreate/SyllabusCreate';
-import SyllabusEdit from './Components/Pages/Academic/Syllabus/SyllabusEdit/SyllabusEdit';
-import SyllabusList from './Components/Pages/Academic/Syllabus/SyllabusList/SyllabusList';
+import SyllabusCreate from './Components/Pages/AdminPages/Academic/Syllabus/SyllabusCreate/SyllabusCreate';
+import SyllabusEdit from './Components/Pages/AdminPages/Academic/Syllabus/SyllabusEdit/SyllabusEdit';
+import SyllabusList from './Components/Pages/AdminPages/Academic/Syllabus/SyllabusList/SyllabusList';
 
-import ClassRoutineCreate from './Components/Pages/Academic/ClassRoutine/ClassRoutineCreate/ClassRoutineCreate';
-import ClassRoutineEdit from './Components/Pages/Academic/ClassRoutine/ClassRoutineEdit/ClassRoutineEdit';
-import ClassRoutineList from './Components/Pages/Academic/ClassRoutine/ClassRoutineList/ClassRoutineList';
+import ClassRoutineCreate from './Components/Pages/AdminPages/Academic/ClassRoutine/ClassRoutineCreate/ClassRoutineCreate';
+import ClassRoutineEdit from './Components/Pages/AdminPages/Academic/ClassRoutine/ClassRoutineEdit/ClassRoutineEdit';
+import ClassRoutineList from './Components/Pages/AdminPages/Academic/ClassRoutine/ClassRoutineList/ClassRoutineList';
 
 // Accountant
-import StudentFeeCreate from './Components/Pages/StudentFee/StudentFeeCreate/StudentFeeCreate';
-import StudentFeeEdit from './Components/Pages/StudentFee/StudentFeeEdit/StudentFeeEdit';
-import StudentFeeList from './Components/Pages/StudentFee/StudentFeeList/StudentFeeList';
+import StudentFeeCreate from './Components/Pages/AdminPages/StudentFee/StudentFeeCreate/StudentFeeCreate';
+import StudentFeeEdit from './Components/Pages/AdminPages/StudentFee/StudentFeeEdit/StudentFeeEdit';
+import StudentFeeList from './Components/Pages/AdminPages/StudentFee/StudentFeeList/StudentFeeList';
 
-import ExpanseCategoryCreate from './Components/Pages/ExpanseCategory/ExpanseCategoryCreate/ExpanseCategoryCreate';
-import ExpanseCategoryEdit from './Components/Pages/ExpanseCategory/ExpanseCategoryEdit/ExpanseCategoryEdit';
-import ExpanseCategoryList from './Components/Pages/ExpanseCategory/ExpanseCategoryList/ExpanseCategoryList';
+import ExpanseCategoryCreate from './Components/Pages/AdminPages/ExpanseCategory/ExpanseCategoryCreate/ExpanseCategoryCreate';
+import ExpanseCategoryEdit from './Components/Pages/AdminPages/ExpanseCategory/ExpanseCategoryEdit/ExpanseCategoryEdit';
+import ExpanseCategoryList from './Components/Pages/AdminPages/ExpanseCategory/ExpanseCategoryList/ExpanseCategoryList';
 
 // Settings
-import SchoolList from './Components/Pages/School/SchoolList/SchoolList';
-import SchoolCreate from './Components/Pages/School/SchoolCreate/SchoolCreate';
-import SchoolEdit from './Components/Pages/School/SchoolEdit/SchoolEdit';
-import SchoolShow from './Components/Pages/School/SchoolShow/SchoolShow';
+import SchoolList from './Components/Pages/AdminPages/School/SchoolList/SchoolList';
+import SchoolCreate from './Components/Pages/AdminPages/School/SchoolCreate/SchoolCreate';
+import SchoolEdit from './Components/Pages/AdminPages/School/SchoolEdit/SchoolEdit';
+import SchoolShow from './Components/Pages/AdminPages/School/SchoolShow/SchoolShow';
 
 
 const App = () => {
@@ -790,7 +790,6 @@ const App = () => {
   // );
 
   
-
   return (
     <>
       <Routes>
