@@ -1,5 +1,9 @@
 //import React from 'react';
 
+import AdminSidebar from '../Sidebar/AdminSidebar';
+import Footer from '../Footer';
+import TopBar from '../TopBar';
+
 const AdminProfile = () => {
   const userFirstName = localStorage.getItem("auth_name");
   const userLastName = localStorage.getItem("last_name");
@@ -10,15 +14,15 @@ const AdminProfile = () => {
   const userBloodGroup = localStorage.getItem("blood_group");
   const userDepartment = localStorage.getItem("department");
   const userImage = localStorage.getItem("image");
-  console.log(userImage);
 
   return (
     <>
+    <TopBar />
+      <AdminSidebar>
       <div className="body">
         <div className="container">
           <div className="main-body">
             <div className="row gutters-sm">
-
               <div className="col-md-4 mb-3">
                 <div className="card profile_design_1">
                   <div className="card-body">
@@ -115,6 +119,8 @@ const AdminProfile = () => {
           </div>
         </div>
       </div>
+      <Footer />
+      </AdminSidebar>
     </>
   );
 };

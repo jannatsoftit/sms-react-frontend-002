@@ -6,6 +6,10 @@ import Swal from "sweetalert2";
 const TopBar = () => {
   const navigate = useNavigate();
 
+  const userFirstName = localStorage.getItem("auth_name");
+  const userLastName = localStorage.getItem("last_name");
+	const userTopImage = localStorage.getItem("image");
+
   const logoutClick = () => {
     localStorage.clear();
     Swal.fire({
@@ -56,6 +60,14 @@ const TopBar = () => {
             </form>
             <ul className='navbar-nav me-auto mb-2'>
               <li className='nav-item dropdown d-flex'>
+								<div>
+									<img
+									src={`http://127.0.0.1:8000/storage/U_img/${userTopImage}`} 
+									alt="user-picture"
+									className="rounded-circle topbar_image"
+								/>
+								</div>
+							
                 <a
                   className='nav-link dropdown-toggle'
                   href='/'
@@ -64,7 +76,7 @@ const TopBar = () => {
                   data-bs-toggle='dropdown'
                   aria-expanded='false'
                 >
-                  User
+                  {userFirstName} {userLastName}
                 </a>
                 <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
                   <li>
