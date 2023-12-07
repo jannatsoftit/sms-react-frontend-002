@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import AccountantForm from '../../../forms/AccountantForm/AccountantForm';
-import TopBar from "../../../TopBar";
+import AccountantForm from '../../../../forms/Admin/AccountantForm/AccountantForm';
+import TopBar from "../../../../TopBar";
 
 const AccountantCreate = () => {
   return (

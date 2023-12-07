@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import StudentTable from '../../../table/StudentTable/StudentTable';
-import TopBar from '../../../TopBar';
+import StudentTable from '../../../../table/Admin/StudentTable/StudentTable';
+import TopBar from "../../../../TopBar";
 
 const StudentList = () => {
   return (

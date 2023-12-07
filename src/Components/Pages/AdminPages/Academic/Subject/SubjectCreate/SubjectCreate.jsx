@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import SubjectForm from '../../../../forms/SubjectForm/SubjectForm';
-import TopBar from "../../../../TopBar";
+import SubjectForm from '../../../../../forms/Admin/SubjectForm/SubjectForm';
+import TopBar from "../../../../../TopBar";
 
 const SubjectCreate = () => {
   return (

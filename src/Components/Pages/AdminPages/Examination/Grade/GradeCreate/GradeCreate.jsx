@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import GradeForm from '../../../../forms/GradeForm/GradeForm';
-import TopBar from "../../../../TopBar";
+import GradeForm from '../../../../../forms/Admin/GradeForm/GradeForm';
+import TopBar from "../../../../../TopBar";
 
 const GradeCreate = () => {
   return (

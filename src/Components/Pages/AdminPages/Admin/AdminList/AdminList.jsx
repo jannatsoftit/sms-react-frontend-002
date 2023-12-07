@@ -1,8 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import AdminTable from '../../../table/AdminTable/AdminTable';
-
-import TopBar from "../../../TopBar";
+import AdminTable from '../../../../table/Admin/AdminTable/AdminTable';
+import TopBar from "../../../../TopBar";
 
 const AdminList = () => {
   return (

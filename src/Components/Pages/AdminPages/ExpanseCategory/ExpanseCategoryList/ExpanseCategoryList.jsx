@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import ExpanseCategoryTable from '../../../../Components/table/ExpanseCategoryTable/ExpanseCategoryTable';
-import TopBar from '../../../TopBar';
+import ExpanseCategoryTable from '../../../../../Components/table/Admin/ExpanseCategoryTable/ExpanseCategoryTable';
+import TopBar from "../../../../TopBar";
 
 const ExpanseCategoryList = () => {
   return (

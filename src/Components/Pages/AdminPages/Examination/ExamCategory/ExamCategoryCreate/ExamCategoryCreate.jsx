@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import ExamCategoryForm from '../../../../forms/ExamCategoryForm/ExamCategoryForm';
-import TopBar from "../../../../TopBar";
+import ExamCategoryForm from '../../../../../forms/Admin/ExamCategoryForm/ExamCategoryForm';
+import TopBar from "../../../../../TopBar";
 
 const ExamCategoryCreate = () => {
   return (

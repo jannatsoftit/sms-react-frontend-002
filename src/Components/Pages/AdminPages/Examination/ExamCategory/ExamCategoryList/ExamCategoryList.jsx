@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import ExamCategoryTable from '../../../../table/ExamCategoryTable/ExamCategoryTable';
-import TopBar from '../../../../TopBar';
+import ExamCategoryTable from '../../../../../table/Admin/ExamCategoryTable/ExamCategoryTable';
+import TopBar from "../../../../../TopBar";
 
 const ExamCategoryList = () => {
   return (

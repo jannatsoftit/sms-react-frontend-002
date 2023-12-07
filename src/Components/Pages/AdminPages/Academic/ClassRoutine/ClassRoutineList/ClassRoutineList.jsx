@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import ClassRoutineTable from '../../../../table/ClassRoutineTable/ClassRoutineTable';
-import TopBar from "../../../../TopBar";
+import ClassRoutineTable from '../../../../../table/Admin/ClassRoutineTable/ClassRoutineTable';
+import TopBar from "../../../../../TopBar";
 
 const ClassRoutineList = () => {
   return (

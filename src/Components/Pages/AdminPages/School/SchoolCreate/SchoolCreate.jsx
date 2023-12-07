@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import SchoolForm from '../../../forms/SchoolForm/SchoolForm';
-import TopBar from "../../../TopBar";
+import SchoolForm from '../../../../forms/Admin/SchoolForm/SchoolForm';
+import TopBar from "../../../../TopBar";
 
 const SchoolCreate = () => {
   return (

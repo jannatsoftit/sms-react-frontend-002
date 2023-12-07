@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import GradeTable from '../../../../table/Grade/GradeTable';
-import TopBar from '../../../../TopBar';
+import GradeTable from '../../../../../table/Admin/GradeTable/GradeTable';
+import TopBar from "../../../../../TopBar";
 
 const GradeList = () => {
   return (

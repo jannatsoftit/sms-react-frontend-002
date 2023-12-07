@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import MarkTable from '../../../../table/MarkTable/MarkTable';
-import TopBar from '../../../../TopBar';
+import MarkTable from '../../../../../table/Admin/MarkTable/MarkTable';
+import TopBar from "../../../../../TopBar";
 
 const MarkList = () => {
   return (

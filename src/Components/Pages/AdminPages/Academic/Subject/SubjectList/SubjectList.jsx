@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import SubjectTable from '../../../../table/SubjectTable/SubjectTable';
-import TopBar from "../../../../TopBar";
+import SubjectTable from '../../../../../table/Admin/SubjectTable/SubjectTable';
+import TopBar from "../../../../../TopBar";
 
 const SubjectList = () => {
   return (

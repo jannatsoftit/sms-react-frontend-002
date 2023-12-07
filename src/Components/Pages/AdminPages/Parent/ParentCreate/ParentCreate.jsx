@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import ParentForm from '../../../forms/ParentForm/Parentform';
-import TopBar from "../../../TopBar";
+import ParentForm from '../../../../forms/Admin/ParentForm/ParentForm';
+import TopBar from "../../../../TopBar";
 
 const ParentCreate = () => {
   return (

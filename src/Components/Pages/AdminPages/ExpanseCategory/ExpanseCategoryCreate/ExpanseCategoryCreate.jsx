@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import ExpanseCategoryForm from '../../../../Components/forms/ExpanseCategoryForm/ExpanseCategoryForm';
-import TopBar from "../../../TopBar";
+import ExpanseCategoryForm from '../../../../../Components/forms/Admin/ExpanseCategoryForm/ExpanseCategoryForm';
+import TopBar from "../../../../TopBar";
 
 const ExpanseCategoryCreate = () => {
   return (

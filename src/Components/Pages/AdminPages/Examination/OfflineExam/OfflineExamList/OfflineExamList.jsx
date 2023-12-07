@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import OfflineExamTable from '../../../../table/OfflineExamTable/OfflineExamTable';
-import TopBar from '../../../../TopBar';
+import OfflineExamTable from '../../../../../table/Admin/OfflineExamTable/OfflineExamTable';
+import TopBar from "../../../../../TopBar";
 
 const OfflineExamList = () => {
   return (

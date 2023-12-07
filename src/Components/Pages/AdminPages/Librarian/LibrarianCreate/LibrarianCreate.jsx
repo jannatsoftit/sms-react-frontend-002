@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import LibrarianForm from '../../../forms/LibrarianForm/LibrarianForm';
-import TopBar from "../../../TopBar";
+import LibrarianForm from '../../../../forms/Admin/LibrarianForm/LibrarianForm';
+import TopBar from "../../../../TopBar";
 
 const LibrarianCreate = () => {
   return (

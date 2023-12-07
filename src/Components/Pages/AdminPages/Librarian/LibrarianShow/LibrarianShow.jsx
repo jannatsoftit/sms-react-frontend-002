@@ -2,9 +2,9 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import LibrarianDetail from '../../../details/LibrarianDetail/LibrarianDetail';
-import AdminSidebar from '../../../Sidebar/AdminSidebar';
-import TopBar from '../../../TopBar';
+import LibrarianDetail from '../../../../details/Admin/LibrarianDetail/LibrarianDetail';
+import AdminSidebar from '../../../../Sidebar/AdminSidebar';
+import TopBar from "../../../../TopBar";
 
 const LibrarianShow = () => {
   const { librarianId } = useParams();

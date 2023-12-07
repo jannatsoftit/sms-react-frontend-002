@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import OfflineExamForm from '../../../../forms/OfflineExamForm/OfflineExamForm';
-import TopBar from "../../../../TopBar";
+import OfflineExamForm from '../../../../../forms/Admin/OfflineExamForm/OfflineExamForm';
+import TopBar from "../../../../../TopBar";
 
 const OfflineExamCreate = () => {
   return (

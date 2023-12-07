@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import LibrarianTable from '../../../table/LibrarianTable/LibrarianTable';
-import TopBar from '../../../TopBar';
+import LibrarianTable from '../../../../table/Admin/LibrarianTable/LibrarianTable';
+import TopBar from "../../../../TopBar";
 
 const LibrarianList = () => {
   return (

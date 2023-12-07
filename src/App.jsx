@@ -24,7 +24,7 @@ import NotFound from './Components/NotFound';
 // Admin Protected Routes
 import AdminProtectedRoute from './Components/ProtectedRoute/AdminProtectedRoute';
 // Dashboard
-import Dashboard from './Components/Pages/Dashboard/Dashboard';
+import Dashboard from './Components/Pages/AdminPages/Dashboard/Dashboard';
 // User
 import AdminCreate from './Components/Pages/AdminPages/Admin/AdminCreate/AdminCreate';
 import AdminEdit from './Components/Pages/AdminPages/Admin/AdminEdit/AdminEdit';

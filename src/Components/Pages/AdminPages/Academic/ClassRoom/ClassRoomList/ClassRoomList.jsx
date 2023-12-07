@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import ClassRoomTable from '../../../../table/ClassRoomTable/ClassRoomTable';
-import TopBar from "../../../../TopBar";
+import ClassRoomTable from '../../../../../table/Admin/ClassRoomTable/ClassRoomTable';
+import TopBar from "../../../../../TopBar";
 
 const ClassRoomList = () => {
   return (

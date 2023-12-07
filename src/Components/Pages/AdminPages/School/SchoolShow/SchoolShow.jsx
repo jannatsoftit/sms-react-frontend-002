@@ -2,9 +2,9 @@
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import SchoolDetail from '../../../details/SchoolDetail/SchoolDetail';
-import AdminSidebar from '../../../Sidebar/AdminSidebar';
-import TopBar from '../../../TopBar';
+import SchoolDetail from '../../../../details/Admin/SchoolDetail/SchoolDetail';
+import AdminSidebar from '../../../../Sidebar/AdminSidebar';
+import TopBar from "../../../../TopBar";
 
 const SchoolShow = () => {
   const { schoolId } = useParams();

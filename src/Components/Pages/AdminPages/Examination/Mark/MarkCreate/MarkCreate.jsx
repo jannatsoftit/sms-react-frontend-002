@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import MarkForm from '../../../../forms/MarkForm/MarkForm';
-import TopBar from "../../../../TopBar";
+import MarkForm from '../../../../../forms/Admin/MarkForm/MarkForm';
+import TopBar from "../../../../../TopBar";
 
 const MarkCreate = () => {
   return (

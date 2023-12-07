@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import AccountantTable from '../../../table/AccountantTable/AccountantTable';
-import TopBar from '../../../TopBar';
+import AccountantTable from '../../../../table/Admin/AccountantTable/AccountantTable';
+import TopBar from "../../../../TopBar";
 
 const AccountantList = () => {
   return (

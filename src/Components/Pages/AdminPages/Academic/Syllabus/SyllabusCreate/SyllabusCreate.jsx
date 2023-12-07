@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import SyllabusForm from '../../../../forms/SyllabusForm/SyllabusForm';
-import TopBar from "../../../../TopBar";
+import SyllabusForm from '../../../../../forms/Admin/SyllabusForm/SyllabusForm';
+import TopBar from "../../../../../TopBar";
 
 const SyllabusCreate = () => {
   return (

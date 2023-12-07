@@ -2,9 +2,9 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import AccountantDetail from '../../../details/AccountantDetail/AccountantDetail';
-import AdminSidebar from "../../../Sidebar/AdminSidebar";
-import TopBar from "../../../TopBar";
+import AccountantDetail from '../../../../details/Admin/AccountantDetail/AccountantDetail';
+import AdminSidebar from "../../../../Sidebar/AdminSidebar";
+import TopBar from "../../../../TopBar";
 
 const AccountantShow = () => {
   const { accountantId } = useParams();

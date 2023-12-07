@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import SyllabusTable from '../../../../table/SyllabusTable/SyllabusTable';
-import TopBar from "../../../../TopBar";
+import SyllabusTable from '../../../../../table/Admin/SyllabusTable/SyllabusTable';
+import TopBar from "../../../../../TopBar";
 
 const SyllabusList = () => {
   return (

@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import TeacherForm from '../../../forms/TeacherForm/Teacherform';
-import TopBar from '../../../TopBar';
+import TeacherForm from '../../../../forms/Admin/TeacherForm/Teacherform';
+import TopBar from "../../../../TopBar";
 
 const TeacherCreate = () => {
   return (

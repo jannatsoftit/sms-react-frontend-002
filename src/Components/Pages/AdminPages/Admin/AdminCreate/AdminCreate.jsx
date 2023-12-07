@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import AdminForm from '../../../forms/AdminForm/Adminform';
-import TopBar from '../../../TopBar';
+import AdminForm from '../../../../forms/Admin/AdminForm/AdminForm';
+import TopBar from "../../../../TopBar";
 
 const AdminCreate = () => {
   return (

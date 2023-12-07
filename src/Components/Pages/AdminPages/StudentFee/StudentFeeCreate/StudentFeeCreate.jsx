@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import StudentFeeForm from '../../../../Components/forms/StudentFeeForm/StudentFeeForm';
-import TopBar from '../../../TopBar';
+import StudentFeeForm from '../../../../../Components/forms/Admin/StudentFeeForm/StudentFeeForm';
+import TopBar from "../../../../TopBar";
 
 const StudentFeeCreate = () => {
   return (

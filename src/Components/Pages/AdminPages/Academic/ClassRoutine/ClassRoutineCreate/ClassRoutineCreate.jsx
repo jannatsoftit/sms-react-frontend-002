@@ -1,7 +1,7 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import ClassRoutineForm from '../../../../forms/ClassRoutineForm/ClassRoutineForm';
-import TopBar from '../../../../TopBar';
+import ClassRoutineForm from '../../../../../forms/Admin/ClassRoutineForm/ClassRoutineForm';
+import TopBar from "../../../../../TopBar";
 
 const ClassRoutineCreate = () => {
   return (

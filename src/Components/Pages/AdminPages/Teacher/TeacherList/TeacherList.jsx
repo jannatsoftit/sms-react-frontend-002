@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import TeacherTable from '../../../table/TeacherTable/TeacherTable';
-import TopBar from '../../../TopBar';
+import TeacherTable from '../../../../table/Admin/TeacherTable/TeacherTable';
+import TopBar from "../../../../TopBar";
 
 const TeacherList = () => {
   return (

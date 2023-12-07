@@ -2,9 +2,9 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import StudentDetail from '../../../details/StudentDetail/StudentDetail';
-import AdminSidebar from '../../../Sidebar/AdminSidebar';
-import TopBar from '../../../TopBar';
+import StudentDetail from '../../../../details/Admin/StudentDetail/StudentDetail';
+import AdminSidebar from '../../../../Sidebar/AdminSidebar';
+import TopBar from "../../../../TopBar";
 
 const StudentShow = () => {
   const { studentId } = useParams();
