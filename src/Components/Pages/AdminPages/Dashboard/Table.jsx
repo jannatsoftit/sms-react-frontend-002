@@ -23,7 +23,7 @@ const Table = () => {
 
   return (
     <>
-      <div className='container'>
+      <div className='container dash_table'>
         <div className='row align-items-center'>
           <div className='col'>
             <h2 className='fs-5 fw-bold mb-2'>Admin List</h2>
@@ -39,12 +39,12 @@ const Table = () => {
           </div>
         </div>
 
-        <div className='table-responsive'>
+        <div className='table-responsive dash_admin_table'>
           <table
             className='table-bordered dash_table'
             style={{ backgroundColor: '#fff' }}
           >
-            <thead>
+            <thead className='dash_table_head'>
               <tr>
                 <th className='dash_table'>First Name</th>
                 <th className='dash_table'>Email</th>

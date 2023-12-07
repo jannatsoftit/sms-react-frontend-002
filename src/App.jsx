@@ -16,11 +16,15 @@ import Register from "./Components/Register";
 import Login from './Components/Login';
 import NotFound from './Components/NotFound';
 
+import ProfileShow from './Components/Profile/ProfileShow';
+import ProfileEdit from './Components/Profile/ProfileEdit';
+
 //------------------ Public Route  ----------------//
 //import PublicDashboard from './Components/PublicDashboard/Dashboard/PublicDashboard';
 
 
 //------------------  Admin Route  ----------------//
+
 // Admin Protected Routes
 import AdminProtectedRoute from './Components/ProtectedRoute/AdminProtectedRoute';
 // Dashboard
@@ -800,6 +804,9 @@ const App = () => {
         <Route path='*' element={<NotFound />}/>
 
         <Route path='/admin' element={<AdminProtectedRoute />}> 
+
+          <Route path='userProfile/:profileId' element={<ProfileShow />}/>
+          <Route path='userProfile/:profileId/edit' element={<ProfileEdit />}/>
 
           <Route path='dashboard' element={<Dashboard />} />
 
