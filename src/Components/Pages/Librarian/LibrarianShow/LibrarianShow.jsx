@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import LibrarianDetail from '../../../details/LibrarianDetail/LibrarianDetail';
-import Sidebar from '../../../Sidebar';
+import AdminSidebar from '../../../Sidebar/AdminSidebar';
 import TopBar from '../../../TopBar';
 
 const LibrarianShow = () => {
@@ -33,7 +33,7 @@ const LibrarianShow = () => {
   return (
     <div>
       <TopBar />
-      <Sidebar>
+      <AdminSidebar>
         {/* Librarian create table title section */}
         <Link to='/admin/librarians' className='add_button'>
           <button type='button' className='btn'>
@@ -43,7 +43,7 @@ const LibrarianShow = () => {
 
         {/* Librarian data details component */}
         <LibrarianDetail librarian={librarian} />
-      </Sidebar>
+      </AdminSidebar>
     </div>
   );
 };

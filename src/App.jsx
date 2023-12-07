@@ -9,20 +9,22 @@ import {
   //useRoutes,
 } from 'react-router-dom';
 
-// import Admin from "./Components/Admin";
-// import AdminRoutes from "./Components/routes";
-// import Dashboard from './Components/Pages/Dashboard/Dashboard';
-import Register from "./Components/Register";
-import Login from './Components/Login';
-
 import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-//------------------  Admin Dashboard Route  ----------------//
+import Register from "./Components/Register";
+import Login from './Components/Login';
+import NotFound from './Components/NotFound';
 
+//------------------ Public Route  ----------------//
+//import PublicDashboard from './Components/PublicDashboard/Dashboard/PublicDashboard';
+
+
+//------------------  Admin Route  ----------------//
+// Admin Protected Routes
+import AdminProtectedRoute from './Components/ProtectedRoute/AdminProtectedRoute';
 // Dashboard
 import Dashboard from './Components/Pages/Dashboard/Dashboard';
-
 // User
 import AdminCreate from './Components/Pages/Admin/AdminCreate/AdminCreate';
 import AdminEdit from './Components/Pages/Admin/AdminEdit/AdminEdit';
@@ -103,9 +105,6 @@ import SchoolCreate from './Components/Pages/School/SchoolCreate/SchoolCreate';
 import SchoolEdit from './Components/Pages/School/SchoolEdit/SchoolEdit';
 import SchoolShow from './Components/Pages/School/SchoolShow/SchoolShow';
 
-import AdminProtectedRoute from './Components/AdminProtectedRoute';
-import NotFound from './Components/NotFound';
-//import PublicDashboard from './Components/PublicDashboard/Dashboard/PublicDashboard';
 
 const App = () => {
 

@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
-import Sidebar from "../../Sidebar";
+import AdminSidebar from "../../Sidebar/AdminSidebar";
 import Footer from "../../Footer";
 
 const ClassRoomForm = () => {
@@ -100,7 +100,7 @@ const ClassRoomForm = () => {
 
   return (
     <>
-      <Sidebar>
+      <AdminSidebar>
         <div className='admin_form'>
           <div className='container-fluid px-1 py-5 mx-auto'>
             <div className='row d-flex justify-content-center'>
@@ -245,7 +245,7 @@ const ClassRoomForm = () => {
           </div>
         </div>
         <Footer />
-      </Sidebar>
+      </AdminSidebar>
     </>
   );
 };

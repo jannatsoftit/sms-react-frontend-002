@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Footer from '../../../../Footer';
-import Sidebar from '../../../../Sidebar';
+import AdminSidebar from '../../../../Sidebar/AdminSidebar';
 import TopBar from '../../../../TopBar';
 
 const SyllabusEdit = () => {
@@ -91,7 +91,7 @@ const SyllabusEdit = () => {
   return (
     <>
       <TopBar />
-      <Sidebar>
+      <AdminSidebar>
         {/* syllabus create table title section */}
         <Link to='/admin/students' className='add_button'>
           <button type='button' className='btn'>
@@ -204,7 +204,7 @@ const SyllabusEdit = () => {
           </div>
         </div>
         <Footer />
-      </Sidebar>
+      </AdminSidebar>
     </>
   );
 };

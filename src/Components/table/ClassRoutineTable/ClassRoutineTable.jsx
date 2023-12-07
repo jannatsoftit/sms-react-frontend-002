@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
-import Sidebar from '../../Sidebar';
+import AdminSidebar from '../../Sidebar/AdminSidebar';
 import Footer from '../../Footer';
 
 const ClassRoutineTable = () => {
@@ -92,7 +92,7 @@ const ClassRoutineTable = () => {
 
   return (
     <>
-      <Sidebar>
+      <AdminSidebar>
         <section className='ftco-section'>
           <div className='container'>
             <div className='col-md-6 text-center mb-5'>
@@ -222,7 +222,7 @@ const ClassRoutineTable = () => {
           </div>
         </section>
         <Footer />
-      </Sidebar>
+      </AdminSidebar>
     </>
   );
 };

@@ -5,7 +5,7 @@ import { TbBooks } from "react-icons/tb";
 import BarChart from "./BarChart";
 import Table from "./Table";
 
-import Sidebar from "../../Sidebar";
+import AdminSidebar from "../../Sidebar/AdminSidebar";
 import TopBar from "../../TopBar";
 import Footer from "../../Footer";
 
@@ -18,7 +18,7 @@ const Dashboard = () => {
   return (
     <>
     <TopBar/>
-    <Sidebar>
+    <AdminSidebar>
       <div className="p-3 pb-5">
         <div className="container-fluid  dashboard_table">
           <div style={{marginTop: '20px',}}>
@@ -83,7 +83,7 @@ const Dashboard = () => {
         </div>
       </div>
       <Footer />
-      </Sidebar>
+      </AdminSidebar>
     </>
   );
 };

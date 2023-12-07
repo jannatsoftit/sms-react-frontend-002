@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import ParentDetail from '../../../details/ParentDetail/ParentDetail';
-import Sidebar from '../../../Sidebar';
+import AdminSidebar from '../../../Sidebar/AdminSidebar';
 import TopBar from '../../../TopBar';
 
 const ParentShow = () => {
@@ -33,7 +33,7 @@ const ParentShow = () => {
   return (
     <div>
       <TopBar />
-      <Sidebar>
+      <AdminSidebar>
         {/* Parent create table title section */}
         <Link to='/admin/parents' className='add_button'>
           <button type='button' className='btn'>
@@ -43,7 +43,7 @@ const ParentShow = () => {
 
         {/* Parent data details component */}
         <ParentDetail parent={parent} />
-      </Sidebar>
+      </AdminSidebar>
     </div>
   );
 };

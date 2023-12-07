@@ -4,7 +4,7 @@ import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import Sidebar from '../../../Sidebar';
+import AdminSidebar from '../../../Sidebar/AdminSidebar';
 import Footer from '../../../Footer';
 import TopBar from '../../../TopBar';
 
@@ -108,7 +108,7 @@ const LibrarianEdit = () => {
   return (
     <>
       <TopBar />
-      <Sidebar>
+      <AdminSidebar>
         {/* Librarian create table title section */}
         <Link to='/admin/librarians' className='add_button'>
           <button type='button' className='btn'>
@@ -384,7 +384,7 @@ const LibrarianEdit = () => {
           </div>
         </div>
         <Footer />
-      </Sidebar>
+      </AdminSidebar>
     </>
   );
 };

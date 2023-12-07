@@ -1,26 +1,26 @@
 import { IconContext } from 'react-icons/lib';
 import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
+import { SidebarData } from '../SidebarData';
 import { useState  } from 'react';
-import SubMenu from './SubMenu';
-import styled from 'styled-components';
 // import * as FaIcons from 'react-icons/fa';
 // import * as AiIcons from 'react-icons/ai';
+import SubMenu from '../SubMenu';
+import styled from 'styled-components';
 
-const SidebarNav = styled.nav`
-background: #15171c;
-width: 250px;
-height: 100vh;
-display: flex;
-justify-content: center;
-position: fixed;
-top: 0;
-left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
-transition: 350ms;
-z-index: 10;
-`;
+  const SidebarNav = styled.nav`
+  background: #15171c;
+  width: 250px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: ${({ sidebar }) => (sidebar ? '0' : '-100%')};
+  transition: 350ms;
+  z-index: 10;
+  `;
 
-const Sidebar = ({ children }) => {
+const AdminSidebar = ({ children }) => {
 
   const [sidebar, setSidebar] = useState('true');
 
@@ -64,4 +64,4 @@ const Sidebar = ({ children }) => {
 
 
 
-export default Sidebar;
+export default AdminSidebar;

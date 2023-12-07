@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Footer from '../../../../Footer';
-import Sidebar from '../../../../Sidebar';
+import AdminSidebar from '../../../../Sidebar/AdminSidebar';
 import TopBar from '../../../../TopBar';
 
 const ClassRoutineEdit = () => {
@@ -93,7 +93,7 @@ const ClassRoutineEdit = () => {
   return (
     <>
       <TopBar />
-      <Sidebar>
+      <AdminSidebar>
         {/* ClassRoutine create table title section */}
         <Link to='/admin/classRoutines' className='add_button'>
           <button type='button' className='btn'>
@@ -224,7 +224,7 @@ const ClassRoutineEdit = () => {
           </div>
         </div>
         <Footer />
-      </Sidebar>
+      </AdminSidebar>
     </>
   );
 };

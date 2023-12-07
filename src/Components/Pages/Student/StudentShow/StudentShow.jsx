@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import StudentDetail from '../../../details/StudentDetail/StudentDetail';
-import Sidebar from '../../../Sidebar';
+import AdminSidebar from '../../../Sidebar/AdminSidebar';
 import TopBar from '../../../TopBar';
 
 const StudentShow = () => {
@@ -33,7 +33,7 @@ const StudentShow = () => {
   return (
     <div>
       <TopBar />
-      <Sidebar>
+      <AdminSidebar>
         {/* student create table title section */}
         <Link to='/admin/students' className='add_button'>
           <button type='button' className='btn'>
@@ -43,7 +43,7 @@ const StudentShow = () => {
 
         {/* student data details component */}
         <StudentDetail student={student} />
-      </Sidebar>
+      </AdminSidebar>
     </div>
   );
 };

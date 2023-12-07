@@ -3,7 +3,7 @@ import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import Footer from '../../Footer';
 import Swal from 'sweetalert2';
-import Sidebar from '../../Sidebar';
+import AdminSidebar from '../../Sidebar/AdminSidebar';
 
 const StudentTable = () => {
   // student data
@@ -87,7 +87,7 @@ const StudentTable = () => {
 
   return (
     <>
-      <Sidebar>
+      <AdminSidebar>
         <section className='ftco-section'>
           <div className='container'>
             <div className='col-md-6 text-center mb-5'>
@@ -247,7 +247,7 @@ const StudentTable = () => {
           </div>
         </section>
         <Footer />
-      </Sidebar>
+      </AdminSidebar>
     </>
   );
 };

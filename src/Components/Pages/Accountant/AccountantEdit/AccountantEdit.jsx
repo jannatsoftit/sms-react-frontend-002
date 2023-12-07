@@ -4,7 +4,7 @@ import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import Sidebar from '../../../Sidebar';
+import Sidebar from '../../../Sidebar/AdminSidebar';
 import Footer from '../../../Footer';
 import TopBar from '../../../TopBar';
 

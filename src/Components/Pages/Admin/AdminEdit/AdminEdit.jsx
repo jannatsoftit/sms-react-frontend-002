@@ -6,7 +6,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 import Footer from '../../../Footer';
-import Sidebar from '../../../Sidebar';
+import AdminSidebar from '../../../Sidebar/AdminSidebar';
 import TopBar from '../../../TopBar';
 
 const AdminEdit = () => {
@@ -109,7 +109,7 @@ const AdminEdit = () => {
   return (
     <>
       <TopBar />
-      <Sidebar>
+      <AdminSidebar>
         {/* Admin create table title section */}
         <Link to='/admin/admins' className='add_button'>
           <button type='button' className='btn'>
@@ -387,7 +387,7 @@ const AdminEdit = () => {
           </div>
         </div>
         <Footer />
-      </Sidebar>
+      </AdminSidebar>
     </>
   );
 };

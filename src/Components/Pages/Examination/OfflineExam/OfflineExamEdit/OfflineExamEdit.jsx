@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import Footer from '../../../../Footer';
-import Sidebar from '../../../../Sidebar';
+import AdminSidebar from '../../../../Sidebar/AdminSidebar';
 import TopBar from '../../../../TopBar';
 
 const OfflineExamEdit = () => {
@@ -105,7 +105,7 @@ const OfflineExamEdit = () => {
   return (
     <>
       <TopBar />
-      <Sidebar>
+      <AdminSidebar>
         {/* offline Exam create table title section */}
         <Link to='/admin/offlineExams' className='add_button'>
           <button type='button' className='btn'>
@@ -333,7 +333,7 @@ const OfflineExamEdit = () => {
           </div>
         </div>
         <Footer />
-      </Sidebar>
+      </AdminSidebar>
     </>
   );
 };
