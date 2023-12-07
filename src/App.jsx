@@ -62,9 +62,10 @@ import LibrarianList from "./Components/Pages/AdminPages/Librarian/LibrarianList
 import LibrarianShow from "./Components/Pages/AdminPages/Librarian/LibrarianShow/LibrarianShow";
 
 // Examination
-import ExamCategoryCreate from "./Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryCreate/ExamCategoryCreate";
-import ExamCategoryEdit from "./Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryEdit/ExamCategoryEdit";
-import ExamCategoryList from "./Components/Pages/AdminPages/Examination/ExamCategory/ExamCategoryList/ExamCategoryList";
+import AdmissionCircularCreate from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularCreate/AdmissionCircularCreate";
+import AdmissionCircularEdit from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularEdit/AdmissionCircularEdit";
+import AdmissionCircularList from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularList/AdmissionCircularList";
+import AdmissionCircularShow from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularShow/AdmissionCircularShow";
 
 import GradeCreate from "./Components/Pages/AdminPages/Examination/Grade/GradeCreate/GradeCreate";
 import GradeEdit from "./Components/Pages/AdminPages/Examination/Grade/GradeEdit/GradeEdit";
@@ -844,15 +845,20 @@ const App = () => {
             element={<LibrarianEdit />}
           />
 
-          <Route path="examCategories" element={<ExamCategoryList />} />
+          <Route path="examCategories" element={<AdmissionCircularList />} />
           <Route
             path="examCategories/create"
-            element={<ExamCategoryCreate />}
+            element={<AdmissionCircularCreate />}
           />
           <Route
             path="examCategories/:examCategoryId/edit"
-            element={<ExamCategoryEdit />}
+            element={<AdmissionCircularEdit />}
           />
+          <Route
+            path="examCategories/show"
+            element={<AdmissionCircularShow />}
+          />
+          
 
           <Route path="grades" element={<GradeList />} />
           <Route path="grades/create" element={<GradeCreate />} />

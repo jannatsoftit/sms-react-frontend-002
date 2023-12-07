@@ -7,7 +7,7 @@ import AdminSidebar from "../../../Sidebar/AdminSidebar";
 import Footer from "../../../Footer";
 
 
-const ExamCategoryTable = () => {
+const AdmissionCircularTable = () => {
   // ExamCategory data
   const [examCategories, setExamCategories] = useState(null);
   console.log(examCategories);
@@ -98,26 +98,24 @@ const ExamCategoryTable = () => {
         <section className='ftco-section'>
           <div className='container'>
             <div className='col-md-6 text-center mb-5'>
-              <h2 className='heading-section'>Exam Category Table List</h2>
+              <h2 className='heading-section'>Admission Circular Table List</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
                   user
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>
-                  exam-categories
+                 admission-circular
                 </Link>
               </div>
             </div>
             <div className='row admin_table'>
               <div className='col-md-12'>
-                <div className='table-wrap'>
+                <div className=''>
                   <table className='table table-responsive-xl'>
                     <thead>
                       <tr>
-                        <th>Exam Type</th>
-                        <th>Class name</th>
-                        <th>Section name</th>
+                        <th>Admission Circular</th>
                         <th>Options</th>
                       </tr>
                     </thead>
@@ -129,12 +127,6 @@ const ExamCategoryTable = () => {
                           <tr className='alert' role='alert' key={i}>
                             <td>
                               <span>{record?.title}</span>
-                            </td>
-                            <td>
-                              <span>{record?.class_name}</span>
-                            </td>
-                            <td>
-                              <span>{record?.section_name}</span>
                             </td>
                             <td>
                               <div className='dropdown'>
@@ -154,9 +146,17 @@ const ExamCategoryTable = () => {
                                   <li>
                                     <Link
                                       className='dropdown-item'
+                                      to={'/admin/examCategories/show'}
+                                    >
+                                      Show AdmissionCircular
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
                                       to={`/admin/examCategories/${record?.id}/edit`}
                                     >
-                                      Edit ExamCategory
+                                      Edit AdmissionCircular
                                     </Link>
                                   </li>
                                   <li>
@@ -164,7 +164,7 @@ const ExamCategoryTable = () => {
                                       className='dropdown-item'
                                       onClick={() => handleDelete(record)}
                                     >
-                                      Delete ExamCategory
+                                      Delete AdmissionCircular
                                     </Link>
                                   </li>
                                 </ul>
@@ -208,7 +208,7 @@ const ExamCategoryTable = () => {
                 </li>
               </ul>
             </nav>
-            {/* Exam Category list table pagination end  */}
+            {/* AdmissionCircular list table pagination end  */}
           </div>
         </section>
         <Footer />
@@ -217,4 +217,4 @@ const ExamCategoryTable = () => {
   );
 };
 
-export default ExamCategoryTable;
+export default AdmissionCircularTable;

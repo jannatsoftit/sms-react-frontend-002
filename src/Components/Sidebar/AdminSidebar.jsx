@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
   const SidebarNav = styled.nav`
   background: #15171c;
-  width: 250px;
+  width: 270px;
   height: 100vh;
   display: flex;
   justify-content: center;

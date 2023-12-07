@@ -8,7 +8,7 @@ import Table from './Table';
 import AdminSidebar from '../../../Sidebar/AdminSidebar';
 import Footer from '../../../Footer';
 import TopBar from '../../../TopBar';
-import Calendar1 from './Calendar1';
+// import Calendar1 from './Calendar1';
 
 const Dashboard = () => {
   const userName = localStorage.getItem('auth_name');
@@ -85,7 +85,7 @@ const Dashboard = () => {
               <Table />
               </div>
               <div className='col-12 col-md-3 p-3' >
-              <Calendar1 />
+              {/* <Calendar1 /> */}
               </div>
             </div>
 

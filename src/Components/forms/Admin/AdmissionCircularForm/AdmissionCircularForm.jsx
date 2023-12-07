@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import AdminSidebar from "../../../Sidebar/AdminSidebar";
 import Footer from '../../../Footer';
 
-const ExamCategoryForm = () => {
+const AdmissionCircularForm = () => {
   const navigate = useNavigate();
 
   const [formErrors, setFormErrors] = useState({});
@@ -97,7 +97,7 @@ const ExamCategoryForm = () => {
                   {/* ExamCategory create form title section */}
                   <div className='col-md-6 text-center mb-5'>
                     <h2 className='heading-section'>
-                      Exam Category Form Table
+                      Admission Circular Form Table
                     </h2>
                     <div className='admin-create'>
                       <Link to='#' className='links'>
@@ -105,7 +105,7 @@ const ExamCategoryForm = () => {
                       </Link>
                       <RxSlash />
                       <Link to='' className='links'>
-                        exam-categories
+                       admission-circular
                       </Link>
                       <RxSlash />
                       <Link to='' className='actives'>
@@ -207,4 +207,4 @@ const ExamCategoryForm = () => {
   );
 };
 
-export default ExamCategoryForm;
+export default AdmissionCircularForm;

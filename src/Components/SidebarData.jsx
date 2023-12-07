@@ -60,12 +60,12 @@ export const SidebarData = [
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
-        title: 'Exam Category',
+        title: 'Admission Circular',
         path: '/admin/examCategories',
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: 'Grade',
+        title: 'Grading System',
         path: '/admin/grades',
         icon: <IoIcons.IoIosPaper />,
       },

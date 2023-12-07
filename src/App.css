@@ -11671,5 +11671,35 @@ margin-top: 60px;
 }
 
 
+/* Academic curiculam css */
 
+.part_one h2, h5{
+  color: #0032B4;
+  text-align: center;
+}
+
+.admission_circular_card {
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  width: 940px;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  margin-top: 30px;
+  margin-left: 60px;
+  margin-bottom: 60px;
+}
+
+.admission_circular_container {
+  padding-left: 60px;
+  padding-right: 60px;
+}
+
+.academic_list {
+  list-style: none;
+}
 
