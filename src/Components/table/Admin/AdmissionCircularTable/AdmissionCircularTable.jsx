@@ -126,7 +126,8 @@ const AdmissionCircularTable = () => {
                               <span>{record?.title}</span>
                             </td>
                             <td>
-                              { (record?.id) === 1 ? 
+                              { 
+                                (record?.id) === 1 ? 
                               <div className="dropdown">
                                 <button
                                   className="btn btn-secondary dropdown-toggle"
@@ -168,6 +169,7 @@ const AdmissionCircularTable = () => {
                                 </ul>
                               </div>
                                 : 
+                                (record?.id) === 2 ?
                               <div className="dropdown">
                                 <button
                                   className="btn btn-secondary dropdown-toggle"
@@ -208,6 +210,50 @@ const AdmissionCircularTable = () => {
                                   </li>
                                 </ul>
                               </div>
+                              :
+                                (record?.id) === 3 ?
+                              <div className="dropdown">
+                                <button
+                                  className="btn btn-secondary dropdown-toggle"
+                                  type="button"
+                                  id="dropdownMenuButton1"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  Actions
+                                </button>
+                                <ul
+                                  className="dropdown-menu"
+                                  aria-labelledby="dropdownMenuButton1"
+                                >
+                                  <li>
+                                    <Link
+                                      className="dropdown-item"
+                                      to={"/admin/examCategories_OF/show"}
+                                    >
+                                      Show AdmissionCircular 1 to 5
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className="dropdown-item"
+                                      to={`/admin/examCategories/${record?.id}/edit`}
+                                    >
+                                      Edit AdmissionCircular
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className="dropdown-item"
+                                      onClick={() => handleDelete(record)}
+                                    >
+                                      Delete AdmissionCircular
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
+                              :
+                              null
                             } 
                               
                             </td>  

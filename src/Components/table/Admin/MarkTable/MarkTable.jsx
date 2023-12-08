@@ -164,7 +164,7 @@ const MarkTable = () => {
                                     onClick={() => {
                                       downloadFileAtURL(PDF_4_FILE_URL);
                                     }}
-                                    style={{ backgroundColor: "green" }}
+                                    style={{ backgroundColor: "#00A3FF", color:'white' }}
                                     
                                   >
                                     <BsDownload /> Download
@@ -176,7 +176,7 @@ const MarkTable = () => {
                                     onClick={() => {
                                       downloadFileAtURL(PDF_10_FILE_URL);
                                     }}
-                                    style={{ backgroundColor: "green" }}
+                                    style={{ backgroundColor: "#00A3FF", color:'white' }}
                                   >
                                     <BsDownload /> Download
                                   </button>

@@ -15,16 +15,11 @@ const OfflineExamForm = () => {
 
   const [inputFields, setInputFields] = useState({
     exam_name: '',
-    paper: '',
     class_name: '',
-    section: '',
-    subject_code: '',
-    date_time: '',
     exam_start_time: '',
     exam_end_time: '',
-    building_name: '',
-    room_number: '',
     total_marks: '',
+    //section: '',
   });
 
   const handleChange = (e) => {
@@ -54,16 +49,11 @@ const OfflineExamForm = () => {
 
     const formData = new FormData();
     formData.append('exam_name', inputFields.exam_name);
-    formData.append('paper', inputFields.paper);
     formData.append('class_name', inputFields.class_name);
-    formData.append('section', inputFields.section);
-    formData.append('subject_code', inputFields.subject_code);
-    formData.append('date_time', inputFields.date_time);
     formData.append('exam_start_time', inputFields.exam_start_time);
     formData.append('exam_end_time', inputFields.exam_end_time);
-    formData.append('building_name', inputFields.building_name);
-    formData.append('room_number', inputFields.room_number);
     formData.append('total_marks', inputFields.total_marks);
+    //formData.append('section', inputFields.section);
 
     fetch(`http://127.0.0.1:8000/api/offlineExams`, {
       body: formData,
@@ -91,24 +81,8 @@ const OfflineExamForm = () => {
       errors.exam_name = 'exam name required';
     }
 
-    if (!values.paper) {
-      errors.paper = 'paper required';
-    }
-
     if (!values.class_name) {
       errors.class_name = 'class name is required';
-    }
-
-    if (!values.section) {
-      errors.section = 'section is required';
-    }
-
-    if (!values.subject_code) {
-      errors.subject_code = 'subject code is required';
-    }
-
-    if (!values.date_time) {
-      errors.date_time = 'exam date is required';
     }
 
     if (!values.exam_start_time) {
@@ -117,14 +91,6 @@ const OfflineExamForm = () => {
 
     if (!values.exam_end_time) {
       errors.exam_end_time = 'exam end time is required';
-    }
-
-    if (!values.building_name) {
-      errors.building_name = 'building name is required';
-    }
-
-    if (!values.room_number) {
-      errors.room_number = 'room number is required';
     }
 
     if (!values.total_marks) {
@@ -184,29 +150,6 @@ const OfflineExamForm = () => {
                           </span>
                         )}
                       </div>
-
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Paper<span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='text'
-                          name='paper'
-                          placeholder='Enter paper'
-                          id='paper'
-                          onChange={handleChange}
-                          value={inputFields?.paper}
-                        />{' '}
-                        {formErrors.paper && (
-                          <span style={{ color: '#e74c3c' }}>
-                            {formErrors.paper}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -227,56 +170,36 @@ const OfflineExamForm = () => {
                           </span>
                         )}
                       </div>
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Section<span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='text'
-                          name='section'
-                          placeholder='Enter section'
-                          id='section'
-                          onChange={handleChange}
-                          value={inputFields?.section}
-                        />{' '}
-                        {formErrors.section && (
-                          <span style={{ color: '#e74c3c' }}>
-                            {formErrors.section}
-                          </span>
-                        )}
-                      </div>
                     </div>
 
                     <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                          Date Time <span className='text-danger'> *</span>
+                          Total Marks<span className='text-danger'> *</span>
                         </label>{' '}
                         <input
-                          type='text'
-                          name='date_time'
-                          placeholder='Enter exam date '
-                          id='date_time'
+                          type='number'
+                          name='total_marks'
+                          placeholder='Enter total marks'
+                          id='total_marks'
                           onChange={handleChange}
-                          value={inputFields?.date_time}
+                          value={inputFields?.total_marks}
                         />{' '}
-                        {formErrors.date_time && (
+                        {formErrors.total_marks && (
                           <span style={{ color: '#e74c3c' }}>
-                            {formErrors.date_time}
+                            {formErrors.total_marks}
                           </span>
                         )}
                       </div>
-
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                          Exam Start Time{' '}
+                           Starting Time{' '}
                           <span className='text-danger'> *</span>
                         </label>{' '}
                         <input
-                          type='time'
+                          type='datetime-local'
                           name='exam_start_time'
                           placeholder='Enter exam start time'
                           id='exam_start_time'
@@ -295,11 +218,11 @@ const OfflineExamForm = () => {
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                          Exam End Time
+                          Ending Time
                           <span className='text-danger'> *</span>
                         </label>{' '}
                         <input
-                          type='time'
+                          type='datetime-local'
                           name='exam_end_time'
                           placeholder='Enter total exam end time'
                           id='exam_end_time'
@@ -312,6 +235,11 @@ const OfflineExamForm = () => {
                           </span>
                         )}
                       </div>
+                    </div>
+
+                    
+
+                    {/* <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -331,9 +259,49 @@ const OfflineExamForm = () => {
                           </span>
                         )}
                       </div>
-                    </div>
 
-                    <div className='row justify-content-between text-left'>
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Paper<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='paper'
+                          placeholder='Enter paper'
+                          id='paper'
+                          onChange={handleChange}
+                          value={inputFields?.paper}
+                        />{' '}
+                        {formErrors.paper && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.paper}
+                          </span>
+                        )}
+                      </div>
+
+                        <div className='form-group col-sm-6 flex-column d-flex'>
+                          {' '}
+                          <label className='form-label px-3'>
+                            Date Time <span className='text-danger'> *</span>
+                          </label>{' '}
+                          <input
+                            type='text'
+                            name='date_time'
+                            placeholder='Enter exam date '
+                            id='date_time'
+                            onChange={handleChange}
+                            value={inputFields?.date_time}
+                          />{' '}
+                          {formErrors.date_time && (
+                            <span style={{ color: '#e74c3c' }}>
+                              {formErrors.date_time}
+                            </span>
+                          )}
+                        </div> 
+                    </div> */}
+
+                    {/* <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -354,28 +322,9 @@ const OfflineExamForm = () => {
                           </span>
                         )}
                       </div>
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Total Marks<span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='number'
-                          name='total_marks'
-                          placeholder='Enter total marks'
-                          id='total_marks'
-                          onChange={handleChange}
-                          value={inputFields?.total_marks}
-                        />{' '}
-                        {formErrors.total_marks && (
-                          <span style={{ color: '#e74c3c' }}>
-                            {formErrors.total_marks}
-                          </span>
-                        )}
-                      </div>
-                    </div>
+                    </div> */}
 
-                    <div className='row justify-content-between text-left'>
+                    {/* <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -396,7 +345,7 @@ const OfflineExamForm = () => {
                           </span>
                         )}
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className='row justify-content-start'>
                       <div className='form-group col-sm-4'>
