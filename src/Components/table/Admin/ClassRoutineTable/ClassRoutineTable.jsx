@@ -2,10 +2,15 @@
 import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
+import { BsDownload } from "react-icons/bs";
 import Swal from 'sweetalert2';
 import AdminSidebar from "../../../Sidebar/AdminSidebar";
 import Footer from "../../../Footer";
 
+// CLASS ROUTINE file
+const CLASSROUTINE_4_FILE_URL ="http://localhost:5173/class_routine_2023_for_class_4.pdf";
+const CLASSROUTINE_5_FILE_URL ="http://localhost:5173/class_routine_2023_for_class_5.pdf";
+const CLASSROUTINE_10_FILE_URL ="http://localhost:5173/class_routine_2023_for_class_10.pdf";
 
 const ClassRoutineTable = () => {
   // ClassRoutine data
@@ -91,6 +96,17 @@ const ClassRoutineTable = () => {
       });
   }, [reload]);
 
+    // download CLASS ROUTINE file from public folder
+    const downloadFileAtURL = (url) => {
+      const fileName = url.split("/").pop();
+      const aTag = document.createElement("a");
+      aTag.href = url;
+      aTag.setAttribute("download", fileName);
+      document.body.appendChild(aTag);
+      aTag.click();
+      aTag.remove();
+    };
+
   return (
     <>
       <AdminSidebar>
@@ -111,19 +127,19 @@ const ClassRoutineTable = () => {
             <div className='row admin_table'>
               <div className='col-md-12'>
                 <div className='table-wrap'>
-                  <div>
+                  {/* <div>
                     <h2 style={{ display: 'flex', justifyContent: 'center' }}>
                       <bold>Class Routine For Class IX & X</bold>
                     </h2>
-                  </div>
+                  </div> */}
                   <table className='table table-responsive-xl'>
                     <thead>
                       <tr>
-                        <th>Day</th>
                         <th>Class Name</th>
-                        <th>Subject Name</th>
+                        <th>Routine</th>
+                        {/* <th>Subject Name</th>
                         <th>Paper</th>
-                        <th>Class Time</th>
+                        <th>Class Time</th> */}
                         <th>Options</th>
                       </tr>
                     </thead>
@@ -132,21 +148,56 @@ const ClassRoutineTable = () => {
                         return (
                           <tr className='alert' role='alert' key={i}>
                             <td>
-                              <span>{record?.day}</span>
-                            </td>
-                            <td>
                               <span>{record?.class_name}</span>
                             </td>
                             <td>
-                              <span>{record?.subject_name}</span>
+                            { (record?.id) === 1 ? 
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(CLASSROUTINE_4_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                  
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            ) 
+                            : 
+                            (record?.id) === 2 ? 
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(CLASSROUTINE_5_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            )
+                            :
+                            (record?.id) === 3 ? 
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(CLASSROUTINE_10_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            )
+                            :
+                            null
+                            
+                            }
                             </td>
-                            <td>
-                              <span>{record?.paper}</span>
-                            </td>
-                            <td>
-                              <span>{record?.class_time}</span>
-                            </td>
-
                             <td>
                               <div className='dropdown'>
                                 <button

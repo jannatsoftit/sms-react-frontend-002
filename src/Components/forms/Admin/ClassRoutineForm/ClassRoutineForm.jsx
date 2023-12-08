@@ -14,11 +14,11 @@ const ClassRoutineForm = () => {
   const [isSubmit, setIsSubmit] = useState(false);
 
   const [inputFields, setInputFields] = useState({
-    day: '',
     class_name: '',
-    subject_name: '',
-    paper: '',
-    class_time: '',
+    // day: '',
+    // subject_name: '',
+    // paper: '',
+    // class_time: '',
   });
 
   const handleChange = (e) => {
@@ -47,11 +47,11 @@ const ClassRoutineForm = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('day', inputFields.day);
     formData.append('class_name', inputFields.class_name);
-    formData.append('subject_name', inputFields.subject_name);
-    formData.append('paper', inputFields.paper);
-    formData.append('class_time', inputFields.class_time);
+    // formData.append('day', inputFields.day);
+    // formData.append('subject_name', inputFields.subject_name);
+    // formData.append('paper', inputFields.paper);
+    // formData.append('class_time', inputFields.class_time);
 
     fetch(`http://127.0.0.1:8000/api/classRoutines`, {
       body: formData,
@@ -75,23 +75,8 @@ const ClassRoutineForm = () => {
   const validate = (values) => {
     const errors = {};
 
-    if (!values.subject_name) {
-      errors.subject_name = 'subject name required';
-    }
-
-    if (!values.day) {
-      errors.day = 'day required';
-    }
-
     if (!values.class_name) {
       errors.class_name = 'class name required';
-    }
-    if (!values.paper) {
-      errors.paper = 'paper is required';
-    }
-
-    if (!values.class_time) {
-      errors.class_time = 'class time is required';
     }
 
     return errors;
@@ -148,7 +133,7 @@ const ClassRoutineForm = () => {
                         )}
                       </div>
 
-                      <div className='form-group col-sm-6 flex-column d-flex'>
+                      {/* <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
                           Subject Name <span className='text-danger'> *</span>
@@ -166,10 +151,10 @@ const ClassRoutineForm = () => {
                             {formErrors.subject_name}
                           </span>
                         )}
-                      </div>
+                      </div> */}
                     </div>
 
-                    <div className='row justify-content-between text-left'>
+                    {/* <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -230,7 +215,7 @@ const ClassRoutineForm = () => {
                           </span>
                         )}
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className='row justify-content-start'>
                       <div className='form-group col-sm-4'>

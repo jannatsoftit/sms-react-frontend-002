@@ -14,11 +14,11 @@ const ClassRoutineEdit = () => {
   const { classRoutineId } = useParams();
 
   const [classRoutine, setClassRoutine] = useState({
-    day: '',
     class_name: '',
-    subject_name: '',
-    paper: '',
-    class_time: '',
+    // day: '',
+    // subject_name: '',
+    // paper: '',
+    // class_time: '',
   });
 
   // able to change input data for edit
@@ -46,11 +46,11 @@ const ClassRoutineEdit = () => {
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
-      formData.append('day', classRoutine.day);
       formData.append('class_name', classRoutine.class_name);
-      formData.append('subject_name', classRoutine.subject_name);
-      formData.append('paper', classRoutine.paper);
-      formData.append('class_time', classRoutine.class_time);
+      // formData.append('day', classRoutine.day);
+      // formData.append('subject_name', classRoutine.subject_name);
+      // formData.append('paper', classRoutine.paper);
+      // formData.append('class_time', classRoutine.class_time);
 
       console.log(formData);
 
@@ -144,7 +144,7 @@ const ClassRoutineEdit = () => {
                         />{' '}
                       </div>
 
-                      <div className='form-group col-sm-6 flex-column d-flex'>
+                      {/* <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
                           Subject Name <span className='text-danger'> *</span>
@@ -157,10 +157,10 @@ const ClassRoutineEdit = () => {
                           onChange={handleChange}
                           value={classRoutine?.subject_name}
                         />{' '}
-                      </div>
+                      </div> */}
                     </div>
 
-                    <div className='row justify-content-between text-left'>
+                    {/* <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -190,9 +190,9 @@ const ClassRoutineEdit = () => {
                           value={classRoutine?.paper}
                         />{' '}
                       </div>
-                    </div>
+                    </div> */}
 
-                    <div className='row justify-content-between text-left'>
+                    {/* <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -208,7 +208,7 @@ const ClassRoutineEdit = () => {
                           value={classRoutine?.class_time}
                         />{' '}
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className='row justify-content-start'>
                       <div className='form-group col-sm-4'>
