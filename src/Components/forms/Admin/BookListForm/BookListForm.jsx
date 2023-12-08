@@ -1,150 +1,129 @@
-import { AiOutlineArrowRight } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+//import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import Footer from "../../../../../Footer";
-import AdminSidebar from '../../../../../Sidebar/AdminSidebar';
-import TopBar from "../../../../../TopBar";
+import AdminSidebar from "../../../Sidebar/AdminSidebar";
+import Footer from "../../../Footer";
 
-const ClassRoomEdit = () => {
+const BookListForm = () => {
   const navigate = useNavigate();
 
-  const { classRoomId } = useParams();
+  const [formErrors, setFormErrors] = useState({});
 
-  const [classRoom, setClassRoom] = useState({
-    class_room_name: '',
-    room_number: '',
-    building_name: '',
-    area: '',
-    total_room: '',
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const [inputFields, setInputFields] = useState({
+    book_name: '',
   });
 
-  // able to change input data for edit
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setClassRoom({
-      ...classRoom,
+    setInputFields({
+      ...inputFields,
       [name]: value,
     });
   };
 
-  // classRoom data update function
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (confirm(`Are you sure you want to update your information?`)) {
+  useEffect(() => {
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Create Successfully!!',
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-
-      navigate('/admin/classRooms', { replace: true });
-
-      const formData = new FormData();
-      formData.append('_method', 'PUT');
-      formData.append('class_room_name', classRoom.class_room_name);
-      formData.append('room_number', classRoom.room_number);
-      formData.append('building_name', classRoom.building_name);
-      formData.append('area', classRoom.area);
-      formData.append('total_room', classRoom.total_room);
-
-      console.log(formData);
-
-      fetch(`http://127.0.0.1:8000/api/classRooms/${classRoomId}`, {
-        body: formData,
-        headers: {
-          Accept: 'application/json',
-        },
-        method: 'POST',
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.info(res);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+      navigate('/admin/bookLists', { replace: true });
+      console.log(inputFields);
     }
-  };
+  }, [formErrors]);
 
-  // classRoom data fetch for edit
-  useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/classRooms/${classRoomId}`, {
+  // BookList data create function
+  const handelSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData();
+    formData.append('book_name', inputFields.book_name);
+
+    fetch(`http://127.0.0.1:8000/api/bookLists`, {
+      body: formData,
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json',
       },
-      method: 'GET',
+      method: 'POST',
     })
       .then((res) => res.json())
       .then((res) => {
-        console.info(res);
-        setClassRoom(res.data?.classRoom);
+        console.log(res);
+        setIsSubmit(true);
+        setFormErrors(validate(inputFields));
       })
       .catch((error) => {
         console.error(error);
+        isSubmit(false);
       });
-  }, [classRoomId]);
+  };
+
+  const validate = (values) => {
+    const errors = {};
+
+    if (!values.book_name) {
+      errors.book_name = 'book list name required';
+    }
+
+    return errors;
+  };
 
   return (
     <>
-      <TopBar />
       <AdminSidebar>
-        {/* ClassRoom create table title section */}
-        <Link to='/admin/classRooms' className='add_button'>
-          <button type='button' className='btn'>
-            Class Room Table <AiOutlineArrowRight />
-          </button>
-        </Link>
-
         <div className='admin_form'>
           <div className='container-fluid px-1 py-5 mx-auto'>
             <div className='row d-flex justify-content-center'>
               <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
                 <div className='card'>
-                  {/* ClassRoom create form title section */}
+                  {/* BookList create form title section */}
                   <div className='col-md-6 text-center mb-5'>
-                    <h2 className='heading-section'>
-                      Class Room Form Edit Table
-                    </h2>
+                    <h2 className='heading-section'>Book List Form Table</h2>
                     <div className='admin-create'>
                       <Link to='#' className='links'>
                         user
                       </Link>
                       <RxSlash />
                       <Link to='' className='links'>
-                        classRooms
+                        book-lists
                       </Link>
                       <RxSlash />
                       <Link to='' className='actives'>
-                        edit
+                        create
                       </Link>
                     </div>
                   </div>
 
-                  {/* ClassRoom create form table*/}
-                  <form className='form-card' onSubmit={handleSubmit}>
+                  {/* Book List create form table*/}
+                  <form className='form-card' onSubmit={handelSubmit}>
                     <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                          Class Room Name<span className='text-danger'> *</span>
+                          Book List Name<span className='text-danger'> *</span>
                         </label>{' '}
                         <input
                           type='text'
-                          name='class_room_name'
-                          placeholder='Enter class room name'
-                          id='class_room_name'
+                          name='book_list'
+                          placeholder='Enter book list name'
+                          id='book_list'
                           onChange={handleChange}
-                          value={classRoom?.class_room_name}
+                          value={inputFields.book_list}
                         />{' '}
+                        {formErrors.book_list && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.book_list}
+                          </span>
+                        )}
                       </div>
 
-                      <div className='form-group col-sm-6 flex-column d-flex'>
+                      {/* <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
                           Room Number<span className='text-danger'> *</span>
@@ -155,17 +134,21 @@ const ClassRoomEdit = () => {
                           placeholder='Enter room number'
                           id='room_number'
                           onChange={handleChange}
-                          value={classRoom?.room_number}
+                          value={inputFields.room_number}
                         />{' '}
-                      </div>
+                        {formErrors.room_number && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.room_number}
+                          </span>
+                        )}
+                      </div> */}
                     </div>
 
-                    <div className='row justify-content-between text-left'>
+                    {/* <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                          Building Name
-                          <span className='text-danger'> *</span>
+                          Building Name<span className='text-danger'> *</span>
                         </label>{' '}
                         <input
                           type='text'
@@ -173,8 +156,13 @@ const ClassRoomEdit = () => {
                           placeholder='Enter building name'
                           id='building_name'
                           onChange={handleChange}
-                          value={classRoom?.building_name}
+                          value={inputFields.building_name}
                         />{' '}
+                        {formErrors.building_name && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.building_name}
+                          </span>
+                        )}
                       </div>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
@@ -187,8 +175,13 @@ const ClassRoomEdit = () => {
                           placeholder='Enter area'
                           id='area'
                           onChange={handleChange}
-                          value={classRoom?.area}
+                          value={inputFields.area}
                         />{' '}
+                        {formErrors.area && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.area}
+                          </span>
+                        )}
                       </div>
                     </div>
 
@@ -204,10 +197,15 @@ const ClassRoomEdit = () => {
                           placeholder='Enter total room'
                           id='total_room'
                           onChange={handleChange}
-                          value={classRoom?.total_room}
+                          value={inputFields.total_room}
                         />{' '}
+                        {formErrors.total_room && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.total_room}
+                          </span>
+                        )}
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className='row justify-content-start'>
                       <div className='form-group col-sm-4'>
@@ -228,4 +226,4 @@ const ClassRoomEdit = () => {
   );
 };
 
-export default ClassRoomEdit;
+export default BookListForm;

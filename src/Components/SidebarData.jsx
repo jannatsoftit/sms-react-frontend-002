@@ -88,8 +88,8 @@ export const SidebarData = [
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
-        title: 'Class Room',
-        path: '/admin/classRooms',
+        title: 'Book List',
+        path: '/admin/bookLists',
         icon: <SiIcons.SiGoogleclassroom />,
       },
       {

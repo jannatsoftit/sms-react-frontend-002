@@ -1,23 +1,23 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import ClassRoomForm from '../../../../../forms/Admin/ClassRoomForm/ClassRoomForm';
+import BookListForm from '../../../../../forms/Admin/BookListForm/BookListForm';
 import TopBar from "../../../../../TopBar";
 
-const ClassRoomCreate = () => {
+const BookListCreate = () => {
   return (
     <div>
         <TopBar/>
-      {/* ClassRoom create table title section */}
+      {/* BookList create table title section */}
       <Link to='/admin/classRooms' className='add_button'>
         <button type='button' className='btn'>
-          ClassRoom Table <AiOutlineArrowRight />
+          BookList Table <AiOutlineArrowRight />
         </button>
       </Link>
 
-      {/* ClassRoom form section */}
-      <ClassRoomForm />
+      {/* BookList form section */}
+      <BookListForm />
     </div>
   );
 };
 
-export default ClassRoomCreate;
+export default BookListCreate;

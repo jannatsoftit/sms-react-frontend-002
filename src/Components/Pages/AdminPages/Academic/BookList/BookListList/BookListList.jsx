@@ -1,23 +1,23 @@
 import { Link } from 'react-router-dom';
 import { HiPlus } from 'react-icons/hi';
-import ClassRoomTable from '../../../../../table/Admin/ClassRoomTable/ClassRoomTable';
+import BookListTable from '../../../../../table/Admin/BookListTable/BookListTable';
 import TopBar from "../../../../../TopBar";
 
-const ClassRoomList = () => {
+const BookListList = () => {
   return (
     <div>
       <TopBar/>
-      {/* ClassRoom table title section */}
+      {/* BookList table title section */}
       <Link to='create' className='add_button'>
         <button type='button' className='btn'>
-          <HiPlus /> ClassRoom
+          <HiPlus /> BookList
         </button>
       </Link>
 
-      {/* ClassRoom table section */}
-      <ClassRoomTable />
+      {/* BookList table section */}
+      <BookListTable />
     </div>
   );
 };
 
-export default ClassRoomList;
+export default BookListList;

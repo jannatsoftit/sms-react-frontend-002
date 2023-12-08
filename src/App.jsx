@@ -83,9 +83,9 @@ import OfflineExamEdit from "./Components/Pages/AdminPages/Examination/OfflineEx
 import OfflineExamList from "./Components/Pages/AdminPages/Examination/OfflineExam/OfflineExamList/OfflineExamList";
 
 //Academic
-import ClassRoomCreate from "./Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomCreate/ClassRoomCreate";
-import ClassRoomEdit from "./Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomEdit/ClassRoomEdit";
-import ClassRoomList from "./Components/Pages/AdminPages/Academic/ClassRoom/ClassRoomList/ClassRoomList";
+import BookListCreate from "./Components/Pages/AdminPages/Academic/BookList/BookListCreate/BookListCreate";
+import BookListEdit from "./Components/Pages/AdminPages/Academic/BookList/BookListEdit/BookListEdit";
+import BookListList from "./Components/Pages/AdminPages/Academic/BookList/BookListList/BookListList";
 
 import SubjectCreate from "./Components/Pages/AdminPages/Academic/Subject/SubjectCreate/SubjectCreate";
 import SubjectEdit from "./Components/Pages/AdminPages/Academic/Subject/SubjectEdit/SubjectEdit";
@@ -460,17 +460,17 @@ const App = () => {
   //       {
   //         children: [
   //           {
-  //             element: <ClassRoomList />,
+  //             element: <BookListList />,
   //             path: '',
   //           },
   //           {
-  //             element: <ClassRoomCreate />,
+  //             element: <BookListCreate />,
   //             path: 'create',
   //           },
   //           {
   //             children: [
   //               {
-  //                 element: <ClassRoomEdit />,
+  //                 element: <BookListEdit />,
   //                 path: 'edit',
   //               },
   //             ],
@@ -688,11 +688,11 @@ const App = () => {
   //             element={<OfflineExamEdit />}
   //           />
 
-  //           <Route path='classRooms' element={<ClassRoomList />} />
-  //           <Route path='classRooms/create' element={<ClassRoomCreate />} />
+  //           <Route path='classRooms' element={<BookListList />} />
+  //           <Route path='classRooms/create' element={<BookListCreate />} />
   //           <Route
   //             path='classRooms/:classRoomId/edit'
-  //             element={<ClassRoomEdit />}
+  //             element={<BookListEdit />}
   //           />
 
   //           <Route path='subjects' element={<SubjectList />} />
@@ -881,11 +881,11 @@ const App = () => {
             element={<OfflineExamEdit />}
           />
 
-          <Route path="classRooms" element={<ClassRoomList />} />
-          <Route path="classRooms/create" element={<ClassRoomCreate />} />
+          <Route path="bookLists" element={<BookListList />} />
+          <Route path="bookLists/create" element={<BookListCreate />} />
           <Route
-            path="classRooms/:classRoomId/edit"
-            element={<ClassRoomEdit />}
+            path="bookLists/:bookListId/edit"
+            element={<BookListEdit />}
           />
 
           <Route path="subjects" element={<SubjectList />} />
