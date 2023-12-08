@@ -16,9 +16,9 @@ const SyllabusForm = () => {
 
   const [inputFields, setInputFields] = useState({
     class_name: '',
-    subject_name: '',
-    topic: '',
-    paper: '',
+    // subject_name: '',
+    // topic: '',
+    // paper: '',
   });
 
   const handleChange = (e) => {
@@ -47,10 +47,10 @@ const SyllabusForm = () => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append('subject_name', inputFields.subject_name);
     formData.append('class_name', inputFields.class_name);
-    formData.append('topic', inputFields.topic);
-    formData.append('paper', inputFields.paper);
+    // formData.append('subject_name', inputFields.subject_name);
+    // formData.append('topic', inputFields.topic);
+    // formData.append('paper', inputFields.paper);
 
     fetch(`http://127.0.0.1:8000/api/syllabuses`, {
       body: formData,
@@ -74,21 +74,21 @@ const SyllabusForm = () => {
   const validate = (values) => {
     const errors = {};
 
-    if (!values.subject_name) {
-      errors.subject_name = 'subject name required';
-    }
-
     if (!values.class_name) {
       errors.class_name = 'class name required';
     }
 
-    if (!values.topic) {
-      errors.topic = 'topic is required';
-    }
+    // if (!values.subject_name) {
+    //   errors.subject_name = 'subject name required';
+    // }
 
-    if (!values.paper) {
-      errors.paper = 'paper is required';
-    }
+    // if (!values.topic) {
+    //   errors.topic = 'topic is required';
+    // }
+
+    // if (!values.paper) {
+    //   errors.paper = 'paper is required';
+    // }
 
     return errors;
   };
@@ -142,7 +142,7 @@ const SyllabusForm = () => {
                         )}
                       </div>
 
-                      <div className='form-group col-sm-6 flex-column d-flex'>
+                      {/* <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
                           Subject Name <span className='text-danger'> *</span>
@@ -160,10 +160,10 @@ const SyllabusForm = () => {
                             {formErrors.subject_name}
                           </span>
                         )}
-                      </div>
+                      </div> */}
                     </div>
 
-                    <div className='row justify-content-between text-left'>
+                    {/* <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -202,7 +202,7 @@ const SyllabusForm = () => {
                           </span>
                         )}
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className='row justify-content-start'>
                       <div className='form-group col-sm-4'>

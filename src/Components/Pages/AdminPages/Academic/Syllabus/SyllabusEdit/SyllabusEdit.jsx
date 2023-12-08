@@ -15,9 +15,9 @@ const SyllabusEdit = () => {
 
   const [syllabus, setSyllabus] = useState({
     class_name: '',
-    subject_name: '',
-    topic: '',
-    paper: '',
+    // subject_name: '',
+    // topic: '',
+    // paper: '',
   });
 
   // able to change input data for edit
@@ -46,9 +46,9 @@ const SyllabusEdit = () => {
       const formData = new FormData();
       formData.append('_method', 'PUT');
       formData.append('class_name', syllabus.class_name);
-      formData.append('subject_name', syllabus.subject_name);
-      formData.append('topic', syllabus.topic);
-      formData.append('paper', syllabus.paper);
+      // formData.append('subject_name', syllabus.subject_name);
+      // formData.append('topic', syllabus.topic);
+      // formData.append('paper', syllabus.paper);
 
       console.log(formData);
 
@@ -93,7 +93,7 @@ const SyllabusEdit = () => {
       <TopBar />
       <AdminSidebar>
         {/* syllabus create table title section */}
-        <Link to='/admin/students' className='add_button'>
+        <Link to='/admin/syllabuses' className='add_button'>
           <button type='button' className='btn'>
             Syllabus Table <AiOutlineArrowRight />
           </button>
@@ -142,7 +142,7 @@ const SyllabusEdit = () => {
                         />{' '}
                       </div>
 
-                      <div className='form-group col-sm-6 flex-column d-flex'>
+                      {/* <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
                           Subject Name <span className='text-danger'> *</span>
@@ -155,10 +155,10 @@ const SyllabusEdit = () => {
                           onChange={handleChange}
                           value={syllabus?.subject_name}
                         />{' '}
-                      </div>
+                      </div> */}
                     </div>
 
-                    <div className='row justify-content-between text-left'>
+                    {/* <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -188,7 +188,7 @@ const SyllabusEdit = () => {
                           value={syllabus?.paper}
                         />{' '}
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className='row justify-content-start'>
                       <div className='form-group col-sm-4'>

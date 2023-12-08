@@ -2,9 +2,15 @@
 import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
+import { BsDownload } from "react-icons/bs";
 import Swal from 'sweetalert2';
 import AdminSidebar from "../../../Sidebar/AdminSidebar";
 import Footer from "../../../Footer";
+
+// syllabus file
+const SYLLABUS_4_FILE_URL ="http://localhost:5173/syllabus_2023_for_class_4.pdf";
+const SYLLABUS_5_FILE_URL ="http://localhost:5173/syllabus_2023_for_class_5.pdf";
+const SYLLABUS_10_FILE_URL ="http://localhost:5173/syllabus_2023_for_class_10.pdf";
 
 
 const SyllabusTable = () => {
@@ -89,6 +95,17 @@ const SyllabusTable = () => {
       });
   }, [reload]);
 
+    // download syllabus file from public folder
+    const downloadFileAtURL = (url) => {
+      const fileName = url.split("/").pop();
+      const aTag = document.createElement("a");
+      aTag.href = url;
+      aTag.setAttribute("download", fileName);
+      document.body.appendChild(aTag);
+      aTag.click();
+      aTag.remove();
+    };
+
   return (
     <>
       <AdminSidebar>
@@ -109,18 +126,16 @@ const SyllabusTable = () => {
             <div className='row admin_table'>
               <div className='col-md-12'>
                 <div className='table-wrap'>
-                  <div>
+                  {/* <div>
                     <h2 style={{ display: 'flex', justifyContent: 'center' }}>
                       <bold>Syllabus For Class IX & X</bold>
                     </h2>
-                  </div>
+                  </div> */}
                   <table className='table table-responsive-xl'>
                     <thead>
                       <tr>
                         <th>Class Name</th>
-                        <th>Subject Name</th>
-                        <th>Topic</th>
-                        <th>Paper</th>
+                        <th>Syllabus</th>
                         <th>Options</th>
                       </tr>
                     </thead>
@@ -132,13 +147,52 @@ const SyllabusTable = () => {
                               <span>{record?.class_name}</span>
                             </td>
                             <td>
-                              <span>{record?.subject_name}</span>
-                            </td>
-                            <td>
-                              <span>{record?.topic}</span>
-                            </td>
-                            <td>
-                              <span>{record?.paper}</span>
+                            { (record?.id) === 1 ? 
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(SYLLABUS_4_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                  
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            ) 
+                            : 
+                            (record?.id) === 2 ? 
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(SYLLABUS_5_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            )
+                            :
+                            (record?.id) === 3 ? 
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(SYLLABUS_10_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            )
+                            :
+                            null
+
+                            }
                             </td>
                             <td>
                               <div className='dropdown'>
