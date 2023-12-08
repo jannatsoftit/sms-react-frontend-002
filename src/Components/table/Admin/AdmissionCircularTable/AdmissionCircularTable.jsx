@@ -1,11 +1,10 @@
 /* eslint-disable react/jsx-no-undef */
-import { Link } from 'react-router-dom';
-import { RxSlash } from 'react-icons/rx';
-import { useEffect, useState } from 'react';
-import Swal from 'sweetalert2';
+import { Link } from "react-router-dom";
+import { RxSlash } from "react-icons/rx";
+import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import AdminSidebar from "../../../Sidebar/AdminSidebar";
 import Footer from "../../../Footer";
-
 
 const AdmissionCircularTable = () => {
   // ExamCategory data
@@ -50,17 +49,17 @@ const AdmissionCircularTable = () => {
       )
     ) {
       Swal.fire({
-        title: 'Success!',
-        text: 'Information Delete Successfully!!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
+        title: "Success!",
+        text: "Information Delete Successfully!!",
+        icon: "success",
+        confirmButtonText: "Ok",
       });
 
       fetch(`http://127.0.0.1:8000/api/examCategories/${examCategory.id}`, {
         headers: {
-          Accept: 'application/json',
+          Accept: "application/json",
         },
-        method: 'DELETE',
+        method: "DELETE",
       })
         .then((res) => res.json())
         .then((res) => {
@@ -77,9 +76,9 @@ const AdmissionCircularTable = () => {
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/examCategories?`, {
       headers: {
-        Accept: 'application/json',
+        Accept: "application/json",
       },
-      method: 'GET',
+      method: "GET",
     })
       .then((res) => res.json())
       .then((res) => {
@@ -95,24 +94,24 @@ const AdmissionCircularTable = () => {
   return (
     <>
       <AdminSidebar>
-        <section className='ftco-section'>
-          <div className='container'>
-            <div className='col-md-6 text-center mb-5'>
-              <h2 className='heading-section'>Admission Circular Table List</h2>
-              <div className='admin'>
-                <Link to='#' className='links'>
+        <section className="ftco-section">
+          <div className="container">
+            <div className="col-md-6 text-center mb-5">
+              <h2 className="heading-section">Admission Circular Table List</h2>
+              <div className="admin">
+                <Link to="#" className="links">
                   user
                 </Link>
                 <RxSlash />
-                <Link to='' className='actives'>
-                 admission-circular
+                <Link to="" className="actives">
+                  admission-circular
                 </Link>
               </div>
             </div>
-            <div className='row admin_table'>
-              <div className='col-md-12'>
-                <div className=''>
-                  <table className='table table-responsive-xl'>
+            <div className="row admin_table">
+              <div className="col-md-12">
+                <div className="">
+                  <table className="table table-responsive-xl">
                     <thead>
                       <tr>
                         <th>Admission Circular</th>
@@ -120,40 +119,39 @@ const AdmissionCircularTable = () => {
                       </tr>
                     </thead>
                     <tbody>
-                      {console.info(records)}
-
                       {records?.map((record, i) => {
                         return (
-                          <tr className='alert' role='alert' key={i}>
+                          <tr className="alert" role="alert" key={i}>
                             <td>
                               <span>{record?.title}</span>
                             </td>
                             <td>
-                              <div className='dropdown'>
+                              { (record?.id) === 1 ? 
+                              <div className="dropdown">
                                 <button
-                                  className='btn btn-secondary dropdown-toggle'
-                                  type='button'
-                                  id='dropdownMenuButton1'
-                                  data-bs-toggle='dropdown'
-                                  aria-expanded='false'
+                                  className="btn btn-secondary dropdown-toggle"
+                                  type="button"
+                                  id="dropdownMenuButton1"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
                                 >
                                   Actions
                                 </button>
                                 <ul
-                                  className='dropdown-menu'
-                                  aria-labelledby='dropdownMenuButton1'
+                                  className="dropdown-menu"
+                                  aria-labelledby="dropdownMenuButton1"
                                 >
                                   <li>
                                     <Link
-                                      className='dropdown-item'
-                                      to={'/admin/examCategories/show'}
+                                      className="dropdown-item"
+                                      to={"/admin/examCategories_ST/show"}
                                     >
-                                      Show AdmissionCircular
+                                      Show AdmissionCircular 9 to 10
                                     </Link>
                                   </li>
                                   <li>
                                     <Link
-                                      className='dropdown-item'
+                                      className="dropdown-item"
                                       to={`/admin/examCategories/${record?.id}/edit`}
                                     >
                                       Edit AdmissionCircular
@@ -161,7 +159,7 @@ const AdmissionCircularTable = () => {
                                   </li>
                                   <li>
                                     <Link
-                                      className='dropdown-item'
+                                      className="dropdown-item"
                                       onClick={() => handleDelete(record)}
                                     >
                                       Delete AdmissionCircular
@@ -169,7 +167,50 @@ const AdmissionCircularTable = () => {
                                   </li>
                                 </ul>
                               </div>
-                            </td>
+                                : 
+                              <div className="dropdown">
+                                <button
+                                  className="btn btn-secondary dropdown-toggle"
+                                  type="button"
+                                  id="dropdownMenuButton1"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  Actions
+                                </button>
+                                <ul
+                                  className="dropdown-menu"
+                                  aria-labelledby="dropdownMenuButton1"
+                                >
+                                  <li>
+                                    <Link
+                                      className="dropdown-item"
+                                      to={"/admin/examCategories_OF/show"}
+                                    >
+                                      Show AdmissionCircular 1 to 5
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className="dropdown-item"
+                                      to={`/admin/examCategories/${record?.id}/edit`}
+                                    >
+                                      Edit AdmissionCircular
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className="dropdown-item"
+                                      onClick={() => handleDelete(record)}
+                                    >
+                                      Delete AdmissionCircular
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
+                            } 
+                              
+                            </td>  
                           </tr>
                         );
                       })}
@@ -180,29 +221,29 @@ const AdmissionCircularTable = () => {
             </div>
 
             {/* Exam Category list table pagination start  */}
-            <nav className='pagination'>
-              <ul className='pagination'>
-                <li className='page-item'>
-                  <Link to={'#'} className='page-link' onClick={perPage}>
+            <nav className="pagination">
+              <ul className="pagination">
+                <li className="page-item">
+                  <Link to={"#"} className="page-link" onClick={perPage}>
                     Prev
                   </Link>
                 </li>
                 {numbers.map((n, i) => (
                   <li
-                    className={`page-item ${currentPage === n ? 'active' : ''}`}
+                    className={`page-item ${currentPage === n ? "active" : ""}`}
                     key={i}
                   >
                     <Link
-                      to={'#'}
-                      className='page-link'
+                      to={"#"}
+                      className="page-link"
                       onClick={() => handleCPage(n)}
                     >
                       {n}
                     </Link>
                   </li>
                 ))}
-                <li className='page-item'>
-                  <Link to={'#'} className='page-link' onClick={nextPage}>
+                <li className="page-item">
+                  <Link to={"#"} className="page-link" onClick={nextPage}>
                     Next
                   </Link>
                 </li>

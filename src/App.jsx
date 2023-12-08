@@ -65,7 +65,10 @@ import LibrarianShow from "./Components/Pages/AdminPages/Librarian/LibrarianShow
 import AdmissionCircularCreate from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularCreate/AdmissionCircularCreate";
 import AdmissionCircularEdit from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularEdit/AdmissionCircularEdit";
 import AdmissionCircularList from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularList/AdmissionCircularList";
-import AdmissionCircularShow from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularShow/AdmissionCircularShow";
+
+import AdmissionCircularShow_ST from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularShow/AdmissionCircularShow_ST";
+
+import AdmissionCircularShow_OF from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularShow/AdmissionCircularShow_OF";
 
 import GradeCreate from "./Components/Pages/AdminPages/Examination/Grade/GradeCreate/GradeCreate";
 import GradeEdit from "./Components/Pages/AdminPages/Examination/Grade/GradeEdit/GradeEdit";
@@ -855,10 +858,13 @@ const App = () => {
             element={<AdmissionCircularEdit />}
           />
           <Route
-            path="examCategories/show"
-            element={<AdmissionCircularShow />}
+            path="examCategories_ST/show"
+            element={<AdmissionCircularShow_ST />}
           />
-          
+            <Route
+            path="examCategories_OF/show"
+            element={<AdmissionCircularShow_OF />}
+          />       
 
           <Route path="grades" element={<GradeList />} />
           <Route path="grades/create" element={<GradeCreate />} />

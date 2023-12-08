@@ -15,12 +15,8 @@ const MarkForm = () => {
 
   const [inputFields, setInputFields] = useState({
     student_name: '',
-    total_marks: '',
-    grade_point: '',
     class_name: '',
-    letter_grade: '',
-    section: '',
-    comment: '',
+    file: '',
   });
 
   const handleChange = (e) => {
@@ -39,7 +35,7 @@ const MarkForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/marks', { replace: true });
+      navigate('/admin/marks', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);
@@ -50,12 +46,8 @@ const MarkForm = () => {
 
     const formData = new FormData();
     formData.append('student_name', inputFields.student_name);
-    formData.append('total_marks', inputFields.total_marks);
-    formData.append('grade_point', inputFields.grade_point);
     formData.append('class_name', inputFields.class_name);
-    formData.append('letter_grade', inputFields.letter_grade);
-    formData.append('section', inputFields.section);
-    formData.append('comment', inputFields.comment);
+    formData.append('file', inputFields.file);
 
     fetch(`http://127.0.0.1:8000/api/marks`, {
       body: formData,
@@ -80,31 +72,15 @@ const MarkForm = () => {
     const errors = {};
 
     if (!values.student_name) {
-      errors.student_name = 'student name required';
-    }
-
-    if (!values.total_marks) {
-      errors.total_marks = 'total marks required';
-    }
-
-    if (!values.grade_point) {
-      errors.grade_point = 'grade point is required';
+      errors.student_name = 'exam name required';
     }
 
     if (!values.class_name) {
       errors.class_name = 'class name is required';
     }
 
-    if (!values.letter_grade) {
-      errors.letter_grade = 'letter grade is required';
-    }
-
-    if (!values.section) {
-      errors.section = 'section is required';
-    }
-
-    if (!values.comment) {
-      errors.comment = 'comment is required';
+    if (!values.file) {
+      errors.file = 'result file is required';
     }
 
     return errors;
@@ -120,14 +96,14 @@ const MarkForm = () => {
                 <div className='card'>
                   {/* Mark create form title section */}
                   <div className='col-md-6 text-center mb-5'>
-                    <h2 className='heading-section'>Mark Form Table</h2>
+                    <h2 className='heading-section'>Exam Results Form Table</h2>
                     <div className='admin-create'>
                       <Link to='#' className='links'>
                         user
                       </Link>
                       <RxSlash />
                       <Link to='' className='links'>
-                        marks
+                        results
                       </Link>
                       <RxSlash />
                       <Link to='' className='actives'>
@@ -142,12 +118,12 @@ const MarkForm = () => {
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                          Student Name <span className='text-danger'> *</span>
+                          Exam Name <span className='text-danger'> *</span>
                         </label>{' '}
                         <input
                           type='text'
                           name='student_name'
-                          placeholder='Enter student name'
+                          placeholder='Enter exam name'
                           id='student_name'
                           onChange={handleChange}
                           value={inputFields.student_name}
@@ -159,48 +135,6 @@ const MarkForm = () => {
                         )}
                       </div>
 
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Marks Obtain<span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='text'
-                          name='total_marks'
-                          placeholder='Enter total marks'
-                          id='total_marks'
-                          onChange={handleChange}
-                          value={inputFields.total_marks}
-                        />{' '}
-                        {formErrors.total_marks && (
-                          <span style={{ color: '#e74c3c' }}>
-                            {formErrors.total_marks}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className='row justify-content-between text-left'>
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Earned Grade Point
-                          <span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='text'
-                          name='grade_point'
-                          placeholder='Enter total marks'
-                          id='grade_point'
-                          onChange={handleChange}
-                          value={inputFields.grade_point}
-                        />{' '}
-                        {formErrors.grade_point && (
-                          <span style={{ color: '#e74c3c' }}>
-                            {formErrors.grade_point}
-                          </span>
-                        )}
-                      </div>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -226,64 +160,27 @@ const MarkForm = () => {
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                          Letter Grade <span className='text-danger'> *</span>
+                          Result <span className='text-danger'> *</span>
                         </label>{' '}
                         <input
-                          type='text'
-                          name='letter_grade'
-                          placeholder='Enter letter grade'
-                          id='letter_grade'
-                          onChange={handleChange}
-                          value={inputFields.letter_grade}
+                          className='form-control'
+                          type='file'
+                          name='file'
+                          id='file'
+                          onChange={(e) => {
+                            setInputFields((value) => ({
+                              ...value,
+                              [e.target.name]: e.target.files[0],
+                            }));
+                          }}
                         />{' '}
-                        {formErrors.letter_grade && (
+                        {formErrors.file && (
                           <span style={{ color: '#e74c3c' }}>
-                            {formErrors.letter_grade}
+                            {formErrors.file}
                           </span>
                         )}
                       </div>
 
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Section <span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='text'
-                          name='section'
-                          placeholder='Enter section'
-                          id='section'
-                          onChange={handleChange}
-                          value={inputFields.section}
-                        />{' '}
-                        {formErrors.section && (
-                          <span style={{ color: '#e74c3c' }}>
-                            {formErrors.section}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className='row justify-content-between text-left'>
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Comment <span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='text'
-                          name='comment'
-                          placeholder='Enter comment'
-                          id='comment'
-                          onChange={handleChange}
-                          value={inputFields.comment}
-                        />{' '}
-                        {formErrors.comment && (
-                          <span style={{ color: '#e74c3c' }}>
-                            {formErrors.comment}
-                          </span>
-                        )}
-                      </div>
                     </div>
 
                     <div className='row justify-content-start'>

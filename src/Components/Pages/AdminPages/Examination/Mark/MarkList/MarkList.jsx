@@ -10,7 +10,7 @@ const MarkList = () => {
       {/* Mark table title section */}
       <Link to='create' className='add_button'>
         <button type='button' className='btn'>
-          <HiPlus /> Mark
+          <HiPlus /> Exam Result
         </button>
       </Link>
 

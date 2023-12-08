@@ -70,7 +70,7 @@ export const SidebarData = [
         icon: <IoIcons.IoIosPaper />,
       },
       {
-        title: 'Mark',
+        title: 'Exam Results',
         path: '/admin/marks',
         icon: <IoIcons.IoIosPaper />,
       },

@@ -15,12 +15,8 @@ const MarkEdit = () => {
 
   const [mark, setMark] = useState({
     student_name: '',
-    total_marks: '',
-    grade_point: '',
     class_name: '',
-    letter_grade: '',
-    section: '',
-    comment: '',
+    file: '',
   });
 
   // able to change input data for edit
@@ -49,12 +45,8 @@ const MarkEdit = () => {
       const formData = new FormData();
       formData.append('_method', 'PUT');
       formData.append('student_name', mark.student_name);
-      formData.append('total_marks', mark.total_marks);
-      formData.append('grade_point', mark.grade_point);
       formData.append('class_name', mark.class_name);
-      formData.append('letter_grade', mark.letter_grade);
-      formData.append('section', mark.section);
-      formData.append('comment', mark.comment);
+      formData.append('file', mark.file);
 
       console.log(formData);
 
@@ -101,7 +93,7 @@ const MarkEdit = () => {
         {/* mark create table title section */}
         <Link to='/admin/marks' className='add_button'>
           <button type='button' className='btn'>
-            Mark Table <AiOutlineArrowRight />
+            Exam Results Table <AiOutlineArrowRight />
           </button>
         </Link>
 
@@ -112,14 +104,14 @@ const MarkEdit = () => {
                 <div className='card'>
                   {/* mark create form title section */}
                   <div className='col-md-6 text-center mb-5'>
-                    <h2 className='heading-section'>Mark Form Edit Table</h2>
+                    <h2 className='heading-section'>Exam Results Form Edit Table</h2>
                     <div className='admin-create'>
                       <Link to='#' className='links'>
                         user
                       </Link>
                       <RxSlash />
                       <Link to='' className='links'>
-                        marks
+                       results
                       </Link>
                       <RxSlash />
                       <Link to='' className='actives'>
@@ -149,38 +141,6 @@ const MarkEdit = () => {
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                          Marks Obtain<span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='text'
-                          name='total_marks'
-                          placeholder='Enter total marks'
-                          id='total_marks'
-                          onChange={handleChange}
-                          value={mark?.total_marks}
-                        />{' '}
-                      </div>
-                    </div>
-
-                    <div className='row justify-content-between text-left'>
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Earned Grade Point
-                          <span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='text'
-                          name='grade_point'
-                          placeholder='Enter total marks'
-                          id='grade_point'
-                          onChange={handleChange}
-                          value={mark?.grade_point}
-                        />{' '}
-                      </div>
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
                           Class Name<span className='text-danger'> *</span>
                         </label>{' '}
                         <input
@@ -198,47 +158,15 @@ const MarkEdit = () => {
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                          Letter Grade <span className='text-danger'> *</span>
+                          Results <span className='text-danger'> *</span>
                         </label>{' '}
                         <input
                           type='text'
-                          name='letter_grade'
-                          placeholder='Enter letter grade'
-                          id='letter_grade'
+                          name='file'
+                          placeholder='Enter results'
+                          id='file'
                           onChange={handleChange}
-                          value={mark?.letter_grade}
-                        />{' '}
-                      </div>
-
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Section <span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='text'
-                          name='section'
-                          placeholder='Enter section'
-                          id='section'
-                          onChange={handleChange}
-                          value={mark?.section}
-                        />{' '}
-                      </div>
-                    </div>
-
-                    <div className='row justify-content-between text-left'>
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Comment <span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='text'
-                          name='comment'
-                          placeholder='Enter comment'
-                          id='comment'
-                          onChange={handleChange}
-                          value={mark?.comment}
+                          value={mark?.file}
                         />{' '}
                       </div>
                     </div>

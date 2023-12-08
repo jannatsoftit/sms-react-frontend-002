@@ -10,7 +10,7 @@ const MarkCreate = () => {
       {/* Mark create table title section */}
       <Link to='/admin/marks' className='add_button'>
         <button type='button' className='btn'>
-          Mark Table <AiOutlineArrowRight />
+          Exam Results Table <AiOutlineArrowRight />
         </button>
       </Link>
 

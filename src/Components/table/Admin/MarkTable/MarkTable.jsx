@@ -1,11 +1,16 @@
 /* eslint-disable react/jsx-no-undef */
-import { Link } from 'react-router-dom';
-import { RxSlash } from 'react-icons/rx';
-import { useEffect, useState } from 'react';
-import Swal from 'sweetalert2';
+import { Link } from "react-router-dom";
+import { RxSlash } from "react-icons/rx";
+import { BsDownload } from "react-icons/bs";
+import { useEffect, useState } from "react";
+import Swal from "sweetalert2";
 import AdminSidebar from "../../../Sidebar/AdminSidebar";
 import Footer from "../../../Footer";
 
+const PDF_4_FILE_URL =
+  "http://localhost:5173/test_exam_result_2023_for_class_4.pdf";
+const PDF_10_FILE_URL =
+  "http://localhost:5173/final_exam_result_for_class_10.pdf";
 
 const MarkTable = () => {
   // Mark data
@@ -45,17 +50,17 @@ const MarkTable = () => {
   const handleDelete = (mark) => {
     if (confirm(`Are You sure you want to delete mark ${mark.id}?`)) {
       Swal.fire({
-        title: 'Success!',
-        text: 'Information Delete Successfully!!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
+        title: "Success!",
+        text: "Information Delete Successfully!!",
+        icon: "success",
+        confirmButtonText: "Ok",
       });
 
       fetch(`http://127.0.0.1:8000/api/marks/${mark.id}`, {
         headers: {
-          Accept: 'application/json',
+          Accept: "application/json",
         },
-        method: 'DELETE',
+        method: "DELETE",
       })
         .then((res) => res.json())
         .then((res) => {
@@ -72,9 +77,9 @@ const MarkTable = () => {
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/marks?`, {
       headers: {
-        Accept: 'application/json',
+        Accept: "application/json",
       },
-      method: 'GET',
+      method: "GET",
     })
       .then((res) => res.json())
       .then((res) => {
@@ -87,93 +92,126 @@ const MarkTable = () => {
       });
   }, [reload]);
 
+  // download result file from public folder
+  const downloadFileAtURL = (url) => {
+    const fileName = url.split("/").pop();
+    const aTag = document.createElement("a");
+    aTag.href = url;
+    aTag.setAttribute("download", fileName);
+    document.body.appendChild(aTag);
+    aTag.click();
+    aTag.remove();
+  };
+
   return (
     <>
       <AdminSidebar>
-        <section className='ftco-section'>
-          <div className='container'>
-            <div className='col-md-6 text-center mb-5'>
-              <h2 className='heading-section'>Mark Table List</h2>
-              <div className='admin'>
-                <Link to='#' className='links'>
+        <section className="ftco-section">
+          <div className="container">
+            <div className="col-md-6 text-center mb-5">
+              <h2 className="heading-section">Exam Result Table List</h2>
+              <div className="admin">
+                <Link to="#" className="links">
                   user
                 </Link>
                 <RxSlash />
-                <Link to='' className='actives'>
+                <Link to="" className="actives">
                   marks
                 </Link>
               </div>
             </div>
-            <div className='row admin_table'>
-              <div className='col-md-12'>
-                <div className='table-wrap'>
-                  <table className='table table-responsive-xl'>
+            <div className="row admin_table">
+              <div className="col-md-12">
+                <div className="table-wrap">
+                  <table className="table table-responsive-xl">
                     <thead>
                       <tr>
-                        <th>Student Name</th>
-                        <th>Total Marks</th>
-                        <th>Grade Point</th>
+                        <th>Exam Name</th>
                         <th>Class name</th>
-                        <th>Letter Grade</th>
-                        <th>Section</th>
-                        <th>Comment</th>
+                        <th>Results</th>
                         <th>Options</th>
                       </tr>
                     </thead>
                     <tbody>
                       {records?.map((record, i) => {
                         return (
-                          <tr className='alert' role='alert' key={i}>
+                          <tr className="alert" role="alert" key={i}>
                             <td>
                               <span>{record?.student_name}</span>
-                            </td>
-                            <td>
-                              <span>{record?.total_marks}</span>
-                            </td>
-                            <td>
-                              <span>{record?.grade_point}</span>
                             </td>
                             <td>
                               <span>{record?.class_name}</span>
                             </td>
                             <td>
-                              <span>{record?.letter_grade}</span>
-                            </td>
-                            <td>
-                              <span>{record?.section}</span>
-                            </td>
-                            <td>
-                              <span>{record?.comment}</span>
-                            </td>
-                            <td>
-                              <div className='dropdown'>
+                              {/* <div>
+                                <a href={'http://localhost:5173/test_exam_result_2023_for_class_4.pdf'}
+                                download
+                                
+                                >
                                 <button
-                                  className='btn btn-secondary dropdown-toggle'
-                                  type='button'
-                                  id='dropdownMenuButton1'
-                                  data-bs-toggle='dropdown'
-                                  aria-expanded='false'
+                                  style={{ backgroundColor: "green" }}
+                                  
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                                </a>
+                                
+                              </div> */}
+
+                              { (record?.id) === 1 ? (
+                                <div>
+                                  <button
+                                    onClick={() => {
+                                      downloadFileAtURL(PDF_4_FILE_URL);
+                                    }}
+                                    style={{ backgroundColor: "green" }}
+                                    
+                                  >
+                                    <BsDownload /> Download
+                                  </button>
+                                </div>
+                              ) : (
+                                <div>
+                                  <button
+                                    onClick={() => {
+                                      downloadFileAtURL(PDF_10_FILE_URL);
+                                    }}
+                                    style={{ backgroundColor: "green" }}
+                                  >
+                                    <BsDownload /> Download
+                                  </button>
+                                </div>
+                              )}
+                            </td>
+                            <td>
+                              <div className="dropdown">
+                                <button
+                                  className="btn btn-secondary dropdown-toggle"
+                                  type="button"
+                                  id="dropdownMenuButton1"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
                                 >
                                   Actions
                                 </button>
                                 <ul
-                                  className='dropdown-menu'
-                                  aria-labelledby='dropdownMenuButton1'
+                                  className="dropdown-menu"
+                                  aria-labelledby="dropdownMenuButton1"
                                 >
                                   <li>
                                     <Link
-                                      className='dropdown-item'
+                                      className="dropdown-item"
                                       to={`/admin/marks/${record?.id}/edit`}
                                     >
-                                      Edit Mark
+                                      Edit Result
                                     </Link>
                                   </li>
                                   <li>
                                     <Link
-                                      className='dropdown-item'
+                                      className="dropdown-item"
                                       onClick={() => handleDelete(record)}
                                     >
-                                      Delete Mark
+                                      Delete Result
                                     </Link>
                                   </li>
                                 </ul>
@@ -189,29 +227,29 @@ const MarkTable = () => {
             </div>
 
             {/* Exam Category list table pagination start  */}
-            <nav className='pagination'>
-              <ul className='pagination'>
-                <li className='page-item'>
-                  <Link to={'#'} className='page-link' onClick={perPage}>
+            <nav className="pagination">
+              <ul className="pagination">
+                <li className="page-item">
+                  <Link to={"#"} className="page-link" onClick={perPage}>
                     Prev
                   </Link>
                 </li>
                 {numbers.map((n, i) => (
                   <li
-                    className={`page-item ${currentPage === n ? 'active' : ''}`}
+                    className={`page-item ${currentPage === n ? "active" : ""}`}
                     key={i}
                   >
                     <Link
-                      to={'#'}
-                      className='page-link'
+                      to={"#"}
+                      className="page-link"
                       onClick={() => handleCPage(n)}
                     >
                       {n}
                     </Link>
                   </li>
                 ))}
-                <li className='page-item'>
-                  <Link to={'#'} className='page-link' onClick={nextPage}>
+                <li className="page-item">
+                  <Link to={"#"} className="page-link" onClick={nextPage}>
                     Next
                   </Link>
                 </li>
