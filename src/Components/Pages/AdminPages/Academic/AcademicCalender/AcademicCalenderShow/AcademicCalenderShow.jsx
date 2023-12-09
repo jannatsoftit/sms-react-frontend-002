@@ -1,6 +1,5 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from "react-router-dom";
-import React from "react";
 import academicCalendar from '../../../../../../assets/AGACalendar.png';
 import academicLogo from '../../../../../../assets/AGAImage.png';
 import AdminSidebar from "../../../../../Sidebar/AdminSidebar";

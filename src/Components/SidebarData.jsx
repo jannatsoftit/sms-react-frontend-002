@@ -104,7 +104,12 @@ export const SidebarData = [
       },
       {
         title: 'Academic Calender',
-        path: '/admin/academicCalender-2023',
+        path: '/admin/academicCalender/2023-2024',
+        icon: <MdIcons.MdSubject />,
+      },
+      {
+        title: 'School Magazine',
+        path: '/admin/schoolMagazine',
         icon: <MdIcons.MdSubject />,
       },
     ],

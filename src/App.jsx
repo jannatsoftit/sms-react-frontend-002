@@ -86,9 +86,11 @@ import BookListCreate from "./Components/Pages/AdminPages/Academic/BookList/Book
 import BookListEdit from "./Components/Pages/AdminPages/Academic/BookList/BookListEdit/BookListEdit";
 import BookListList from "./Components/Pages/AdminPages/Academic/BookList/BookListList/BookListList";
 
+import SchoolMagazineCreate from "./Components/Pages/AdminPages/Academic/SchoolMagazine/SchoolMagazineCreate/SchoolMagazineCreate";
+import SchoolMagazineEdit from "./Components/Pages/AdminPages/Academic/SchoolMagazine/SchoolMagazineEdit/SchoolMagazineEdit";
+import SchoolMagazineList from "./Components/Pages/AdminPages/Academic/SchoolMagazine/SchoolMagazineList/SchoolMagazineList";
+
 import AcademicCalenderShow from "./Components/Pages/AdminPages/Academic/AcademicCalender/AcademicCalenderShow/AcademicCalenderShow";
-// import AcademicCalenderEdit from "./Components/Pages/AdminPages/Academic/AcademicCalender/AcademicCalenderEdit/AcademicCalenderEdit";
-// import AcademicCalenderList from "./Components/Pages/AdminPages/Academic/AcademicCalender/AcademicCalenderList/AcademicCalenderList";
 
 import SyllabusCreate from "./Components/Pages/AdminPages/Academic/Syllabus/SyllabusCreate/SyllabusCreate";
 import SyllabusEdit from "./Components/Pages/AdminPages/Academic/Syllabus/SyllabusEdit/SyllabusEdit";
@@ -887,9 +889,14 @@ const App = () => {
             element={<BookListEdit />}
           />
 
-          <Route path="academicCalender-2023" element={<AcademicCalenderShow />} />
-          {/* <Route path="subjects/create" element={<SubjectCreate />} />
-          <Route path="subjects/:subjectId/edit" element={<SubjectEdit />} /> */}
+          <Route path="schoolMagazines" element={<SchoolMagazineList />} />
+          <Route path="schoolMagazines/create" element={<SchoolMagazineCreate />} />
+          <Route
+            path="schoolMagazines/:schoolMagazineId/edit"
+            element={<SchoolMagazineEdit />}
+          />
+
+          <Route path="academicCalender/2023-2024" element={<AcademicCalenderShow />} />
 
           <Route path="syllabuses" element={<SyllabusList />} />
           <Route path="syllabuses/create" element={<SyllabusCreate />} />
