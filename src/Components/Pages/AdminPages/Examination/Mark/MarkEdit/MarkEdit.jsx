@@ -16,7 +16,7 @@ const MarkEdit = () => {
   const [mark, setMark] = useState({
     student_name: '',
     class_name: '',
-    file: '',
+    //file: '',
   });
 
   // able to change input data for edit
@@ -46,7 +46,7 @@ const MarkEdit = () => {
       formData.append('_method', 'PUT');
       formData.append('student_name', mark.student_name);
       formData.append('class_name', mark.class_name);
-      formData.append('file', mark.file);
+      //formData.append('file', mark.file);
 
       console.log(formData);
 
@@ -154,7 +154,7 @@ const MarkEdit = () => {
                       </div>
                     </div>
 
-                    <div className='row justify-content-between text-left'>
+                    {/* <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -169,7 +169,7 @@ const MarkEdit = () => {
                           value={mark?.file}
                         />{' '}
                       </div>
-                    </div>
+                    </div> */}
 
                     <div className='row justify-content-start'>
                       <div className='form-group col-sm-4'>

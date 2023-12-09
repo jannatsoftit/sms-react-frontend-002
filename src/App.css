@@ -45,6 +45,11 @@ main {
   overflow-y: scroll;
 }
 
+/* offline exam css */
+.offline_exam_table{
+  
+}
+
 
 /* .link {
   display: flex;
@@ -237,6 +242,13 @@ span {
   justify-content: end;
   padding-right: 110px;
   margin-top: 50px;
+}
+
+.addmission_add_button{
+  display: flex;
+  justify-content: end;
+  padding-right: 170px;
+  margin-top: 40px;
 }
 
 /*!
@@ -860,6 +872,13 @@ pre code {
   flex-wrap: wrap;
   margin-right: -15px;
   margin-left: -15px;
+}
+.admission_circular_row{
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: 5px;
+  margin-left: 5px;
 }
 
 .no-gutters {
@@ -10983,10 +11002,10 @@ h5,
 .table tbody td {
   border: none;
   /* padding: 30px; */
-  /* padding-right: 60px; */
+  padding-right: 15px;
   padding-left: 60px;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  /* padding-top: -10px;
+  padding-bottom: -10px; */
   font-size: 14px;
   background: #fff;
   vertical-align: middle;
@@ -11687,11 +11706,11 @@ margin-top: 60px;
   background-clip: border-box;
   border: 0 solid rgba(0,0,0,.125);
   border-radius: .25rem;
-  width: 940px;
+  width: 1020px;
   padding-top: 80px;
   padding-bottom: 40px;
   margin-top: 30px;
-  margin-left: 60px;
+  margin-left: 120px;
   margin-bottom: 60px;
 }
 

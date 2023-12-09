@@ -124,7 +124,7 @@ const BookListEdit = () => {
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                           Name<span className='text-danger'> *</span>
+                           Book List Name<span className='text-danger'> *</span>
                         </label>{' '}
                         <input
                           type='text'

@@ -110,15 +110,15 @@ const BookListForm = () => {
                         </label>{' '}
                         <input
                           type='text'
-                          name='book_list'
+                          name='book_name'
                           placeholder='Enter book list name'
-                          id='book_list'
+                          id='book_name'
                           onChange={handleChange}
-                          value={inputFields.book_list}
+                          value={inputFields.book_name}
                         />{' '}
-                        {formErrors.book_list && (
+                        {formErrors.book_name && (
                           <span style={{ color: '#e74c3c' }}>
-                            {formErrors.book_list}
+                            {formErrors.book_name}
                           </span>
                         )}
                       </div>

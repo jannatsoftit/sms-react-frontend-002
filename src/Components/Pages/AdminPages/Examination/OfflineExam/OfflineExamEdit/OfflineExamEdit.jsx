@@ -159,6 +159,21 @@ const OfflineExamEdit = () => {
                       <div className="form-group col-sm-6 flex-column d-flex">
                         {" "}
                         <label className="form-label px-3">
+                          Starting Time <span className="text-danger"> *</span>
+                        </label>{" "}
+                        <input
+                          type="datetime-local"
+                          name="exam_start_time"
+                          placeholder="Enter starting time"
+                          id="exam_start_time"
+                          onChange={handleChange}
+                          value={offlineExam?.exam_start_time}
+                        />{" "}
+                      </div>
+
+                      {/* <div className="form-group col-sm-6 flex-column d-flex">
+                        {" "}
+                        <label className="form-label px-3">
                           Class Name
                           <span className="text-danger"> *</span>
                         </label>{" "}
@@ -170,7 +185,7 @@ const OfflineExamEdit = () => {
                           onChange={handleChange}
                           value={offlineExam?.class_name}
                         />{" "}
-                      </div>
+                      </div> */}
                     </div>
 
                     {/* <div className='row justify-content-between text-left'>
@@ -206,7 +221,7 @@ const OfflineExamEdit = () => {
                     </div> */}
 
                     <div className="row justify-content-between text-left">
-                      
+                                            
                       <div className="form-group col-sm-6 flex-column d-flex">
                         {" "}
                         <label className="form-label px-3">
@@ -226,17 +241,18 @@ const OfflineExamEdit = () => {
                       <div className="form-group col-sm-6 flex-column d-flex">
                         {" "}
                         <label className="form-label px-3">
-                          Starting Time <span className="text-danger"> *</span>
+                          Total Marks<span className="text-danger"> *</span>
                         </label>{" "}
                         <input
-                          type="datetime-local"
-                          name="exam_start_time"
-                          placeholder="Enter starting time"
-                          id="exam_start_time"
+                          type="number"
+                          name="total_marks"
+                          placeholder="Enter total marks"
+                          id="total_marks"
                           onChange={handleChange}
-                          value={offlineExam?.exam_start_time}
+                          value={offlineExam?.total_marks}
                         />{" "}
                       </div>
+
                     </div>
 
                     {/* <div className="row justify-content-between text-left">
@@ -269,23 +285,6 @@ const OfflineExamEdit = () => {
                         />{' '}
                       </div>
                     </div> */}
-
-                    <div className="row justify-content-between text-left"> 
-                      <div className="form-group col-sm-6 flex-column d-flex">
-                        {" "}
-                        <label className="form-label px-3">
-                          Total Marks<span className="text-danger"> *</span>
-                        </label>{" "}
-                        <input
-                          type="number"
-                          name="total_marks"
-                          placeholder="Enter total marks"
-                          id="total_marks"
-                          onChange={handleChange}
-                          value={offlineExam?.total_marks}
-                        />{" "}
-                      </div>
-                    </div>
 
                     {/* <div className="row justify-content-between text-left">
                     <div className="form-group col-sm-6 flex-column d-flex">

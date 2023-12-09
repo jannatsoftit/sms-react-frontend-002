@@ -8,9 +8,11 @@ import AdminSidebar from "../../../Sidebar/AdminSidebar";
 import Footer from "../../../Footer";
 
 // CLASS ROUTINE file
-const CLASSROUTINE_4_FILE_URL ="http://localhost:5173/class_routine_2023_for_class_4.pdf";
-const CLASSROUTINE_5_FILE_URL ="http://localhost:5173/class_routine_2023_for_class_5.pdf";
-const CLASSROUTINE_10_FILE_URL ="http://localhost:5173/class_routine_2023_for_class_10.pdf";
+const CLASSROUTINE_2_FILE_URL ="http://localhost:5173/classRoutine/class_routine_2023_for_class_2.pdf";
+const CLASSROUTINE_4_FILE_URL ="http://localhost:5173/classRoutine/class_routine_2023_for_class_4.pdf";
+const CLASSROUTINE_6_FILE_URL ="http://localhost:5173/classRoutine/class_routine_2023_for_class_6.pdf";
+const CLASSROUTINE_9_FILE_URL ="http://localhost:5173/classRoutine/class_routine_2023_for_class_9.pdf";
+const CLASSROUTINE_10_FILE_URL ="http://localhost:5173/classRoutine/class_routine_2023_for_class_10.pdf";
 
 const ClassRoutineTable = () => {
   // ClassRoutine data
@@ -98,13 +100,19 @@ const ClassRoutineTable = () => {
 
     // download CLASS ROUTINE file from public folder
     const downloadFileAtURL = (url) => {
-      const fileName = url.split("/").pop();
-      const aTag = document.createElement("a");
-      aTag.href = url;
-      aTag.setAttribute("download", fileName);
-      document.body.appendChild(aTag);
-      aTag.click();
-      aTag.remove();
+      fetch(url)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const blobURL = window.URL.createObjectURL(new Blob([blob]))
+        const fileName = url.split("/").pop();
+        const aTag = document.createElement("a");
+        aTag.href = blobURL;
+        aTag.setAttribute("download", fileName);
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
+      })
+      
     };
 
   return (
@@ -151,12 +159,13 @@ const ClassRoutineTable = () => {
                               <span>{record?.class_name}</span>
                             </td>
                             <td>
-                            { (record?.id) === 1 ? 
+                            { 
+                            (record?.id) === 1 ? 
                             (
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(CLASSROUTINE_4_FILE_URL);
+                                    downloadFileAtURL(CLASSROUTINE_2_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                   
@@ -171,7 +180,7 @@ const ClassRoutineTable = () => {
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(CLASSROUTINE_5_FILE_URL);
+                                    downloadFileAtURL(CLASSROUTINE_4_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                 >
@@ -185,7 +194,7 @@ const ClassRoutineTable = () => {
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(CLASSROUTINE_10_FILE_URL);
+                                    downloadFileAtURL(CLASSROUTINE_6_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                 >
@@ -193,6 +202,36 @@ const ClassRoutineTable = () => {
                                 </button>
                               </div>
                             )
+                            :
+                            (record?.id) === 4 ? 
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(CLASSROUTINE_9_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                  
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            ) 
+                            :
+                            (record?.id) === 5 ? 
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(CLASSROUTINE_10_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                  
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            ) 
                             :
                             null
                             

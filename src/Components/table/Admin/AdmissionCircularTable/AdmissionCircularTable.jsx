@@ -96,7 +96,7 @@ const AdmissionCircularTable = () => {
       <AdminSidebar>
         <section className="ftco-section">
           <div className="container">
-            <div className="col-md-6 text-center mb-5">
+            <div className="col-md-7 text-center mb-5">
               <h2 className="heading-section">Admission Circular Table List</h2>
               <div className="admin">
                 <Link to="#" className="links">
@@ -108,8 +108,8 @@ const AdmissionCircularTable = () => {
                 </Link>
               </div>
             </div>
-            <div className="row admin_table">
-              <div className="col-md-12">
+            <div className="admission_circular_row admin_table">
+              <div className="col-md-2">
                 <div className="">
                   <table className="table table-responsive-xl">
                     <thead>
@@ -147,7 +147,7 @@ const AdmissionCircularTable = () => {
                                       className="dropdown-item"
                                       to={"/admin/examCategories_ST/show"}
                                     >
-                                      Show AdmissionCircular 9 to 10
+                                      Show AdmissionCircular 6 to 10
                                     </Link>
                                   </li>
                                   <li>

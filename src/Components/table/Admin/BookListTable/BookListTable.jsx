@@ -9,8 +9,10 @@ import Footer from "../../../Footer";
 
 
 // BOOK LIST file
+const BOOKLIST_2_FILE_URL ="http://localhost:5173/book_list_2023_for_class_2.pdf";
 const BOOKLIST_4_FILE_URL ="http://localhost:5173/book_list_2023_for_class_4.pdf";
-const BOOKLIST_5_FILE_URL ="http://localhost:5173/book_list_2023_for_class_5.pdf";
+const BOOKLIST_6_FILE_URL ="http://localhost:5173/book_list_2023_for_class_6.pdf";
+const BOOKLIST_9_FILE_URL ="http://localhost:5173/book_list_2023_for_class_9.pdf";
 const BOOKLIST_10_FILE_URL ="http://localhost:5173/book_list_2023_for_class_10.pdf";
 
 const BookListTable = () => {
@@ -112,7 +114,7 @@ const BookListTable = () => {
         <section className='ftco-section'>
           <div className='container'>
             <div className='col-md-6 text-center mb-5'>
-              <h2 className='heading-section'>Book List Table List</h2>
+              <h2 className='heading-section'>Book List Table</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
                   user
@@ -144,12 +146,13 @@ const BookListTable = () => {
                               <span>{record?.book_name}</span>
                             </td>
                             <td>
-                            { (record?.id) === 1 ? 
+                            { 
+                            (record?.id) === 1 ?
                             (
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(BOOKLIST_4_FILE_URL);
+                                    downloadFileAtURL(BOOKLIST_2_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                   
@@ -159,12 +162,12 @@ const BookListTable = () => {
                               </div>
                             ) 
                             : 
-                            (record?.id) === 2 ? 
+                            (record?.id) === 2 ?
                             (
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(BOOKLIST_5_FILE_URL);
+                                    downloadFileAtURL(BOOKLIST_4_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                 >
@@ -173,7 +176,35 @@ const BookListTable = () => {
                               </div>
                             )
                             :
-                            (record?.id) === 3 ? 
+                            (record?.id) === 3 ?
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(BOOKLIST_6_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            )
+                            :
+                            (record?.id) === 4 ?
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(BOOKLIST_9_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            )
+                            :
+                            (record?.id) === 5 ?
                             (
                               <div>
                                 <button

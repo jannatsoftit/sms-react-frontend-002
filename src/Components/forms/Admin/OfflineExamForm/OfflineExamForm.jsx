@@ -15,7 +15,6 @@ const OfflineExamForm = () => {
 
   const [inputFields, setInputFields] = useState({
     exam_name: '',
-    class_name: '',
     exam_start_time: '',
     exam_end_time: '',
     total_marks: '',
@@ -49,11 +48,11 @@ const OfflineExamForm = () => {
 
     const formData = new FormData();
     formData.append('exam_name', inputFields.exam_name);
-    formData.append('class_name', inputFields.class_name);
     formData.append('exam_start_time', inputFields.exam_start_time);
     formData.append('exam_end_time', inputFields.exam_end_time);
     formData.append('total_marks', inputFields.total_marks);
     //formData.append('section', inputFields.section);
+    //formData.append('class_name', inputFields.class_name);
 
     fetch(`http://127.0.0.1:8000/api/offlineExams`, {
       body: formData,
@@ -79,10 +78,6 @@ const OfflineExamForm = () => {
 
     if (!values.exam_name) {
       errors.exam_name = 'exam name required';
-    }
-
-    if (!values.class_name) {
-      errors.class_name = 'class name is required';
     }
 
     if (!values.exam_start_time) {
@@ -150,48 +145,7 @@ const OfflineExamForm = () => {
                           </span>
                         )}
                       </div>
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Class Name
-                          <span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='text'
-                          name='class_name'
-                          placeholder='Enter class name'
-                          id='class_name'
-                          onChange={handleChange}
-                          value={inputFields?.class_name}
-                        />{' '}
-                        {formErrors.class_name && (
-                          <span style={{ color: '#e74c3c' }}>
-                            {formErrors.class_name}
-                          </span>
-                        )}
-                      </div>
-                    </div>
 
-                    <div className='row justify-content-between text-left'>
-                      <div className='form-group col-sm-6 flex-column d-flex'>
-                        {' '}
-                        <label className='form-label px-3'>
-                          Total Marks<span className='text-danger'> *</span>
-                        </label>{' '}
-                        <input
-                          type='number'
-                          name='total_marks'
-                          placeholder='Enter total marks'
-                          id='total_marks'
-                          onChange={handleChange}
-                          value={inputFields?.total_marks}
-                        />{' '}
-                        {formErrors.total_marks && (
-                          <span style={{ color: '#e74c3c' }}>
-                            {formErrors.total_marks}
-                          </span>
-                        )}
-                      </div>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -212,10 +166,30 @@ const OfflineExamForm = () => {
                           </span>
                         )}
                       </div>
+                      {/* <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Class Name
+                          <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='class_name'
+                          placeholder='Enter class name'
+                          id='class_name'
+                          onChange={handleChange}
+                          value={inputFields?.class_name}
+                        />{' '}
+                        {formErrors.class_name && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.class_name}
+                          </span>
+                        )}
+                      </div> */}
                     </div>
 
                     <div className='row justify-content-between text-left'>
-                      <div className='form-group col-sm-6 flex-column d-flex'>
+                    <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
                           Ending Time
@@ -235,8 +209,28 @@ const OfflineExamForm = () => {
                           </span>
                         )}
                       </div>
-                    </div>
 
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Total Marks<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='number'
+                          name='total_marks'
+                          placeholder='Enter total marks'
+                          id='total_marks'
+                          onChange={handleChange}
+                          value={inputFields?.total_marks}
+                        />{' '}
+                        {formErrors.total_marks && (
+                          <span style={{ color: '#e74c3c' }}>
+                            {formErrors.total_marks}
+                          </span>
+                        )}
+                      </div>
+                      
+                    </div>
                     
 
                     {/* <div className='row justify-content-between text-left'>

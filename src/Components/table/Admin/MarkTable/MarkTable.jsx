@@ -7,10 +7,13 @@ import Swal from "sweetalert2";
 import AdminSidebar from "../../../Sidebar/AdminSidebar";
 import Footer from "../../../Footer";
 
-const PDF_4_FILE_URL =
-  "http://localhost:5173/test_exam_result_2023_for_class_4.pdf";
-const PDF_10_FILE_URL =
-  "http://localhost:5173/final_exam_result_for_class_10.pdf";
+// exam result file
+const PDF_2_FILE_URL ="http://localhost:5173/examResult/final_exam_result_2023_for_class_2.pdf";
+const PDF_4_FILE_URL ="http://localhost:5173/examResult/midterm_exam_result_2023_for_class_4.pdf";
+const PDF_6_FILE_URL ="http://localhost:5173/examResult/half_yearly_exam_result_2023_for_class_6.pdf";
+const PDF_9_FILE_URL ="http://localhost:5173/examResult/final_exam_result_2023_for_class_9.pdf";
+const PDF_10_FILE_URL ="http://localhost:5173/examResult/final_exam_result_for_class_10.pdf";
+
 
 const MarkTable = () => {
   // Mark data
@@ -94,13 +97,19 @@ const MarkTable = () => {
 
   // download result file from public folder
   const downloadFileAtURL = (url) => {
-    const fileName = url.split("/").pop();
-    const aTag = document.createElement("a");
-    aTag.href = url;
-    aTag.setAttribute("download", fileName);
-    document.body.appendChild(aTag);
-    aTag.click();
-    aTag.remove();
+    fetch(url)
+    .then((response) => response.blob())
+    .then((blob) => {
+      const blobURL = window.URL.createObjectURL(new Blob([blob]))
+      const fileName = url.split("/").pop();
+      const aTag = document.createElement("a");
+      aTag.href = blobURL;
+      aTag.setAttribute("download", fileName);
+      document.body.appendChild(aTag);
+      aTag.click();
+      aTag.remove();
+    })
+    
   };
 
   return (
@@ -116,7 +125,7 @@ const MarkTable = () => {
                 </Link>
                 <RxSlash />
                 <Link to="" className="actives">
-                  marks
+                  exam-results
                 </Link>
               </div>
             </div>
@@ -158,19 +167,68 @@ const MarkTable = () => {
                                 
                               </div> */}
 
-                              { (record?.id) === 1 ? (
+                              { 
+                                (record?.id) === 2 ? 
+                              (
+                                <div>
+                                  <button
+                                    onClick={() => {
+                                      downloadFileAtURL(PDF_2_FILE_URL);
+                                    }}
+                                    
+                                    style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                  >
+                                    <BsDownload /> Download
+                                  </button>
+                                </div>
+                              ) 
+                              : 
+                                (record?.id) === 3 ?
+                              (
                                 <div>
                                   <button
                                     onClick={() => {
                                       downloadFileAtURL(PDF_4_FILE_URL);
                                     }}
-                                    style={{ backgroundColor: "#00A3FF", color:'white' }}
                                     
+                                    style={{ backgroundColor: "#00A3FF", color:'white' }}
                                   >
                                     <BsDownload /> Download
                                   </button>
                                 </div>
-                              ) : (
+                              )
+                              :
+                                (record?.id) === 4 ? 
+                              (
+                                <div>
+                                  <button
+                                    
+                                    onClick={() => {
+                                      downloadFileAtURL(PDF_6_FILE_URL);
+                                    }}
+                                    style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                  >
+                                    <BsDownload /> Download
+                                  </button>
+                                </div>
+                              )
+                              :
+                                (record?.id) === 5 ? 
+                              (
+                                <div>
+                                  <button
+                                    onClick={() => {
+                                      downloadFileAtURL(PDF_9_FILE_URL);
+                                    }}
+                                    style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                  >
+                                    <BsDownload /> Download
+                                  </button>
+                                </div>
+                              )
+                              :
+                                (record?.id) === 6 ? 
+                              (
                                 <div>
                                   <button
                                     onClick={() => {
@@ -181,7 +239,11 @@ const MarkTable = () => {
                                     <BsDownload /> Download
                                   </button>
                                 </div>
-                              )}
+                              )
+                              :
+                              null
+                            
+                            }
                             </td>
                             <td>
                               <div className="dropdown">

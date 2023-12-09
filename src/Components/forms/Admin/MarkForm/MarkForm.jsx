@@ -16,7 +16,7 @@ const MarkForm = () => {
   const [inputFields, setInputFields] = useState({
     student_name: '',
     class_name: '',
-    file: '',
+    //file: '',
   });
 
   const handleChange = (e) => {
@@ -47,7 +47,7 @@ const MarkForm = () => {
     const formData = new FormData();
     formData.append('student_name', inputFields.student_name);
     formData.append('class_name', inputFields.class_name);
-    formData.append('file', inputFields.file);
+    //formData.append('file', inputFields.file);
 
     fetch(`http://127.0.0.1:8000/api/marks`, {
       body: formData,
@@ -77,10 +77,6 @@ const MarkForm = () => {
 
     if (!values.class_name) {
       errors.class_name = 'class name is required';
-    }
-
-    if (!values.file) {
-      errors.file = 'result file is required';
     }
 
     return errors;
@@ -156,7 +152,7 @@ const MarkForm = () => {
                       </div>
                     </div>
 
-                    <div className='row justify-content-between text-left'>
+                    {/* <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
@@ -180,8 +176,7 @@ const MarkForm = () => {
                           </span>
                         )}
                       </div>
-
-                    </div>
+                    </div> */}
 
                     <div className='row justify-content-start'>
                       <div className='form-group col-sm-4'>

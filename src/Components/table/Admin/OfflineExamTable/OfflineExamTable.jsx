@@ -8,9 +8,11 @@ import AdminSidebar from "../../../Sidebar/AdminSidebar";
 import Footer from "../../../Footer";
 
 // offline exam routine file
-const EXAMROUTINE_4_FILE_URL ="http://localhost:5173/exam_routine_2023_for_class_4.pdf";
-const EXAMROUTINE_5_FILE_URL ="http://localhost:5173/exam_routine_2023_for_class_5.pdf";
-const EXAMROUTINE_10_FILE_URL ="http://localhost:5173/exam_routine_2023_for_class_10.pdf";
+const EXAMROUTINE_2_FILE_URL ="http://localhost:5173/examRoutine/exam_routine_2023_for_class_2.pdf";
+const EXAMROUTINE_4_FILE_URL ="http://localhost:5173/examRoutine/exam_routine_2023_for_class_4.pdf";
+const EXAMROUTINE_6_FILE_URL ="http://localhost:5173/examRoutine/exam_routine_2023_for_class_6.pdf";
+const EXAMROUTINE_9_FILE_URL ="http://localhost:5173/examRoutine/exam_routine_2023_for_class_9.pdf";
+const EXAMROUTINE_10_FILE_URL ="http://localhost:5173/examRoutine/exam_routine_2023_for_class_10.pdf";
 
 const OfflineExamTable = () => {
   // Offline Exam data
@@ -96,13 +98,19 @@ const OfflineExamTable = () => {
 
     // download exam-routine file from public folder
     const downloadFileAtURL = (url) => {
-      const fileName = url.split("/").pop();
-      const aTag = document.createElement("a");
-      aTag.href = url;
-      aTag.setAttribute("download", fileName);
-      document.body.appendChild(aTag);
-      aTag.click();
-      aTag.remove();
+      fetch(url)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const blobURL = window.URL.createObjectURL(new Blob([blob]))
+        const fileName = url.split("/").pop();
+        const aTag = document.createElement("a");
+        aTag.href = blobURL;
+        aTag.setAttribute("download", fileName);
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
+      })
+      
     };
 
   return (
@@ -122,14 +130,14 @@ const OfflineExamTable = () => {
                 </Link>
               </div>
             </div>
-            <div className="row admin_table">
+            <div className="row admin_table offline_exam_table">
               <div className="col-md-12">
                 <div className="table-wrap">
                   <table className="table table-responsive-xl">
                     <thead>
                       <tr>
                         <th>Exam Name</th>
-                        <th>Class Name</th>
+                        {/* <th>Class Name</th> */}
                         {/* <th>Paper</th>
                         //<th>Section</th>
                         <th>Subject Code</th>
@@ -140,7 +148,7 @@ const OfflineExamTable = () => {
                         <th>Starting Time</th>
                         <th>Ending Time</th>
                         <th>Total Marks</th>
-                        <th>Routine</th>
+                        <th>Exam Routine</th>
                         <th>Options</th>
                       </tr>
                     </thead>
@@ -154,9 +162,6 @@ const OfflineExamTable = () => {
                               <span>{record?.exam_name}</span>
                             </td>
                             <td>
-                              <span>{record?.class_name}</span>
-                            </td>
-                            <td>
                               <span>{record?.exam_start_time}</span>
                             </td>
                             <td>
@@ -166,12 +171,13 @@ const OfflineExamTable = () => {
                               <span>{record?.total_marks}</span>
                             </td>
                             <td>
-                            { (record?.id) === 1 ? 
+                            { 
+                            (record?.id) === 2 ? 
                             (
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(EXAMROUTINE_4_FILE_URL);
+                                    downloadFileAtURL(EXAMROUTINE_2_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                   
@@ -181,12 +187,12 @@ const OfflineExamTable = () => {
                               </div>
                             ) 
                             : 
-                            (record?.id) === 2 ? 
+                            (record?.id) === 3 ? 
                             (
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(EXAMROUTINE_5_FILE_URL);
+                                    downloadFileAtURL(EXAMROUTINE_4_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                 >
@@ -195,12 +201,12 @@ const OfflineExamTable = () => {
                               </div>
                             )
                             :
-                            (record?.id) === 3 ? 
+                            (record?.id) === 4 ? 
                             (
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(EXAMROUTINE_10_FILE_URL);
+                                    downloadFileAtURL(EXAMROUTINE_6_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                 >
@@ -208,6 +214,36 @@ const OfflineExamTable = () => {
                                 </button>
                               </div>
                             )
+                            :
+                            (record?.id) === 6 ? 
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(EXAMROUTINE_9_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                  
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            )
+                            :
+                            (record?.id) === 7 ? 
+                            (
+                              <div>
+                                <button
+                                  onClick={() => {
+                                    downloadFileAtURL(EXAMROUTINE_10_FILE_URL);
+                                  }}
+                                  style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                  
+                                >
+                                  <BsDownload /> Download
+                                </button>
+                              </div>
+                            ) 
                             :
                             null
                             

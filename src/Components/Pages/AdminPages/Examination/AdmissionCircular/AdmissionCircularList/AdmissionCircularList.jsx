@@ -8,7 +8,7 @@ const AdmissionCircularList = () => {
     <div>
       <TopBar/>
       {/* ExamCategory table title section */}
-      <Link to='create' className='add_button'>
+      <Link to='create' className='addmission_add_button'>
         <button type='button' className='btn'>
           <HiPlus /> AdmissionCircular
         </button>
