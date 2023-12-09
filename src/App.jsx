@@ -67,7 +67,6 @@ import AdmissionCircularEdit from "./Components/Pages/AdminPages/Examination/Adm
 import AdmissionCircularList from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularList/AdmissionCircularList";
 
 import AdmissionCircularShow_ST from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularShow/AdmissionCircularShow_ST";
-
 import AdmissionCircularShow_OF from "./Components/Pages/AdminPages/Examination/AdmissionCircular/AdmissionCircularShow/AdmissionCircularShow_OF";
 
 import GradeCreate from "./Components/Pages/AdminPages/Examination/Grade/GradeCreate/GradeCreate";
@@ -87,9 +86,9 @@ import BookListCreate from "./Components/Pages/AdminPages/Academic/BookList/Book
 import BookListEdit from "./Components/Pages/AdminPages/Academic/BookList/BookListEdit/BookListEdit";
 import BookListList from "./Components/Pages/AdminPages/Academic/BookList/BookListList/BookListList";
 
-import SubjectCreate from "./Components/Pages/AdminPages/Academic/Subject/SubjectCreate/SubjectCreate";
-import SubjectEdit from "./Components/Pages/AdminPages/Academic/Subject/SubjectEdit/SubjectEdit";
-import SubjectList from "./Components/Pages/AdminPages/Academic/Subject/SubjectList/SubjectList";
+import AcademicCalenderShow from "./Components/Pages/AdminPages/Academic/AcademicCalender/AcademicCalenderShow/AcademicCalenderShow";
+// import AcademicCalenderEdit from "./Components/Pages/AdminPages/Academic/AcademicCalender/AcademicCalenderEdit/AcademicCalenderEdit";
+// import AcademicCalenderList from "./Components/Pages/AdminPages/Academic/AcademicCalender/AcademicCalenderList/AcademicCalenderList";
 
 import SyllabusCreate from "./Components/Pages/AdminPages/Academic/Syllabus/SyllabusCreate/SyllabusCreate";
 import SyllabusEdit from "./Components/Pages/AdminPages/Academic/Syllabus/SyllabusEdit/SyllabusEdit";
@@ -888,9 +887,9 @@ const App = () => {
             element={<BookListEdit />}
           />
 
-          <Route path="subjects" element={<SubjectList />} />
-          <Route path="subjects/create" element={<SubjectCreate />} />
-          <Route path="subjects/:subjectId/edit" element={<SubjectEdit />} />
+          <Route path="academicCalender-2023" element={<AcademicCalenderShow />} />
+          {/* <Route path="subjects/create" element={<SubjectCreate />} />
+          <Route path="subjects/:subjectId/edit" element={<SubjectEdit />} /> */}
 
           <Route path="syllabuses" element={<SyllabusList />} />
           <Route path="syllabuses/create" element={<SyllabusCreate />} />

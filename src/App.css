@@ -11692,7 +11692,6 @@ margin-top: 60px;
 
 
 /* Academic curiculam css */
-
 .part_one h2, h5{
   color: #0032B4;
   text-align: center;
@@ -11722,4 +11721,74 @@ margin-top: 60px;
 .academic_list {
   list-style: none;
 }
+
+/* academic calender css */
+
+.academic_calender_container {
+  display: flex;
+  justify-content: space-around;
+  background-color: #fff;
+  border: 0 solid rgba(0,0,0,.125);
+  border-radius: .25rem;
+  width: 1020px;
+  padding-top: 80px;
+  padding-bottom: 40px;
+  margin-top: 30px;
+  margin-left: 120px;
+  margin-bottom: 60px;
+}
+
+.academic_calender_one {
+  font-size: 10px;
+}
+
+.academic_calender_two {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.academic_calender_two h2{
+  font-size: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

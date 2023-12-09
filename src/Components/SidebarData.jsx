@@ -93,11 +93,6 @@ export const SidebarData = [
         icon: <SiIcons.SiGoogleclassroom />,
       },
       {
-        title: 'Subjects',
-        path: '/admin/admin/subjects',
-        icon: <MdIcons.MdSubject />,
-      },
-      {
         title: 'Syllabus',
         path: '/admin/syllabuses',
         icon: <IoIcons.IoIosPaper />,
@@ -106,6 +101,11 @@ export const SidebarData = [
         title: 'Class Routine',
         path: '/admin/classRoutines',
         icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Academic Calender',
+        path: '/admin/academicCalender-2023',
+        icon: <MdIcons.MdSubject />,
       },
     ],
   },
