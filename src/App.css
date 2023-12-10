@@ -11772,12 +11772,41 @@ margin-top: 60px;
  margin-left: 945px;
 }
 
+/* managing committee image css */
 
+.managing_committee_image1 {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 
+.managing_committee_image2 {
+  margin-bottom: 10px;
+  margin-top: 60px;
+}
 
+.managing_committee_text1 {
+  font-size: 13px;
+  text-align: center;
+  background-color: #CBF2DE;
+  width: 200px;
+  height: 140px;
+  border-radius: 5px;
+  margin-left: -40px;
+  margin-top: 5px;
+  padding: 8px;
+}
 
-
-
+.managing_committee_text2 {
+  font-size: 13px;
+  text-align: center;
+  background-color: #CBF2DE;
+  width: 200px;
+  height: 140px;
+  border-radius: 5px;
+  margin-left: -40px;
+  margin-top: 5px;
+  padding: 8px;
+}
 
 
 

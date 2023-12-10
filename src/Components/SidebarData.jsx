@@ -115,11 +115,16 @@ export const SidebarData = [
     ],
   },
   {
-    title: 'Accountant',
+    title: 'Admininstration',
     icon: <FaIcons.FaMoneyCheckAlt />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
+      {
+        title: 'Managing Committee',
+        path: '/admin/managingCommittee',
+        icon: <BiIcons.BiMoney />,
+      },
       {
         title: 'Student Fee',
         path: '/admin/studentFees',

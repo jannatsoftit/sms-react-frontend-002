@@ -121,7 +121,7 @@ import HSTeachingStaffList from "./Components/Pages/AdminPages/HSTeachingStaff/H
 import HSTeachingStaffCreate from "./Components/Pages/AdminPages/HSTeachingStaff/HSTeachingStaffCreate/HSTeachingStaffCreate";
 import HSTeachingStaffEdit from "./Components/Pages/AdminPages/HSTeachingStaff/HSTeachingStaffEdit/HSTeachingStaffEdit";
 
-// PTeaching Staff
+// PTeaching Staff 
 import PTeachingStaffList from "./Components/Pages/AdminPages/PTeachingStaff/PTeachingStaffList/PTeachingStaffList";
 import PTeachingStaffCreate from "./Components/Pages/AdminPages/PTeachingStaff/PTeachingStaffCreate/PTeachingStaffCreate";
 import PTeachingStaffEdit from "./Components/Pages/AdminPages/PTeachingStaff/PTeachingStaffEdit/PTeachingStaffEdit";
@@ -130,6 +130,9 @@ import PTeachingStaffEdit from "./Components/Pages/AdminPages/PTeachingStaff/PTe
 import NonTeachingStaffList from "./Components/Pages/AdminPages/NonTeachingStaff/NonTeachingStaffList/NonTeachingStaffList";
 import NonTeachingStaffCreate from "./Components/Pages/AdminPages/NonTeachingStaff/NonTeachingStaffCreate/NonTeachingStaffCreate";
 import NonTeachingStaffEdit from "./Components/Pages/AdminPages/NonTeachingStaff/NonTeachingStaffEdit/NonTeachingStaffEdit";
+
+//ManagingCommittee
+import ManagingCommitteeTable from "./Components/table/Admin/ManagingCommittee/ManagingCommitteeTable";
 
 // Settings
 import SchoolList from "./Components/Pages/AdminPages/School/SchoolList/SchoolList";
@@ -971,6 +974,8 @@ const App = () => {
           <Route path="nonTeachingStaffs" element={<NonTeachingStaffList />} />
           <Route path="nonTeachingStaffs/create" element={<NonTeachingStaffCreate />} />
           <Route path="nonTeachingStaffs/:nonTeachingStaffId/edit" element={<NonTeachingStaffEdit />} />
+
+          <Route path="managingCommittee" element={<ManagingCommitteeTable />} />
 
 p
           <Route path="schools" element={<SchoolList />} />
