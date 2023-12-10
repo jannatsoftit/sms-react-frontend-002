@@ -80,13 +80,14 @@ main {
 /* Top section */
 
 
-/* .navbar-nav {
+.navbar-nav {
    margin-left: 660px;
+   margin-top: 5px;
 }
 
 .search {
   margin-left: 160px;
-} */
+}
 
 
 
@@ -11663,8 +11664,8 @@ margin-top: 60px;
 }
 
 .topbar_image{
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
 }
 
 .profile_image {

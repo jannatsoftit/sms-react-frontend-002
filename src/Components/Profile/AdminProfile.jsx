@@ -13,7 +13,7 @@ const AdminProfile = () => {
   const userGender = localStorage.getItem("gender");
   const userBloodGroup = localStorage.getItem("blood_group");
   const userDepartment = localStorage.getItem("department");
-  const userImage = localStorage.getItem("image");
+  const userTopImage = localStorage.getItem("image");
 
   return (
     <>
@@ -28,7 +28,7 @@ const AdminProfile = () => {
                   <div className="card-body">
                     <div className="d-flex flex-column align-items-center text-center profile_text">
                       <img
-                        src={`http://127.0.0.1:8000/storage/U_img/${userImage}`} 
+                        src={`http://127.0.0.1:8000/storage/AD_img/${userTopImage}`} 
                         alt="user-picture"
                         className="rounded-circle profile_image"
                         width="250"

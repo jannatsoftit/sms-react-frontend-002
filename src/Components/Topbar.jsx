@@ -8,6 +8,7 @@ const TopBar = () => {
 
   const userFirstName = localStorage.getItem("auth_name");
   const userLastName = localStorage.getItem("last_name");
+  const userDesignation = localStorage.getItem("designation");
 	const userTopImage = localStorage.getItem("image");
 
   const logoutClick = () => {
@@ -27,13 +28,12 @@ const TopBar = () => {
   if (localStorage.getItem("auth_token")) {
     AuthButtons2 = (
       <li>
-        <button
-          className="btn btn-outline-dark"
+        <a
           onClick={logoutClick}
-          style={{ backgroundColor: "#ADD8E6", color: "black" }}
+          style={{ color: "black", cursor:'pointer', marginLeft:'25px' }}
         >
           Logout
-        </button>
+        </a>
       </li>
     );
   }
@@ -62,10 +62,11 @@ const TopBar = () => {
               <li className='nav-item dropdown d-flex'>
 								<div>
 									<img
-									src={`http://127.0.0.1:8000/storage/U_img/${userTopImage}`} 
-									alt="user-picture"
-									className="rounded-circle topbar_image"
-								/>
+										src={`http://127.0.0.1:8000/storage/AD_img/${userTopImage}`}
+										alt={userFirstName}
+										className="rounded-circle topbar_image"
+									/>
+									
 								</div>
 							
                 <a
@@ -75,19 +76,23 @@ const TopBar = () => {
                   role='button'
                   data-bs-toggle='dropdown'
                   aria-expanded='false'
+
                 >
                   {userFirstName} {userLastName}
                 </a>
                 <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
                   <li>
                     <Link className='dropdown-item' to='/admin/profile'>
-                      Profile
+											User Profile
                     </Link>
                   </li>
+									<li>
+									  {AuthButtons2}
+									</li>
                 </ul>
               </li>
             </ul>
-            {AuthButtons2}
+            
           </div>
         </div>
       </nav>
