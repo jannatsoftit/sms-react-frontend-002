@@ -36,7 +36,7 @@ const NonTeachingStaffForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/admin/nonteachingStaffs', { replace: true });
+      navigate('/admin/nonTeachingStaffs', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);
@@ -52,7 +52,7 @@ const NonTeachingStaffForm = () => {
 
     console.log(formData);
 
-    fetch(`http://127.0.0.1:8000/api/nonteachingStaffs`, {
+    fetch(`http://127.0.0.1:8000/api/nonTeachingStaffs`, {
       body: formData,
       headers: {
         Accept: 'application/json',

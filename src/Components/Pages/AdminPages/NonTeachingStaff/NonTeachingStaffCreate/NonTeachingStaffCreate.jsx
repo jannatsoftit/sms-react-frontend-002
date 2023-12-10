@@ -1,23 +1,23 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
-import HTeachingStaffForm from '../../../../forms/Admin/HTeachingStaffForm/HTeachingStaffForm';
+import NonTeachingStaffForm from '../../../../forms/Admin/NonTeachingStaffForm/NonTeachingStaffForm';
 import TopBar from "../../../../TopBar";
 
-const HTeachingStaffCreate = () => {
+const NonTeachingStaffCreate = () => {
   return (
     <div>
       <TopBar />
-      {/* HTeaching Staff create table title section */}
-      <Link to='/admin/tteachingStaffs' className='add_button'>
+      {/* NonTeaching Staff create table title section */}
+      <Link to='/admin/nonTeachingStaffs' className='add_button'>
         <button type='button' className='btn'>
-          H Teaching Staff Table <AiOutlineArrowRight />
+          Non-Teaching Staff Table <AiOutlineArrowRight />
         </button>
       </Link>
 
       {/* HTeaching Staff form section */}
-      <HTeachingStaffForm />
+      <NonTeachingStaffForm />
     </div>
   );
 };
 
-export default HTeachingStaffCreate;
+export default NonTeachingStaffCreate;

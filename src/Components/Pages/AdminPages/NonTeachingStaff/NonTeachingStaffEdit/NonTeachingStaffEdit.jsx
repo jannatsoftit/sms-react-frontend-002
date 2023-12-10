@@ -8,12 +8,12 @@ import Footer from '../../../../Footer';
 import AdminSidebar from '../../../../Sidebar/AdminSidebar';
 import TopBar from '../../../../TopBar';
 
-const HTeachingStaffEdit = () => {
+const NonTeachingStaffEdit = () => {
   const navigate = useNavigate();
 
-  const { teachingStaffId } = useParams();
+  const { nonTeachingStaffId } = useParams();
 
-  const [teachingStaff, setTeachingStaff] = useState({
+  const [nonTeachingStaff, setNonTeachingStaff] = useState({
     name: '',
     designation: '',
     image: '',
@@ -22,13 +22,13 @@ const HTeachingStaffEdit = () => {
   // able to change input data for edit
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setTeachingStaff({
-      ...teachingStaff,
+    setNonTeachingStaff({
+      ...nonTeachingStaff,
       [name]: value,
     });
   };
 
-  // HTeachingStaff data update function
+  // NonTeachingStaff data update function
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -40,17 +40,17 @@ const HTeachingStaffEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/admin/tteachingStaffs', { replace: true });
+      navigate('/admin/nonTeachingStaffs', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
-      formData.append('name', teachingStaff.name);
-      formData.append('designation', teachingStaff.designation);
-      formData.append('image', teachingStaff.image);
+      formData.append('name', nonTeachingStaff.name);
+      formData.append('designation', nonTeachingStaff.designation);
+      formData.append('image', nonTeachingStaff.image);
 
       console.log(formData);
 
-      fetch(`http://127.0.0.1:8000/api/teachingStaffs/${teachingStaffId}`, {
+      fetch(`http://127.0.0.1:8000/api/nonTeachingStaffs/${nonTeachingStaffId}`, {
         body: formData,
         headers: {
           Accept: 'application/json',
@@ -67,9 +67,9 @@ const HTeachingStaffEdit = () => {
     }
   };
 
-  // hteaching Staff data fetch for edit
+  // nonteaching Staff data fetch for edit
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/teachingStaffs/${teachingStaffId}`, {
+    fetch(`http://127.0.0.1:8000/api/nonTeachingStaffs/${nonTeachingStaffId}`, {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -79,21 +79,21 @@ const HTeachingStaffEdit = () => {
       .then((res) => res.json())
       .then((res) => {
         console.info(res);
-        setTeachingStaff(res.data?.teachingStaff);
+        setNonTeachingStaff(res.data?.nonTeachingStaff);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [teachingStaffId]);
+  }, [nonTeachingStaffId]);
 
   return (
     <>
       <TopBar />
       <AdminSidebar>
-        {/* teachingStaff create table title section */}
-        <Link to='/admin/teachingStaffs' className='add_button'>
+        {/* nonTeachingStaff create table title section */}
+        <Link to='/admin/nonTeachingStaffs' className='add_button'>
           <button type='button' className='btn'>
-            H Teaching Staff Table <AiOutlineArrowRight />
+            Non-Teaching Staff Table <AiOutlineArrowRight />
           </button>
         </Link>
 
@@ -102,10 +102,10 @@ const HTeachingStaffEdit = () => {
             <div className='row d-flex justify-content-center'>
               <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
                 <div className='card'>
-                  {/* hteachingStaff create form title section */}
+                  {/* nonteachingStaff create form title section */}
                   <div className='col-md-6 text-center mb-5'>
                     <h2 className='heading-section'>
-                      H Teaching Staff Form Edit Table
+                      Non-Teaching Staff Form Edit Table
                     </h2>
                     <div className='admin-create'>
                       <Link to='#' className='links'>
@@ -113,7 +113,7 @@ const HTeachingStaffEdit = () => {
                       </Link>
                       <RxSlash />
                       <Link to='' className='links'>
-                        teaching-staffs
+                        non-teaching-staffs
                       </Link>
                       <RxSlash />
                       <Link to='' className='actives'>
@@ -122,7 +122,7 @@ const HTeachingStaffEdit = () => {
                     </div>
                   </div>
 
-                  {/* theachingStaff create form table*/}
+                  {/* non heachingStaff create form table*/}
                   <form className='form-card' onSubmit={handleSubmit}>
                     <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
@@ -136,7 +136,7 @@ const HTeachingStaffEdit = () => {
                           placeholder='Enter name'
                           id='name'
                           onChange={handleChange}
-                          value={teachingStaff?.name}
+                          value={nonTeachingStaff?.name}
                         />{' '}
                       </div>
 
@@ -151,7 +151,7 @@ const HTeachingStaffEdit = () => {
                           placeholder='Enter designation'
                           id='designation'
                           onChange={handleChange}
-                          value={teachingStaff?.designation}
+                          value={nonTeachingStaff?.designation}
                         />{' '}
                       </div>
                     </div>
@@ -167,7 +167,7 @@ const HTeachingStaffEdit = () => {
                           type='file'
                           name='image'
                           onChange={(e) => {
-                            setTeachingStaff((value) => ({
+                            setNonTeachingStaff((value) => ({
                               ...value,
                               [e.target.name]: e.target.files[0],
                             }));
@@ -195,4 +195,4 @@ const HTeachingStaffEdit = () => {
   );
 };
 
-export default HTeachingStaffEdit;
+export default NonTeachingStaffEdit;

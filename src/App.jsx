@@ -126,17 +126,17 @@ import PTeachingStaffList from "./Components/Pages/AdminPages/PTeachingStaff/PTe
 import PTeachingStaffCreate from "./Components/Pages/AdminPages/PTeachingStaff/PTeachingStaffCreate/PTeachingStaffCreate";
 import PTeachingStaffEdit from "./Components/Pages/AdminPages/PTeachingStaff/PTeachingStaffEdit/PTeachingStaffEdit";
 
-// NoNTeaching Staff
-// import NoNTeachingStaffList from "./Components/Pages/AdminPages/NoNTeachingStaff/NoNTeachingStaffList/NoNTeachingStaffList";
-// import NoNTeachingStaffCreate from "./Components/Pages/AdminPages/NoNTeachingStaff/NoNTeachingStaffCreate/NoNTeachingStaffCreate";
-// import NoNTeachingStaffEdit from "./Components/Pages/AdminPages/NoNTeachingStaff/NoNTeachingStaffEdit/NoNTeachingStaffEdit";
-
+//NoN-Teaching Staff
+import NonTeachingStaffList from "./Components/Pages/AdminPages/NonTeachingStaff/NonTeachingStaffList/NonTeachingStaffList";
+import NonTeachingStaffCreate from "./Components/Pages/AdminPages/NonTeachingStaff/NonTeachingStaffCreate/NonTeachingStaffCreate";
+import NonTeachingStaffEdit from "./Components/Pages/AdminPages/NonTeachingStaff/NonTeachingStaffEdit/NonTeachingStaffEdit";
 
 // Settings
 import SchoolList from "./Components/Pages/AdminPages/School/SchoolList/SchoolList";
 import SchoolCreate from "./Components/Pages/AdminPages/School/SchoolCreate/SchoolCreate";
 import SchoolEdit from "./Components/Pages/AdminPages/School/SchoolEdit/SchoolEdit";
 import SchoolShow from "./Components/Pages/AdminPages/School/SchoolShow/SchoolShow";
+
 
 const App = () => {
   // const [isAuthenticated, setAuthenticated] = useState(
@@ -967,6 +967,10 @@ const App = () => {
           <Route path="pteachingStaffs" element={<PTeachingStaffList />} />
           <Route path="pteachingStaffs/create" element={<PTeachingStaffCreate />} />
           <Route path="pteachingStaffs/:pteachingStaffId/edit" element={<PTeachingStaffEdit />} />
+
+          <Route path="nonTeachingStaffs" element={<NonTeachingStaffList />} />
+          <Route path="nonTeachingStaffs/create" element={<NonTeachingStaffCreate />} />
+          <Route path="nonTeachingStaffs/:nonTeachingStaffId/edit" element={<NonTeachingStaffEdit />} />
 
 p
           <Route path="schools" element={<SchoolList />} />

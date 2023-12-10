@@ -1,24 +1,26 @@
 /* eslint-disable react/jsx-no-undef */
 import { Link } from 'react-router-dom';
-import { HiPlus } from 'react-icons/hi';
 import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
+import { RxSlash } from "react-icons/rx";
+import AdminSidebar from "../../../Sidebar/AdminSidebar";
+import Footer from "../../../Footer";
 
 
-const HSTeachingStaffTable = () => {
+const NonTeachingStaffTable = () => {
 
-  // HSTeachingStaff data
-  const [hsteachingStaffs, setHSTeachingStaffs] = useState(null);
+  // NonTeachingStaff data
+  const [nonTeachingStaffs, setNonTeachingStaffs] = useState(null);
 
-  // HSTeachingStaff table reload state
+  // NonTeachingStaff table reload state
   const [reload, setReload] = useState(0);
 
 
-  //HSTeachingStaffs data delete function
-  const handleDelete = (hsteachingStaff) => {
+  //NonTeachingStaffs data delete function
+  const handleDelete = (nonTeachingStaff) => {
     if (
       confirm(
-        `Are You sure you want to delete hsteaching staff ${hsteachingStaff.id}?`
+        `Are You sure you want to delete non-teaching staff ${nonTeachingStaff.id}?`
       )
     ) {
       Swal.fire({
@@ -28,7 +30,7 @@ const HSTeachingStaffTable = () => {
         confirmButtonText: 'Ok',
       });
 
-      fetch(`http://127.0.0.1:8000/api/hsteachingStaffs/${hsteachingStaff.id}`, {
+      fetch(`http://127.0.0.1:8000/api/nonTeachingStaffs/${nonTeachingStaff.id}`, {
         headers: {
           Accept: 'application/json',
         },
@@ -45,9 +47,9 @@ const HSTeachingStaffTable = () => {
     }
   };
 
-  //hsteachingStaff all data show in the table
+  //nonteachingStaff all data show in the table
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/hsteachingStaffs?`, {
+    fetch(`http://127.0.0.1:8000/api/nonTeachingStaffs?`, {
       headers: {
         Accept: 'application/json',
       },
@@ -56,18 +58,31 @@ const HSTeachingStaffTable = () => {
       .then((res) => res.json())
       .then((res) => {
         console.info(res);
-        setHSTeachingStaffs(res.data?.hsteachingStaffs);
+        setNonTeachingStaffs(res.data?.nonTeachingStaffs);
       })
       .catch((error) => {
         console.error(error);
-        setHSTeachingStaffs(null);
+        setNonTeachingStaffs(null);
       });
   }, [reload]);
 
   return (
     <>
-      <section className='ftco-section' style={{marginTop:'-180px'}}>
+    <AdminSidebar>
+      <section className='ftco-section' >
         <div className='container'>
+        <div className="col-md-7 text-center mb-5">
+              <h2 className="heading-section">Non-Teacher Stuff Table List</h2>
+              <div className="admin">
+                <Link to="#" className="links">
+                  user
+                </Link>
+                <RxSlash />
+                <Link to="" className="actives">
+                 non-teacher-stuffs
+                </Link>
+              </div>
+            </div>
           <div className='row admin_table'>
             {/* higher secondary level */}
             <div className='col-md-12'>
@@ -75,7 +90,7 @@ const HSTeachingStaffTable = () => {
                 <div className='teaching_staff_title'>
                   <h4
                     style={{
-                      marginTop: '70px',
+                      marginTop: '0px',
                       width: '400px',
                       backgroundColor: '#053270',
                       borderRadius: '5px',
@@ -85,16 +100,8 @@ const HSTeachingStaffTable = () => {
                       justifyContent: 'center',
                     }}
                   >
-                    <b>Higher Secondary Level</b>
+                    <b>Non-Teaching Suff</b>
                   </h4>
-                </div>
-                <div className='teaching_table_button'>
-                  {/* Admin table title section */}
-                  <Link to='/admin/hsteachingStaffs/create'>
-                    <button type='button' className='btn'>
-                      <HiPlus /> Teaching Stuff
-                    </button>
-                  </Link>
                 </div>
                 <table className='table table-responsive-xl'>
                   <thead>
@@ -106,7 +113,7 @@ const HSTeachingStaffTable = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {hsteachingStaffs?.map((hsteachingStaff, i) => {
+                    {nonTeachingStaffs?.map((nonTeachingStaff, i) => {
                       return (
                         <tr className='alert' role='alert' key={i}>
                           <td>
@@ -116,16 +123,16 @@ const HSTeachingStaffTable = () => {
                                 height: '70px',
                                 borderRadius: '5px',
                               }}
-                              src={`http://127.0.0.1:8000/storage/TS_img/${hsteachingStaff.image}`}
+                              src={`http://127.0.0.1:8000/storage/NTS_img/${nonTeachingStaff.image}`}
                               width='50px'
-                              alt={hsteachingStaff?.name}
+                              alt={nonTeachingStaff?.name}
                             />
                           </td>
                           <td>
-                            <span>{hsteachingStaff?.name}</span>
+                            <span>{nonTeachingStaff?.name}</span>
                           </td>
                           <td>
-                            <span>{hsteachingStaff?.designation}</span>
+                            <span>{nonTeachingStaff?.designation}</span>
                           </td>
                           <td>
                             <div className='dropdown'>
@@ -145,17 +152,17 @@ const HSTeachingStaffTable = () => {
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    to={`/admin/hsteachingStaffs/${hsteachingStaff?.id}/edit`}
+                                    to={`/admin/nonTeachingStaffs/${nonTeachingStaff?.id}/edit`}
                                   >
-                                    Edit TeachingStaff
+                                    Edit Non-Teaching Staff
                                   </Link>
                                 </li>
                                 <li>
                                   <Link
                                     className='dropdown-item'
-                                    onClick={() => handleDelete(hsteachingStaff)}
+                                    onClick={() => handleDelete(nonTeachingStaff)}
                                   >
-                                    Delete TeachingStaff
+                                    Delete Non-Teaching Staff
                                   </Link>
                                 </li>
                               </ul>
@@ -171,8 +178,10 @@ const HSTeachingStaffTable = () => {
           </div>
         </div>
       </section>
+      <Footer />
+      </AdminSidebar>
     </>
   );
 };
 
-export default HSTeachingStaffTable;
+export default NonTeachingStaffTable;
