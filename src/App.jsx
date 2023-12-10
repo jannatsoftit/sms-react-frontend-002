@@ -109,6 +109,29 @@ import ExpanseCategoryCreate from "./Components/Pages/AdminPages/ExpanseCategory
 import ExpanseCategoryEdit from "./Components/Pages/AdminPages/ExpanseCategory/ExpanseCategoryEdit/ExpanseCategoryEdit";
 import ExpanseCategoryList from "./Components/Pages/AdminPages/ExpanseCategory/ExpanseCategoryList/ExpanseCategoryList";
 
+import TeachingStaffTable from "./Components/table/Admin/TeachingStaffTable/TeachingStaffTable";
+
+// HTeaching Staff
+import HTeachingStaffList from "./Components/Pages/AdminPages/HTeachingStaff/HTeachingStaffList/HTeachingStaffList";
+import HTeachingStaffCreate from "./Components/Pages/AdminPages/HTeachingStaff/HTeachingStaffCreate/HTeachingStaffCreate";
+import HTeachingStaffEdit from "./Components/Pages/AdminPages/HTeachingStaff/HTeachingStaffEdit/HTeachingStaffEdit";
+
+// HSTeaching Staff
+import HSTeachingStaffList from "./Components/Pages/AdminPages/HSTeachingStaff/HSTeachingStaffList/HSTeachingStaffList";
+import HSTeachingStaffCreate from "./Components/Pages/AdminPages/HSTeachingStaff/HSTeachingStaffCreate/HSTeachingStaffCreate";
+import HSTeachingStaffEdit from "./Components/Pages/AdminPages/HSTeachingStaff/HSTeachingStaffEdit/HSTeachingStaffEdit";
+
+// PTeaching Staff
+import PTeachingStaffList from "./Components/Pages/AdminPages/PTeachingStaff/PTeachingStaffList/PTeachingStaffList";
+import PTeachingStaffCreate from "./Components/Pages/AdminPages/PTeachingStaff/PTeachingStaffCreate/PTeachingStaffCreate";
+import PTeachingStaffEdit from "./Components/Pages/AdminPages/PTeachingStaff/PTeachingStaffEdit/PTeachingStaffEdit";
+
+// NoNTeaching Staff
+// import NoNTeachingStaffList from "./Components/Pages/AdminPages/NoNTeachingStaff/NoNTeachingStaffList/NoNTeachingStaffList";
+// import NoNTeachingStaffCreate from "./Components/Pages/AdminPages/NoNTeachingStaff/NoNTeachingStaffCreate/NoNTeachingStaffCreate";
+// import NoNTeachingStaffEdit from "./Components/Pages/AdminPages/NoNTeachingStaff/NoNTeachingStaffEdit/NoNTeachingStaffEdit";
+
+
 // Settings
 import SchoolList from "./Components/Pages/AdminPages/School/SchoolList/SchoolList";
 import SchoolCreate from "./Components/Pages/AdminPages/School/SchoolCreate/SchoolCreate";
@@ -929,6 +952,23 @@ const App = () => {
             element={<ExpanseCategoryEdit />}
           />
 
+
+
+          <Route path="tteachingStaffs" element={<TeachingStaffTable />} />
+
+          <Route path="teachingStaffs" element={<HTeachingStaffList />} />
+          <Route path="teachingStaffs/create" element={<HTeachingStaffCreate />} />
+          <Route path="teachingStaffs/:teachingStaffId/edit" element={<HTeachingStaffEdit />} />
+
+          <Route path="hsteachingStaffs" element={<HSTeachingStaffList />} />
+          <Route path="hsteachingStaffs/create" element={<HSTeachingStaffCreate />} />
+          <Route path="hsteachingStaffs/:hsteachingStaffId/edit" element={<HSTeachingStaffEdit />} />
+
+          <Route path="pteachingStaffs" element={<PTeachingStaffList />} />
+          <Route path="pteachingStaffs/create" element={<PTeachingStaffCreate />} />
+          <Route path="pteachingStaffs/:pteachingStaffId/edit" element={<PTeachingStaffEdit />} />
+
+p
           <Route path="schools" element={<SchoolList />} />
           <Route path="schools/create" element={<SchoolCreate />} />
           <Route path="schools/:schoolId" element={<SchoolShow />} />

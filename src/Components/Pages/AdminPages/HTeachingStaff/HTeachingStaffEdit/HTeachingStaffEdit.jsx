@@ -4,29 +4,31 @@ import { RxSlash } from 'react-icons/rx';
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import Footer from "../../../../../Footer";
-import AdminSidebar from '../../../../../Sidebar/AdminSidebar';
-import TopBar from "../../../../../TopBar";
+import Footer from '../../../../Footer';
+import AdminSidebar from '../../../../Sidebar/AdminSidebar';
+import TopBar from '../../../../TopBar';
 
-const SchoolMagazineEdit = () => {
+const HTeachingStaffEdit = () => {
   const navigate = useNavigate();
 
-  const { schoolMagazineId } = useParams();
+  const { teachingStaffId } = useParams();
 
-  const [schoolMagazine, setSchoolMagazine] = useState({
-    magazine_name: '',
+  const [teachingStaff, setTeachingStaff] = useState({
+    name: '',
+    designation: '',
+    image: '',
   });
 
   // able to change input data for edit
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setSchoolMagazine({
-      ...schoolMagazine,
+    setTeachingStaff({
+      ...teachingStaff,
       [name]: value,
     });
   };
 
-  // SchoolMagazine data update function
+  // HTeachingStaff data update function
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -38,15 +40,17 @@ const SchoolMagazineEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/admin/schoolMagazines', { replace: true });
+      navigate('/admin/tteachingStaffs', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
-      formData.append('magazine_name', schoolMagazine.magazine_name);
+      formData.append('name', teachingStaff.name);
+      formData.append('designation', teachingStaff.designation);
+      formData.append('image', teachingStaff.image);
 
       console.log(formData);
 
-      fetch(`http://127.0.0.1:8000/api/schoolMagazines/${schoolMagazineId}`, {
+      fetch(`http://127.0.0.1:8000/api/teachingStaffs/${teachingStaffId}`, {
         body: formData,
         headers: {
           Accept: 'application/json',
@@ -63,9 +67,9 @@ const SchoolMagazineEdit = () => {
     }
   };
 
-  // schoolMagazine data fetch for edit
+  // hteaching Staff data fetch for edit
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/schoolMagazines/${schoolMagazineId}`, {
+    fetch(`http://127.0.0.1:8000/api/teachingStaffs/${teachingStaffId}`, {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -75,21 +79,21 @@ const SchoolMagazineEdit = () => {
       .then((res) => res.json())
       .then((res) => {
         console.info(res);
-        setSchoolMagazine(res.data?.schoolMagazine);
+        setTeachingStaff(res.data?.teachingStaff);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [schoolMagazineId]);
+  }, [teachingStaffId]);
 
   return (
     <>
       <TopBar />
       <AdminSidebar>
-        {/* schoolMagazine create table title section */}
-        <Link to='/admin/schoolMagazines' className='add_button'>
+        {/* teachingStaff create table title section */}
+        <Link to='/admin/teachingStaffs' className='add_button'>
           <button type='button' className='btn'>
-            School Magazine Table <AiOutlineArrowRight />
+            H Teaching Staff Table <AiOutlineArrowRight />
           </button>
         </Link>
 
@@ -98,10 +102,10 @@ const SchoolMagazineEdit = () => {
             <div className='row d-flex justify-content-center'>
               <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
                 <div className='card'>
-                  {/* schoolMagazine create form title section */}
+                  {/* hteachingStaff create form title section */}
                   <div className='col-md-6 text-center mb-5'>
                     <h2 className='heading-section'>
-                      School Magazine Edit Table
+                      H Teaching Staff Form Edit Table
                     </h2>
                     <div className='admin-create'>
                       <Link to='#' className='links'>
@@ -109,7 +113,7 @@ const SchoolMagazineEdit = () => {
                       </Link>
                       <RxSlash />
                       <Link to='' className='links'>
-                        school-magazines
+                        teaching-staffs
                       </Link>
                       <RxSlash />
                       <Link to='' className='actives'>
@@ -118,24 +122,60 @@ const SchoolMagazineEdit = () => {
                     </div>
                   </div>
 
-                  {/* SchoolMagazine create form table*/}
+                  {/* theachingStaff create form table*/}
                   <form className='form-card' onSubmit={handleSubmit}>
                     <div className='row justify-content-between text-left'>
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                          School Magazine Name<span className='text-danger'> *</span>
+                          Name<span className='text-danger'> *</span>
                         </label>{' '}
                         <input
                           type='text'
-                          name='magazine_name'
-                          placeholder='Enter magazine name'
-                          id='magazine_name'
+                          name='name'
+                          placeholder='Enter name'
+                          id='name'
                           onChange={handleChange}
-                          value={schoolMagazine?.magazine_name}
+                          value={teachingStaff?.name}
+                        />{' '}
+                      </div>
+
+                      <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-label px-3'>
+                          Designation<span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          type='text'
+                          name='designation'
+                          placeholder='Enter designation'
+                          id='designation'
+                          onChange={handleChange}
+                          value={teachingStaff?.designation}
                         />{' '}
                       </div>
                     </div>
+
+                    <div className='row justify-content-between text-left'>
+                    <div className='form-group col-sm-6 flex-column d-flex'>
+                        {' '}
+                        <label className='form-control-label px-3'>
+                          Image <span className='text-danger'> *</span>
+                        </label>{' '}
+                        <input
+                          className='form-control'
+                          type='file'
+                          name='image'
+                          onChange={(e) => {
+                            setTeachingStaff((value) => ({
+                              ...value,
+                              [e.target.name]: e.target.files[0],
+                            }));
+                          }}
+                        />{' '}
+                      </div>
+                      </div>
+
                     <div className='row justify-content-start'>
                       <div className='form-group col-sm-4'>
                         <button type='submit' className='btn-block btn-primary'>
@@ -155,4 +195,4 @@ const SchoolMagazineEdit = () => {
   );
 };
 
-export default SchoolMagazineEdit;
+export default HTeachingStaffEdit;

@@ -211,7 +211,7 @@ const AdminEdit = () => {
                         <input
                           type='text'
                           name='department'
-                          //placeholder='Enter Your Department'
+                          placeholder='Enter Your Department'
                           id='department'
                           onChange={handleChange}
                           value={admin?.department}

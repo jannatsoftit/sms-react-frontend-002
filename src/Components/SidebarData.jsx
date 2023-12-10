@@ -109,7 +109,7 @@ export const SidebarData = [
       },
       {
         title: 'School Magazine',
-        path: '/admin/schoolMagazine',
+        path: '/admin/schoolMagazines',
         icon: <MdIcons.MdSubject />,
       },
     ],
@@ -128,6 +128,24 @@ export const SidebarData = [
       {
         title: 'Expense Category',
         path: '/admin/expanseCategories',
+        icon: <IoIcons.IoIosPaper />,
+      },
+    ],
+  },
+  {
+    title: 'School Staff',
+    icon: <FaIcons.FaMoneyCheckAlt />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+    subNav: [
+      {
+        title: 'Teaching Staff',
+        path: '/admin/tteachingStaffs',
+        icon: <BiIcons.BiMoney />,
+      },
+      {
+        title: 'Non-Teaching Staff',
+        path: '/admin/nonTeachingStaffs',
         icon: <IoIcons.IoIosPaper />,
       },
     ],

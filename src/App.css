@@ -11752,10 +11752,24 @@ margin-top: 60px;
 }
 
 
+/* teaching staff css */
 
+.teaching_staff_title{
+  display: flex;
+  justify-content: center;
+}
 
+.teaching-staff {
+  margin-top: 90px;
+}
 
+.teaching-staff-link{
+  margin-left: 25px;
+}
 
+.teaching_table_button{
+ margin-left: 945px;
+}
 
 
 

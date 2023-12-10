@@ -7,15 +7,12 @@ import Swal from 'sweetalert2';
 import AdminSidebar from "../../../Sidebar/AdminSidebar";
 import Footer from "../../../Footer";
 
+// SchoolMagazine file
+const SM_2023_FILE_URL ="http://localhost:5173/schoolMagazine/school_magazine_2023.pdf";
+const SM_2022_FILE_URL ="http://localhost:5173/schoolMagazine/school_magazine_2022.pdf";
+const SM_2021_FILE_URL ="http://localhost:5173/schoolMagazine/school_magazine_2021.pdf";
 
-// BOOK LIST file
-const BOOKLIST_2_FILE_URL ="http://localhost:5173/book_list_2023_for_class_2.pdf";
-const BOOKLIST_4_FILE_URL ="http://localhost:5173/book_list_2023_for_class_4.pdf";
-const BOOKLIST_6_FILE_URL ="http://localhost:5173/book_list_2023_for_class_6.pdf";
-const BOOKLIST_9_FILE_URL ="http://localhost:5173/book_list_2023_for_class_9.pdf";
-const BOOKLIST_10_FILE_URL ="http://localhost:5173/book_list_2023_for_class_10.pdf";
-
-const SchoolMagazineTable = () => {  //schoolMagazines
+const SchoolMagazineTable = () => { 
   // SchoolMagazine data
   const [schoolMagazines, setSchoolMagazines] = useState(null);
 
@@ -52,7 +49,7 @@ const SchoolMagazineTable = () => {  //schoolMagazines
   // schoolMagazines data delete function
   const handleDelete = (schoolMagazine) => {
     if (
-      confirm(`Are You sure you want to delete book list ${schoolMagazine.id}?`)
+      confirm(`Are You sure you want to delete school magazines ${schoolMagazine.id}?`)
     ) {
       Swal.fire({
         title: 'Success!',
@@ -89,7 +86,7 @@ const SchoolMagazineTable = () => {  //schoolMagazines
       .then((res) => res.json())
       .then((res) => {
         console.info(res);
-        setSchoolMagazines(res.data?.bookLists);
+        setSchoolMagazines(res.data?.schoolMagazines);
       })
       .catch((error) => {
         console.error(error);
@@ -99,13 +96,18 @@ const SchoolMagazineTable = () => {  //schoolMagazines
 
     // download School Magazines file from public folder
     const downloadFileAtURL = (url) => {
-      const fileName = url.split("/").pop();
-      const aTag = document.createElement("a");
-      aTag.href = url;
-      aTag.setAttribute("download", fileName);
-      document.body.appendChild(aTag);
-      aTag.click();
-      aTag.remove();
+      fetch(url)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const blobURL = window.URL.createObjectURL(new Blob([blob]))
+        const fileName = url.split("/").pop();
+        const aTag = document.createElement("a");
+        aTag.href = blobURL;
+        aTag.setAttribute("download", fileName);
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
+      })
     };
 
   return (
@@ -152,7 +154,7 @@ const SchoolMagazineTable = () => {  //schoolMagazines
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(BOOKLIST_2_FILE_URL);
+                                    downloadFileAtURL(SM_2023_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                   
@@ -167,7 +169,7 @@ const SchoolMagazineTable = () => {  //schoolMagazines
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(BOOKLIST_4_FILE_URL);
+                                    downloadFileAtURL(SM_2022_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                 >
@@ -181,7 +183,7 @@ const SchoolMagazineTable = () => {  //schoolMagazines
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(BOOKLIST_6_FILE_URL);
+                                    downloadFileAtURL(SM_2021_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                 >
@@ -195,7 +197,7 @@ const SchoolMagazineTable = () => {  //schoolMagazines
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(BOOKLIST_9_FILE_URL);
+                                    downloadFileAtURL(SM_2023_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                 >
@@ -209,7 +211,7 @@ const SchoolMagazineTable = () => {  //schoolMagazines
                               <div>
                                 <button
                                   onClick={() => {
-                                    downloadFileAtURL(BOOKLIST_10_FILE_URL);
+                                    downloadFileAtURL(SM_2023_FILE_URL);
                                   }}
                                   style={{ backgroundColor: "#00A3FF", color:'white' }}
                                 >

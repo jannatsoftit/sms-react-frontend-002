@@ -45,7 +45,7 @@ const SchoolMagazineForm = () => {
     const formData = new FormData();
     formData.append('magazine_name', inputFields.magazine_name);
 
-    fetch(`http://127.0.0.1:8000/api/bookLists`, {
+    fetch(`http://127.0.0.1:8000/api/schoolMagazines`, {
       body: formData,
       headers: {
         Accept: 'application/json',
