@@ -131,6 +131,9 @@ import NonTeachingStaffList from "./Components/Pages/AdminPages/NonTeachingStaff
 import NonTeachingStaffCreate from "./Components/Pages/AdminPages/NonTeachingStaff/NonTeachingStaffCreate/NonTeachingStaffCreate";
 import NonTeachingStaffEdit from "./Components/Pages/AdminPages/NonTeachingStaff/NonTeachingStaffEdit/NonTeachingStaffEdit";
 
+// notice Table
+import ParentNoticeTable from './Components/table/Admin/NoticeTable/ParentNoticeTable';
+
 // Settings
 import SchoolList from "./Components/Pages/AdminPages/School/SchoolList/SchoolList";
 import SchoolCreate from "./Components/Pages/AdminPages/School/SchoolCreate/SchoolCreate";
@@ -971,6 +974,11 @@ const App = () => {
           <Route path="nonTeachingStaffs" element={<NonTeachingStaffList />} />
           <Route path="nonTeachingStaffs/create" element={<NonTeachingStaffCreate />} />
           <Route path="nonTeachingStaffs/:nonTeachingStaffId/edit" element={<NonTeachingStaffEdit />} />
+
+          <Route path="parentNotice" element={<ParentNoticeTable />} />
+          {/* <Route path="studentNotice" element={<StudentNoticeTable />} />
+          <Route path="teacherNotice" element={<TeacherNoticeTable />} /> */}
+
 
 p
           <Route path="schools" element={<SchoolList />} />

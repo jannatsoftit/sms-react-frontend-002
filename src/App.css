@@ -11772,12 +11772,46 @@ margin-top: 60px;
  margin-left: 945px;
 }
 
+/* parent_notice_title */
 
+.parent_notice_title{
+  display: flex;
+  justify-content: center;
+  margin-top: 70px;
+}
+.parent_notice_head{
+  padding-top: '60px';
+  margin-left: 80px;
+}
 
+.parent_notice_link{
+  margin-left: 110px;
+}
 
-
-
-
+.parent_notice_card{
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  padding-left: 80px;
+  padding-right: 80px;
+  padding-top: 60px;
+  padding-bottom: 50px;
+  width: 900px;
+  margin-left: 120px;
+  font-size: 18px;
+}
 
 
 
