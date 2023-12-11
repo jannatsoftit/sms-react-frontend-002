@@ -8,10 +8,10 @@ import Table from './Table';
 import AdminSidebar from '../../../Sidebar/AdminSidebar';
 import Footer from '../../../Footer';
 import TopBar from '../../../TopBar';
-// import Calendar1 from './Calendar1';
+import Calendar1 from './Calendar1';
 
 const Dashboard = () => {
-  const userName = localStorage.getItem('auth_name');
+  const userDepartment = localStorage.getItem('department');
 
   return (
     <>
@@ -19,18 +19,18 @@ const Dashboard = () => {
       <AdminSidebar>
         <div className='p-3 pb-5'>
           <div className='container-fluid  dashboard_table'>
-            <div style={{ marginTop: '20px' }}>
+            <div style={{ marginTop: '20px',}}>
               <h3 className='dashboard_page_title'>
                 <span className='dashboard-page-title-icon bg-gradient-primary text-black mr-2'>
                   <i className='mdi mdi-home'></i>
                 </span>
-                {userName} Dashboard
+                {userDepartment} Dashboard
               </h3>
             </div>
 
             <div className='row'>
               <div className='col-12 col-sm-6 col-md-3 col-lg-3 p-3'>
-                <div className='d-flex p-4 justify-content-center align-items-center bg-white shadow-lg'>
+                <div className='d-flex p-4 justify-content-center align-items-center bg-white shadow-lg' style={{borderRadius:'5px'}}>
                   <PiUsersFill className='icons text-secondary' />
                   <div className='info'>
                     <span>Students</span>
@@ -40,7 +40,7 @@ const Dashboard = () => {
               </div>
 
               <div className='col-12 col-sm-6 col-md-3 col-lg-3 p-3'>
-                <div className='d-flex p-4 justify-content-center align-items-center bg-white shadow-lg'>
+                <div className='d-flex p-4 justify-content-center align-items-center bg-white shadow-lg' style={{borderRadius:'5px'}}>
                   <FaChalkboardTeacher className='icons text-success' />
                   <div className='info'>
                     <span>Teacher</span>
@@ -50,7 +50,7 @@ const Dashboard = () => {
               </div>
 
               <div className='col-12 col-sm-6 col-md-3 col-lg-3 p-3'>
-                <div className='d-flex p-4 justify-content-center align-items-center bg-white shadow-lg'>
+                <div className='d-flex p-4 justify-content-center align-items-center bg-white shadow-lg' style={{borderRadius:'5px'}}>
                   <TbBooks className='icons text-danger' />
                   <div className='info'>
                     <span>Activity</span>
@@ -60,7 +60,7 @@ const Dashboard = () => {
               </div>
 
               <div className='col-12 col-sm-6 col-md-3 col-lg-3 p-3'>
-                <div className='d-flex p-4 justify-content-center align-items-center bg-white shadow-lg'>
+                <div className='d-flex p-4 justify-content-center align-items-center bg-white shadow-lg' style={{borderRadius:'5px'}}>
                   <MdNotificationsActive className='icons text-info' />
                   <div className='info'>
                     <span>Notification</span>
@@ -71,23 +71,22 @@ const Dashboard = () => {
             </div>
 
             <div className='row'>
-              <div className='col-12 col-md-6 p-3 mt-4'>
-                <BarChart />
-              </div>
-              <div className='col-12 col-md-6 p-3'>
-                
-              </div>
-            </div>
-
-
-            <div className='row'>
               <div className='col-12 col-md-9 p-3 mt-4'>
               <Table />
               </div>
               <div className='col-12 col-md-3 p-3' >
-              {/* <Calendar1 /> */}
+                <Calendar1 />
               </div>
             </div>
+
+            <div className='row'>
+              <div className='col-12 col-md-8 p-3 mt-4'>
+                <BarChart />
+              </div>
+            </div>
+
+
+           
 
 
             {/* google map */}

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Calendar from 'moedim';
 import styled from 'styled-components';
-
 const StyledCalendar = styled(Calendar)`
   --moedim-primary: #f00;
 `;

@@ -94,7 +94,7 @@ main {
 /* dashboard */
 
 .dashboard_page_title {
-  color: #f7f7f7;
+  color: #435585;
   font-size: 1.125rem;
   margin-bottom: 0;
   display: flex;
@@ -218,6 +218,7 @@ span {
 .dash_table_head {
   background-color: #71B7E6;
 }
+
 
 /* admin list table image css*/
 .rounded-circle {
@@ -11913,7 +11914,11 @@ div.desc {
 }
 
 
+/* dashboard row css */
 
+.dashboard_row {
+ margin-left: 40px;
+}
 
 
 
