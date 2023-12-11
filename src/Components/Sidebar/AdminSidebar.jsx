@@ -9,7 +9,7 @@ import styled from 'styled-components';
 import Logo from '../../assets/computerClub/AGAImage.png';
 
   const SidebarNav = styled.nav`
-  background: #15171c;
+  background: #02727D;
   width: 280px;
   height: 100vh;
   display: flex;

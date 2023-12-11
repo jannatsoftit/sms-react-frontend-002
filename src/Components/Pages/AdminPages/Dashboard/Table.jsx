@@ -32,7 +32,7 @@ const Table = () => {
             <a
               href='/admins'
               className='btn btn-sm mb-2'
-              style={{ backgroundColor: '#ADD8E6' }}
+              style={{ backgroundColor: '#02727D', color:'white'}}
             >
               See all
             </a>

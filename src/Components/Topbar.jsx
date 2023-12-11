@@ -53,7 +53,7 @@ const TopBar = () => {
               <button
                 className='btn btn-outline-dark'
                 type='submit'
-                style={{ backgroundColor: '#ADD8E6', color: 'black' }}
+                style={{ backgroundColor: '#02727D', color: 'white' }}
               >
                 Search
               </button>
