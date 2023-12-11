@@ -133,6 +133,8 @@ import NonTeachingStaffEdit from "./Components/Pages/AdminPages/NonTeachingStaff
 
 // notice Table
 import ParentNoticeTable from './Components/table/Admin/NoticeTable/ParentNoticeTable';
+import StudentNoticeTable from './Components/table/Admin/NoticeTable/StudentNoticeTable';
+import TeacherNoticeTable from './Components/table/Admin/NoticeTable/TeacherNoticeTable';
 
 // Settings
 import SchoolList from "./Components/Pages/AdminPages/School/SchoolList/SchoolList";
@@ -976,11 +978,9 @@ const App = () => {
           <Route path="nonTeachingStaffs/:nonTeachingStaffId/edit" element={<NonTeachingStaffEdit />} />
 
           <Route path="parentNotice" element={<ParentNoticeTable />} />
-          {/* <Route path="studentNotice" element={<StudentNoticeTable />} />
-          <Route path="teacherNotice" element={<TeacherNoticeTable />} /> */}
+          <Route path="studentNotice" element={<StudentNoticeTable />} />
+          <Route path="teacherNotice" element={<TeacherNoticeTable />} />
 
-
-p
           <Route path="schools" element={<SchoolList />} />
           <Route path="schools/create" element={<SchoolCreate />} />
           <Route path="schools/:schoolId" element={<SchoolShow />} />
