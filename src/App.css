@@ -11953,6 +11953,27 @@ div.desc {
  margin-left: 40px;
 }
 
+/* library modal css */
+
+.library_details_modal {
+  background-color: white;
+}
+
+.library_details {
+  align-content: start;
+  margin: 20px;
+  font-size: 16px;
+}
+
+.library_details_button {
+  margin-top: 30px;
+  margin-left: 260px;
+}
+
+
+
+
+
 
 
 

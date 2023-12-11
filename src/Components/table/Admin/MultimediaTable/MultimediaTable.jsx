@@ -132,6 +132,62 @@ const MultimediaTable = () => {
                       </div>
                     </div>
                   </div>
+
+                    {/* Multimedia Modal start */}
+                    <div className="">
+                      <button
+                        type="button"
+                        className="btn btn-primary library_details_button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal3"
+                      >
+                        Multimedia ClassRoom Details
+                      </button>
+
+                      <div
+                        className="modal fade"
+                        id="exampleModal3"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel3"
+                        aria-hidden="true"
+                      >
+                        <div className="modal-dialog library_details_modal">
+                          <div clclassNameass="modal-content">
+                            <div className="modal-header">
+                              <h3
+                                className="modal-title"
+                                id="exampleModalLabel3"
+                                style={{fontFamily:'Georgia Times New Roman, Times, serif'}}
+                              >
+                                Multimedia ClassRoom Details:
+                              </h3>
+                            </div>
+                            <div className="library_details">
+                              <p><b>Total Multimedia ClassRoom - </b> 10 Multimedia ClassRoom.</p>
+                              <p><b>Total Element - </b> 30 chairs, 6 Tables, 10 light,
+                              5 Fan. 
+                              </p>
+                              <p><b>Total Multimedia - </b>10 Multimedia.</p>
+                              <p><b>Location - </b>East, Shapla Building.</p>
+                              <p><b>Multimedia ClassRoom Assistant - </b>Rahman (Multimedia Class Teacher).</p>
+                              <p><b>Area - </b>400 square feet.</p>
+
+                            </div>
+                            <div className="modal-footer">
+                              <button
+                                type="button"
+                                className="btn btn-info"
+                                data-bs-dismiss="modal"
+                                
+                              >
+                                Close
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {/* Multimedia Modal end */}
                 </div>
               </div>
             </div>

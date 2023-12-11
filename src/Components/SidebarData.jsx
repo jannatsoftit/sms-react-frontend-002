@@ -203,16 +203,16 @@ export const SidebarData = [
         path: `/admin/schools`,
         icon: <BsIcons.BsInfoCircleFill />,
       },
-      {
-        title: 'Login',
-        path: '/login',
-        icon: <RiIcons.RiLogoutCircleFill />,
-      },
-      {
-        title: 'Registration',
-        path: '/register',
-        icon: <RiIcons.RiLogoutCircleFill />,
-      },
+      // {
+      //   title: 'Login',
+      //   path: '/login',
+      //   icon: <RiIcons.RiLogoutCircleFill />,
+      // },
+      // {
+      //   title: 'Registration',
+      //   path: '/register',
+      //   icon: <RiIcons.RiLogoutCircleFill />,
+      // },
     ],
   },
 ];

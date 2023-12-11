@@ -27,7 +27,7 @@ const ComputerClubTable = () => {
                       justifyContent: 'center',
                     }}
                   >
-                    <b>Computer Club</b>
+                    <b>Computer Lab</b>
                   </h4>
                 </div>
 
@@ -107,6 +107,62 @@ const ComputerClubTable = () => {
                     </div>
 
                   </div>
+
+                    {/* computer Modal start */}
+                    <div className="">
+                      <button
+                        type="button"
+                        className="btn btn-primary library_details_button"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal2"
+                      >
+                        Computer Lab Details
+                      </button>
+
+                      <div
+                        className="modal fade"
+                        id="exampleModal2"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel2"
+                        aria-hidden="true"
+                      >
+                        <div className="modal-dialog library_details_modal">
+                          <div clclassNameass="modal-content">
+                            <div className="modal-header">
+                              <h3
+                                className="modal-title"
+                                id="exampleModalLabel2"
+                                style={{fontFamily:'Georgia Times New Roman, Times, serif'}}
+                              >
+                                Computer Lab Details:
+                              </h3>
+                            </div>
+                            <div className="library_details">
+                              <p><b>Total Computer Lab - </b> 1 Computer Lab Room.</p>
+                              <p><b>Total Element - </b> 30 chairs, 6 Tables, 10 light,
+                              5 Fan. 
+                              </p>
+                              <p><b>Total Computers - </b>40 Computers.</p>
+                              <p><b>Location - </b>East, Jamuna Building.</p>
+                              <p><b>Computer Lab Assistant - </b>Fajlul Rahman (Computer Training Teacher).</p>
+                              <p><b>Area - </b>400 square feet.</p>
+
+                            </div>
+                            <div className="modal-footer">
+                              <button
+                                type="button"
+                                className="btn btn-info"
+                                data-bs-dismiss="modal"
+                                
+                              >
+                                Close
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    {/* computer Modal end */}
                 </div>
               </div>
             </div>
