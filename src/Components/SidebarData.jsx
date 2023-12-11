@@ -151,29 +151,6 @@ export const SidebarData = [
     ],
   },
   {
-    title: 'Facility',
-    icon: <FaIcons.FaMoneyCheckAlt />,
-    iconClosed: <RiIcons.RiArrowDownSFill />,
-    iconOpened: <RiIcons.RiArrowUpSFill />,
-    subNav: [
-      {
-        title: 'Library',
-        path: '/admin/library',
-        icon: <BiIcons.BiMoney />,
-      },
-      {
-        title: 'Multimedia Class',
-        path: '/admin/multimediaClass',
-        icon: <IoIcons.IoIosPaper />,
-      },
-      {
-        title: 'Computer Club',
-        path: '/admin/computerClub',
-        icon: <IoIcons.IoIosPaper />,
-      },
-    ],
-  },
-  {
     title: 'Notice',
     icon: <FaIcons.FaMoneyCheckAlt />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
@@ -197,22 +174,18 @@ export const SidebarData = [
     ],
   },
   {
-    title: 'Gallery',
+    title: 'Facility',
+    path: '/admin/facility',
     icon: <FaIcons.FaMoneyCheckAlt />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
-    subNav: [
-      {
-        title: 'Image',
-        path: '/admin/image',
-        icon: <BiIcons.BiMoney />,
-      },
-      {
-        title: 'Video',
-        path: '/admin/video',
-        icon: <IoIcons.IoIosPaper />,
-      },
-    ],
+  },
+  {
+    title: 'Gallery',
+    path: '/admin/gallery',
+    icon: <FaIcons.FaMoneyCheckAlt />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
   },
   {
     title: 'Settings',

@@ -137,14 +137,10 @@ import StudentNoticeTable from './Components/table/Admin/NoticeTable/StudentNoti
 import TeacherNoticeTable from './Components/table/Admin/NoticeTable/TeacherNoticeTable';
 
 // Library Table
-import LibraryTable from './Components/table/Admin/LibraryTable/LibraryTable';
+import FacilityTable from './Components/table/Admin/FacilityTable/FacilityTable';
 
-// Computer Club Table
-import ComputerClubTable from './Components/table/Admin/ComputerClubTable/ComputerClubTable';
-
-// Multimedia Class Table
-import MultimediaTable from './Components/table/Admin/MultimediaTable/MultimediaTable';
-
+// Gallery Table
+import GalleryTable from './Components/table/Admin/GalleryTable/GalleryTable';
 
 
 // Settings
@@ -992,9 +988,9 @@ const App = () => {
           <Route path="studentNotice" element={<StudentNoticeTable />} />
           <Route path="teacherNotice" element={<TeacherNoticeTable />} />
 
-          <Route path="library" element={<LibraryTable />} />
-          <Route path="computerClub" element={<ComputerClubTable />} />
-          <Route path="multimediaClass" element={<MultimediaTable />} />
+          <Route path="facility" element={<FacilityTable />} />
+
+          <Route path="gallery" element={<GalleryTable />} />
           
 
           <Route path="schools" element={<SchoolList />} />

@@ -11869,16 +11869,48 @@ div.desc {
 
 
 
+/* gallery image css */
 
+.gallery_card {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  padding-left: 80px;
+  padding-right: 80px;
+  margin-top: 10px;
+  margin-left: 170px;
+  margin-bottom: 60px;
+  width: 900px;
+  height: 900px;
+  font-size: 18px;
+}
 
+.gallery_button {
+  margin-right: 40px;
+}
 
+.gallery_button button{
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+}
 
-
-
-
-
-
-
+.gallery_button button:hover{
+  color: white;
+  background: #053270;
+}
 
 
 
