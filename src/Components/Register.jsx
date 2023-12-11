@@ -87,7 +87,7 @@ const Register = () => {
   };
 
   return (
-    <div className="register">
+    <div className="register register_body">
       <div className="register_container">
         <div className="register_title">Registration Form</div>
         <div className="content">
