@@ -136,6 +136,17 @@ import ParentNoticeTable from './Components/table/Admin/NoticeTable/ParentNotice
 import StudentNoticeTable from './Components/table/Admin/NoticeTable/StudentNoticeTable';
 import TeacherNoticeTable from './Components/table/Admin/NoticeTable/TeacherNoticeTable';
 
+// Library Table
+import LibraryTable from './Components/table/Admin/LibraryTable/LibraryTable';
+
+// Computer Club Table
+import ComputerClubTable from './Components/table/Admin/ComputerClubTable/ComputerClubTable';
+
+// Multimedia Class Table
+import MultimediaTable from './Components/table/Admin/MultimediaTable/MultimediaTable';
+
+
+
 // Settings
 import SchoolList from "./Components/Pages/AdminPages/School/SchoolList/SchoolList";
 import SchoolCreate from "./Components/Pages/AdminPages/School/SchoolCreate/SchoolCreate";
@@ -980,6 +991,11 @@ const App = () => {
           <Route path="parentNotice" element={<ParentNoticeTable />} />
           <Route path="studentNotice" element={<StudentNoticeTable />} />
           <Route path="teacherNotice" element={<TeacherNoticeTable />} />
+
+          <Route path="library" element={<LibraryTable />} />
+          <Route path="computerClub" element={<ComputerClubTable />} />
+          <Route path="multimediaClass" element={<MultimediaTable />} />
+          
 
           <Route path="schools" element={<SchoolList />} />
           <Route path="schools/create" element={<SchoolCreate />} />
