@@ -1,63 +1,137 @@
 /* eslint-disable react/jsx-no-undef */
-import { Link } from 'react-router-dom';
-import { RxSlash } from 'react-icons/rx';
-import libraryImage1 from '../../../../assets/libraryImage/library1.png';
-import libraryImage2 from '../../../../assets/libraryImage/library2.png';
-import libraryImage3 from '../../../../assets/libraryImage/library3.jpg';
-import libraryImage4 from '../../../../assets/libraryImage/library4.jpg';
-import libraryImage5 from '../../../../assets/libraryImage/library5.jpg';
+import { Link } from "react-router-dom";
+import { RxSlash } from "react-icons/rx";
+import MCImage1 from "../../../../../public/MultimediaClass/mulC1.jpg";
+import MCImage2 from "../../../../../public/MultimediaClass/mulC2.jpg";
+import MCImage3 from "../../../../../public/MultimediaClass/mulC3.jpg";
 
-const ParentTeachingTable = () => {
+const MultimediaTable = () => {
   return (
     <>
-      <section className='ftco-section' style={{ marginTop: '-80px' }}>
-        <div className='container'>
-          <div className='row admin_table'>
-            {/* higher level */}
-            <div className='col-md-12'>
-              <div className=''>
-                {/* parent notice title section */}
-                <div className='parent_notice_title'>
+      <section className="ftco-section" style={{ marginTop: "-130px" }}>
+        <div className="container">
+          <div className="row admin_table">
+            {/* Multimedia level */}
+            <div className="col-md-12">
+              <div className="">
+                {/* Multimedia title section */}
+                <div className="parent_notice_title">
                   <h4
                     style={{
-                      width: '340px',
-                      backgroundColor: '#053270',
-                      borderRadius: '5px',
-                      border: '3px solid black',
-                      color: '#F7FBFF',
-                      display: 'flex',
-                      justifyContent: 'center',
+                      width: "340px",
+                      backgroundColor: "#053270",
+                      borderRadius: "5px",
+                      border: "3px solid black",
+                      color: "#F7FBFF",
+                      display: "flex",
+                      justifyContent: "center",
                     }}
                   >
                     <b>Multimedia Class Room</b>
                   </h4>
                 </div>
 
-                {/*  Library Facility logo section*/}
-                <div className='parent_notice_card'>
-                  {/* carousel start */}
-                  <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
-                    <div className="carousel-inner">
-                      <div className="carousel-item active">
-                        <img src={libraryImage1} className="d-block" alt="image"/>
-                      </div>
-                      <div className="carousel-item">
-                        <img src={libraryImage2} className="d-block" alt="image"/>
-                      </div>
-                      <div className="carousel-item">
-                        <img src={libraryImage3} className="d-block" alt="image"/>
+                {/*  Multimedia logo section*/}
+                <div className="parent_notice_card">
+                  <div className="row align-items-start library_image_1">
+                    <div className="col">
+                      <div className="responsive">
+                        <div className="gallery">
+                          <a target="_blank" href="img_5terre.jpg">
+                            <img
+                              src={MCImage1}
+                              alt="Cinque Terre"
+                              width="600"
+                              height="400"
+                            />
+                          </a>
+                          <div className="desc">Computer Club.</div>
+                        </div>
                       </div>
                     </div>
-                    <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                      <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span className="visually-hidden">Previous</span>
-                    </button>
-                    <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                      <span className="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span className="visually-hidden">Next</span>
-                    </button>
+
+                    <div className="col">
+                      <div className="responsive">
+                        <div className="gallery">
+                          <a target="_blank" href="img_5terre.jpg">
+                            <img
+                              src={MCImage2}
+                              alt="Cinque Terre"
+                              width="600"
+                              height="400"
+                            />
+                          </a>
+                          <div className="desc">Computer Club .</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col">
+                      <div className="responsive">
+                        <div className="gallery">
+                          <a target="_blank" href="img_5terre.jpg">
+                            <img
+                              src={MCImage3}
+                              alt="Cinque Terre"
+                              width="600"
+                              height="400"
+                            />
+                          </a>
+                          <div className="desc">Computer Club</div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                  {/* carousel end */}
+
+                  <div className="row align-items-start library_image_2">
+                    <div className="col">
+                      <div className="responsive">
+                        <div className="gallery">
+                          <a target="_blank" href="img_5terre.jpg">
+                            <img
+                              src={MCImage1}
+                              alt="Cinque Terre"
+                              width="600"
+                              height="400"
+                            />
+                          </a>
+                          <div className="desc">Computer Club</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col">
+                      <div className="responsive">
+                        <div className="gallery">
+                          <a target="_blank" href="img_5terre.jpg">
+                            <img
+                              src={MCImage2}
+                              alt="Cinque Terre"
+                              width="600"
+                              height="400"
+                            />
+                          </a>
+                          <div className="desc">Computer Club</div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col">
+                      <div className="responsive">
+                        <div className="gallery">
+                          <a target="_blank" href="img_5terre.jpg">
+                            <img
+                              src={MCImage3}
+                              alt="Cinque Terre"
+                              width="600"
+                              height="400"
+                            />
+                          </a>
+                          <div className="desc">Computer Club</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -68,4 +142,4 @@ const ParentTeachingTable = () => {
   );
 };
 
-export default ParentTeachingTable;
+export default MultimediaTable;

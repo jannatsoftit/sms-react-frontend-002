@@ -11725,7 +11725,6 @@ margin-top: 60px;
 }
 
 /* academic calender css */
-
 .academic_calender_container {
   display: flex;
   justify-content: space-around;
@@ -11753,7 +11752,6 @@ margin-top: 60px;
   font-size: 30px;
 }
 
-
 /* teaching staff css */
 
 .teaching_staff_title{
@@ -11773,7 +11771,6 @@ margin-top: 60px;
  margin-left: 945px;
 }
 
-<<<<<<< HEAD
 /* managing committee image css */
 
 .managing_committee_image1 {
@@ -11810,26 +11807,6 @@ margin-top: 60px;
   padding: 8px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
 /* parent_notice_title */
 
 .parent_notice_title{
@@ -11972,15 +11949,9 @@ div.desc {
 
 
 /* dashboard row css */
-
 .dashboard_row {
  margin-left: 40px;
 }
->>>>>>> b24a3f3b8eb7f86f13326966f90c78948272e7da
-
-
-
-
 
 
 
