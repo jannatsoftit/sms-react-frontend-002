@@ -143,7 +143,22 @@ const StudentFeeTable = () => {
                               <span>{record?.paid_amount}</span>
                             </td>
                             <td>
-                              <span>{record?.status}</span>
+                              {
+                               ( record?.status) === 'paid' ?
+                                <button
+                                  className='btn btn-success'
+                                  style={{fontSize:'12px'}} 
+                                ><span>{record?.status}</span></button>
+                                :
+                                ( record?.status) === 'unpaid' ?
+                                <button
+                                  className='btn btn-danger'
+                                  style={{fontSize:'12px'}}  
+                                ><span>{record?.status}</span></button>
+                                :
+                                null
+                              }
+                              
                             </td>
                             <td>
                               <div className='dropdown'>

@@ -60,12 +60,15 @@ const TopBar = () => {
             </form>
             <ul className='navbar-nav me-auto mb-2'>
               <li className='nav-item dropdown d-flex'>
-								<div>
+								<div className="position-relative ">
 									<img
 										src={`http://127.0.0.1:8000/storage/AD_img/${userTopImage}`}
 										alt={userFirstName}
 										className="rounded-circle topbar_image"
 									/>
+									<span className="position-absulate top-0 start-20 translate-middle p-2 bg-success border border-light rounded-circle">
+										<span className="visually-hidden"></span>
+									</span>
 									
 								</div>
 							
@@ -98,12 +101,10 @@ const TopBar = () => {
       </nav>
 
       {/* new topbar code */}
-
       {/* <nav class="navbar navbar-expand navbar-light navbar-bg">
 				<a class="sidebar-toggle js-sidebar-toggle">
           <i class="hamburger align-self-center"></i>
         </a>
-
 				<div class="navbar-collapse collapse">
 					<ul class="navbar-nav navbar-align">
 						<li class="nav-item dropdown">
