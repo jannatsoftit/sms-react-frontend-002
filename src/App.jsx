@@ -131,8 +131,22 @@ import NonTeachingStaffList from "./Components/Pages/AdminPages/NonTeachingStaff
 import NonTeachingStaffCreate from "./Components/Pages/AdminPages/NonTeachingStaff/NonTeachingStaffCreate/NonTeachingStaffCreate";
 import NonTeachingStaffEdit from "./Components/Pages/AdminPages/NonTeachingStaff/NonTeachingStaffEdit/NonTeachingStaffEdit";
 
+<<<<<<< HEAD
 //ManagingCommittee
 import ManagingCommitteeTable from "./Components/table/Admin/ManagingCommittee/ManagingCommitteeTable";
+=======
+// notice Table
+import ParentNoticeTable from './Components/table/Admin/NoticeTable/ParentNoticeTable';
+import StudentNoticeTable from './Components/table/Admin/NoticeTable/StudentNoticeTable';
+import TeacherNoticeTable from './Components/table/Admin/NoticeTable/TeacherNoticeTable';
+
+// Library Table
+import FacilityTable from './Components/table/Admin/FacilityTable/FacilityTable';
+
+// Gallery Table
+import GalleryTable from './Components/table/Admin/GalleryTable/GalleryTable';
+
+>>>>>>> b24a3f3b8eb7f86f13326966f90c78948272e7da
 
 // Settings
 import SchoolList from "./Components/Pages/AdminPages/School/SchoolList/SchoolList";
@@ -975,9 +989,21 @@ const App = () => {
           <Route path="nonTeachingStaffs/create" element={<NonTeachingStaffCreate />} />
           <Route path="nonTeachingStaffs/:nonTeachingStaffId/edit" element={<NonTeachingStaffEdit />} />
 
+<<<<<<< HEAD
           <Route path="managingCommittee" element={<ManagingCommitteeTable />} />
 
 p
+=======
+          <Route path="parentNotice" element={<ParentNoticeTable />} />
+          <Route path="studentNotice" element={<StudentNoticeTable />} />
+          <Route path="teacherNotice" element={<TeacherNoticeTable />} />
+
+          <Route path="facility" element={<FacilityTable />} />
+
+          <Route path="gallery" element={<GalleryTable />} />
+          
+
+>>>>>>> b24a3f3b8eb7f86f13326966f90c78948272e7da
           <Route path="schools" element={<SchoolList />} />
           <Route path="schools/create" element={<SchoolCreate />} />
           <Route path="schools/:schoolId" element={<SchoolShow />} />

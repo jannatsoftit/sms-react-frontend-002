@@ -156,6 +156,43 @@ export const SidebarData = [
     ],
   },
   {
+    title: 'Notice',
+    icon: <FaIcons.FaMoneyCheckAlt />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+    subNav: [
+      {
+        title: 'Teacher Notice',
+        path: '/admin/teacherNotice',
+        icon: <BiIcons.BiMoney />,
+      },
+      {
+        title: 'Student Notice',
+        path: '/admin/studentNotice',
+        icon: <IoIcons.IoIosPaper />,
+      },
+      {
+        title: 'Parent Notice',
+        path: '/admin/parentNotice',
+        icon: <IoIcons.IoIosPaper />,
+      },
+    ],
+  },
+  {
+    title: 'Facility',
+    path: '/admin/facility',
+    icon: <FaIcons.FaMoneyCheckAlt />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+  },
+  {
+    title: 'Gallery',
+    path: '/admin/gallery',
+    icon: <FaIcons.FaMoneyCheckAlt />,
+    iconClosed: <RiIcons.RiArrowDownSFill />,
+    iconOpened: <RiIcons.RiArrowUpSFill />,
+  },
+  {
     title: 'Settings',
     icon: <AiIcons.AiFillSetting />,
     iconClosed: <RiIcons.RiArrowDownSFill />,

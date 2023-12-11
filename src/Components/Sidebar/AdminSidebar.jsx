@@ -6,6 +6,7 @@ import { useState  } from 'react';
 // import * as AiIcons from 'react-icons/ai';
 import SubMenu from '../SubMenu';
 import styled from 'styled-components';
+import Logo from '../../assets/computerClub/AGAImage.png';
 
   const SidebarNav = styled.nav`
   background: #15171c;
@@ -39,9 +40,10 @@ const AdminSidebar = ({ children }) => {
               <div className='sidebar_wrap'>
                 <div className='sidebar'>
                   <div className='top_section'>
-                    <Link to='/' className='logo'>
+                    {/* <Link to='/' className='logo'>
                       Logo
-                    </Link>
+                    </Link> */}
+                    <img src={Logo} alt='school-image' width='80px' height='80px' style={{borderRadius:'5px'}}/>
                   </div>
 
                   {/* <div className='navicon'>
