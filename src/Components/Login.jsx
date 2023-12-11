@@ -48,8 +48,8 @@ const Login = () => {
           localStorage.setItem('blood_group', response?.blood_group);
           localStorage.setItem('department', response?.department);
           localStorage.setItem('image', response?.image);
-
           localStorage.setItem('role', response?.role_id);
+          localStorage.setItem('school_id', response?.school_id);
           
           const userRoleId = localStorage.getItem('role');
           console.log(userRoleId);

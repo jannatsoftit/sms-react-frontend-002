@@ -2,6 +2,7 @@ import { FaChalkboardTeacher } from 'react-icons/fa';
 import { MdNotificationsActive } from 'react-icons/md';
 import { PiUsersFill } from 'react-icons/pi';
 import { TbBooks } from 'react-icons/tb';
+import { FaSchoolFlag } from "react-icons/fa6";
 import BarChart from './BarChart';
 import Table from './Table';
 
@@ -12,6 +13,7 @@ import TopBar from '../../../TopBar';
 
 const Dashboard = () => {
   const userDepartment = localStorage.getItem('department');
+  const SchoolId = localStorage.getItem('school_id');
 
   return (
     <>
@@ -19,6 +21,15 @@ const Dashboard = () => {
       <AdminSidebar>
         <div className='p-3 pb-5'>
           <div className='container-fluid  dashboard_table'>
+            <div className='school_dashboard'>
+              {
+                (SchoolId) === '1' ?
+                <h6><b style={{marginLeft:'320px', marginTop:'15px'}}><FaSchoolFlag style={{marginTop:'-5px'}}/>{" "}Abdul Gafur Academy Primary and High School</b></h6>
+                :
+                <h4>Abdul Gafur Academy Primary and High School</h4>
+              }
+
+            </div>
             <div style={{ marginTop: '20px',}}>
               <h3 className='dashboard_page_title'>
                 <span className='dashboard-page-title-icon bg-gradient-primary text-black mr-2'>
@@ -84,10 +95,6 @@ const Dashboard = () => {
                 <BarChart />
               </div>
             </div>
-
-
-           
-
 
             {/* google map */}
             <div className='row dash_map'>
