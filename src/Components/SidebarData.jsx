@@ -1,4 +1,10 @@
 import * as FaIcons from 'react-icons/fa';
+import { FaSchoolFlag } from "react-icons/fa6";
+import { PiChalkboardTeacher } from "react-icons/pi";
+import { GiTeacher } from "react-icons/gi";
+import { MdAddAlert } from "react-icons/md";
+import { RiGalleryLine } from "react-icons/ri";
+
 import * as AiIcons from 'react-icons/ai';
 import * as BsIcons from 'react-icons/bs';
 import * as BiIcons from 'react-icons/bi';
@@ -7,6 +13,8 @@ import * as RiIcons from 'react-icons/ri';
 import * as SiIcons from 'react-icons/si';
 import * as MdIcons from 'react-icons/md';
 import * as PiIcons from 'react-icons/pi';
+import { GrContactInfo } from "react-icons/gr";
+
 
 export const SidebarData = [
   {
@@ -123,7 +131,7 @@ export const SidebarData = [
       {
         title: 'Managing Committee',
         path: '/admin/managingCommittee',
-        icon: <BiIcons.BiMoney />,
+        icon: <FaIcons.FaUserFriends />,
       },
       {
         title: 'Student Fee',
@@ -139,32 +147,32 @@ export const SidebarData = [
   },
   {
     title: 'School Staff',
-    icon: <FaIcons.FaMoneyCheckAlt />,
+    icon: <FaSchoolFlag />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: 'Teaching Staff',
         path: '/admin/tteachingStaffs',
-        icon: <BiIcons.BiMoney />,
+        icon: <GiTeacher />,
       },
       {
         title: 'Non-Teaching Staff',
         path: '/admin/nonTeachingStaffs',
-        icon: <IoIcons.IoIosPaper />,
+        icon: <PiChalkboardTeacher />,
       },
     ],
   },
   {
     title: 'Notice',
-    icon: <FaIcons.FaMoneyCheckAlt />,
+    icon: <MdAddAlert />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
         title: 'Teacher Notice',
         path: '/admin/teacherNotice',
-        icon: <BiIcons.BiMoney />,
+        icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Student Notice',
@@ -181,14 +189,14 @@ export const SidebarData = [
   {
     title: 'Facility',
     path: '/admin/facility',
-    icon: <FaIcons.FaMoneyCheckAlt />,
+    icon: <IoIcons.IoIosPaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
   },
   {
     title: 'Gallery',
     path: '/admin/gallery',
-    icon: <FaIcons.FaMoneyCheckAlt />,
+    icon: <RiGalleryLine />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
   },
