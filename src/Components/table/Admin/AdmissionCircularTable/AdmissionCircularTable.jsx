@@ -147,7 +147,7 @@ const AdmissionCircularTable = () => {
                                       className="dropdown-item"
                                       to={"/admin/examCategories_ST/show"}
                                     >
-                                      Show AdmissionCircular 6 to 10
+                                      Show AdmissionCircular
                                     </Link>
                                   </li>
                                   <li>
@@ -189,7 +189,7 @@ const AdmissionCircularTable = () => {
                                       className="dropdown-item"
                                       to={"/admin/examCategories_OF/show"}
                                     >
-                                      Show AdmissionCircular 1 to 5
+                                      Show AdmissionCircular
                                     </Link>
                                   </li>
                                   <li>
