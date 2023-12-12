@@ -1,10 +1,10 @@
-import PTeachingStaffTable from '../../../../table/Admin/TeachingStaffTable/PTeachingStaffTable';
-import TopBar from "../../../../TopBar";
+import PTeachingStaffTable from '../../../../table/Student/TeachingStaffTable/PTeachingStaffTable';
+import StudentTopBar from "../../../../StudentTopBar";
 
 const PTeachingStaffList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* PTeaching Staff table section */}
       <PTeachingStaffTable />
     </div>

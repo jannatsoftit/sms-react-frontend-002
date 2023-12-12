@@ -1,10 +1,10 @@
-import SchoolTable from '../../../../table/Admin/SchoolTable/SchoolTable';
-import TopBar from "../../../../TopBar";
+import SchoolTable from '../../../../table/Student/SchoolTable/SchoolTable';
+import StudentTopBar from "../../../../StudentTopBar";
 
 const SchoolList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* Parent table section */}
       <SchoolTable />
     </div>

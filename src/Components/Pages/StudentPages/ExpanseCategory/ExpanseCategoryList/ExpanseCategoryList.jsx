@@ -1,10 +1,10 @@
-import ExpanseCategoryTable from '../../../../../Components/table/Admin/ExpanseCategoryTable/ExpanseCategoryTable';
-import TopBar from "../../../../TopBar";
+import ExpanseCategoryTable from '../../../../../Components/table/Student/ExpanseCategoryTable/ExpanseCategoryTable';
+import StudentTopBar from "../../../../StudentTopBar";
 
 const ExpanseCategoryList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* ExpanseCategory table section */}
       <ExpanseCategoryTable />
     </div>

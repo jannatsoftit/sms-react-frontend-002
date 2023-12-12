@@ -1,16 +1,16 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from "react-router-dom";
-import AdminSidebar from "../../../../../Sidebar/AdminSidebar";
+import StudentSidebar from "../../../../../Sidebar/StudentSidebar";
 import Footer from "../../../../../Footer";
-import TopBar from "../../../../../TopBar";
+import StudentTopBar from "../../../../../StudentTopBar";
 
 const AdmissionCircularShow_OF = () => {
   return (
     <>
-      <TopBar />
-      <AdminSidebar>
+      <StudentTopBar />
+      <StudentSidebar>
         {/* Admission CircularShow table title section */}
-        <Link to="/admin/admissionCirculars" className="add_button">
+        <Link to="/student/admissionCirculars" className="add_button">
           <button type="button" className="btn">
           Admission Circular Table <AiOutlineArrowRight />
           </button>
@@ -150,7 +150,7 @@ const AdmissionCircularShow_OF = () => {
           <div></div>
         </div>
         <Footer />
-      </AdminSidebar>
+      </StudentSidebar>
     </>
   );
 };

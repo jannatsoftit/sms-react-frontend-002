@@ -1,10 +1,10 @@
-import StudentTable from '../../../../table/Admin/StudentTable/StudentTable';
-import TopBar from "../../../../TopBar";
+import StudentTable from '../../../../table/Student/StudentTable/StudentTable';
+import StudentTopBar from "../../../../StudentTopBar";
 
 const StudentList = () => {
   return (
     <div>
-      <TopBar />
+      <StudentTopBar />
       {/* Student table section */}
       <StudentTable />
     </div>

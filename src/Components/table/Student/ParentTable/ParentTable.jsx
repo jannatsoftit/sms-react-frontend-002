@@ -39,33 +39,6 @@ const ParentTable = () => {
     }
   };
 
-  //parent data delete function
-  const handleDelete = (parent) => {
-    if (confirm(`Are You sure you want to delete parent ${parent.id}?`)) {
-      Swal.fire({
-        title: 'Success!',
-        text: 'Information Delete Successfully!!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-      });
-
-      fetch(`http://127.0.0.1:8000/api/parents/${parent.id}`, {
-        headers: {
-          Accept: 'application/json',
-        },
-        method: 'DELETE',
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.info(res);
-          setReload((value) => ++value);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
-
   //parent all data show in the table
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/parents?`, {
@@ -181,25 +154,9 @@ const ParentTable = () => {
                                   <li>
                                     <Link
                                       className='dropdown-item'
-                                      to={`/admin/parents/${record?.id}`}
+                                      to={`/student/parents/${record?.id}`}
                                     >
                                       Show Parent
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      to={`/admin/parents/${record?.id}/edit`}
-                                    >
-                                      Edit Parent
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      onClick={() => handleDelete(record)}
-                                    >
-                                      Delete Parent
                                     </Link>
                                   </li>
                                 </ul>

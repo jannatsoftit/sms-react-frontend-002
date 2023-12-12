@@ -1,10 +1,10 @@
-import ClassRoutineTable from '../../../../../table/Admin/ClassRoutineTable/ClassRoutineTable';
-import TopBar from "../../../../../TopBar";
+import ClassRoutineTable from '../../../../../table/Student/ClassRoutineTable/ClassRoutineTable';
+import StudentTopBar from "../../../../../StudentTopBar";
 
 const ClassRoutineList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* ClassRoutine table section */}
       <ClassRoutineTable />
     </div>

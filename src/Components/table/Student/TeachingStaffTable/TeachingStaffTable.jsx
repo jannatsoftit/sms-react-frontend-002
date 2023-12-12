@@ -7,12 +7,12 @@ import PTeachingStaffTable from '../../../table/Admin/TeachingStaffTable/PTeachi
 
 import StudentSidebar from '../../../Sidebar/StudentSidebar';
 import Footer from '../../../Footer';
-import TopBar from '../../../TopBar';
+import StudentTopBar from '../../../StudentTopBar';
 
 const TeachingStaffTable = () => {
   return (
     <>
-    <TopBar/>
+    <StudentTopBar/>
       <StudentSidebar>
         <section className='ftco-section'>
           <div className='container'>

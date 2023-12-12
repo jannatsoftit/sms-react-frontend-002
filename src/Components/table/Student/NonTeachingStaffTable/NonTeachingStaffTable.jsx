@@ -15,38 +15,6 @@ const NonTeachingStaffTable = () => {
   // NonTeachingStaff table reload state
   const [reload, setReload] = useState(0);
 
-
-  //NonTeachingStaffs data delete function
-  const handleDelete = (nonTeachingStaff) => {
-    if (
-      confirm(
-        `Are You sure you want to delete non-teaching staff ${nonTeachingStaff.id}?`
-      )
-    ) {
-      Swal.fire({
-        title: 'Success!',
-        text: 'Information Delete Successfully!!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-      });
-
-      fetch(`http://127.0.0.1:8000/api/nonTeachingStaffs/${nonTeachingStaff.id}`, {
-        headers: {
-          Accept: 'application/json',
-        },
-        method: 'DELETE',
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.info(res);
-          setReload((value) => ++value);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
-
   //nonteachingStaff all data show in the table
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/nonTeachingStaffs?`, {
@@ -109,7 +77,6 @@ const NonTeachingStaffTable = () => {
                       <th>Image</th>
                       <th>Name</th>
                       <th>Designation</th>
-                      <th>Options</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -133,40 +100,6 @@ const NonTeachingStaffTable = () => {
                           </td>
                           <td>
                             <span>{nonTeachingStaff?.designation}</span>
-                          </td>
-                          <td>
-                            <div className='dropdown'>
-                              <button
-                                className='btn btn-secondary dropdown-toggle'
-                                type='button'
-                                id='dropdownMenuButton1'
-                                data-bs-toggle='dropdown'
-                                aria-expanded='false'
-                              >
-                                Actions
-                              </button>
-                              <ul
-                                className='dropdown-menu'
-                                aria-labelledby='dropdownMenuButton1'
-                              >
-                                <li>
-                                  <Link
-                                    className='dropdown-item'
-                                    to={`/admin/nonTeachingStaffs/${nonTeachingStaff?.id}/edit`}
-                                  >
-                                    Edit Non-Teaching Staff
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link
-                                    className='dropdown-item'
-                                    onClick={() => handleDelete(nonTeachingStaff)}
-                                  >
-                                    Delete Non-Teaching Staff
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
                           </td>
                         </tr>
                       );

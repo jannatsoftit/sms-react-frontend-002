@@ -48,53 +48,24 @@ const OfflineExamTable = () => {
     }
   };
 
-  // Offline Exam data delete function
-  const handleDelete = (offlineExam) => {
-    if (
-      confirm(`Are You sure you want to delete offline exam ${offlineExam.id}?`)
-    ) {
-      Swal.fire({
-        title: "Success!",
-        text: "Information Delete Successfully!!",
-        icon: "success",
-        confirmButtonText: "Ok",
-      });
-
-      fetch(`http://127.0.0.1:8000/api/offlineExams/${offlineExam.id}`, {
+    //Offline Exam all data show in the table
+    useEffect(() => {
+      fetch(`http://127.0.0.1:8000/api/offlineExams?`, {
         headers: {
           Accept: "application/json",
         },
-        method: "DELETE",
+        method: "GET",
       })
         .then((res) => res.json())
         .then((res) => {
           console.info(res);
-          setReload((value) => ++value);
+          setOfflineExams(res.data?.offlineExams);
         })
         .catch((error) => {
           console.error(error);
+          setOfflineExams(null);
         });
-    }
-  };
-
-  //Offline Exam all data show in the table
-  useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/offlineExams?`, {
-      headers: {
-        Accept: "application/json",
-      },
-      method: "GET",
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        console.info(res);
-        setOfflineExams(res.data?.offlineExams);
-      })
-      .catch((error) => {
-        console.error(error);
-        setOfflineExams(null);
-      });
-  }, [reload]);
+    }, [reload]);
 
     // download exam-routine file from public folder
     const downloadFileAtURL = (url) => {
@@ -132,24 +103,15 @@ const OfflineExamTable = () => {
             </div>
             <div className="row admin_table offline_exam_table">
               <div className="col-md-12">
-                <div className="table-wrap">
+                <div className="">
                   <table className="table table-responsive-xl">
                     <thead>
                       <tr>
                         <th>Exam Name</th>
-                        {/* <th>Class Name</th> */}
-                        {/* <th>Paper</th>
-                        //<th>Section</th>
-                        <th>Subject Code</th>
-                        <th>Exam Date</th>
-                        <th>Building Name</th>
-                        <th>Room Number</th>
-                        */}
                         <th>Starting Time</th>
                         <th>Ending Time</th>
                         <th>Total Marks</th>
                         <th>Exam Routine</th>
-                        <th>Options</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -248,41 +210,6 @@ const OfflineExamTable = () => {
                             null
                             
                             }
-                            </td>
-
-                            <td>
-                              <div className="dropdown">
-                                <button
-                                  className="btn btn-secondary dropdown-toggle"
-                                  type="button"
-                                  id="dropdownMenuButton1"
-                                  data-bs-toggle="dropdown"
-                                  aria-expanded="false"
-                                >
-                                  Actions
-                                </button>
-                                <ul
-                                  className="dropdown-menu"
-                                  aria-labelledby="dropdownMenuButton1"
-                                >
-                                  <li>
-                                    <Link
-                                      className="dropdown-item"
-                                      to={`/admin/offlineExams/${record?.id}/edit`}
-                                    >
-                                      Edit Offline Exam
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className="dropdown-item"
-                                      onClick={() => handleDelete(record)}
-                                    >
-                                      Delete Offline Exam
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </div>
                             </td>
                           </tr>
                         );

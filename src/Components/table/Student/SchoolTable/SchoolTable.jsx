@@ -39,7 +39,7 @@ const SchoolTable = () => {
               <h2 className='heading-section'>School Table List</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
-                  user
+                  settings
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>
@@ -118,17 +118,9 @@ const SchoolTable = () => {
                                   <li>
                                     <Link
                                       className='dropdown-item'
-                                      to={`/admin/schools/${school?.id}`}
+                                      to={`/student/schools/${school?.id}`}
                                     >
                                       Show School
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      to={`/admin/schools/${school?.id}/edit`}
-                                    >
-                                      Edit School
                                     </Link>
                                   </li>
                                 </ul>

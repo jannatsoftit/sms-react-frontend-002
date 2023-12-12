@@ -2,9 +2,9 @@
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import SchoolDetail from '../../../../details/Admin/SchoolDetail/SchoolDetail';
-import AdminSidebar from '../../../../Sidebar/AdminSidebar';
-import TopBar from "../../../../TopBar";
+import SchoolDetail from '../../../../details/Student/SchoolDetail/SchoolDetail';
+import StudentSidebar from '../../../../Sidebar/StudentSidebar';
+import StudentTopBar from "../../../../StudentTopBar";
 
 const SchoolShow = () => {
   const { schoolId } = useParams();
@@ -32,8 +32,8 @@ const SchoolShow = () => {
 
   return (
     <div>
-      <TopBar />
-      <AdminSidebar>
+      <StudentTopBar />
+      <StudentSidebar>
         <div className='dropdown add_button'>
           <button
             className='btn btn-secondary dropdown-toggle'
@@ -46,7 +46,7 @@ const SchoolShow = () => {
           </button>
           <ul className='dropdown-menu' aria-labelledby='dropdownMenuButton1'>
             <li>
-              <Link className='dropdown-item' to={`/admin/schools`}>
+              <Link className='dropdown-item' to={`/student/schools`}>
                 School Table
               </Link>
             </li>
@@ -55,7 +55,7 @@ const SchoolShow = () => {
 
         {/* school data details component */}
         <SchoolDetail school={school} />
-      </AdminSidebar>
+      </StudentSidebar>
     </div>
   );
 };

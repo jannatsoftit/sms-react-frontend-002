@@ -98,13 +98,12 @@ const SyllabusTable = () => {
             </div>
             <div className='row admin_table'>
               <div className='col-md-12'>
-                <div className='table-wrap'>
+                <div className=''>
                   <table className='table table-responsive-xl'>
                     <thead>
                       <tr>
                         <th>Class Name</th>
                         <th>Syllabus</th>
-                        <th>Options</th>
                       </tr>
                     </thead>
                     <tbody>

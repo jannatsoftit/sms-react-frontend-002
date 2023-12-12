@@ -101,13 +101,12 @@ const SchoolMagazineTable = () => {
             </div>
             <div className='row admin_table'>
               <div className='col-md-12'>
-                <div className='table-wrap'>
+                <div className=''>
                   <table className='table table-responsive-xl'>
                     <thead>
                       <tr>
                         <th>School Magazine Year</th>
                         <th>School Magazine</th>
-                        <th>Options</th>
                       </tr>
                     </thead>
                     <tbody>

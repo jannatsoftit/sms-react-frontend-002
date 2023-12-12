@@ -3,7 +3,7 @@ import { GalleryData } from './GalleryData';
 import { useState } from 'react';
 import StudentSidebar from '../../../Sidebar/StudentSidebar';
 import Footer from '../../../Footer';
-import TopBar from '../../../TopBar';
+import StudentTopBar from '../../../StudentTopBar';
 
 const GalleryTable = () => {
   const [images, setImage] = useState(GalleryData);
@@ -43,7 +43,7 @@ const GalleryTable = () => {
 
   return (
     <>
-      <TopBar />
+      <StudentTopBar />
       <StudentSidebar>
         {/* Library Facility title section */}
         <div className='parent_notice_title'>

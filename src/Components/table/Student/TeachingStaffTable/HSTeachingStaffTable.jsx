@@ -13,38 +13,6 @@ const HSTeachingStaffTable = () => {
   // HSTeachingStaff table reload state
   const [reload, setReload] = useState(0);
 
-
-  //HSTeachingStaffs data delete function
-  const handleDelete = (hsteachingStaff) => {
-    if (
-      confirm(
-        `Are You sure you want to delete hsteaching staff ${hsteachingStaff.id}?`
-      )
-    ) {
-      Swal.fire({
-        title: 'Success!',
-        text: 'Information Delete Successfully!!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-      });
-
-      fetch(`http://127.0.0.1:8000/api/hsteachingStaffs/${hsteachingStaff.id}`, {
-        headers: {
-          Accept: 'application/json',
-        },
-        method: 'DELETE',
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.info(res);
-          setReload((value) => ++value);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
-
   //hsteachingStaff all data show in the table
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/hsteachingStaffs?`, {
@@ -102,7 +70,6 @@ const HSTeachingStaffTable = () => {
                       <th>Image</th>
                       <th>Name</th>
                       <th>Designation</th>
-                      <th>Options</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -126,40 +93,6 @@ const HSTeachingStaffTable = () => {
                           </td>
                           <td>
                             <span>{hsteachingStaff?.designation}</span>
-                          </td>
-                          <td>
-                            <div className='dropdown'>
-                              <button
-                                className='btn btn-secondary dropdown-toggle'
-                                type='button'
-                                id='dropdownMenuButton1'
-                                data-bs-toggle='dropdown'
-                                aria-expanded='false'
-                              >
-                                Actions
-                              </button>
-                              <ul
-                                className='dropdown-menu'
-                                aria-labelledby='dropdownMenuButton1'
-                              >
-                                <li>
-                                  <Link
-                                    className='dropdown-item'
-                                    to={`/admin/hsteachingStaffs/${hsteachingStaff?.id}/edit`}
-                                  >
-                                    Edit TeachingStaff
-                                  </Link>
-                                </li>
-                                <li>
-                                  <Link
-                                    className='dropdown-item'
-                                    onClick={() => handleDelete(hsteachingStaff)}
-                                  >
-                                    Delete TeachingStaff
-                                  </Link>
-                                </li>
-                              </ul>
-                            </div>
                           </td>
                         </tr>
                       );

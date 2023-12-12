@@ -16,7 +16,7 @@ import * as PiIcons from 'react-icons/pi';
 import { GrContactInfo } from "react-icons/gr";
 
 
-export const SidebarData = [
+export const StudentSidebarData = [
   {
     title: 'Dashboard',
     path: '/student/dashboard',

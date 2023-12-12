@@ -40,37 +40,6 @@ const AdmissionCircularTable = () => {
     }
   };
 
-  //Admission Circular data delete function
-  const handleDelete = (admissionCircular) => {
-    if (
-      confirm(
-        `Are You sure you want to delete Admission Circular ${admissionCircular.id}?`
-      )
-    ) {
-      Swal.fire({
-        title: "Success!",
-        text: "Information Delete Successfully!!",
-        icon: "success",
-        confirmButtonText: "Ok",
-      });
-
-      fetch(`http://127.0.0.1:8000/api/admissionCirculars/${admissionCircular.id}`, {
-        headers: {
-          Accept: "application/json",
-        },
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.info(res);
-          setReload((value) => ++value);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
-
   //Admission Circular all data show in the table
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/admissionCirculars?`, {
@@ -114,7 +83,7 @@ const AdmissionCircularTable = () => {
                     <thead>
                       <tr>
                         <th>Admission Circular</th>
-                        <th>Options</th>
+                        <th>Option</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -144,25 +113,9 @@ const AdmissionCircularTable = () => {
                                   <li>
                                     <Link
                                       className="dropdown-item"
-                                      to={"/admin/admissionCirculars_ST/show"}
+                                      to={"/student/admissionCirculars_ST/show"}
                                     >
                                       Show AdmissionCircular
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className="dropdown-item"
-                                      to={`/admin/admissionCirculars/${record?.id}/edit`}
-                                    >
-                                      Edit AdmissionCircular
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className="dropdown-item"
-                                      onClick={() => handleDelete(record)}
-                                    >
-                                      Delete AdmissionCircular
                                     </Link>
                                   </li>
                                 </ul>
@@ -186,25 +139,9 @@ const AdmissionCircularTable = () => {
                                   <li>
                                     <Link
                                       className="dropdown-item"
-                                      to={"/admin/admissionCirculars_OF/show"}
+                                      to={"/student/admissionCirculars_OF/show"}
                                     >
                                       Show AdmissionCircular
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className="dropdown-item"
-                                      to={`/admin/admissionCirculars/${record?.id}/edit`}
-                                    >
-                                      Edit AdmissionCircular
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className="dropdown-item"
-                                      onClick={() => handleDelete(record)}
-                                    >
-                                      Delete AdmissionCircular
                                     </Link>
                                   </li>
                                 </ul>
@@ -228,25 +165,9 @@ const AdmissionCircularTable = () => {
                                   <li>
                                     <Link
                                       className="dropdown-item"
-                                      to={"/admin/admissionCirculars_OF/show"}
+                                      to={"/student/admissionCirculars_OF/show"}
                                     >
                                       Show AdmissionCircular 1 to 5
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className="dropdown-item"
-                                      to={`/admin/admissionCirculars/${record?.id}/edit`}
-                                    >
-                                      Edit AdmissionCircular
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className="dropdown-item"
-                                      onClick={() => handleDelete(record)}
-                                    >
-                                      Delete AdmissionCircular
                                     </Link>
                                   </li>
                                 </ul>
@@ -254,7 +175,6 @@ const AdmissionCircularTable = () => {
                               :
                               null
                             } 
-                              
                             </td>  
                           </tr>
                         );

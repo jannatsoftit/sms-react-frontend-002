@@ -41,32 +41,6 @@ const SubjectTable = () => {
     }
   };
 
-  // Subject data delete function
-  const handleDelete = (subject) => {
-    if (confirm(`Are You sure you want to delete subject ${subject.id}?`)) {
-      Swal.fire({
-        title: 'Success!',
-        text: 'Information Delete Successfully!!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-      });
-
-      fetch(`http://127.0.0.1:8000/api/subjects/${subject.id}`, {
-        headers: {
-          Accept: 'application/json',
-        },
-        method: 'DELETE',
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.info(res);
-          setReload((value) => ++value);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
 
   //Subject all data show in the table
   useEffect(() => {
@@ -114,7 +88,6 @@ const SubjectTable = () => {
                         <th>Class Name</th>
                         <th>Subject Code</th>
                         <th>Paper</th>
-                        <th>Options</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -132,40 +105,6 @@ const SubjectTable = () => {
                             </td>
                             <td>
                               <span>{record?.paper}</span>
-                            </td>
-                            <td>
-                              <div className='dropdown'>
-                                <button
-                                  className='btn btn-secondary dropdown-toggle'
-                                  type='button'
-                                  id='dropdownMenuButton1'
-                                  data-bs-toggle='dropdown'
-                                  aria-expanded='false'
-                                >
-                                  Actions
-                                </button>
-                                <ul
-                                  className='dropdown-menu'
-                                  aria-labelledby='dropdownMenuButton1'
-                                >
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      to={`/admin/subjects/${record?.id}/edit`}
-                                    >
-                                      Edit Subject
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      onClick={() => handleDelete(record)}
-                                    >
-                                      Delete Subject
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </div>
                             </td>
                           </tr>
                         );

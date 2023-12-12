@@ -40,32 +40,6 @@ const TeacherTable = () => {
     }
   };
 
-  //Teacher data delete function
-  const handleDelete = (teacher) => {
-    if (confirm(`Are You sure you want to delete teacher ${teacher.id}?`)) {
-      Swal.fire({
-        title: 'Success!',
-        text: 'Information Delete Successfully!!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-      });
-
-      fetch(`http://127.0.0.1:8000/api/teachers/${teacher.id}`, {
-        headers: {
-          Accept: 'application/json',
-        },
-        method: 'DELETE',
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.info(res);
-          setReload((value) => ++value);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
 
   //Teacher all data show in the table
   useEffect(() => {
@@ -182,25 +156,9 @@ const TeacherTable = () => {
                                   <li>
                                     <Link
                                       className='dropdown-item'
-                                      to={`/admin/teachers/${record?.id}`}
+                                      to={`/student/teachers/${record?.id}`}
                                     >
                                       Show Teacher
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      to={`/admin/teachers/${record?.id}/edit`}
-                                    >
-                                      Edit Teacher
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      onClick={() => handleDelete(record)}
-                                    >
-                                      Delete Teacher
                                     </Link>
                                   </li>
                                 </ul>

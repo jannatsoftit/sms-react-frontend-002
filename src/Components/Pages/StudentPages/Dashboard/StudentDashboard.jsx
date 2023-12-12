@@ -4,19 +4,19 @@ import { PiUsersFill } from 'react-icons/pi';
 import { TbBooks } from 'react-icons/tb';
 import { FaSchoolFlag } from "react-icons/fa6";
 import BarChart from './BarChart';
-import AdminSidebar from '../../../Sidebar/AdminSidebar';
+import StudentSidebar from '../../../Sidebar/StudentSidebar';
 import Footer from '../../../Footer';
-import TopBar from '../../../TopBar';
+import StudentTopBar from '../../../StudentTopBar';
 import Calendar1 from './Calendar1';
 
-const Dashboard = () => {
+const StudentDashboard = () => {
   const userDepartment = localStorage.getItem('department');
   const SchoolId = localStorage.getItem('school_id');
 
   return (
     <>
-      <TopBar />
-      <AdminSidebar>
+      <StudentTopBar />
+      <StudentSidebar>
         <div className='p-3 pb-5' style={{marginLeft:'40px'}}>
           <div className='container-fluid  dashboard_table'>
             <div className='school_dashboard'>
@@ -109,9 +109,9 @@ const Dashboard = () => {
           </div>
         </div>
         <Footer />
-      </AdminSidebar>
+      </StudentSidebar>
     </>
   );
 };
 
-export default Dashboard;
+export default StudentDashboard;

@@ -1,10 +1,10 @@
-import AdmissionCircularTable from '../../../../../table/Admin/AdmissionCircularTable/AdmissionCircularTable';
-import TopBar from "../../../../../TopBar";
+import AdmissionCircularTable from '../../../../../table/Student/AdmissionCircularTable/AdmissionCircularTable';
+import StudentTopBar from "../../../../../StudentTopBar";
 
 const AdmissionCircularList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* admissionCircular table section */}
       <AdmissionCircularTable />
     </div>

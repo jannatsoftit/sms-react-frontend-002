@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import StudentSidebar from '../../../Sidebar/StudentSidebar';
 import Footer from '../../../Footer';
-import TopBar from '../../../TopBar';
+import StudentTopBar from '../../../StudentTopBar';
 import magagineImage1 from '../../../../../public/managingCommittee/mg1.png';
 import magagineImage2 from '../../../../../public/managingCommittee/mg2.png';
 import magagineImage3 from '../../../../../public/managingCommittee/mg3.png';
@@ -22,7 +22,7 @@ const ManagingCommitteeTable = () => {
 
   return (
     <>
-    <TopBar/>
+    <StudentTopBar/>
       <StudentSidebar>
         <section className='ftco-section'>
           <div className='container'>

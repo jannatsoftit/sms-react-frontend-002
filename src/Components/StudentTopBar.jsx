@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -9,7 +8,6 @@ const TopBar = () => {
   const userFirstName = localStorage.getItem("auth_name");
   const userLastName = localStorage.getItem("last_name");
 	const userTopImage = localStorage.getItem("image");
-	const userRoleId = localStorage.getItem("role");
 
   const logoutClick = () => {
     localStorage.clear();
@@ -84,7 +82,7 @@ const TopBar = () => {
                 </a>
                 <ul className='dropdown-menu' aria-labelledby='navbarDropdown'>
                   <li>
-                    <Link className='dropdown-item' to='/admin/profile'>
+                    <Link className='dropdown-item' to='/student/profile'>
 											User Profile
                     </Link>
                   </li>

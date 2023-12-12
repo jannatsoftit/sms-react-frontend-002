@@ -40,32 +40,6 @@ const GradeTable = () => {
     }
   };
 
-  //Grade data delete function
-  const handleDelete = (grade) => {
-    if (confirm(`Are You sure you want to delete grade ${grade.id}?`)) {
-      Swal.fire({
-        title: 'Success!',
-        text: 'Information Delete Successfully!!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-      });
-
-      fetch(`http://127.0.0.1:8000/api/grades/${grade.id}`, {
-        headers: {
-          Accept: 'application/json',
-        },
-        method: 'DELETE',
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.info(res);
-          setReload((value) => ++value);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
 
   //Grade all data show in the table
   useEffect(() => {
@@ -105,14 +79,13 @@ const GradeTable = () => {
             </div>
             <div className='row admin_table'>
               <div className='col-md-12'>
-                <div className='table-wrap'>
+                <div className=''>
                   <table className='table table-responsive-xl'>
                     <thead>
                       <tr>
                         <th>Grade point</th>
                         <th>Letter grade</th>
                         <th>Marks interval</th>
-                        <th>Options</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -127,40 +100,6 @@ const GradeTable = () => {
                             </td>
                             <td>
                               <span>{record?.marks_interval}</span>
-                            </td>
-                            <td>
-                              <div className='dropdown'>
-                                <button
-                                  className='btn btn-secondary dropdown-toggle'
-                                  type='button'
-                                  id='dropdownMenuButton1'
-                                  data-bs-toggle='dropdown'
-                                  aria-expanded='false'
-                                >
-                                  Actions
-                                </button>
-                                <ul
-                                  className='dropdown-menu'
-                                  aria-labelledby='dropdownMenuButton1'
-                                >
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      to={`/admin/grades/${record?.id}/edit`}
-                                    >
-                                      Edit ExamCategory
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      onClick={() => handleDelete(record)}
-                                    >
-                                      Delete ExamCategory
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </div>
                             </td>
                           </tr>
                         );

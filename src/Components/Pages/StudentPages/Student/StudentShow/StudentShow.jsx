@@ -2,9 +2,9 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import StudentDetail from '../../../../details/Admin/StudentDetail/StudentDetail';
-import AdminSidebar from '../../../../Sidebar/AdminSidebar';
-import TopBar from "../../../../TopBar";
+import StudentDetail from '../../../../details/Student/StudentDetail/StudentDetail';
+import StudentSidebar from '../../../../Sidebar/StudentSidebar';
+import StudentTopBar from "../../../../StudentTopBar";
 
 const StudentShow = () => {
   const { studentId } = useParams();
@@ -32,10 +32,10 @@ const StudentShow = () => {
 
   return (
     <div>
-      <TopBar />
-      <AdminSidebar>
+      <StudentTopBar />
+      <StudentSidebar>
         {/* student create table title section */}
-        <Link to='/admin/students' className='add_button'>
+        <Link to='/student/students' className='add_button'>
           <button type='button' className='btn'>
             Student Table <AiOutlineArrowRight />
           </button>
@@ -43,7 +43,7 @@ const StudentShow = () => {
 
         {/* student data details component */}
         <StudentDetail student={student} />
-      </AdminSidebar>
+      </StudentSidebar>
     </div>
   );
 };

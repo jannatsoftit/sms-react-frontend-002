@@ -1,10 +1,10 @@
-import ParentTable from '../../../../table/Admin/ParentTable/ParentTable';
-import TopBar from "../../../../TopBar";
+import ParentTable from '../../../../table/Student/ParentTable/ParentTable';
+import StudentTopBar from "../../../../StudentTopBar";
 
 const ParentList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* Parent table section */}
       <ParentTable />
     </div>

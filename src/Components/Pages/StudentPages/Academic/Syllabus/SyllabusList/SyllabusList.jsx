@@ -1,10 +1,10 @@
-import SyllabusTable from '../../../../../table/Admin/SyllabusTable/SyllabusTable';
-import TopBar from "../../../../../TopBar";
+import SyllabusTable from '../../../../../table/Student/SyllabusTable/SyllabusTable';
+import StudentTopBar from "../../../../../StudentTopBar";
 
 const SyllabusList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* Syllabus table section */}
       <SyllabusTable />
     </div>

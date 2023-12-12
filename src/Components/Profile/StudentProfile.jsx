@@ -1,8 +1,8 @@
 //import React from 'react';
 
+import StudentTopBar from '../StudentTopBar';
 import StudentSidebar from '../Sidebar/StudentSidebar';
 import Footer from '../Footer';
-import TopBar from '../TopBar';
 
 const StudentProfile = () => {
   const userFirstName = localStorage.getItem("auth_name");
@@ -17,7 +17,7 @@ const StudentProfile = () => {
 
   return (
     <>
-    <TopBar />
+    <StudentTopBar />
       <StudentSidebar>
       <div className="body">
         <div className="container">

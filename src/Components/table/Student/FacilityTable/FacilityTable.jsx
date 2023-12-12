@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RxSlash } from "react-icons/rx";
 import StudentSidebar from "../../../Sidebar/StudentSidebar";
 import Footer from "../../../Footer";
-import TopBar from "../../../TopBar";
+import StudentTopBar from "../../../StudentTopBar";
 import libraryImage1 from "../../../../assets/libraryImage/library1.png";
 import libraryImage2 from "../../../../assets/libraryImage/library2.png";
 import libraryImage3 from "../../../../assets/libraryImage/library3.jpg";
@@ -14,7 +14,7 @@ import MultimediaTable from "../MultimediaTable/MultimediaTable";
 const FacilityTable = () => {
   return (
     <>
-      <TopBar />
+      <StudentTopBar />
       <StudentSidebar>
         <section className="ftco-section" style={{ marginTop: "-80px" }}>
           <div className="container">
@@ -160,7 +160,7 @@ const FacilityTable = () => {
                         aria-hidden="true"
                       >
                         <div className="modal-dialog library_details_modal">
-                          <div clclassNameass="modal-content">
+                          <div className="modal-content">
                             <div className="modal-header">
                               <h3
                                 className="modal-title"

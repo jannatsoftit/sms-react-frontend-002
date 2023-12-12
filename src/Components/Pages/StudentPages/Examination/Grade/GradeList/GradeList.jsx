@@ -1,10 +1,10 @@
-import GradeTable from '../../../../../table/Admin/GradeTable/GradeTable';
-import TopBar from "../../../../../TopBar";
+import GradeTable from '../../../../../table/Student/GradeTable/GradeTable';
+import StudentTopBar from "../../../../../StudentTopBar";
 
 const GradeList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* Grade table section */}
       <GradeTable />
     </div>

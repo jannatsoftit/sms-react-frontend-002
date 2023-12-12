@@ -3,13 +3,13 @@ import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
 import StudentSidebar from '../../../Sidebar/StudentSidebar';
 import Footer from '../../../Footer';
-import TopBar from '../../../TopBar';
+import StudentTopBar from '../../../StudentTopBar';
 import academicLogo from '../../../../assets/AGAImage.png';
 
 const ParentTeachingTable = () => {
   return (
     <>
-      <TopBar />
+      <StudentTopBar />
       <StudentSidebar>
         <section className='ftco-section' style={{ marginTop: '-80px' }}>
           <div className='container'>

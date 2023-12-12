@@ -40,32 +40,6 @@ const StudentTable = () => {
     }
   };
 
-  //student data delete function
-  const handleDelete = (student) => {
-    if (confirm(`Are You sure you want to delete student ${student.id}?`)) {
-      Swal.fire({
-        title: 'Success!',
-        text: 'Information Delete Successfully!!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-      });
-
-      fetch(`http://127.0.0.1:8000/api/students/${student.id}`, {
-        headers: {
-          Accept: 'application/json',
-        },
-        method: 'DELETE',
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.info(res);
-          setReload((value) => ++value);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
 
   //student all data show in the table
   useEffect(() => {
@@ -182,25 +156,9 @@ const StudentTable = () => {
                                   <li>
                                     <Link
                                       className='dropdown-item'
-                                      to={`/admin/students/${record?.id}`}
+                                      to={`/student/students/${record?.id}`}
                                     >
                                       Show Student
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      to={`/admin/students/${record?.id}/edit`}
-                                    >
-                                      Edit Student
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      onClick={() => handleDelete(record)}
-                                    >
-                                      Delete Student
                                     </Link>
                                   </li>
                                 </ul>

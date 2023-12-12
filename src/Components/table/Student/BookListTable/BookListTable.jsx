@@ -103,13 +103,12 @@ const BookListTable = () => {
             </div>
             <div className='row admin_table'>
               <div className='col-md-12'>
-                <div className='table-wrap'>
+                <div className=''>
                   <table className='table table-responsive-xl'>
                     <thead>
                       <tr>
                         <th>Name</th>
                         <th>BookList</th>
-                        <th>Options</th>
                       </tr>
                     </thead>
                     <tbody>

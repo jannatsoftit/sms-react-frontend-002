@@ -49,33 +49,6 @@ const MarkTable = () => {
     }
   };
 
-  // Mark data delete function
-  const handleDelete = (mark) => {
-    if (confirm(`Are You sure you want to delete mark ${mark.id}?`)) {
-      Swal.fire({
-        title: "Success!",
-        text: "Information Delete Successfully!!",
-        icon: "success",
-        confirmButtonText: "Ok",
-      });
-
-      fetch(`http://127.0.0.1:8000/api/marks/${mark.id}`, {
-        headers: {
-          Accept: "application/json",
-        },
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((res) => {
-          console.info(res);
-          setReload((value) => ++value);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
-
   //mark all data show in the table
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/marks?`, {
@@ -131,14 +104,13 @@ const MarkTable = () => {
             </div>
             <div className="row admin_table">
               <div className="col-md-12">
-                <div className="table-wrap">
+                <div className="">
                   <table className="table table-responsive-xl">
                     <thead>
                       <tr>
                         <th>Exam Name</th>
                         <th>Class name</th>
                         <th>Results</th>
-                        <th>Options</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -152,21 +124,6 @@ const MarkTable = () => {
                               <span>{record?.class_name}</span>
                             </td>
                             <td>
-                              {/* <div>
-                                <a href={'http://localhost:5173/test_exam_result_2023_for_class_4.pdf'}
-                                download
-                                
-                                >
-                                <button
-                                  style={{ backgroundColor: "green" }}
-                                  
-                                >
-                                  <BsDownload /> Download
-                                </button>
-                                </a>
-                                
-                              </div> */}
-
                               { 
                                 (record?.id) === 2 ? 
                               (
@@ -244,40 +201,6 @@ const MarkTable = () => {
                               null
                             
                             }
-                            </td>
-                            <td>
-                              <div className="dropdown">
-                                <button
-                                  className="btn btn-secondary dropdown-toggle"
-                                  type="button"
-                                  id="dropdownMenuButton1"
-                                  data-bs-toggle="dropdown"
-                                  aria-expanded="false"
-                                >
-                                  Actions
-                                </button>
-                                <ul
-                                  className="dropdown-menu"
-                                  aria-labelledby="dropdownMenuButton1"
-                                >
-                                  <li>
-                                    <Link
-                                      className="dropdown-item"
-                                      to={`/admin/marks/${record?.id}/edit`}
-                                    >
-                                      Edit Result
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className="dropdown-item"
-                                      onClick={() => handleDelete(record)}
-                                    >
-                                      Delete Result
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </div>
                             </td>
                           </tr>
                         );

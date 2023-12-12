@@ -1,10 +1,10 @@
-import OfflineExamTable from '../../../../../table/Admin/OfflineExamTable/OfflineExamTable';
-import TopBar from "../../../../../TopBar";
+import OfflineExamTable from '../../../../../table/Student/OfflineExamTable/OfflineExamTable';
+import StudentTopBar from "../../../../../StudentTopBar";
 
 const OfflineExamList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* OfflineExam table section */}
       <OfflineExamTable />
     </div>

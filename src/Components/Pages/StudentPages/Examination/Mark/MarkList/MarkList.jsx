@@ -1,10 +1,10 @@
-import MarkTable from '../../../../../table/Admin/MarkTable/MarkTable';
-import TopBar from "../../../../../TopBar";
+import MarkTable from '../../../../../table/Student/MarkTable/MarkTable';
+import StudentTopBar from "../../../../../StudentTopBar";
 
 const MarkList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* Mark table section */}
       <MarkTable />
     </div>

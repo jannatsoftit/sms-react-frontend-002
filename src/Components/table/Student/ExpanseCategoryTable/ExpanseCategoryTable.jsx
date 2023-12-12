@@ -40,40 +40,6 @@ const ExpanseCategoryTable = () => {
     }
   };
 
-  //expanseCategory data delete function
-  const handleDelete = (expanseCategory) => {
-    if (
-      confirm(
-        `Are You sure you want to delete expanse category ${expanseCategory.id}?`
-      )
-    ) {
-      Swal.fire({
-        title: 'Success!',
-        text: 'Information Delete Successfully!!',
-        icon: 'success',
-        confirmButtonText: 'Ok',
-      });
-
-      fetch(
-        `http://127.0.0.1:8000/api/expanseCategories/${expanseCategory.id}`,
-        {
-          headers: {
-            Accept: 'application/json',
-          },
-          method: 'DELETE',
-        }
-      )
-        .then((res) => res.json())
-        .then((res) => {
-          console.info(res);
-          setReload((value) => ++value);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    }
-  };
-
   //expanseCategory all data show in the table
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/expanseCategories?`, {
@@ -97,8 +63,8 @@ const ExpanseCategoryTable = () => {
     <>
       <StudentSidebar>
         <section className='ftco-section'>
-          <div className='container'>
-            <div className='col-md-6 text-center mb-5'>
+          <div className='container' style={{marginLeft:'120px'}}>
+            <div className='col-md-7 text-center mb-5' style={{marginTop:'60px'}}>
               <h2 className='heading-section'>Expanse Category Table List</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
@@ -111,13 +77,12 @@ const ExpanseCategoryTable = () => {
               </div>
             </div>
             <div className='row admin_table'>
-              <div className='col-md-12'>
-                <div className='table-wrap'>
+              <div className='col-md-4'>
+                <div className=''>
                   <table className='table table-responsive-xl'>
                     <thead>
-                      <tr>
-                        <th>Expanse Category Name</th>
-                        <th>Options</th>
+                      <tr >
+                        <th><div style={{marginLeft:'330px'}}>Expanse Category Name</div></th>
                       </tr>
                     </thead>
                     <tbody>
@@ -125,41 +90,7 @@ const ExpanseCategoryTable = () => {
                         return (
                           <tr className='alert' role='alert' key={i}>
                             <td>
-                              <span>{record?.name}</span>
-                            </td>
-                            <td>
-                              <div className='dropdown'>
-                                <button
-                                  className='btn btn-secondary dropdown-toggle'
-                                  type='button'
-                                  id='dropdownMenuButton1'
-                                  data-bs-toggle='dropdown'
-                                  aria-expanded='false'
-                                >
-                                  Actions
-                                </button>
-                                <ul
-                                  className='dropdown-menu'
-                                  aria-labelledby='dropdownMenuButton1'
-                                >
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      to={`/admin/expanseCategories/${record?.id}/edit`}
-                                    >
-                                      Edit ExpanseCategory
-                                    </Link>
-                                  </li>
-                                  <li>
-                                    <Link
-                                      className='dropdown-item'
-                                      onClick={() => handleDelete(record)}
-                                    >
-                                      Delete ExpanseCategory
-                                    </Link>
-                                  </li>
-                                </ul>
-                              </div>
+                              <span style={{marginLeft:'380px'}}>{record?.name}</span>
                             </td>
                           </tr>
                         );

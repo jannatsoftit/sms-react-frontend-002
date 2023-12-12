@@ -1,10 +1,10 @@
-import StudentFeeTable from '../../../../../Components/table/Admin/StudentFeeTable/StudentFeeTable';
-import TopBar from "../../../../TopBar";
+import StudentFeeTable from '../../../../../Components/table/Student/StudentFeeTable/StudentFeeTable';
+import StudentTopBar from "../../../../StudentTopBar";
 
 const StudentFeeList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* StudentFee table section */}
       <StudentFeeTable />
     </div>

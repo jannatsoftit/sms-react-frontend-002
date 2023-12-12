@@ -1,10 +1,10 @@
-import HSTeachingStaffTable from '../../../../table/Admin/TeachingStaffTable/HSTeachingStaffTable';
-import TopBar from "../../../../TopBar";
+import HSTeachingStaffTable from '../../../../table/Student/TeachingStaffTable/HSTeachingStaffTable';
+import StudentTopBar from "../../../../StudentTopBar";
 
 const HSTeachingStaffList = () => {
   return (
     <div>
-      <TopBar/>
+      <StudentTopBar/>
       {/* HSTeaching Staff table section */}
       <HSTeachingStaffTable />
     </div>

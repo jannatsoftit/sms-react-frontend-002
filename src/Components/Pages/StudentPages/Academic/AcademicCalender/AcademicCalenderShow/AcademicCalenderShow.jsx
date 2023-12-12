@@ -2,17 +2,17 @@ import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from "react-router-dom";
 import academicCalendar from '../../../../../../assets/AGACalendar.png';
 import academicLogo from '../../../../../../assets/AGAImage.png';
-import AdminSidebar from "../../../../../Sidebar/AdminSidebar";
+import StudentSidebar from "../../../../../Sidebar/StudentSidebar";
 import Footer from "../../../../../Footer";
-import TopBar from "../../../../../TopBar";
+import StudentTopBar from "../../../../../StudentTopBar";
 
 const AcademicCalenderShow = () => {
   return (
     <>
-      <TopBar />
-      <AdminSidebar>
+      <StudentTopBar />
+      <StudentSidebar>
         {/* Admission CircularShow table title section */}
-        <Link to="/admin/dashboard" className="add_button">
+        <Link to="/student/dashboard" className="add_button">
           <button type="button" className="btn">
             Back to Home<AiOutlineArrowRight />
           </button>
@@ -40,7 +40,7 @@ const AcademicCalenderShow = () => {
           </div>
         </div>
         <Footer />
-      </AdminSidebar>
+      </StudentSidebar>
     </>
   );
 };
