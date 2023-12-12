@@ -95,7 +95,7 @@ const GradeTable = () => {
               <h2 className='heading-section'>Grade Table List</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
-                  user
+                  examination
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>

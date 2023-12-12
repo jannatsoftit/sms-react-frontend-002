@@ -91,7 +91,7 @@ const SchoolMagazineTable = () => {
               <h2 className='heading-section'>School Magazine Table</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
-                  user
+                  academy
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>

@@ -122,7 +122,7 @@ const OfflineExamTable = () => {
               <h2 className="heading-section">Offline Exam Table List</h2>
               <div className="admin">
                 <Link to="#" className="links">
-                  user
+                  examination
                 </Link>
                 <RxSlash />
                 <Link to="" className="actives">

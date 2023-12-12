@@ -94,7 +94,7 @@ const ClassRoutineTable = () => {
               <h2 className='heading-section'>Class Routine Table List</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
-                  user
+                  academy
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>

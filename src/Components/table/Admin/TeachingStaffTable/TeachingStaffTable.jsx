@@ -20,7 +20,7 @@ const TeachingStaffTable = () => {
               <h2 className='heading-section'>Teaching Staff Table List</h2>
               <div className='admin teaching-staff-link'>
                 <Link to='#' className='links'>
-                  user
+                  school-staff
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>

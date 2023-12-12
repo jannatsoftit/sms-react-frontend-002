@@ -94,7 +94,7 @@ const BookListTable = () => {
               <h2 className='heading-section'>Book List Table</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
-                  user
+                  academy
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>

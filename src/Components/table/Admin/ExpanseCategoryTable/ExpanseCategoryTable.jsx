@@ -102,7 +102,7 @@ const ExpanseCategoryTable = () => {
               <h2 className='heading-section'>Expanse Category Table List</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
-                  user
+                  administration
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>

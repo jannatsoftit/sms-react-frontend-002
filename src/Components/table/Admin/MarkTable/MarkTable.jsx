@@ -121,7 +121,7 @@ const MarkTable = () => {
               <h2 className="heading-section">Exam Result Table List</h2>
               <div className="admin">
                 <Link to="#" className="links">
-                  user
+                  examination
                 </Link>
                 <RxSlash />
                 <Link to="" className="actives">

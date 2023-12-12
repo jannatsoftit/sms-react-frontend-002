@@ -75,7 +75,7 @@ const NonTeachingStaffTable = () => {
               <h2 className="heading-section">Non-Teacher Stuff Table List</h2>
               <div className="admin">
                 <Link to="#" className="links">
-                  user
+                  school-staff
                 </Link>
                 <RxSlash />
                 <Link to="" className="actives">

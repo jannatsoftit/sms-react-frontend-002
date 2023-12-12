@@ -39,11 +39,11 @@ const SchoolTable = () => {
               <h2 className='heading-section'>School Table List</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
-                  user
+                  settings
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>
-                  schools
+                  school-info
                 </Link>
               </div>
             </div>
