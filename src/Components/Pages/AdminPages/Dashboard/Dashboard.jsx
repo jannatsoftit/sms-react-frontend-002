@@ -19,7 +19,7 @@ const Dashboard = () => {
     <>
       <TopBar />
       <AdminSidebar>
-        <div className='p-3 pb-5'>
+        <div className='p-3 pb-5' style={{marginLeft:'40px'}}>
           <div className='container-fluid  dashboard_table'>
             <div className='school_dashboard'>
               {
@@ -103,7 +103,7 @@ const Dashboard = () => {
               1!3m3!1m2!1s0x39ff112a602d68ff%3A0xb3b85ec88687eb53!2z4KaG4Kas4KeN4Kam4KeB4Kay
               IOCml-Cmq-CngeCmsCDgpo_gppXgpr7gpqHgp4fgpq7gp4Ag4Kau4Ka-4Kan4KeN4Kav4Kau4Ka_4KaVIOCmrOCmv-CmpuCnjeCmr-CmvuCms
               uCmr-CmvA!5e0!3m2!1sen!2sbd!4v1701937958811!5m2!1sen!2sbd" 
-              width="600" 
+              width="1200" 
               height="350" 
               allowFullScreen="" 
               loading="lazy" 

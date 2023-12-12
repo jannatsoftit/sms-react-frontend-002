@@ -66,10 +66,9 @@ const TopBar = () => {
 										alt={userFirstName}
 										className="rounded-circle topbar_image"
 									/>
-									<span className="position-absulate top-0 start-20 translate-middle p-2 bg-success border border-light rounded-circle">
-										<span className="visually-hidden"></span>
-									</span>
-									
+									<div style={{paddingTop:'9px', width:'12px', borderRadius:'7px'}} className="position-relative translate-middle bg-success border border-light ">
+										<div className="visually-hidden"></div>
+									</div>	
 								</div>
 							
                 <a
