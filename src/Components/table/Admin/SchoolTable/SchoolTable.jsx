@@ -82,7 +82,23 @@ const SchoolTable = () => {
                               <span>{school?.facebook_page}</span>
                             </td>
                             <td>
-                              <span>{school?.status}</span>
+                              {/* <span>{school?.status}</span> */}
+                              {
+                               ( school?.status) === 1 ?
+                                <button
+                                  className='btn btn-success'
+                                  style={{fontSize:'12px'}} 
+                                ><span>Active</span></button>
+                                :
+                                ( school?.status) === 0 ?
+                                <button
+                                  className='btn btn-danger'
+                                  style={{fontSize:'12px'}}  
+                                ><span>Inactive</span></button>
+                                :
+                                null
+                              }
+
                             </td>
                             <td>
                               <div className='dropdown'>

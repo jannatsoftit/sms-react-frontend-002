@@ -69,7 +69,7 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Admission Circular',
-        path: '/admin/examCategories',
+        path: '/admin/admissionCirculars',
         icon: <IoIcons.IoIosPaper />,
       },
       {
@@ -123,7 +123,7 @@ export const SidebarData = [
     ],
   },
   {
-    title: 'Admininstration',
+    title: 'Administration',
     icon: <FaIcons.FaMoneyCheckAlt />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,

@@ -8,25 +8,25 @@ import AdminSidebar from '../../../../../Sidebar/AdminSidebar';
 import Footer from "../../../../../Footer";
 import TopBar from "../../../../../TopBar";
 
-const AdmissionCircularEdit = () => {
+const AdmissionCircularEdit = () => { //admissionCircular AdmissionCircular
   const navigate = useNavigate();
 
-  const { examCategoryId } = useParams();
+  const { admissionCircularId } = useParams();
 
-  const [examCategory, setExamCategory] = useState({
+  const [admissionCircular, setAdmissionCircular] = useState({
     title: '',
   });
 
   // able to change input data for edit
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setExamCategory({
-      ...examCategory,
+    setAdmissionCircular({
+      ...admissionCircular,
       [name]: value,
     });
   };
 
-  // ExamCategory data update function
+  // AdmissionCircular data update function
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -38,15 +38,15 @@ const AdmissionCircularEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/admin/examCategories', { replace: true });
+      navigate('/admin/admissionCirculars', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
-      formData.append('title', examCategory.title);
+      formData.append('title', admissionCircular.title);
 
       console.log(formData);
 
-      fetch(`http://127.0.0.1:8000/api/examCategories/${examCategoryId}`, {
+      fetch(`http://127.0.0.1:8000/api/admissionCirculars/${admissionCircularId}`, {
         body: formData,
         headers: {
           Accept: 'application/json',
@@ -63,9 +63,9 @@ const AdmissionCircularEdit = () => {
     }
   };
 
-  // ExamCategory data fetch for edit
+  // AdmissionCircular data fetch for edit
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/examCategories/${examCategoryId}`, {
+    fetch(`http://127.0.0.1:8000/api/admissionCirculars/${admissionCircularId}`, {
       headers: {
         Accept: 'application/json',
         'Content-Type': 'application/json',
@@ -75,19 +75,19 @@ const AdmissionCircularEdit = () => {
       .then((res) => res.json())
       .then((res) => {
         console.info(res);
-        setExamCategory(res.data?.examCategory);
+        setAdmissionCircular(res.data?.admissionCircular);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [examCategoryId]);
+  }, [admissionCircularId]);
 
   return (
     <>
       <TopBar />
       <AdminSidebar>
-        {/* ExamCategory create table title section */}
-        <Link to='/admin/examCategories' className='add_button'>
+        {/* admissionCircular create table title section */}
+        <Link to='/admin/admissionCirculars' className='add_button'>
           <button type='button' className='btn'>
           Admission Circular Table <AiOutlineArrowRight />
           </button>
@@ -98,7 +98,7 @@ const AdmissionCircularEdit = () => {
             <div className='row d-flex justify-content-center'>
               <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
                 <div className='card'>
-                  {/* ExamCategory create form title section */}
+                  {/* admissionCircular create form title section */}
                   <div className='col-md-6 text-center mb-5'>
                     <h2 className='heading-section'>
                     Admission Circular Form Edit Table
@@ -118,7 +118,7 @@ const AdmissionCircularEdit = () => {
                     </div>
                   </div>
 
-                  {/* ExamCategory create form table*/}
+                  {/* admissionCircular create form table*/}
                   <form className='form-card' onSubmit={handleSubmit}>
                     <div className='row justify-content-between text-left'>
                     <div className='form-group col-sm-6 flex-column d-flex'>
@@ -132,7 +132,7 @@ const AdmissionCircularEdit = () => {
                           placeholder='Enter Admission Circular Name'
                           id='title'
                           onChange={handleChange}
-                          value={examCategory?.title}
+                          value={admissionCircular?.title}
                         />{' '}
                       </div>
                     </div>

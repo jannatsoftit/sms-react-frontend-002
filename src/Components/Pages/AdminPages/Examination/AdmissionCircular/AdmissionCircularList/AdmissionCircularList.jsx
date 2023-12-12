@@ -7,14 +7,14 @@ const AdmissionCircularList = () => {
   return (
     <div>
       <TopBar/>
-      {/* ExamCategory table title section */}
+      {/* admissionCircular table title section */}
       <Link to='create' className='addmission_add_button'>
         <button type='button' className='btn'>
           <HiPlus /> AdmissionCircular
         </button>
       </Link>
 
-      {/* ExamCategory table section */}
+      {/* admissionCircular table section */}
       <AdmissionCircularTable />
     </div>
   );

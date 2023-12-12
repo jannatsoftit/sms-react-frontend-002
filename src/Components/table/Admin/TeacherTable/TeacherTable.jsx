@@ -128,7 +128,7 @@ const TeacherTable = () => {
                             <td>
                               <img
                                 className='rounded-circle'
-                                src={`http://127.0.0.1:8000/storage/T_img/${record.image}`}
+                                src={`http://127.0.0.1:8000/storage/AD_img/${record.image}`}
                                 width='50px'
                                 alt={record?.name}
                               />

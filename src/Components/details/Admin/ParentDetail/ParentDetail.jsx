@@ -14,7 +14,7 @@ const AdminDetail = ({ parent }) => {
                       <div className='text-center border-end'>
                         <img
                           className='img-fluid avatar-xxl rounded-circle'
-                          src={`http://127.0.0.1:8000/storage/P_img/${parent?.image}`}
+                          src={`http://127.0.0.1:8000/storage/AD_img/${parent?.image}`}
                           width='50px'
                           alt={parent?.name}
                         />

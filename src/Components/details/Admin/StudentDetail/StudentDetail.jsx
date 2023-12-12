@@ -14,7 +14,7 @@ const StudentDetail = ({ student }) => {
                       <div className='text-center border-end'>
                         <img
                           className='img-fluid avatar-xxl rounded-circle'
-                          src={`http://127.0.0.1:8000/storage/S_img/${student?.image}`}
+                          src={`http://127.0.0.1:8000/storage/AD_img/${student?.image}`}
                           width='50px'
                           alt={student?.name}
                         />

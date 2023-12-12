@@ -886,21 +886,21 @@ const App = () => {
             element={<LibrarianEdit />}
           />
 
-          <Route path="examCategories" element={<AdmissionCircularList />} />
+          <Route path="admissionCirculars" element={<AdmissionCircularList />} />
           <Route
-            path="examCategories/create"
+            path="admissionCirculars/create"
             element={<AdmissionCircularCreate />}
           />
           <Route
-            path="examCategories/:examCategoryId/edit"
+            path="admissionCirculars/:admissionCircularId/edit"
             element={<AdmissionCircularEdit />}
           />
           <Route
-            path="examCategories_ST/show"
+            path="admissionCirculars_ST/show"
             element={<AdmissionCircularShow_ST />}
           />
             <Route
-            path="examCategories_OF/show"
+            path="admissionCirculars_OF/show"
             element={<AdmissionCircularShow_OF />}
           />       
 

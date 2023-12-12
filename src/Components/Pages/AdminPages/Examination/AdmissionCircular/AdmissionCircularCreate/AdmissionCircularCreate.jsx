@@ -7,14 +7,14 @@ const AdmissionCircularCreate = () => {
   return (
     <div>
       <TopBar/>
-      {/* ExamCategory create table title section */}
+      {/* admissionCircular create table title section */}
       <Link to='/admin/examCategories' className='add_button'>
         <button type='button' className='btn'>
           Admission Circular Table <AiOutlineArrowRight />
         </button>
       </Link>
 
-      {/* ExamCategory form section */}
+      {/* admissionCircular form section */}
       <AdmissionCircularForm />
     </div>
   );

@@ -7,20 +7,19 @@ import AdminSidebar from "../../../Sidebar/AdminSidebar";
 import Footer from "../../../Footer";
 
 const AdmissionCircularTable = () => {
-  // ExamCategory data
-  const [examCategories, setExamCategories] = useState(null);
-  console.log(examCategories);
+  // admissionCircular data
+  const [admissionCirculars, setAdmissionCirculars] = useState(null);
 
-  // ExamCategory table reload state
+  // admissionCircular table reload state
   const [reload, setReload] = useState(0);
 
-  // ExamCategory table pagination
+  // admissionCircular table pagination
   const [currentPage, setCurrentPage] = useState(1);
   const recordsPerPage = 6;
   const lastIndex = currentPage * recordsPerPage; //lastIndex = 2 (lastIndex = 2, if recordsPerPage = 2  and lastIndex = 4, if recordsPerPage = 3...)
   const firstIndex = lastIndex - recordsPerPage; //firstIndex count kora hoy 2nd page theke...  //1st page record = recordsPerPage
-  const records = examCategories?.slice(firstIndex, lastIndex);
-  const nPage = Math.ceil((examCategories || []).length / recordsPerPage); // examCategories.length = 0,2,4,6,8....
+  const records = admissionCirculars?.slice(firstIndex, lastIndex);
+  const nPage = Math.ceil((admissionCirculars || []).length / recordsPerPage); // admissionCirculars.length = 0,2,4,6,8....
   const numbers = [...Array(nPage + 1).keys()].slice(1);
 
   // handle prePage, nextPage and CurrentPage function
@@ -41,11 +40,11 @@ const AdmissionCircularTable = () => {
     }
   };
 
-  //Exam Category data delete function
-  const handleDelete = (examCategory) => {
+  //Admission Circular data delete function
+  const handleDelete = (admissionCircular) => {
     if (
       confirm(
-        `Are You sure you want to delete exam category ${examCategory.id}?`
+        `Are You sure you want to delete Admission Circular ${admissionCircular.id}?`
       )
     ) {
       Swal.fire({
@@ -55,7 +54,7 @@ const AdmissionCircularTable = () => {
         confirmButtonText: "Ok",
       });
 
-      fetch(`http://127.0.0.1:8000/api/examCategories/${examCategory.id}`, {
+      fetch(`http://127.0.0.1:8000/api/admissionCirculars/${admissionCircular.id}`, {
         headers: {
           Accept: "application/json",
         },
@@ -72,9 +71,9 @@ const AdmissionCircularTable = () => {
     }
   };
 
-  //ExamCategory all data show in the table
+  //Admission Circular all data show in the table
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/examCategories?`, {
+    fetch(`http://127.0.0.1:8000/api/admissionCirculars?`, {
       headers: {
         Accept: "application/json",
       },
@@ -83,11 +82,11 @@ const AdmissionCircularTable = () => {
       .then((res) => res.json())
       .then((res) => {
         console.info(res);
-        setExamCategories(res.data?.examCategories);
+        setAdmissionCirculars(res.data?.admissionCirculars);
       })
       .catch((error) => {
         console.error(error);
-        setExamCategories(null);
+        setAdmissionCirculars(null);
       });
   }, [reload]);
 
@@ -145,7 +144,7 @@ const AdmissionCircularTable = () => {
                                   <li>
                                     <Link
                                       className="dropdown-item"
-                                      to={"/admin/examCategories_ST/show"}
+                                      to={"/admin/admissionCirculars_ST/show"}
                                     >
                                       Show AdmissionCircular
                                     </Link>
@@ -153,7 +152,7 @@ const AdmissionCircularTable = () => {
                                   <li>
                                     <Link
                                       className="dropdown-item"
-                                      to={`/admin/examCategories/${record?.id}/edit`}
+                                      to={`/admin/admissionCirculars/${record?.id}/edit`}
                                     >
                                       Edit AdmissionCircular
                                     </Link>
@@ -187,7 +186,7 @@ const AdmissionCircularTable = () => {
                                   <li>
                                     <Link
                                       className="dropdown-item"
-                                      to={"/admin/examCategories_OF/show"}
+                                      to={"/admin/admissionCirculars_OF/show"}
                                     >
                                       Show AdmissionCircular
                                     </Link>
@@ -195,7 +194,7 @@ const AdmissionCircularTable = () => {
                                   <li>
                                     <Link
                                       className="dropdown-item"
-                                      to={`/admin/examCategories/${record?.id}/edit`}
+                                      to={`/admin/admissionCirculars/${record?.id}/edit`}
                                     >
                                       Edit AdmissionCircular
                                     </Link>
@@ -229,7 +228,7 @@ const AdmissionCircularTable = () => {
                                   <li>
                                     <Link
                                       className="dropdown-item"
-                                      to={"/admin/examCategories_OF/show"}
+                                      to={"/admin/admissionCirculars_OF/show"}
                                     >
                                       Show AdmissionCircular 1 to 5
                                     </Link>
@@ -237,7 +236,7 @@ const AdmissionCircularTable = () => {
                                   <li>
                                     <Link
                                       className="dropdown-item"
-                                      to={`/admin/examCategories/${record?.id}/edit`}
+                                      to={`/admin/admissionCirculars/${record?.id}/edit`}
                                     >
                                       Edit AdmissionCircular
                                     </Link>
@@ -266,7 +265,7 @@ const AdmissionCircularTable = () => {
               </div>
             </div>
 
-            {/* Exam Category list table pagination start  */}
+            {/* admission Circular list table pagination start  */}
             <nav className="pagination">
               <ul className="pagination">
                 <li className="page-item">

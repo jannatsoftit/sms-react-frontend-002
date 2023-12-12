@@ -1,6 +1,5 @@
 import { AiOutlineArrowRight } from 'react-icons/ai';
 import { Link } from "react-router-dom";
-import React from "react";
 import AdminSidebar from "../../../../../Sidebar/AdminSidebar";
 import Footer from "../../../../../Footer";
 import TopBar from "../../../../../TopBar";
@@ -11,7 +10,7 @@ const AdmissionCircularShow_OF = () => {
       <TopBar />
       <AdminSidebar>
         {/* Admission CircularShow table title section */}
-        <Link to="/admin/examCategories" className="add_button">
+        <Link to="/admin/admissionCirculars" className="add_button">
           <button type="button" className="btn">
           Admission Circular Table <AiOutlineArrowRight />
           </button>
