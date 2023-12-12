@@ -35,7 +35,7 @@ const SchoolTable = () => {
       <StudentSidebar>
         <section className='ftco-section'>
           <div className='container'>
-            <div className='col-md-6 text-center mb-5'>
+            <div className='col-md-6 text-center mb-5 mt-5'>
               <h2 className='heading-section'>School Table List</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
@@ -49,7 +49,7 @@ const SchoolTable = () => {
             </div>
             <div className='row School_table'>
               <div className='col-md-12'>
-                <div className='table-wrap'>
+                <div className=''>
                   <table className='table table-responsive-xl'>
                     <thead>
                       <tr>

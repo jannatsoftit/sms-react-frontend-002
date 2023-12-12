@@ -30,7 +30,7 @@ const ManagingCommitteeTable = () => {
               <h2 className='heading-section'>Managing Committee Table</h2>
               <div className='admin' style={{marginLeft:'60px'}}>
                 <Link to='#' className='links'>
-                  user
+                  administration
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>

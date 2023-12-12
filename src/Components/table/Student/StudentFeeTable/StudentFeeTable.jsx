@@ -68,11 +68,11 @@ const StudentFeeTable = () => {
       <StudentSidebar>
         <section className='ftco-section'>
           <div className='container'>
-            <div className='col-md-6 text-center mb-5'>
+            <div className='col-md-7 text-center mb-5 mt-5'>
               <h2 className='heading-section'>Student Fee Table List</h2>
-              <div className='admin'>
+              <div className='admin' style={{marginLeft:'30px'}}>
                 <Link to='#' className='links'>
-                  user
+                  administration
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>

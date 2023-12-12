@@ -65,13 +65,9 @@ const TeacherTable = () => {
       <StudentSidebar>
         <section className='ftco-section'>
           <div className='container'>
-            <div className='col-md-6 text-center mb-5'>
+            <div className='col-md-6 text-center mb-5 mt-5'>
               <h2 className='heading-section'>Teacher Table List</h2>
               <div className='admin'>
-                <Link to='#' className='links'>
-                  user
-                </Link>
-                <RxSlash />
                 <Link to='' className='actives'>
                   teachers
                 </Link>

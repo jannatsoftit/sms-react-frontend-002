@@ -16,8 +16,16 @@ const FacilityTable = () => {
     <>
       <StudentTopBar />
       <StudentSidebar>
-        <section className="ftco-section" style={{ marginTop: "-80px" }}>
+        <section className="ftco-section" >
           <div className="container">
+          <div className="col-md-8 text-center mb-5 mt-5">
+              <h2 className="heading-section">Facility Table</h2>
+              <div className="admin" style={{marginLeft:'120px'}}>
+                <Link to="#" className="links">
+                  facility
+                </Link>
+              </div>
+            </div>
             <div className="row admin_table">
               {/* Library Facility */}
               <div className="col-md-12">

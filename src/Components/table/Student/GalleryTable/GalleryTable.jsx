@@ -1,6 +1,6 @@
 import React from 'react';
 import { GalleryData } from './GalleryData';
-import { useState } from 'react';
+import { Link, useState } from 'react';
 import StudentSidebar from '../../../Sidebar/StudentSidebar';
 import Footer from '../../../Footer';
 import StudentTopBar from '../../../StudentTopBar';
@@ -38,8 +38,6 @@ const GalleryTable = () => {
 
     setImage(finalData);
   };
-
-
 
   return (
     <>

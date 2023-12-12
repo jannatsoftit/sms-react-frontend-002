@@ -210,9 +210,7 @@ import SNonTeachingStaffList from './Components/Pages/StudentPages/NonTeachingSt
 import SManagingCommitteeTable from './Components/table/Student/ManagingCommittee/ManagingCommitteeTable';
 
 // notice Table
-import SParentNoticeTable from './Components/table/Student/NoticeTable/ParentNoticeTable';
 import SStudentNoticeTable from './Components/table/Student/NoticeTable/StudentNoticeTable';
-import STeacherNoticeTable from './Components/table/Student/NoticeTable/TeacherNoticeTable';
 
 // Library Table
 import SFacilityTable from './Components/table/Student/FacilityTable/FacilityTable';
@@ -1168,9 +1166,7 @@ const App = () => {
             element={<SManagingCommitteeTable />}
           />
 
-          <Route path='parentNotice' element={<SParentNoticeTable />} />
           <Route path='studentNotice' element={<SStudentNoticeTable />} />
-          <Route path='teacherNotice' element={<STeacherNoticeTable />} />
 
           <Route path='facility' element={<SFacilityTable />} />
 
