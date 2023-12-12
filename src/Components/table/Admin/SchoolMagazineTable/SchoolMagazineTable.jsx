@@ -46,6 +46,33 @@ const SchoolMagazineTable = () => {
     }
   };
 
+//school magazine data delete function
+const handleDelete = (schoolMagazine) => {
+  if (confirm(`Are You sure you want to delete school magazine ${schoolMagazine.id}?`)) {
+    Swal.fire({
+      title: 'Success!',
+      text: 'Information Delete Successfully!!',
+      icon: 'success',
+      confirmButtonText: 'Ok',
+    });
+
+    fetch(`http://127.0.0.1:8000/api/schoolMagazines/${schoolMagazine.id}`, {
+      headers: {
+        Accept: 'application/json',
+      },
+      method: 'DELETE',
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.info(res);
+        setReload((value) => ++value);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+};
+
 
   //schoolMagazines all data show in the table
   useEffect(() => {
@@ -195,6 +222,40 @@ const SchoolMagazineTable = () => {
                             null
                             
                             }
+                            </td>
+                            <td>
+                              <div className='dropdown'>
+                                <button
+                                  className='btn btn-secondary dropdown-toggle'
+                                  type='button'
+                                  id='dropdownMenuButton1'
+                                  data-bs-toggle='dropdown'
+                                  aria-expanded='false'
+                                >
+                                  Actions
+                                </button>
+                                <ul
+                                  className='dropdown-menu'
+                                  aria-labelledby='dropdownMenuButton1'
+                                >
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      to={`/admin/schoolMagazines/${record?.id}/edit`}
+                                    >
+                                      Edit SchoolMagazine
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      onClick={() => handleDelete(record)}
+                                    >
+                                      Delete SchoolMagazine
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
                             </td>
                           </tr>
                         );

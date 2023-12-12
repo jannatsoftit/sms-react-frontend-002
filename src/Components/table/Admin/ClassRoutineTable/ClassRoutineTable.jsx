@@ -48,6 +48,33 @@ const ClassRoutineTable = () => {
     }
   };
 
+    //classRoutine data delete function
+    const handleDelete = (classRoutine) => {
+      if (confirm(`Are You sure you want to delete class Routine ${classRoutine.id}?`)) {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Information Delete Successfully!!',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+        });
+  
+        fetch(`http://127.0.0.1:8000/api/classRoutines/${classRoutine.id}`, {
+          headers: {
+            Accept: 'application/json',
+          },
+          method: 'DELETE',
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            console.info(res);
+            setReload((value) => ++value);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+    };
+  
 
   //Class Routines all data show in the table
   useEffect(() => {
@@ -94,7 +121,7 @@ const ClassRoutineTable = () => {
               <h2 className='heading-section'>Class Routine Table List</h2>
               <div className='admin'>
                 <Link to='#' className='links'>
-                  academy
+                  academic
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>
@@ -204,6 +231,41 @@ const ClassRoutineTable = () => {
                             
                             }
                             </td>
+                            <td>
+                              <div className='dropdown'>
+                                <button
+                                  className='btn btn-secondary dropdown-toggle'
+                                  type='button'
+                                  id='dropdownMenuButton1'
+                                  data-bs-toggle='dropdown'
+                                  aria-expanded='false'
+                                >
+                                  Actions
+                                </button>
+                                <ul
+                                  className='dropdown-menu'
+                                  aria-labelledby='dropdownMenuButton1'
+                                >
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      to={`/admin/classRoutines/${record?.id}/edit`}
+                                    >
+                                      Edit ClassRoutine
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      onClick={() => handleDelete(record)}
+                                    >
+                                      Delete ClassRoutine
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                            
                           </tr>
                         );
                       })}

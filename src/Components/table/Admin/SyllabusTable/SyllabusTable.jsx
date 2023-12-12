@@ -49,6 +49,33 @@ const SyllabusTable = () => {
     }
   };
 
+    //syllabus data delete function
+    const handleDelete = (syllabus) => {
+      if (confirm(`Are You sure you want to delete syllabus ${syllabus.id}?`)) {
+        Swal.fire({
+          title: 'Success!',
+          text: 'Information Delete Successfully!!',
+          icon: 'success',
+          confirmButtonText: 'Ok',
+        });
+  
+        fetch(`http://127.0.0.1:8000/api/syllabuses/${syllabus.id}`, {
+          headers: {
+            Accept: 'application/json',
+          },
+          method: 'DELETE',
+        })
+          .then((res) => res.json())
+          .then((res) => {
+            console.info(res);
+            setReload((value) => ++value);
+          })
+          .catch((error) => {
+            console.error(error);
+          });
+      }
+    };
+
   //Syllabus all data show in the table
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/syllabuses?`, {
@@ -161,6 +188,40 @@ const SyllabusTable = () => {
                             null
 
                             }
+                            </td>
+                            <td>
+                              <div className='dropdown'>
+                                <button
+                                  className='btn btn-secondary dropdown-toggle'
+                                  type='button'
+                                  id='dropdownMenuButton1'
+                                  data-bs-toggle='dropdown'
+                                  aria-expanded='false'
+                                >
+                                  Actions
+                                </button>
+                                <ul
+                                  className='dropdown-menu'
+                                  aria-labelledby='dropdownMenuButton1'
+                                >
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      to={`/admin/syllabuses/${record?.id}/edit`}
+                                    >
+                                      Edit syllabus
+                                    </Link>
+                                  </li>
+                                  <li>
+                                    <Link
+                                      className='dropdown-item'
+                                      onClick={() => handleDelete(record)}
+                                    >
+                                      Delete syllabus
+                                    </Link>
+                                  </li>
+                                </ul>
+                              </div>
                             </td>
                           </tr>
                         );
