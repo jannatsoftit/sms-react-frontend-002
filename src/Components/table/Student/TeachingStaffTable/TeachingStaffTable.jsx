@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-undef */
 import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
-import HSTeachingStaffTable from '../../../table/Admin/TeachingStaffTable/HSTeachingStaffTable';
-import HTeachingStaffTable from '../../../table/Admin/TeachingStaffTable/HTeachingStaffTable';
-import PTeachingStaffTable from '../../../table/Admin/TeachingStaffTable/PTeachingStaffTable';
+import HSTeachingStaffTable from '../../../table/Student/TeachingStaffTable/HSTeachingStaffTable';
+import HTeachingStaffTable from '../../../table/Student/TeachingStaffTable/HTeachingStaffTable';
+import PTeachingStaffTable from '../../../table/Student/TeachingStaffTable/PTeachingStaffTable';
 
 import StudentSidebar from '../../../Sidebar/StudentSidebar';
 import Footer from '../../../Footer';

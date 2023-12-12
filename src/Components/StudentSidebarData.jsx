@@ -32,12 +32,12 @@ export const StudentSidebarData = [
   {
     title: 'Teacher Table',
     path: '/student/teachers',
-    icon: <AiIcons.AiFillHome />,
+    icon: <FaIcons.FaChalkboardTeacher />,
   },
   {
     title: 'Parent Table',
     path: '/student/parents',
-    icon: <AiIcons.AiFillHome />,
+    icon: <RiIcons.RiParentFill />,
   },
 
   {

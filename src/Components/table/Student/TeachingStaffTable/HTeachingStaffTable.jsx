@@ -53,14 +53,7 @@ const HTeachingStaffTable = () => {
                     <b>Higher Level</b>
                   </h4>
                 </div>
-                <div className='teaching_table_button'>
-                  {/* Admin table title section */}
-                  <Link to='/admin/teachingStaffs/create'>
-                    <button type='button' className='btn'>
-                      <HiPlus /> Teaching Stuff
-                    </button>
-                  </Link>
-                </div>
+
                 <table className='table table-responsive-xl'>
                   <thead>
                     <tr>
