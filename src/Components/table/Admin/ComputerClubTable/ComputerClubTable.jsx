@@ -127,7 +127,7 @@ const ComputerClubTable = () => {
                         aria-hidden="true"
                       >
                         <div className="modal-dialog library_details_modal">
-                          <div clclassNameass="modal-content">
+                          <div className="modal-content">
                             <div className="modal-header">
                               <h3
                                 className="modal-title"
