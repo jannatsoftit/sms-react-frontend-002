@@ -15,11 +15,13 @@ import * as MdIcons from 'react-icons/md';
 import * as PiIcons from 'react-icons/pi';
 import { GrContactInfo } from "react-icons/gr";
 
+const userSchoolId = localStorage.getItem("school_id");
 
-export const StudentSidebarData = [
+
+export const TeacherSidebarData = [
   {
     title: 'Dashboard',
-    path: '/student/dashboard',
+    path: '/teacher/dashboard',
     icon: <AiIcons.AiFillHome />,
   },
   // {
@@ -31,14 +33,14 @@ export const StudentSidebarData = [
   // },
   {
     title: 'Teacher Table',
-    path: '/student/teachers',
+    path: '/teacher/teachers',
     icon: <FaIcons.FaChalkboardTeacher />,
   },
-  {
-    title: 'Parent Table',
-    path: '/student/parents',
-    icon: <RiIcons.RiParentFill />,
-  },
+  // {
+  //   title: 'Parent Table',
+  //   path: '/teacher/parents',
+  //   icon: <RiIcons.RiParentFill />,
+  // },
 
   {
     title: 'Examination',
@@ -48,22 +50,22 @@ export const StudentSidebarData = [
     subNav: [
       {
         title: 'Admission Circular',
-        path: '/student/admissionCirculars',
+        path: '/teacher/admissionCirculars',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Grading System',
-        path: '/student/grades',
+        path: '/teacher/grades',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Exam Results',
-        path: '/student/marks',
+        path: '/teacher/marks',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Offline Exam',
-        path: '/student/offlineExams',
+        path: '/teacher/offlineExams',
         icon: <IoIcons.IoIosPaper />,
       },
     ],
@@ -76,27 +78,27 @@ export const StudentSidebarData = [
     subNav: [
       {
         title: 'Book List',
-        path: '/student/bookLists',
+        path: '/teacher/bookLists',
         icon: <SiIcons.SiGoogleclassroom />,
       },
       {
         title: 'Syllabus',
-        path: '/student/syllabuses',
+        path: '/teacher/syllabuses',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Class Routine',
-        path: '/student/classRoutines',
+        path: '/teacher/classRoutines',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Academic Calender',
-        path: '/student/academicCalender/2023-2024',
+        path: '/teacher/academicCalender/2023-2024',
         icon: <MdIcons.MdSubject />,
       },
       {
         title: 'School Magazine',
-        path: '/student/schoolMagazines',
+        path: '/teacher/schoolMagazines',
         icon: <MdIcons.MdSubject />,
       },
     ],
@@ -109,17 +111,17 @@ export const StudentSidebarData = [
     subNav: [
       {
         title: 'Managing Committee',
-        path: '/student/managingCommittee',
+        path: '/teacher/managingCommittee',
         icon: <FaIcons.FaUserFriends />,
       },
       {
         title: 'Student Fee',
-        path: '/student/studentFees',
+        path: '/teacher/studentFees',
         icon: <BiIcons.BiMoney />,
       },
       {
         title: 'Expense Category',
-        path: '/student/expanseCategories',
+        path: '/teacher/expanseCategories',
         icon: <IoIcons.IoIosPaper />,
       },
     ],
@@ -132,12 +134,12 @@ export const StudentSidebarData = [
     subNav: [
       {
         title: 'Teaching Staff',
-        path: '/student/tteachingStaffs',
+        path: '/teacher/tteachingStaffs',
         icon: <GiTeacher />,
       },
       {
         title: 'Non-Teaching Staff',
-        path: '/student/nonTeachingStaffs',
+        path: '/teacher/nonTeachingStaffs',
         icon: <PiChalkboardTeacher />,
       },
     ],
@@ -149,22 +151,22 @@ export const StudentSidebarData = [
     iconOpened: <RiIcons.RiArrowUpSFill />,
     subNav: [
       {
-        title: 'Student Notice',
-        path: '/student/studentNotice',
+        title: 'Teacher Notice',
+        path: '/teacher/teacherNotice',
         icon: <IoIcons.IoIosPaper />,
       },
     ],
   },
   {
     title: 'Facility',
-    path: '/student/facility',
+    path: '/teacher/facility',
     icon: <IoIcons.IoIosPaper />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
   },
   {
     title: 'Gallery',
-    path: '/student/gallery',
+    path: '/teacher/gallery',
     icon: <RiGalleryLine />,
     iconClosed: <RiIcons.RiArrowDownSFill />,
     iconOpened: <RiIcons.RiArrowUpSFill />,
@@ -177,7 +179,7 @@ export const StudentSidebarData = [
     subNav: [
       {
         title: 'School Info',
-        path: `/student/schools`,
+        path: `/teacher/schools`,
         icon: <BsIcons.BsInfoCircleFill />,
       },
     ],

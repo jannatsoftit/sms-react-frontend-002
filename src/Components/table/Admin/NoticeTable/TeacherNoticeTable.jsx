@@ -6,7 +6,7 @@ import Footer from '../../../Footer';
 import TopBar from '../../../TopBar';
 import academicLogo from '../../../../assets/AGAImage.png';
 
-const ParentTeachingTable = () => {
+const TeacherNoticeTable = () => {
   return (
     <>
       <TopBar />
@@ -111,4 +111,4 @@ const ParentTeachingTable = () => {
   );
 };
 
-export default ParentTeachingTable;
+export default TeacherNoticeTable;

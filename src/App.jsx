@@ -14,6 +14,7 @@ import Login from './Components/Login';
 import NotFound from './Components/NotFound';
 import AdminProfile from './Components/Profile/AdminProfile';
 import StudentProfile from './Components/Profile/StudentProfile';
+import TeacherProfile from './Components/Profile/TeacherProfile';
 
 import './App.css';
 // import 'bootstrap/dist/css/bootstrap.min.css';
@@ -147,8 +148,11 @@ import SchoolCreate from './Components/Pages/AdminPages/School/SchoolCreate/Scho
 import SchoolEdit from './Components/Pages/AdminPages/School/SchoolEdit/SchoolEdit';
 import SchoolShow from './Components/Pages/AdminPages/School/SchoolShow/SchoolShow';
 
+
+
 //------------------ Student Route  ----------------//
-// Admin Protected Routes
+
+// student Protected Routes
 import StudentProtectedRoute from './Components/ProtectedRoute/StudentProtectedRoute';
 
 // Dashboard
@@ -221,6 +225,80 @@ import SGalleryTable from './Components/table/Student/GalleryTable/GalleryTable'
 // Settings
 import SSchoolList from './Components/Pages/StudentPages/School/SchoolList/SchoolList';
 import SSchoolShow from './Components/Pages/StudentPages/School/SchoolShow/SchoolShow';
+
+//------------------ Teacher Route  ----------------//
+
+// Teacher Protected Routes
+import TeacherProtectedRoute from './Components/ProtectedRoute/TeacherProtectedRoute';
+
+// Dashboard
+import TeacherDashboard from './Components/Pages/TeacherPages/Dashboard/TeacherDashboard';
+
+// User
+
+import TTeacherList from './Components/Pages/TeacherPages/Teacher/TeacherList/TeacherList';
+import TTeacherShow from './Components/Pages/TeacherPages/Teacher/TeacherShow/TeacherShow';
+
+// Examination
+import TAdmissionCircularList from './Components/Pages/TeacherPages/Examination/AdmissionCircular/AdmissionCircularList/AdmissionCircularList';
+
+import TAdmissionCircularShow_ST from './Components/Pages/TeacherPages/Examination/AdmissionCircular/AdmissionCircularShow/AdmissionCircularShow_ST';
+import TAdmissionCircularShow_OF from './Components/Pages/TeacherPages/Examination/AdmissionCircular/AdmissionCircularShow/AdmissionCircularShow_OF';
+
+import TGradeList from './Components/Pages/TeacherPages/Examination/Grade/GradeList/GradeList';
+
+import TMarkList from './Components/Pages/TeacherPages/Examination/Mark/MarkList/MarkList';
+
+import TOfflineExamList from './Components/Pages/TeacherPages/Examination/OfflineExam/OfflineExamList/OfflineExamList';
+
+//Academic
+import TBookListList from './Components/Pages/TeacherPages/Academic/BookList/BookListList/BookListList';
+
+import TSchoolMagazineList from './Components/Pages/TeacherPages/Academic/SchoolMagazine/SchoolMagazineList/SchoolMagazineList';
+
+import TAcademicCalenderShow from './Components/Pages/TeacherPages/Academic/AcademicCalender/AcademicCalenderShow/AcademicCalenderShow';
+
+import TSyllabusList from './Components/Pages/TeacherPages/Academic/Syllabus/SyllabusList/SyllabusList';
+
+import TClassRoutineList from './Components/Pages/TeacherPages/Academic/ClassRoutine/ClassRoutineList/ClassRoutineList';
+
+// Accountant
+import TStudentFeeList from './Components/Pages/TeacherPages/StudentFee/StudentFeeList/StudentFeeList';
+
+import TExpanseCategoryList from './Components/Pages/TeacherPages/ExpanseCategory/ExpanseCategoryList/ExpanseCategoryList';
+
+import TTeachingStaffTable from './Components/table/Teacher/TeachingStaffTable/TeachingStaffTable';
+
+// HTeaching Staff
+import THTeachingStaffList from './Components/Pages/TeacherPages/HTeachingStaff/HTeachingStaffList/HTeachingStaffList';
+
+// HSTeaching Staff
+import THSTeachingStaffList from './Components/Pages/TeacherPages/HSTeachingStaff/HSTeachingStaffList/HSTeachingStaffList';
+
+// PTeaching Staff
+import TPTeachingStaffList from './Components/Pages/TeacherPages/PTeachingStaff/PTeachingStaffList/PTeachingStaffList';
+
+//NoN-Teaching Staff
+import TNonTeachingStaffList from './Components/Pages/TeacherPages/NonTeachingStaff/NonTeachingStaffList/NonTeachingStaffList';
+
+//ManagingCommittee
+import TManagingCommitteeTable from './Components/table/Teacher/ManagingCommittee/ManagingCommitteeTable';
+
+// notice Table
+import TTeacherNoticeTable from './Components/table/Teacher/NoticeTable/TeacherNoticeTable';
+
+// Library Table
+import TFacilityTable from './Components/table/Teacher/FacilityTable/FacilityTable';
+
+// Gallery Table
+import TGalleryTable from './Components/table/Teacher/GalleryTable/GalleryTable';
+
+// Settings
+import TSchoolList from './Components/Pages/TeacherPages/School/SchoolList/SchoolList';
+import TSchoolShow from './Components/Pages/TeacherPages/School/SchoolShow/SchoolShow';
+
+
+
 
 const App = () => {
   // const [isAuthenticated, setAuthenticated] = useState(
@@ -1175,6 +1253,76 @@ const App = () => {
           <Route path='schools' element={<SSchoolList />} />
           <Route path='schools/:schoolId' element={<SSchoolShow />} />
         </Route>
+
+
+        <Route path='/teacher' element={<TeacherProtectedRoute />}>
+          <Route path='profile' element={<TeacherProfile />} />
+          <Route path='dashboard' element={<TeacherDashboard />} />
+
+          <Route path='teachers' element={<TTeacherList />} />
+          <Route path='teachers/:teacherId' element={<TTeacherShow />} />
+
+          <Route
+            path='admissionCirculars'
+            element={<TAdmissionCircularList />}
+          />
+          <Route
+            path='admissionCirculars_ST/show'
+            element={<TAdmissionCircularShow_ST />}
+          />
+          <Route
+            path='admissionCirculars_OF/show'
+            element={<TAdmissionCircularShow_OF />}
+          />
+
+          <Route path='grades' element={<TGradeList />} />
+
+          <Route path='marks' element={<TMarkList />} />
+
+          <Route path='offlineExams' element={<TOfflineExamList />} />
+
+          <Route path='bookLists' element={<TBookListList />} />
+
+          <Route path='schoolMagazines' element={<TSchoolMagazineList />} />
+
+          <Route
+            path='academicCalender/2023-2024'
+            element={<TAcademicCalenderShow />}
+          />
+
+          <Route path='syllabuses' element={<TSyllabusList />} />
+
+          <Route path='classRoutines' element={<TClassRoutineList />} />
+
+          <Route path='studentFees' element={<TStudentFeeList />} />
+
+          <Route path='expanseCategories' element={<TExpanseCategoryList />} />
+
+          <Route path='tteachingStaffs' element={<TTeachingStaffTable />} />
+
+          <Route path='teachingStaffs' element={<THTeachingStaffList />} />
+
+          <Route path='hsteachingStaffs' element={<THSTeachingStaffList />} />
+
+          <Route path='pteachingStaffs' element={<TPTeachingStaffList />} />
+
+          <Route path='nonTeachingStaffs' element={<TNonTeachingStaffList />} />
+
+          <Route
+            path='managingCommittee'
+            element={<TManagingCommitteeTable />}
+          />
+
+          <Route path='teacherNotice' element={<TTeacherNoticeTable />} />
+
+          <Route path='facility' element={<TFacilityTable />} />
+
+          <Route path='gallery' element={<TGalleryTable />} />
+
+          <Route path='schools' element={<TSchoolList />} />
+          <Route path='schools/:schoolId' element={<TSchoolShow />} />
+        </Route>
+        
       </Routes>
     </>
   );

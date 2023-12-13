@@ -1,16 +1,16 @@
 /* eslint-disable react/jsx-no-undef */
 import { Link } from 'react-router-dom';
 import { RxSlash } from 'react-icons/rx';
-import StudentSidebar from '../../../Sidebar/StudentSidebar';
+import TeacherSidebar from '../../../Sidebar/TeacherSidebar';
 import Footer from '../../../Footer';
-import StudentTopBar from '../../../StudentTopBar';
+import TeacherTopBar from '../../../TeacherTopBar';
 import academicLogo from '../../../../assets/AGAImage.png';
 
-const StudentNoticeTable = () => {
+const TeacherNoticeTable = () => {
   return (
     <>
-      <StudentTopBar />
-      <StudentSidebar>
+      <TeacherTopBar />
+      <TeacherSidebar>
         <section className='ftco-section' style={{ marginTop: '-80px' }}>
           <div className='container'>
             <div className='row admin_table'>
@@ -19,14 +19,14 @@ const StudentNoticeTable = () => {
                 <div className=''>
                   {/* parent notice heading section */}
                   <div className='col-md-4 text-center'>
-                    <h4 className='parent_notice_head'>Student Notice Table</h4>
+                    <h4 className='parent_notice_head'>Teacher Notice Table</h4>
                     <div className='admin-create parent_notice_link'>
                       <Link to='#' className='links'>
                         notice
                       </Link>
                       <RxSlash />
                       <Link to='' className='links'>
-                        students-notice
+                        teachers-notice
                       </Link>
                     </div>
                   </div>
@@ -43,7 +43,7 @@ const StudentNoticeTable = () => {
                         justifyContent: 'center',
                       }}
                     >
-                      <b>Student's Notice Board</b>
+                      <b>Teacher's Notice Board</b>
                     </h4>
                   </div>
 
@@ -65,34 +65,34 @@ const StudentNoticeTable = () => {
                     </h5>
 
                     <div style={{ marginTop: '20px' }}>
-                    <b style={{ fontSize: '20px' }}>Friday, December 10</b>
-                    <p><b style={{ fontSize: '20px'}}>Important Message</b></p>
-
                       <h6>
-                        <b>Date: </b>08/12/23
+                        <b>Date: </b>January01, 2023
                       </h6>
                       <h6>
-                        <b>Time: </b>7:30am
+                        <b>From: </b>Rachel Smith
                       </h6>
-                      <h6 style={{ paddingBottom:'30px', borderBottom:'3px solid'}}  >
-                        <b>Message: </b>That's it.... lats day! Have a happy and safe Christmas.
+                      <h6>
+                        <b>To: </b>Abdul Gafur Academy Primary and High School
                       </h6>
                     </div>
 
-                    
-
-                    <p style={{ marginTop: '20px'}}> 
-                      Students, remember to check <Link to={''}>Student Notices </Link>
-                      every morning before you start your day. 'Student Notices'
-                      informs you of any teachers, that due to emergent leave,
-                      may not be at school on that day and lessons may occur
-                      differently. Students if any of your teachers appear on
-                      'Student Notices' please check your email for further
-                      advice. 
-                      <p><b>Please note:</b> Notifications will be posted by
-                      7:30am each school day.</p>
+                    <p style={{ marginTop: '20px' }}>
+                      We encourage you to read with your children at home at
+                      least 5 times a week to foster a love of reading within
+                      your child. We will be sending home 2 books a week to
+                      engage with. These will be the Read Write Inc phonics
+                      books and the Oxford Reading Tree Songbirds books. Once
+                      your child is allocated their reading books, they will be
+                      collected in at school on a Wednesday and new reading
+                      books will be given out to children on a Friday. This
+                      allows children to read 5 out of 7 days a week at home.
+                      Please remember to write in your child's reading journal
+                      every time they have read at home. Children will have the
+                      opportunity to visit the library weekly. Please also
+                      ensure that you keep the reading books in school bags as
+                      we may want to record our reading with them in their
+                      reading journals too!
                     </p>
-
                     <h6>
                       <b>Respectfully,</b>
                     </h6>
@@ -106,9 +106,9 @@ const StudentNoticeTable = () => {
           </div>
         </section>
         <Footer />
-      </StudentSidebar>
+      </TeacherSidebar>
     </>
   );
 };
 
-export default StudentNoticeTable;
+export default TeacherNoticeTable;

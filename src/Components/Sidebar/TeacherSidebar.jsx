@@ -1,6 +1,6 @@
 import { IconContext } from 'react-icons/lib';
 //import { Link } from 'react-router-dom';
-import { StudentSidebarData } from '../StudentSidebarData';
+import { TeacherSidebarData } from '../TeacherSidebarData';
 import { useState } from 'react';
 // import * as FaIcons from 'react-icons/fa';
 // import * as AiIcons from 'react-icons/ai';
@@ -21,7 +21,7 @@ const SidebarNav = styled.nav`
   z-index: 10;
 `;
 
-const StudentSidebar = ({ children }) => {
+const TeacherSidebar = ({ children }) => {
   const [sidebar, setSidebar] = useState('true');
 
   const showSidebar = () => setSidebar(!sidebar);
@@ -54,7 +54,7 @@ const StudentSidebar = ({ children }) => {
                 {/* <div className='navicon'>
                   <AiIcons.AiOutlineClose />
                 </div> */}
-                {StudentSidebarData?.map((item, index) => {
+                {TeacherSidebarData?.map((item, index) => {
                   return <SubMenu item={item} key={index} />;
                 })}
               </div>
@@ -67,4 +67,4 @@ const StudentSidebar = ({ children }) => {
   );
 };
 
-export default StudentSidebar;
+export default TeacherSidebar;
