@@ -462,7 +462,7 @@ const StudentForm = () => {
                           <span className='text-danger'> *</span>
                         </label>{' '}
                         <input
-                          type='text'
+                          type='password'
                           id='password_confirmation'
                           name='password_confirmation'
                           placeholder='Enter your password confirmation'

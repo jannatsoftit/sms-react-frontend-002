@@ -297,7 +297,7 @@ const Register = () => {
                   Password <span className="text-danger"> *</span>
                 </span>
                 <input
-                  type="text"
+                  type="password"
                   name="password"
                   value={registerInput.password}
                   onChange={handleInput}
@@ -312,7 +312,7 @@ const Register = () => {
                   Confirm Password <span className="text-danger"> *</span>
                 </span>
                 <input
-                  type="text"
+                  type="password"
                   name="password_confirmation"
                   value={registerInput.password_confirmation}
                   onChange={handleInput}

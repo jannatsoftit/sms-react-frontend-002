@@ -1,4 +1,5 @@
 import Footer from "../../../Footer";
+import schoolImage from '../../../../../public/schoolMagazine/school_image_agap.jpg';
 
 const SchoolDetail = ({ school }) => {
   return (
@@ -9,12 +10,19 @@ const SchoolDetail = ({ school }) => {
             <div className='col-xl-8'>
               <div className='card'>
                 <div className='card-body'>
+                  <div className="school_image">
+                      <img src={schoolImage} 
+                        width='670px' 
+                        height='350px' 
+                        style={{marginLeft:'80px', marginBottom:'30px'}}
+                      />
+                  </div>
                   <div>
                     <p
                       style={{
                         display: 'flex',
                         justifyContent: 'center',
-                        fontSize: '40px',
+                        fontSize: '30px',
                         fontWeight: 'bold',
                         color: 'blue',
                       }}
