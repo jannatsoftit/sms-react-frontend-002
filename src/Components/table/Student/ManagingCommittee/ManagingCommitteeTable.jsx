@@ -107,8 +107,21 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text1'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
+                      MD Mahbubul Hasan <br />
+                      Principal
+                      <br />
+                      Member Secretary
+                      <br />
+                      Abdul Gafur Academy Primary & high School.
+                    </p>
+                  </div>
+                </div>
+
+                <div className='col'>
+                  <div className='row managing_committee_text1'>
+                    <p className='rounded float-start'>
+                      D.H.M Arefin <br />
+                      Co-opt Member
                       <br />
                       Managing Committee
                       <br />
@@ -120,21 +133,8 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text1'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
-                      <br />
-                      Managing Committee
-                      <br />
-                      Abdul Gafur Academy Primary & high School.
-                    </p>
-                  </div>
-                </div>
-
-                <div className='col'>
-                  <div className='row managing_committee_text1'>
-                    <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
+                      Masuda Sultana <br />
+                      Co-opt Member
                       <br />
                       Managing Committee
                       <br />
@@ -181,7 +181,7 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text2'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
+                      Arif Hossain<br />
                       Chairman
                       <br />
                       Managing Committee
@@ -194,8 +194,8 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text2'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
+                      Khadija Islam<br />
+                      Co-opt Member
                       <br />
                       Managing Committee
                       <br />
@@ -207,8 +207,8 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text2'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
+                      Sharif Islam <br />
+                      Guardian Member
                       <br />
                       Managing Committee
                       <br />
@@ -220,8 +220,8 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text2'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
+                        Amin Hasan <br />
+                      Guardian Member
                       <br />
                       Managing Committee
                       <br />
@@ -231,173 +231,6 @@ const ManagingCommitteeTable = () => {
                 </div>
               </div>
               {/* 2nd image row end */}
-            </div>
-
-            <div className='managing_committee_meeting_card'>
-              <div className='row'>
-                <h4
-                  style={{
-                    marginTop: '50px',
-                    width: '400px',
-                    color: 'black',
-                    marginLeft: '110px',
-                  }}
-                >
-                  <b>Meeting Details :</b>
-                </h4>
-              </div>
-
-              <div className='managing_committee_meeting_table'>
-                {/* table start */}
-                <div className='col-md-4'>
-                  <div>
-                    <table className='table table-primary table-striped'>
-                      <tbody>
-                        <tr>
-                          <td>Team Name: </td>
-                          <td>Sports Committee</td>
-                        </tr>
-                        <tr>
-                          <td>Meeting Date: </td>
-                          <td>December20, 2023</td>
-                        </tr>
-                        <tr>
-                          <td>Time: </td>
-                          <td>1:00 PM-4:00 PM</td>
-                        </tr>
-                        <tr>
-                          <td>Venue: </td>
-                          <td>Conference Hall</td>
-                        </tr>
-                        <tr>
-                          <td>Attendance: </td>
-                          <td>
-                            Ella Mcghee, Carin Aleman, Katherine Muins, james
-                            Miller, and Elizabeth Zamora
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Absent Members: </td>
-                          <td>
-                            Becky Bragg, Michael Mitchell, and Elizabeht
-                            Williams
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>Minuters Taker: </td>
-                          <td>Carin Aleman</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                {/* table end */}
-              </div>
-            </div>
-
-            <div className='managing_committee_meeting_card'>
-              {/* Agenda Details start*/}
-              <div className='row'>
-                <h4
-                  style={{
-                    marginTop: '50px',
-                    width: '400px',
-                    color: 'black',
-                    marginLeft: '110px',
-                  }}
-                >
-                  <b>Agenda Details :</b>
-                </h4>
-              </div>
-
-              <div className='managing_committee_meeting_table'>
-                <div className='col-md-4'>
-                  <div>
-                    <table className='table table-primary table-striped'>
-                      <tbody>
-                        <tr>
-                          <td>AGENDA</td>
-                        </tr>
-                        <tr>
-                          <td>To discuss organization the Sports Festival.</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-
-              {/* Agenda Details end*/}
-            </div>
-
-            <div className='managing_committee_meeting_card'>
-              {/* meeting minite start*/}
-              <div className='row'>
-                <h4
-                  style={{
-                    marginTop: '50px',
-                    width: '400px',
-                    color: 'black',
-                    marginLeft: '110px',
-                  }}
-                >
-                  <b>Meeting Minites :</b>
-                </h4>
-                <ul style={{ marginLeft: '130px' }}>
-                  <li>
-                    All members of the committee will help in looking for event
-                    sponsors
-                  </li>
-                  <li>
-                    The proposed plan will be persentation to the Board of
-                    Trustees on Monday.
-                  </li>
-                </ul>
-              </div>
-              {/* meeting minite end*/}
-            </div>
-
-            <div className='managing_committee_meeting_table'>
-              {/* Action plan start*/}
-              <div className='row'>
-                <h4
-                  style={{
-                    marginTop: '40px',
-                    width: '400px',
-                    color: 'black',
-                    marginLeft: '60px',
-                  }}
-                >
-                  <b>Action Plan :</b>
-                </h4>
-              </div>
-
-              <div className='managing_committee_meeting_table' style={{marginLeft:'10px'}}>
-                <div className='col-md-4'>
-                  <div>
-                    <table className='table table-primary table-striped'>
-                      <tbody>
-                        <tr>
-                          <th>Action </th>
-                          <th>Assigned To</th>
-                        </tr>
-                        <tr>
-                          <td>Preare the sponsorship letter.</td>
-                          <td>Ella McGhee</td>
-                        </tr>
-                        <tr>
-                          <td>
-                            Preare the presentation of the event proposal.
-                          </td>
-                          <td>Katherine Mullins</td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-
-              {/* Action plan end*/}
             </div>
           </div>
         </section>

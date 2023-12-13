@@ -8,9 +8,9 @@ const HTeachingStaffCreate = () => {
     <div>
       <TopBar />
       {/* HTeaching Staff create table title section */}
-      <Link to='/admin/tteachingStaffs' className='add_button'>
+      <Link to='/admin/all-teachingStaffs' className='add_button'>
         <button type='button' className='btn'>
-          H Teaching Staff Table <AiOutlineArrowRight />
+          Teaching Staff Table <AiOutlineArrowRight />
         </button>
       </Link>
 

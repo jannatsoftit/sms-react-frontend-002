@@ -100,14 +100,14 @@ const HTeachingStaffForm = () => {
               <div className='card'>
                 {/* hteachingStaff create form title section */}
                 <div className='col-md-6 text-center mb-5'>
-                  <h2 className='heading-section'>HTeaching Staff Table</h2>
+                  <h2 className='heading-section'>Teaching Staff Table</h2>
                   <div className='admin-create'>
                     <Link to='#' className='links'>
-                      user
+                    school-staff
                     </Link>
                     <RxSlash />
                     <Link to='' className='links'>
-                      hteaching-staff
+                      teaching-staff
                     </Link>
                     <RxSlash />
                     <Link to='' className='actives'>

@@ -157,7 +157,7 @@ const FacilityTable = () => {
                         data-bs-toggle="modal"
                         data-bs-target="#exampleModal"
                       >
-                        Library Facility Details
+                        Library Facility Information
                       </button>
 
                       <div

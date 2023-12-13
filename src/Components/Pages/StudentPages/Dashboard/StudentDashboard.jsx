@@ -73,7 +73,7 @@ const StudentDashboard = () => {
                   <MdNotificationsActive className='icons text-info' />
                   <div className='info'>
                     <span>Notification</span>
-                    <h2>0</h2>
+                    <h2>2</h2>
                   </div>
                 </div>
               </div>

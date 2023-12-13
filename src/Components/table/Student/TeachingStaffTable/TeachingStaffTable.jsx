@@ -24,7 +24,7 @@ const TeachingStaffTable = () => {
                 </Link>
                 <RxSlash />
                 <Link to='' className='actives'>
-                  teaching-staffs
+                  all-teaching-staffs
                 </Link>
               </div>
             </div>

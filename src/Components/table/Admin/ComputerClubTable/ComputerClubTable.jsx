@@ -41,7 +41,7 @@ const ComputerClubTable = () => {
                         <a target="_blank" href="img_5terre.jpg">
                           <img src={computerClubImage1} alt="Cinque Terre" width="600" height="400"/>
                         </a>
-                        <div className="desc">Computer Club.</div>
+                        <div className="desc">Computer Lab</div>
                       </div>
                     </div>
                     </div>
@@ -53,7 +53,7 @@ const ComputerClubTable = () => {
                         <a target="_blank" href="img_5terre.jpg">
                           <img src={computerClubImage2} alt="Cinque Terre" width="600" height="400"/>
                         </a>
-                        <div className="desc">Computer Club .</div>
+                        <div className="desc">Computer Lab</div>
                       </div>
                     </div>
                     </div>
@@ -64,7 +64,7 @@ const ComputerClubTable = () => {
                         <a target="_blank" href="img_5terre.jpg">
                           <img src={computerClubImage3} alt="Cinque Terre" width="600" height="400"/>
                         </a>
-                        <div className="desc">Computer Club</div>
+                        <div className="desc">Computer Lab</div>
                       </div>
                     </div>
                     </div>
@@ -79,7 +79,7 @@ const ComputerClubTable = () => {
                         <a target="_blank" href="img_5terre.jpg">
                           <img src={computerClubImage4} alt="Cinque Terre" width="600" height="400"/>
                         </a>
-                        <div className="desc">Computer Club</div>
+                        <div className="desc">Computer Lab</div>
                       </div>
                     </div>
                     </div>
@@ -90,7 +90,7 @@ const ComputerClubTable = () => {
                         <a target="_blank" href="img_5terre.jpg">
                           <img src={computerClubImage1} alt="Cinque Terre" width="600" height="400"/>
                         </a>
-                        <div className="desc">Computer Club</div>
+                        <div className="desc">Computer Lab</div>
                       </div>
                     </div>
                     </div>
@@ -101,7 +101,7 @@ const ComputerClubTable = () => {
                         <a target="_blank" href="img_5terre.jpg">
                           <img src={computerClubImage3} alt="Cinque Terre" width="600" height="400"/>
                         </a>
-                        <div className="desc">Computer Club</div>
+                        <div className="desc">Computer Lab</div>
                       </div>
                     </div>
                     </div>
@@ -116,7 +116,7 @@ const ComputerClubTable = () => {
                         data-bs-toggle="modal"
                         data-bs-target="#exampleModal2"
                       >
-                        Computer Lab Details
+                        Computer Lab Information
                       </button>
 
                       <div

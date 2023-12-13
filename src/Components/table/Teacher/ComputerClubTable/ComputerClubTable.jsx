@@ -45,7 +45,7 @@ const ComputerClubTable = () => {
                               height='400'
                             />
                           </a>
-                          <div className='desc'>Computer Club.</div>
+                          <div className='desc'>Computer Lab.</div>
                         </div>
                       </div>
                     </div>
@@ -61,7 +61,7 @@ const ComputerClubTable = () => {
                               height='400'
                             />
                           </a>
-                          <div className='desc'>Computer Club .</div>
+                          <div className='desc'>Computer Lab .</div>
                         </div>
                       </div>
                     </div>
@@ -77,7 +77,7 @@ const ComputerClubTable = () => {
                               height='400'
                             />
                           </a>
-                          <div className='desc'>Computer Club</div>
+                          <div className='desc'>Computer Lab</div>
                         </div>
                       </div>
                     </div>
@@ -95,7 +95,7 @@ const ComputerClubTable = () => {
                               height='400'
                             />
                           </a>
-                          <div className='desc'>Computer Club</div>
+                          <div className='desc'>Computer Lab</div>
                         </div>
                       </div>
                     </div>
@@ -111,7 +111,7 @@ const ComputerClubTable = () => {
                               height='400'
                             />
                           </a>
-                          <div className='desc'>Computer Club</div>
+                          <div className='desc'>Computer Lab</div>
                         </div>
                       </div>
                     </div>
@@ -127,7 +127,7 @@ const ComputerClubTable = () => {
                               height='400'
                             />
                           </a>
-                          <div className='desc'>Computer Club</div>
+                          <div className='desc'>Computer Lab</div>
                         </div>
                       </div>
                     </div>
@@ -141,7 +141,7 @@ const ComputerClubTable = () => {
                       data-bs-toggle='modal'
                       data-bs-target='#exampleModal2'
                     >
-                      Computer Lab Details
+                      Computer Lab Information
                     </button>
 
                     <div

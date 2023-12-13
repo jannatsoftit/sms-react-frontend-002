@@ -114,11 +114,11 @@ export const TeacherSidebarData = [
         path: '/teacher/managingCommittee',
         icon: <FaIcons.FaUserFriends />,
       },
-      {
-        title: 'Student Fee',
-        path: '/teacher/studentFees',
-        icon: <BiIcons.BiMoney />,
-      },
+      // {
+      //   title: 'Student Fee',
+      //   path: '/teacher/studentFees',
+      //   icon: <BiIcons.BiMoney />,
+      // },
       {
         title: 'Expense Category',
         path: '/teacher/expanseCategories',
@@ -134,7 +134,7 @@ export const TeacherSidebarData = [
     subNav: [
       {
         title: 'Teaching Staff',
-        path: '/teacher/tteachingStaffs',
+        path: '/teacher/all-teachingStaffs',
         icon: <GiTeacher />,
       },
       {

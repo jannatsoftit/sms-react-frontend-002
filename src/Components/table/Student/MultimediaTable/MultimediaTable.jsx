@@ -45,7 +45,7 @@ const MultimediaTable = () => {
                               height="400"
                             />
                           </a>
-                          <div className="desc">Computer Club.</div>
+                          <div className="desc">Multimedia ClassRoom</div>
                         </div>
                       </div>
                     </div>
@@ -61,7 +61,7 @@ const MultimediaTable = () => {
                               height="400"
                             />
                           </a>
-                          <div className="desc">Computer Club .</div>
+                          <div className="desc">Multimedia ClassRoom</div>
                         </div>
                       </div>
                     </div>
@@ -77,7 +77,7 @@ const MultimediaTable = () => {
                               height="400"
                             />
                           </a>
-                          <div className="desc">Computer Club</div>
+                          <div className="desc">Multimedia ClassRoom</div>
                         </div>
                       </div>
                     </div>
@@ -95,7 +95,7 @@ const MultimediaTable = () => {
                               height="400"
                             />
                           </a>
-                          <div className="desc">Computer Club</div>
+                          <div className="desc">Multimedia ClassRoom</div>
                         </div>
                       </div>
                     </div>
@@ -111,7 +111,7 @@ const MultimediaTable = () => {
                               height="400"
                             />
                           </a>
-                          <div className="desc">Computer Club</div>
+                          <div className="desc">Multimedia ClassRoom</div>
                         </div>
                       </div>
                     </div>
@@ -127,7 +127,7 @@ const MultimediaTable = () => {
                               height="400"
                             />
                           </a>
-                          <div className="desc">Computer Club</div>
+                          <div className="desc">Multimedia ClassRoom</div>
                         </div>
                       </div>
                     </div>
@@ -152,7 +152,7 @@ const MultimediaTable = () => {
                         aria-hidden="true"
                       >
                         <div className="modal-dialog library_details_modal">
-                          <div clclassNameass="modal-content">
+                          <div className="modal-content">
                             <div className="modal-header">
                               <h3
                                 className="modal-title"

@@ -10,7 +10,7 @@ const PTeachingStaffList = () => {
       {/* PTeaching Staff table title section */}
       <Link to='create' className='add_button'>
         <button type='button' className='btn'>
-          <HiPlus /> P Teaching Staff
+          <HiPlus /> Teaching Staff
         </button>
       </Link>
 

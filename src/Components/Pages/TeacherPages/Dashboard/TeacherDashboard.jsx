@@ -73,7 +73,7 @@ const TeacherDashboard = () => {
                   <MdNotificationsActive className='icons text-info' />
                   <div className='info'>
                     <span>Notification</span>
-                    <h2>0</h2>
+                    <h2>6</h2>
                   </div>
                 </div>
               </div>

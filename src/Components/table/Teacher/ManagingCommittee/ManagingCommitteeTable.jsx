@@ -58,8 +58,8 @@ const ManagingCommitteeTable = () => {
             </div>
 
             <div className='managing_committee_card'>
-              {/* 1st image row start */}
-              <div className='row align-items-start'>
+             {/* 1st image row start */}
+             <div className='row align-items-start'>
                 <div className='col'>
                   <img
                     className='rounded float-start managing_committee_image1'
@@ -107,8 +107,21 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text1'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
+                      MD Mahbubul Hasan <br />
+                      Principal
+                      <br />
+                      Member Secretary
+                      <br />
+                      Abdul Gafur Academy Primary & high School.
+                    </p>
+                  </div>
+                </div>
+
+                <div className='col'>
+                  <div className='row managing_committee_text1'>
+                    <p className='rounded float-start'>
+                      D.H.M Arefin <br />
+                      Co-opt Member
                       <br />
                       Managing Committee
                       <br />
@@ -120,21 +133,8 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text1'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
-                      <br />
-                      Managing Committee
-                      <br />
-                      Abdul Gafur Academy Primary & high School.
-                    </p>
-                  </div>
-                </div>
-
-                <div className='col'>
-                  <div className='row managing_committee_text1'>
-                    <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
+                      Masuda Sultana <br />
+                      Co-opt Member
                       <br />
                       Managing Committee
                       <br />
@@ -181,7 +181,7 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text2'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
+                      Arif Hossain<br />
                       Chairman
                       <br />
                       Managing Committee
@@ -194,8 +194,8 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text2'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
+                      Khadija Islam<br />
+                      Co-opt Member
                       <br />
                       Managing Committee
                       <br />
@@ -207,8 +207,8 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text2'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
+                      Sharif Islam <br />
+                      Guardian Member
                       <br />
                       Managing Committee
                       <br />
@@ -220,8 +220,8 @@ const ManagingCommitteeTable = () => {
                 <div className='col'>
                   <div className='row managing_committee_text2'>
                     <p className='rounded float-start'>
-                      A K M Arif <br />
-                      Chairman
+                        Amin Hasan <br />
+                      Guardian Member
                       <br />
                       Managing Committee
                       <br />

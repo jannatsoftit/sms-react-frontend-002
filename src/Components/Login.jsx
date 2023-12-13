@@ -109,7 +109,7 @@ const Login = () => {
             </div>
             <div className='field'>
               <input
-                //type='text'
+                type='password'
                 name='password'
                 value={loginInput.password}
                 onChange={handleInput}
@@ -119,7 +119,7 @@ const Login = () => {
             </div>
             <div className='field'>
               <input
-                //type='text'
+                type='password'
                 name='password_confirmation'
                 value={loginInput.password_confirmation}
                 onChange={handleInput}

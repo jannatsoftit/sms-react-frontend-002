@@ -8,9 +8,9 @@ import StudentSidebar from "../../../Sidebar/StudentSidebar";
 import Footer from "../../../Footer";
 
 // syllabus file
-const SYLLABUS_4_FILE_URL ="http://localhost:5173/syllabus_2023_for_class_4.pdf";
-const SYLLABUS_5_FILE_URL ="http://localhost:5173/syllabus_2023_for_class_5.pdf";
-const SYLLABUS_10_FILE_URL ="http://localhost:5173/syllabus_2023_for_class_10.pdf";
+const SYLLABUS_4_FILE_URL ="http://localhost:5173/syllabus/syllabus_2023_for_class_4.pdf";
+const SYLLABUS_5_FILE_URL ="http://localhost:5173/syllabus/syllabus_2023_for_class_5.pdf";
+const SYLLABUS_10_FILE_URL ="http://localhost:5173/syllabus/syllabus_2023_for_class_10.pdf";
 
 
 const SyllabusTable = () => {
@@ -70,13 +70,18 @@ const SyllabusTable = () => {
 
     // download syllabus file from public folder
     const downloadFileAtURL = (url) => {
-      const fileName = url.split("/").pop();
-      const aTag = document.createElement("a");
-      aTag.href = url;
-      aTag.setAttribute("download", fileName);
-      document.body.appendChild(aTag);
-      aTag.click();
-      aTag.remove();
+      fetch(url)
+      .then((response) => response.blob())
+      .then((blob) => {
+        const blobURL = window.URL.createObjectURL(new Blob([blob]))
+        const fileName = url.split("/").pop();
+        const aTag = document.createElement("a");
+        aTag.href = blobURL;
+        aTag.setAttribute("download", fileName);
+        document.body.appendChild(aTag);
+        aTag.click();
+        aTag.remove();
+      })
     };
 
   return (

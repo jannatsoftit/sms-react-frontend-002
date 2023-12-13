@@ -8,11 +8,11 @@ import Footer from "../../../Footer";
 
 
 // BOOK LIST file
-const BOOKLIST_2_FILE_URL ="http://localhost:5173/book_list_2023_for_class_2.pdf";
-const BOOKLIST_4_FILE_URL ="http://localhost:5173/book_list_2023_for_class_4.pdf";
-const BOOKLIST_6_FILE_URL ="http://localhost:5173/book_list_2023_for_class_6.pdf";
-const BOOKLIST_9_FILE_URL ="http://localhost:5173/book_list_2023_for_class_9.pdf";
-const BOOKLIST_10_FILE_URL ="http://localhost:5173/book_list_2023_for_class_10.pdf";
+const BOOKLIST_2_FILE_URL ="http://localhost:5173/bookList/book_list_2023_for_class_2.pdf";
+const BOOKLIST_4_FILE_URL ="http://localhost:5173/bookList/book_list_2023_for_class_4.pdf";
+const BOOKLIST_6_FILE_URL ="http://localhost:5173/bookList/book_list_2023_for_class_6.pdf";
+const BOOKLIST_9_FILE_URL ="http://localhost:5173/bookList/book_list_2023_for_class_9.pdf";
+const BOOKLIST_10_FILE_URL ="http://localhost:5173/bookList/book_list_2023_for_class_10.pdf";
 
 const BookListTable = () => {
   // BookList data

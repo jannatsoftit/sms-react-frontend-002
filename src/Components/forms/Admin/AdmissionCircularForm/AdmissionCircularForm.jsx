@@ -33,7 +33,7 @@ const AdmissionCircularForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/admin/admissionCirculars', { replace: true });
+      navigate('/admin/admission-circulars', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);
@@ -124,10 +124,7 @@ const AdmissionCircularForm = () => {
                           </span>
                         )}
                       </div>
-
                     </div>
-
-
                     <div className='row justify-content-start'>
                       <div className='form-group col-sm-4'>
                         <button type='submit' className='btn-block btn-primary'>

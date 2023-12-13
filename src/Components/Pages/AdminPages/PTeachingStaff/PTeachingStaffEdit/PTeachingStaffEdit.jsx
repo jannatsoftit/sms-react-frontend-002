@@ -40,7 +40,7 @@ const PTeachingStaffEdit = () => {
         confirmButtonText: 'Ok',
       });
 
-      navigate('/admin/tteachingStaffs', { replace: true });
+      navigate('/admin/all-teachingStaffs', { replace: true });
 
       const formData = new FormData();
       formData.append('_method', 'PUT');
@@ -91,9 +91,9 @@ const PTeachingStaffEdit = () => {
       <TopBar />
       <AdminSidebar>
         {/* pteachingStaff create table title section */}
-        <Link to='/admin/tteachingStaffs' className='add_button'>
+        <Link to='/admin/all-teachingStaffs' className='add_button'>
           <button type='button' className='btn'>
-            P Teaching Staff Table <AiOutlineArrowRight />
+            Teaching Staff Table <AiOutlineArrowRight />
           </button>
         </Link>
 
@@ -103,17 +103,17 @@ const PTeachingStaffEdit = () => {
               <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
                 <div className='card'>
                   {/* pteachingStaff create form title section */}
-                  <div className='col-md-6 text-center mb-5'>
+                  <div className='col-md-7 text-center mb-5'>
                     <h2 className='heading-section'>
-                      P Teaching Staff Form Edit Table
+                      Teaching Staff Edit Form
                     </h2>
-                    <div className='admin-create'>
+                    <div className='admin-create'  style={{marginLeft:'-10px'}}>
                       <Link to='#' className='links'>
-                        user
+                      school-staff
                       </Link>
                       <RxSlash />
                       <Link to='' className='links'>
-                        pteaching-staffs
+                        teaching-staffs
                       </Link>
                       <RxSlash />
                       <Link to='' className='actives'>

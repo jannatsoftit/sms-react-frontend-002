@@ -98,15 +98,15 @@ const NonTeachingStaffForm = () => {
               <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
                 <div className='card'>
                   {/* nonteachingStaff create form title section */}
-                  <div className='col-md-6 text-center mb-5'>
-                    <h2 className='heading-section'>HTeaching Staff Table</h2>
-                    <div className='admin-create'>
+                  <div className='col-md-7 text-center mb-5'>
+                    <h2 className='heading-section'>Non-Teaching Staff Table</h2>
+                    <div className='admin-create' style={{marginLeft:'-15px'}}>
                       <Link to='#' className='links'>
                         user
                       </Link>
                       <RxSlash />
                       <Link to='' className='links'>
-                        nonteaching-staff
+                        non-teaching-staff
                       </Link>
                       <RxSlash />
                       <Link to='' className='actives'>

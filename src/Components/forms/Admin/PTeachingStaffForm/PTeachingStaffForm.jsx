@@ -36,7 +36,7 @@ const PTeachingStaffForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/admin/tteachingStaffs', { replace: true });
+      navigate('/admin/all-teachingStaffs', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);
@@ -100,14 +100,14 @@ const PTeachingStaffForm = () => {
               <div className='card'>
                 {/* pteachingStaff create form title section */}
                 <div className='col-md-6 text-center mb-5'>
-                  <h2 className='heading-section'>P Teaching Staff Table</h2>
+                  <h2 className='heading-section'>Teaching Staff Table</h2>
                   <div className='admin-create'>
                     <Link to='#' className='links'>
-                      user
+                    school-staff
                     </Link>
                     <RxSlash />
                     <Link to='' className='links'>
-                      pteaching-staff
+                      teaching-staff
                     </Link>
                     <RxSlash />
                     <Link to='' className='actives'>

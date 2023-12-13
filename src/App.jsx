@@ -1119,7 +1119,7 @@ const App = () => {
             element={<ExpanseCategoryEdit />}
           />
 
-          <Route path='tteachingStaffs' element={<TeachingStaffTable />} />
+          <Route path='all-teachingStaffs' element={<TeachingStaffTable />} />
 
           <Route path='teachingStaffs' element={<HTeachingStaffList />} />
           <Route
@@ -1229,7 +1229,7 @@ const App = () => {
 
           <Route path='expanseCategories' element={<SExpanseCategoryList />} />
 
-          <Route path='tteachingStaffs' element={<STeachingStaffTable />} />
+          <Route path='all-teachingStaffs' element={<STeachingStaffTable />} />
 
           <Route path='teachingStaffs' element={<SHTeachingStaffList />} />
 
@@ -1298,7 +1298,7 @@ const App = () => {
 
           <Route path='expanseCategories' element={<TExpanseCategoryList />} />
 
-          <Route path='tteachingStaffs' element={<TTeachingStaffTable />} />
+          <Route path='all-teachingStaffs' element={<TTeachingStaffTable />} />
 
           <Route path='teachingStaffs' element={<THTeachingStaffList />} />
 
