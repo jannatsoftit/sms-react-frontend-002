@@ -34,11 +34,11 @@ export const StudentSidebarData = [
     path: '/student/teachers',
     icon: <FaIcons.FaChalkboardTeacher />,
   },
-  {
-    title: 'Parent Table',
-    path: '/student/parents',
-    icon: <RiIcons.RiParentFill />,
-  },
+  // {
+  //   title: 'Parent Table',
+  //   path: '/student/parents',
+  //   icon: <RiIcons.RiParentFill />,
+  // },
 
   {
     title: 'Examination',

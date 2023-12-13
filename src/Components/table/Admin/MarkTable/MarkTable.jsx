@@ -241,6 +241,20 @@ const MarkTable = () => {
                                 </div>
                               )
                               :
+                              (record?.id) === 8 ? 
+                              (
+                                <div>
+                                  <button
+                                    onClick={() => {
+                                      downloadFileAtURL(PDF_2_FILE_URL);
+                                    }}
+                                    style={{ backgroundColor: "#00A3FF", color:'white' }}
+                                  >
+                                    <BsDownload /> Download
+                                  </button>
+                                </div>
+                              )
+                              :
                               null
                             
                             }
