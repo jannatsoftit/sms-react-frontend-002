@@ -33,7 +33,7 @@ const AdmissionCircularForm = () => {
         icon: 'success',
         confirmButtonText: 'Ok',
       });
-      navigate('/admin/admission-circulars', { replace: true });
+      navigate('/admin/admissionCirculars', { replace: true });
       console.log(inputFields);
     }
   }, [formErrors]);
@@ -118,9 +118,9 @@ const AdmissionCircularForm = () => {
                           onChange={handleChange}
                           value={inputFields.title}
                         />{' '}
-                        {formErrors.book_name && (
+                        {formErrors.title && (
                           <span style={{ color: '#e74c3c' }}>
-                            {formErrors.book_name}
+                            {formErrors.title}
                           </span>
                         )}
                       </div>
