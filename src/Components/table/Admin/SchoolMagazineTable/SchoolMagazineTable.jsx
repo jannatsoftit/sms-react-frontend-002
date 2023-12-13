@@ -48,7 +48,7 @@ const SchoolMagazineTable = () => {
 
 //school magazine data delete function
 const handleDelete = (schoolMagazine) => {
-  if (confirm(`Are You sure you want to delete school magazine ${schoolMagazine.id}?`)) {
+  if (confirm(`Are You sure you want to delete school magazine?`)) {
     Swal.fire({
       title: 'Success!',
       text: 'Information Delete Successfully!!',

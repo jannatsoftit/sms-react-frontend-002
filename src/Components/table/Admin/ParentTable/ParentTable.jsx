@@ -41,7 +41,7 @@ const ParentTable = () => {
 
   //parent data delete function
   const handleDelete = (parent) => {
-    if (confirm(`Are You sure you want to delete parent ${parent.id}?`)) {
+    if (confirm(`Are You sure you want to delete parent?`)) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Delete Successfully!!',

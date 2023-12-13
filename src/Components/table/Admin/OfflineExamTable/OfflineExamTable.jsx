@@ -51,7 +51,7 @@ const OfflineExamTable = () => {
   // Offline Exam data delete function
   const handleDelete = (offlineExam) => {
     if (
-      confirm(`Are You sure you want to delete offline exam ${offlineExam.id}?`)
+      confirm(`Are You sure you want to delete offline exam?`)
     ) {
       Swal.fire({
         title: "Success!",

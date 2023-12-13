@@ -18,7 +18,7 @@ const HSTeachingStaffTable = () => {
   const handleDelete = (hsteachingStaff) => {
     if (
       confirm(
-        `Are You sure you want to delete hsteaching staff ${hsteachingStaff.id}?`
+        `Are You sure you want to delete hsteaching staff ?`
       )
     ) {
       Swal.fire({

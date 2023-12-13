@@ -44,7 +44,7 @@ const ExpanseCategoryTable = () => {
   const handleDelete = (expanseCategory) => {
     if (
       confirm(
-        `Are You sure you want to delete expanse category ${expanseCategory.id}?`
+        `Are You sure you want to delete expanse category?`
       )
     ) {
       Swal.fire({

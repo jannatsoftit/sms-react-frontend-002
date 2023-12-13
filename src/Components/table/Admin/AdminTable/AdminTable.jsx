@@ -43,7 +43,7 @@ const AdminTable = () => {
 
   //admin data delete function
   const handleDelete = (admin) => {
-    if (confirm(`Are You sure you want to delete admin ${admin.id}?`)) {
+    if (confirm(`Are You sure you want to delete admin?`)) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Delete Successfully!!',

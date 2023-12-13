@@ -44,7 +44,7 @@ const AdmissionCircularTable = () => {
   const handleDelete = (admissionCircular) => {
     if (
       confirm(
-        `Are You sure you want to delete Admission Circular ${admissionCircular.id}?`
+        `Are You sure you want to delete Admission Circular?`
       )
     ) {
       Swal.fire({

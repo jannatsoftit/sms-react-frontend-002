@@ -44,7 +44,7 @@ const LibrarianTable = () => {
 
   //Librarian data delete function
   const handleDelete = (librarian) => {
-    if (confirm(`Are You sure you want to delete librarian ${librarian.id}?`)) {
+    if (confirm(`Are You sure you want to delete librarian ?`)) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Delete Successfully!!',

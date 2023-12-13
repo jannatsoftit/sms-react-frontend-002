@@ -46,7 +46,7 @@ const StudentFeeTable = () => {
   // StudentFee data delete function
   const handleDelete = (studentFee) => {
     if (
-      confirm(`Are You sure you want to delete student fee ${studentFee.id}?`)
+      confirm(`Are You sure you want to delete student fee ?`)
     ) {
       Swal.fire({
         title: 'Success!',

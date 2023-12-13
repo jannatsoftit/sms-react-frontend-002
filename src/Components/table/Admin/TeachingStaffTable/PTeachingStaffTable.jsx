@@ -16,7 +16,7 @@ const PTeachingStaffTable = () => {
   const handleDelete = (pteachingStaff) => {
     if (
       confirm(
-        `Are You sure you want to delete pteaching staff ${pteachingStaff.id}?`
+        `Are You sure you want to delete pteaching staff ?`
       )
     ) {
       Swal.fire({

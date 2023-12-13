@@ -42,7 +42,7 @@ const StudentTable = () => {
 
   //student data delete function
   const handleDelete = (student) => {
-    if (confirm(`Are You sure you want to delete student ${student.id}?`)) {
+    if (confirm(`Are You sure you want to delete student?`)) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Delete Successfully!!',

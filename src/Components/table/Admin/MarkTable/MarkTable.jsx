@@ -51,7 +51,7 @@ const MarkTable = () => {
 
   // Mark data delete function
   const handleDelete = (mark) => {
-    if (confirm(`Are You sure you want to delete mark ${mark.id}?`)) {
+    if (confirm(`Are You sure you want to delete mark ?`)) {
       Swal.fire({
         title: "Success!",
         text: "Information Delete Successfully!!",

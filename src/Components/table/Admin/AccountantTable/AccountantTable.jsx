@@ -44,7 +44,7 @@ const AccountantTable = () => {
   //Accountant data delete function
   const handleDelete = (accountant) => {
     if (
-      confirm(`Are You sure you want to delete accountant ${accountant.id}?`)
+      confirm(`Are You sure you want to delete accountant?`)
     ) {
       Swal.fire({
         title: 'Success!',

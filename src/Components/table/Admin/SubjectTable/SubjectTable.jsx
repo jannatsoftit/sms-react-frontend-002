@@ -43,7 +43,7 @@ const SubjectTable = () => {
 
   // Subject data delete function
   const handleDelete = (subject) => {
-    if (confirm(`Are You sure you want to delete subject ${subject.id}?`)) {
+    if (confirm(`Are You sure you want to delete subject ?`)) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Delete Successfully!!',

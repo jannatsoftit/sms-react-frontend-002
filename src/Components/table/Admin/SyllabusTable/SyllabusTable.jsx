@@ -51,7 +51,7 @@ const SyllabusTable = () => {
 
     //syllabus data delete function
     const handleDelete = (syllabus) => {
-      if (confirm(`Are You sure you want to delete syllabus ${syllabus.id}?`)) {
+      if (confirm(`Are You sure you want to delete syllabus ?`)) {
         Swal.fire({
           title: 'Success!',
           text: 'Information Delete Successfully!!',

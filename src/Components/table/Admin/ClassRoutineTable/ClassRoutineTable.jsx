@@ -50,7 +50,7 @@ const ClassRoutineTable = () => {
 
     //classRoutine data delete function
     const handleDelete = (classRoutine) => {
-      if (confirm(`Are You sure you want to delete class Routine ${classRoutine.id}?`)) {
+      if (confirm(`Are You sure you want to delete class Routine ?`)) {
         Swal.fire({
           title: 'Success!',
           text: 'Information Delete Successfully!!',

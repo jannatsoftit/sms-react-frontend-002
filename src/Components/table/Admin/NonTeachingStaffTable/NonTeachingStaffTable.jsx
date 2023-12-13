@@ -20,7 +20,7 @@ const NonTeachingStaffTable = () => {
   const handleDelete = (nonTeachingStaff) => {
     if (
       confirm(
-        `Are You sure you want to delete non-teaching staff ${nonTeachingStaff.id}?`
+        `Are You sure you want to delete non-teaching staff ?`
       )
     ) {
       Swal.fire({
