@@ -51,7 +51,7 @@ const BookListTable = () => {
 
   //book list data delete function
   const handleDelete = (bookList) => {
-    if (confirm(`Are You sure you want to delete bookLists ${bookList.id}?`)) {
+    if (confirm(`Are You sure you want to delete bookLists?`)) {
       Swal.fire({
         title: 'Success!',
         text: 'Information Delete Successfully!!',

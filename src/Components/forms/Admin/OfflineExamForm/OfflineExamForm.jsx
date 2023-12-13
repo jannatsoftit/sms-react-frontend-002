@@ -104,11 +104,11 @@ const OfflineExamForm = () => {
               <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
                 <div className='card'>
                   {/* offlineExams create form title section */}
-                  <div className='col-md-6 text-center mb-5'>
+                  <div className='col-md-7 text-center mb-5'>
                     <h2 className='heading-section'>
                       Offline Exams Form Table
                     </h2>
-                    <div className='admin-create'>
+                    <div className='admin-create' style={{marginLeft:'-20px'}}>
                       <Link to='#' className='links'>
                         user
                       </Link>

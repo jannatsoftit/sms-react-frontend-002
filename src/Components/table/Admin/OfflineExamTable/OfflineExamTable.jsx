@@ -118,9 +118,9 @@ const OfflineExamTable = () => {
       <AdminSidebar>
         <section className="ftco-section">
           <div className="container">
-            <div className="col-md-6 text-center mb-5">
+            <div className="col-md-7 text-center mb-5">
               <h2 className="heading-section">Offline Exam Table List</h2>
-              <div className="admin">
+              <div className="admin" style={{marginLeft:'30px'}}>
                 <Link to="#" className="links">
                   examination
                 </Link>

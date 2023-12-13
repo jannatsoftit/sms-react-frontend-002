@@ -83,7 +83,7 @@ const ExpanseCategoryForm = () => {
               <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
                 <div className='card'>
                   {/* ExpanseCategory create form title section */}
-                  <div className='col-md-6 text-center mb-5'>
+                  <div className='col-md-7 text-center mb-5'>
                     <h2 className='heading-section'>
                       Expanse Category Form Table
                     </h2>

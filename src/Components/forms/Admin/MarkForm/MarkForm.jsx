@@ -95,7 +95,7 @@ const MarkForm = () => {
                     <h2 className='heading-section'>Exam Results Form Table</h2>
                     <div className='admin-create'>
                       <Link to='#' className='links'>
-                        user
+                        examination
                       </Link>
                       <RxSlash />
                       <Link to='' className='links'>

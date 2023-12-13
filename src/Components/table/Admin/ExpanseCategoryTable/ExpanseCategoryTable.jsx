@@ -98,7 +98,7 @@ const ExpanseCategoryTable = () => {
       <AdminSidebar>
         <section className='ftco-section'>
           <div className='container'>
-            <div className='col-md-6 text-center mb-5'>
+            <div className='col-md-7 text-center mb-5'>
               <h2 className='heading-section'>Expanse Category Table List</h2>
               <div className='admin'>
                 <Link to='#' className='links'>

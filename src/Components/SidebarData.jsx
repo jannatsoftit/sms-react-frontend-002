@@ -171,17 +171,17 @@ export const SidebarData = [
     subNav: [
       {
         title: 'Teacher Notice',
-        path: '/admin/teacher-notice',
+        path: '/admin/teacherNotice',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Student Notice',
-        path: '/admin/student-notice',
+        path: '/admin/studentNotice',
         icon: <IoIcons.IoIosPaper />,
       },
       {
         title: 'Parent Notice',
-        path: '/admin/parent-notice',
+        path: '/admin/parentNotice',
         icon: <IoIcons.IoIosPaper />,
       },
     ],

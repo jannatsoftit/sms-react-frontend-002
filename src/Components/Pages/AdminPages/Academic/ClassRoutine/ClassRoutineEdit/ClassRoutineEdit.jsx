@@ -107,13 +107,13 @@ const ClassRoutineEdit = () => {
               <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
                 <div className='card'>
                   {/* ClassRoutine create form title section */}
-                  <div className='col-md-6 text-center mb-5'>
+                  <div className='col-md-7 text-center mb-5'>
                     <h2 className='heading-section'>
                       Class Routine Form Edit Table
                     </h2>
                     <div className='admin-create'>
                       <Link to='#' className='links'>
-                        user
+                        academic
                       </Link>
                       <RxSlash />
                       <Link to='' className='links'>

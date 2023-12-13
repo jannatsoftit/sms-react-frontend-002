@@ -102,11 +102,11 @@ const ExpanseCategoryEdit = () => {
               <div className='col-xl-7 col-lg-8 col-md-9 col-11 text-center'>
                 <div className='card'>
                   {/* ExpanseCategory create form title section */}
-                  <div className='col-md-6 text-center mb-5'>
+                  <div className='col-md-8 text-center mb-5'>
                     <h2 className='heading-section'>
                       Expanse Category Form Edit Table
                     </h2>
-                    <div className='admin-create'>
+                    <div className='admin-create' style={{marginLeft:'-15px'}}>
                       <Link to='#' className='links'>
                         user
                       </Link>

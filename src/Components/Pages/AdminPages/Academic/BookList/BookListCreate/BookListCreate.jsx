@@ -8,7 +8,7 @@ const BookListCreate = () => {
     <div>
         <TopBar/>
       {/* BookList create table title section */}
-      <Link to='/admin/classRooms' className='add_button'>
+      <Link to='/admin/bookLists' className='add_button'>
         <button type='button' className='btn'>
           BookList Table <AiOutlineArrowRight />
         </button>
