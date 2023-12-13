@@ -50,6 +50,7 @@ const Login = () => {
           localStorage.setItem('image', response?.image);
           localStorage.setItem('role', response?.role_id);
           localStorage.setItem('school_id', response?.school_id);
+          localStorage.setItem('parent_id', response?.parent_id);
           
           const userRoleId = localStorage.getItem('role');
           console.log(userRoleId);

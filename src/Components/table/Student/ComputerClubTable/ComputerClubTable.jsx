@@ -170,13 +170,6 @@ const ComputerClubTable = () => {
                               <b>Total Computer Lab - </b> 1 Computer Lab Room.
                             </p>
                             <p>
-                              <b>Total Element - </b> 30 chairs, 6 Tables, 10
-                              light, 5 Fan.
-                            </p>
-                            <p>
-                              <b>Total Computers - </b>40 Computers.
-                            </p>
-                            <p>
                               <b>Location - </b>East, Jamuna Building.
                             </p>
                             <p>

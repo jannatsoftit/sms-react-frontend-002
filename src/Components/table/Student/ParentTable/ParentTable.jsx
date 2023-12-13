@@ -6,6 +6,8 @@ import StudentSidebar from "../../../Sidebar/StudentSidebar";
 import Footer from "../../../Footer";
 
 const ParentTable = () => {
+  const parentId = localStorage.getItem('parent_id');
+
   // parent data
   const [parents, setParents] = useState(null);
 

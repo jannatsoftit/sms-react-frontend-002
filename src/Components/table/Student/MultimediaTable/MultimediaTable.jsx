@@ -164,12 +164,8 @@ const MultimediaTable = () => {
                             </div>
                             <div className="library_details">
                               <p><b>Total Multimedia ClassRoom - </b> 10 Multimedia ClassRoom.</p>
-                              <p><b>Total Element - </b> 30 chairs, 6 Tables, 10 light,
-                              5 Fan. 
-                              </p>
-                              <p><b>Total Multimedia - </b>10 Multimedia.</p>
                               <p><b>Location - </b>East, Shapla Building.</p>
-                              <p><b>Multimedia ClassRoom Assistant - </b>Rahman (Multimedia Class Teacher).</p>
+                              <p><b>Multimedia ClassRoom Assistant - </b>Rahman, Habib, Ismail (Multimedia Class Teacher).</p>
                               <p><b>Area - </b>400 square feet.</p>
 
                             </div>

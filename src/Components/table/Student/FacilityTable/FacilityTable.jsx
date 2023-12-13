@@ -180,9 +180,6 @@ const FacilityTable = () => {
                             </div>
                             <div className="library_details">
                               <p><b>Total Library Room - </b> 2 Library Rooms.</p>
-                              <p><b>Total Element - </b> 30 chairs, 6 Tables, 12 Book Shelfs, 10 light,
-                              5 Fan.  
-                              </p>
                               <p><b>Total Books - </b>3000 Books.</p>
                               <p><b>Location - </b>East, Shapla Building and Jamuna Building.</p>
                               <p><b>Library Room Assistant - </b>Farukh.</p>

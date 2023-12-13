@@ -126,7 +126,7 @@ const MarkEdit = () => {
                       <div className='form-group col-sm-6 flex-column d-flex'>
                         {' '}
                         <label className='form-label px-3'>
-                          Student Name <span className='text-danger'> *</span>
+                          Exam Name <span className='text-danger'> *</span>
                         </label>{' '}
                         <input
                           type='text'

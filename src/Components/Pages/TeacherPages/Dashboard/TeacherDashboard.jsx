@@ -7,7 +7,7 @@ import BarChart from './BarChart';
 import TeacherSidebar from '../../../Sidebar/TeacherSidebar';
 import Footer from '../../../Footer';
 import TeacherTopBar from '../../../TeacherTopBar';
-import Calendar1 from './Calendar1';
+//import Calendar1 from './Calendar1';
 
 const TeacherDashboard = () => {
   const userDepartment = localStorage.getItem('department');
@@ -84,7 +84,7 @@ const TeacherDashboard = () => {
               <BarChart />
               </div>
               <div className='col-12 col-md-3 p-3' >
-                <Calendar1 />
+                {/* <Calendar1 /> */}
               </div>
             </div>
 
